@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/Inventaire_plantes.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/UI/Font/Quicksand_Book.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Son/Mer+Vent+CigalesV1.wav" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Son/Mer+Vent+CigalesV1.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Scripts/DebugLabel3.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/WaterTextureOffset.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Mask/Ciel.png" type="Texture" id=18]
@@ -65,7 +65,7 @@ __meta__ = {
 }
 
 [node name="WaterTextureOffset" parent="." instance=ExtResource( 17 )]
-position = Vector2( 0, 292 )
+position = Vector2( 10.8679, 292 )
 scale = Vector2( 30, 0.682812 )
 
 [node name="Bateau" parent="." instance=ExtResource( 2 )]

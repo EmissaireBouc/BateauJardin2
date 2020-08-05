@@ -1,13 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/PlanteScene/Cosmos.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Plante/PlanteTest/buisson blanc 2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Mask/wind_2d.shader" type="Shader" id=3]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.1
+shader_param/maxStrength = 0.3
+shader_param/strengthScale = 50.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = 0.0
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -21,18 +33,19 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "lvl2",
+"loop": false,
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 } ]
 
 [node name="BuissonBlanc2" instance=ExtResource( 1 )]
-frames = SubResource( 1 )
+material = SubResource( 1 )
+frames = SubResource( 2 )
 offset = Vector2( -10, -150 )
 
 [node name="CollisionPolygon2D" parent="Area2D" index="0"]

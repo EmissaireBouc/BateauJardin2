@@ -56,7 +56,7 @@ func select_plant(area):
 func unselect_plant(area):
 	overlapPlant = false
 	areaName = ""
-	area.get_parent().set_material(null)
+	area.get_parent().set_material(preload("res://Assets/Mask/grass_wind_2d.material"))
 #	$Polygon2D.set_self_modulate(45)
 
 func clear_aCollisionNode():

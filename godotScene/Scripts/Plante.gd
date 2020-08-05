@@ -37,6 +37,7 @@ func init(plant):
 	lvl = ImportData.plant_data[plant].LVL
 
 	get_child(0).play("apparition")
+	get_child(0).set_material(preload("res://Assets/Mask/grass_wind_2d.material"))
 
 func LVL_up():
 	lvl += 1
