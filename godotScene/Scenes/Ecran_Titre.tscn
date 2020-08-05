@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Decors/icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/BoutonMenu.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_left = 150.0
+margin_top = 100.0
+margin_right = -150.0
+margin_bottom = 236.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1620.0
+margin_bottom = 136.0
+
+[node name="Menu" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1620.0
+margin_bottom = 136.0
+size_flags_vertical = 3
+custom_constants/separation = 200
+
+[node name="Jouer" type="Button" parent="MarginContainer/VBoxContainer/Menu"]
+margin_right = 406.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Jouer"
+script = ExtResource( 2 )
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/Menu"]
+margin_left = 606.0
+margin_right = 1012.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Options"
+script = ExtResource( 2 )
+
+[node name="Quitter" type="Button" parent="MarginContainer/VBoxContainer/Menu"]
+margin_left = 1212.0
+margin_right = 1620.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Quitter"
+script = ExtResource( 2 )
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Jouer" to="MarginContainer/VBoxContainer/Menu/Jouer" method="_on_Jouer_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Options" to="MarginContainer/VBoxContainer/Menu/Options" method="_on_Options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Quitter" to="MarginContainer/VBoxContainer/Menu/Quitter" method="_on_Quitter_pressed"]
