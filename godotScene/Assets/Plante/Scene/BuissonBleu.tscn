@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Plante/_Template_Plante.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Plante/Image/buisson bleu.png" type="Texture" id=2]
+
+
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+// Wind settings.
+uniform float speed = 1.0;
+uniform float minStrength : hint_range(0.0, 1.0);
+uniform float maxStrength : hint_range(0.0, 1.0);
+uniform float strengthScale = 100.0;
+uniform float interval = 3.5;
+uniform float detail = 1.0;
+uniform float distortion : hint_range(0.0, 1.0);
+uniform float heightOffset = 0.0;
+
+float getWind(vec2 vertex, vec2 uv, float timer){
+	vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
+	float time = timer * speed + pos.x * pos.y;
+	float diff = pow(maxStrength - minStrength, 2.0);
+	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
+	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
+	
+	return wind;
+	}
+
+void vertex() {
+	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/speed = 2.0
+shader_param/minStrength = 0.092
+shader_param/maxStrength = 0.333
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = 0.0
+
+[sub_resource type="SpriteFrames" id=3]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "fane",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "apparition",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+} ]
+
+[node name="BuissonBleu" instance=ExtResource( 1 )]
+material = SubResource( 2 )
+frames = SubResource( 3 )
+offset = Vector2( 10, -140 )

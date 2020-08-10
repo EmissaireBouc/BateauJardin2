@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Plante/Image/oreilles de lapin.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Plante/Plantes.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+// Wind settings.
+uniform float speed = 1.0;
+uniform float minStrength : hint_range(0.0, 1.0);
+uniform float maxStrength : hint_range(0.0, 1.0);
+uniform float strengthScale = 100.0;
+uniform float interval = 3.5;
+uniform float detail = 1.0;
+uniform float distortion : hint_range(0.0, 1.0);
+uniform float heightOffset = 0.0;
+
+float getWind(vec2 vertex, vec2 uv, float timer){
+	vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
+	float time = timer * speed + pos.x * pos.y;
+	float diff = pow(maxStrength - minStrength, 2.0);
+	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
+	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
+	
+	return wind;
+	}
+
+void vertex() {
+	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = SubResource( 1 )
+shader_param/speed = 2.0
+shader_param/minStrength = 0.0
+shader_param/maxStrength = 0.3
+shader_param/strengthScale = 50.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = 0.0
+
+[sub_resource type="SpriteFrames" id=3]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "apparition",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "fane",
+"speed": 5.0
+} ]
+
+[node name="Arbuste" type="AnimatedSprite"]
+material = SubResource( 2 )
+frames = SubResource( 3 )
+animation = "lvl3"
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( -23.7254, -10.5659 )
+scale = Vector2( 3.06715, 1 )
+polygon = PoolVector2Array( -18.3475, -21.4341, -18.3475, 66.5659, 36.2897, 63.2224, 36.4265, -21.4341 )
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]

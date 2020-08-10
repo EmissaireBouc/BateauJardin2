@@ -1,6 +1,8 @@
 extends Node
 
 var plant_data
+var dialogue
+var text
 
 func _ready():
 	var plantdata_file = File.new()

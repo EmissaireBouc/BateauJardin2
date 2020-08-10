@@ -123,4 +123,11 @@ func animation_loop(mode, backward = false):
 #		if !$AudioStreamPlayer2D.is_playing():
 #			$AudioStreamPlayer2D.play()
 
-
+#func _on_Area2D_area_shape_entered(_area_id, area, _area_shape, _self_shape):
+#	area.get_parent().get_material().set_shader_param("detail",10)
+#
+#
+#func _on_Area2D_area_shape_exited(_area_id, area, _area_shape, _self_shape):
+#	if area != null:
+#		area.get_parent().get_material().set_shader_param("detail",1)
+#

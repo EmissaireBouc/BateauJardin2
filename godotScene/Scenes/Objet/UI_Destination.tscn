@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/UI/Curseur/UI_plantation.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/Curseur/UI_destination.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "PLANTATION",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "DESTINATION",
+"speed": 5.0
+} ]
+
+[node name="UI_Destination" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "DESTINATION"
+offset = Vector2( 0, 20 )

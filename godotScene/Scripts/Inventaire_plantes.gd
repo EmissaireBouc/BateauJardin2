@@ -19,7 +19,7 @@ func open():
 		itemlist.unselect_graine()
 		visible = true
 		$AnimationPlayer.play("Apparition")
-		
+
 
 func close():
 	if visible:
@@ -39,8 +39,6 @@ func _on_ItemList_item_selected(index):
 		itemlist.modulate_icon()
 	itemID = index
 	itemlist.set_item_icon_modulate(index, Color(1,1,1,1))
-
-
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

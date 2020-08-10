@@ -16,9 +16,9 @@ func make_inventory():
 			create_item(key)
 
 func create_item(plante):
-	var texture = load("res://Assets/UI/Inv/%s" %"icon"+ImportData.plant_data[plante].Name+".png")
+	var texture = load("res://Assets/Plante/Icone/%s" %"icon"+ImportData.plant_data[plante].Name+".png")
 	add_item(ImportData.plant_data[plante].Name, texture)
-	
+
 
 func return_selected_item():
 	if is_anything_selected():

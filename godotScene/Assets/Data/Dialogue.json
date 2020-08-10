@@ -1,0 +1,68 @@
+{
+  "Dialogue": {
+		"Capitaine" :{
+			"Default": {
+				"dia1": { 
+					"name":"Capitaine",
+					"text" : "Salut ça va ?"
+				},
+				"dia2":{ 
+					"name": "PJ",
+					"text" : "Oui et toi ?"
+				}
+			},
+			"Myosotis 1" :{
+				"dia1" : { 
+					"name": "Capitaine",
+					"text" : "Je vois que tu as planté des myosotis..."
+				},
+				"dia2" : { 
+					"name": "Capitaine",
+					"text" : "Ce sont mes préférés"
+				}
+			},
+			"Myosotis 2" :{
+				"dia1" : { 
+					"name": "Capitaine",
+					"text" : "Elles ont bien poussées !"
+				},
+				"dia2" : { 
+					"name": "PJ",
+					"text" : "J'en prends grand soin"
+				}
+			}
+		},
+	  "Gabière": {
+			"Bla": {
+				"dia1": { 
+					"name":"Capitaine",
+					"text" : "Salut ça va ?"
+				},
+				"dia2":{ 
+					"name": "PJ",
+					"text" : "Oui et toi ?"
+				}
+			},
+			"Bli" :{
+				"dia1" : { 
+					"name": "Capitaine",
+					"text" : "Je vois que tu as planté des myosotis..."
+				},
+				"dia2" : { 
+					"name": "Capitaine",
+					"text" : "Ce sont mes préférés"
+				}
+			},
+			"Blo" :{
+				"dia1" : { 
+					"name": "Capitaine",
+					"text" : "Elles ont bien poussées !"
+				},
+				"dia2" : { 
+					"name": "PJ",
+					"text" : "J'en prends grand soin"
+				}
+			}
+		}
+	}
+}
