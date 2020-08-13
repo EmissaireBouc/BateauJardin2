@@ -74,7 +74,12 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -84,12 +89,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -144,7 +144,12 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -154,12 +159,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -185,7 +185,12 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -195,12 +200,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -255,7 +255,12 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -265,12 +270,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -296,7 +296,12 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -306,12 +311,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],

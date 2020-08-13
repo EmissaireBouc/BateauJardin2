@@ -241,9 +241,9 @@ func plante_PV_up(plant):
 
 func plante_Remove(plant):
 	for i in range(aGarden.size()):
-		if aGarden[i] == get_node("Bateau/YSort/%s" %plant):
+		if aGarden[i] == get_node("Bateau/YSort/Plante/%s" %plant):
 			aGarden.remove(i)
-			get_node("Bateau/YSort/%s" %plant).queue_free()
+			get_node("Bateau/YSort/Plante/%s" %plant).queue_free()
 			break
 	print_garden()
 	MouseA.clear_aCollisionNode()
