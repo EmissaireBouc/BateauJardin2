@@ -1,178 +1,200 @@
 {
   "Cosmos": {
     "Name": "Cosmos",
+    "ID": 0,
     "PV": 3,
     "XP": 5,
     "LVL": 0,
     "Available": 1,
-    "ID": 0
+    "Description": "Des jolies fleurs de toutes les couleurs"
   },
   "Myosotis": {
     "Name": "Myosotis",
+    "ID": 1,
     "PV": 2,
     "XP": 3,
     "LVL": 0,
     "Available": 1,
-    "ID": 1
+    "Description": "ForgetMeNot en anglais, la fleur des divorcés géographiques"
   },
   "Cactus": {
     "Name": "Cactus",
+    "ID": 2,
     "PV": 4,
     "XP": 2,
     "LVL": 0,
     "Available": 1,
-    "ID": 2
+    "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
   "Pleureur": {
     "Name": "Pleureur",
+    "ID": 3,
     "PV": 8,
     "XP": 8,
     "LVL": 0,
     "Available": 1,
-    "ID": 3
+    "Description": "Un arbre larmoyant"
   },
   "Arbuste": {
     "Name": "Arbuste",
+    "ID": 4,
     "PV": 7,
     "XP": 8,
     "LVL": 0,
-    "Available": 0,
-    "ID": 4
+    "Available": 1,
+    "Description": "un arabesque"
   },
   "HautArbuste": {
     "Name": "HautArbuste",
+    "ID": 5,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
-    "Available": 0,
-    "ID": 5
+    "Available": 1,
+    "Description": "un haut arabesque"
   },
   "BuissonBlanc": {
     "Name": "BuissonBlanc",
+    "ID": 6,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 6
+    "Description": "un buisson qui est plutôt blanc"
   },
   "BuissonBlanc2": {
     "Name": "BuissonBlanc2",
+    "ID": 7,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 7
+    "Description": "un autre buisson également blanc"
   },
   "BuissonBleu": {
     "Name": "BuissonBleu",
+    "ID": 8,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 8
+    "Description": "un buisson différent un peu bleu"
   },
   "BuissonRose": {
     "Name": "BuissonRose",
+    "ID": 9,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 9
+    "Description": "un buisson pas comme les autres"
   },
   "CactusOrange": {
     "Name": "CactusOrange",
+    "ID": 10,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 10
+    "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
   "CactusRouge": {
     "Name": "CactusRouge",
+    "ID": 11,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 11
+    "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
   "FeuillesVertRouge": {
     "Name": "FeuillesVertRouge",
+    "ID": 12,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
-    "Available": 0,
-    "ID": 12
+    "Available": 1,
+    "Description": "etc"
   },
   "Flocons": {
     "Name": "Flocons",
+    "ID": 13,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 13
+    "Description": "etc"
   },
   "Glycines": {
     "Name": "Glycines",
+    "ID": 14,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 14
+    "Description": "etc"
   },
   "JaunesHautes": {
     "Name": "JaunesHautes",
+    "ID": 15,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 15
+    "Description": "etc"
   },
   "OrangeFines": {
     "Name": "OrangeFines",
+    "ID": 16,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 16
+    "Description": "etc"
   },
   "OreillesDeLapin": {
     "Name": "OreillesDeLapin",
+    "ID": 17,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 17
+    "Description": "etc"
   },
   "Pompom": {
     "Name": "Pompom",
+    "ID": 18,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 18
+    "Description": "etc"
   },
   "RoseTremiere": {
     "Name": "RoseTremiere",
+    "ID": 19,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 19
+    "Description": "etc"
   },
   "RosesPlates": {
     "Name": "RosesPlates",
+    "ID": 20,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 20
+    "Description": "etc"
   },
   "Rouge": {
     "Name": "Rouge",
+    "ID": 21,
     "PV": 7,
     "XP": 7,
     "LVL": 0,
     "Available": 1,
-    "ID": 21
+    "Description": "etc"
   }
 }

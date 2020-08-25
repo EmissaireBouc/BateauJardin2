@@ -37,6 +37,9 @@ func setup(plantName):
 	play("apparition")
 	initialize_shader()
 
+func LVL_up():
+	lvl += 1
+	update_status()
 
 func initialize_shader():
 	rng.randomize()
