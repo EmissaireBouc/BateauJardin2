@@ -1,0 +1,66 @@
+{
+    "Gribou": {
+      "Prenom": "Jade",
+      "Aka": "na",
+      "Genre": "na",
+      "Pronom": "na",
+      "Fonction": "Jardinière",
+      "Histoire": "Arrivée suite à un BurnOut sur le continent, Jade s'occupe de cultiver le bateau-jardin"
+    },
+    "Bigbiz": {
+      "Prenom": "Eleanor",
+      "Aka": "Charibe",
+      "Genre": "na",
+      "Pronom": "na",
+      "Fonction": "Navigatrice",
+      "Histoire": "Description Eleanor"
+    },
+    "Kuma": {
+      "Prenom": "Mazaa",
+      "Aka": "Scylla",
+      "Genre": "na",
+      "Pronom": "na",
+      "Fonction": "Cartographe",
+      "Histoire": "Description Mazaa"
+    },
+    "Roche": {
+      "Prenom": "Suzanne",
+      "Aka": "Suzy",
+      "Genre": "na",
+      "Pronom": "na",
+      "Fonction": "Charpentière",
+      "Histoire": "Description Suzy"
+    },
+    "Darzi": {
+      "Prenom": "Kaneza",
+      "Aka": "na",
+      "Genre": "na",
+      "Pronom": "na",
+      "Fonction": "Mécanicienne",
+      "Histoire": "Description Kaneza"
+    },
+    "Duong": {
+      "Prenom": "Minh Tâm",
+      "Aka": "na",
+      "Genre": "na",
+      "Pronom": "na",
+      "Fonction": "Gabière",
+      "Histoire": "Description Minh Tâm"
+    },
+    "na": {
+      "Prenom": "Ismael",
+      "Aka": "na",
+      "Genre": "na",
+      "Pronom": "na",
+      "Fonction": "Vigie",
+      "Histoire": "Description Ismael"
+    },
+    "Dupré": {
+      "Prenom": "Mael",
+      "Aka": "na",
+      "Genre": "na",
+      "Pronom": "na",
+      "Fonction": "Individu en HP",
+      "Histoire": "Description Mael"
+    }
+}

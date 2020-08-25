@@ -1,0 +1,239 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/UI/Carnet/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/Carnet/Font_Titre_Livre.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/UI/Carnet/Font_Entete_Livre.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/UI/Carnet/Font_BasPage_Livre.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/UI/Carnet/Livre_graine.gd" type="Script" id=5]
+[ext_resource path="res://Assets/UI/Carnet/Carnet_equipage.gd" type="Script" id=6]
+[ext_resource path="res://Assets/UI/Carnet/Theme_Livre.tres" type="Theme" id=7]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 958.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="PageBck" type="Panel" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 938.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 938.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 918.0
+margin_bottom = 56.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entete" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "Sommaire"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="titre_TableMatiere" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 918.0
+margin_bottom = 139.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titre" type="Label" parent="MarginContainer/VBoxContainer/titre_TableMatiere"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Table des Matières"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equipage" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 143.0
+margin_right = 918.0
+margin_bottom = 213.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Equipage"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 50.0
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 1 )
+text = "Equipage"
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 217.0
+margin_right = 918.0
+margin_bottom = 217.0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/CenterContainer2"]
+margin_left = 459.0
+margin_right = 459.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 3
+script = ExtResource( 6 )
+
+[node name="Graines" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 221.0
+margin_right = 918.0
+margin_bottom = 291.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Graines"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 50.0
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 1 )
+text = "Graines"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 295.0
+margin_right = 918.0
+margin_bottom = 295.0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+margin_left = 459.0
+margin_right = 459.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 5
+script = ExtResource( 5 )
+
+[node name="Options" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 299.0
+margin_right = 918.0
+margin_bottom = 369.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/Options"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 50.0
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 1 )
+text = "Options"
+
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 373.0
+margin_right = 918.0
+margin_bottom = 1040.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BasDePage" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer6"]
+margin_right = 918.0
+margin_bottom = 647.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 938.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PageBck" type="Panel" parent="MarginContainer2/VBoxContainer"]
+margin_right = 918.0
+margin_bottom = 1040.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
