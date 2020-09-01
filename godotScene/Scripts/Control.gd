@@ -168,7 +168,7 @@ func _on_Player_anim_over(state):
 					menuInventaire.open()
 					Player.change_state(OPEN_INV)
 				PLANT:
-					#PA.PA_down(1)
+					PA.PA_down(1)
 					var planteName = menuInventaire.get_selected_item()
 					print(planteName)
 					var plante = load ("res://Assets/Plante/Scene/%s" %planteName + ".tscn").instance()

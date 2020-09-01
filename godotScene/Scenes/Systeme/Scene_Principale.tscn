@@ -78,8 +78,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -88,8 +88,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl2",
+"loop": false,
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -148,8 +148,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -158,8 +158,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
+"loop": false,
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -189,8 +189,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -199,8 +199,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
+"loop": false,
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -259,8 +259,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -269,8 +269,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "lvl2",
+"loop": false,
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -300,8 +300,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -310,8 +310,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl2",
+"loop": false,
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
