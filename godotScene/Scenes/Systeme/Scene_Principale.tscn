@@ -403,11 +403,6 @@ __meta__ = {
 position = Vector2( -928, -624 )
 polygon = PoolVector2Array( -608, 1392, 2528, 1392, 2528, -272, -672, -272 )
 
-[node name="Eleanor" parent="Bateau" instance=ExtResource( 19 )]
-visible = false
-position = Vector2( -1345.38, 479.286 )
-script = ExtResource( 26 )
-
 [node name="YSort" type="YSort" parent="Bateau"]
 
 [node name="gMouseCollider" type="Area2D" parent="Bateau/YSort"]
@@ -456,6 +451,11 @@ current = true
 smoothing_enabled = true
 offset_v = -1.0
 script = ExtResource( 14 )
+
+[node name="Eleanor" parent="Bateau/YSort" instance=ExtResource( 19 )]
+light_mask = -2147483647
+position = Vector2( -782.328, -201.36 )
+script = ExtResource( 26 )
 
 [node name="Line2D" type="Line2D" parent="Bateau/YSort"]
 visible = false

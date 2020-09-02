@@ -9,7 +9,7 @@ onready var Dialogues = get_node("../CanvasLayer/Dialogues")
 func _ready():
 	get_node("Area2D").connect("body_entered",self,"on_body_entered")
 	get_node("Area2D").connect("body_exited",self,"on_body_exited")
-	z_index = position.y
+	"z_index = position.y"
 
 """ Lorsque Player chevauche aire de collision de PNJ :
 On instancie la variable DialogueArray de Boite de dialogue avec la valeur contenue dans dialogue_data(NomPersonnage) """
