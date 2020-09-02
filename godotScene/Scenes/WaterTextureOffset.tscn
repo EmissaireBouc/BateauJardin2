@@ -5,3 +5,5 @@
 
 [node name="WaterTextureOffset" instance=ExtResource( 1 )]
 material = ExtResource( 2 )
+position = Vector2( 314.589, 2116.65 )
+scale = Vector2( 2.38291, 1 )
