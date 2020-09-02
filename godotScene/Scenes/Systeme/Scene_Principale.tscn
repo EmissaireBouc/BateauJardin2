@@ -1,4 +1,5 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
+
 
 [ext_resource path="res://scripts/Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decors/Bateau_Pont.tscn" type="PackedScene" id=2]
@@ -19,12 +20,15 @@
 [ext_resource path="res://Scenes/WaterTextureOffset.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Mask/Ciel.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Mask/water_diffuse2.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/PNJ/Eleanor.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Plante/Scene/Cosmos.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Assets/Plante/Scene/FeuillesVertRouge.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Assets/Plante/Scene/OreillesDeLapin.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/Plante/Image/oreilles de lapin.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Plante/Image/feuilles vert rouge .png" type="Texture" id=24]
 [ext_resource path="res://Assets/Plante/Image/colorées.png" type="Texture" id=25]
+[ext_resource path="res://Scripts/InteractionDialogues.gd" type="Script" id=26]
+[ext_resource path="res://Scenes/Systeme/Dialogues.tscn" type="PackedScene" id=27]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 102.45
@@ -57,6 +61,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -75,7 +80,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -89,8 +94,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -127,6 +132,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=6]
 resource_local_to_scene = true
@@ -145,7 +151,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -159,8 +165,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -186,7 +192,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -200,8 +206,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -238,6 +244,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=11]
 resource_local_to_scene = true
@@ -256,7 +263,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -270,8 +277,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -297,7 +304,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -311,8 +318,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
-"loop": false,
-"name": "apparition",
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -445,6 +452,11 @@ smoothing_enabled = true
 offset_v = -1.0
 script = ExtResource( 14 )
 
+[node name="Eleanor" parent="Bateau/YSort" instance=ExtResource( 19 )]
+light_mask = -2147483647
+position = Vector2( -782.328, -201.36 )
+script = ExtResource( 26 )
+
 [node name="Line2D" type="Line2D" parent="Bateau/YSort"]
 visible = false
 width = 2.0
@@ -546,6 +558,9 @@ script = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Dialogues" parent="CanvasLayer" instance=ExtResource( 27 )]
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 margin_left = 8.0

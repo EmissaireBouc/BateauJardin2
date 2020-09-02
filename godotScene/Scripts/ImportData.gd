@@ -3,6 +3,7 @@ extends Node
 var plant_data
 var equipage_data
 var text
+var dialogue_data
 
 func _ready():
 	var plantdata_file = File.new()
@@ -16,3 +17,10 @@ func _ready():
 	var equipage_json = JSON.parse(equipage_file.get_as_text())
 	equipage_file.close()
 	equipage_data = equipage_json.result
+
+	var dialoguedata_file = File.new()
+	dialoguedata_file.open("res://Assets/Data/DialoguesData.json",File.READ)
+	var dialoguedata_json = JSON.parse(dialoguedata_file.get_as_text())
+	dialoguedata_file.close()
+	dialogue_data = dialoguedata_json.result
+	print(dialogue_data)

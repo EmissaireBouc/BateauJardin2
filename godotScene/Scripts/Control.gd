@@ -23,8 +23,8 @@ onready var nav2D : Navigation2D = $Bateau/WalkArea # Navigation2D est un noeud 
 onready var Line2D : Line2D = $Bateau/YSort/Line2D # Line2D trace une ligne (débug)
 onready var Player : AnimatedSprite = $Bateau/YSort/Player
 onready var MouseA : Area2D = get_node("Bateau/YSort/gMouseCollider")
-onready var menuInventaire : Area2D = get_node("CanvasLayer/Control/Inventory")
-onready var menuEntretenir : Area2D = get_node("CanvasLayer/Control/MenuInteractions")
+onready var menuInventaire : Control = get_node("CanvasLayer/Control/Inventory")
+onready var menuEntretenir : MarginContainer = get_node("CanvasLayer/Control/MenuInteractions")
 onready var Cam : Camera2D = get_node("Bateau/YSort/Player/Camera2D")
 onready var PA : Label = get_node("CanvasLayer/PA")
 

@@ -18,9 +18,8 @@ func _ready():
 	destination = position
 	change_state(IDLE)
 
-
 func _process(delta):
-
+	
 	match state:
 		IDLE:
 			animation_loop("IDLE")
@@ -28,6 +27,7 @@ func _process(delta):
 			var move_distance = speed * delta
 			move_along_path(move_distance)
 			animation_loop("WALK")
+			
 		PLANT:
 			animation_loop("PLANT")
 		PLANT_BACK:
