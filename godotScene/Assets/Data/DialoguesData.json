@@ -1,0 +1,26 @@
+{
+  "Soeur": {
+	"ID": 0,
+    "Nom": "Soeur",
+    "Portrait": "illustration",
+    "Informations": 0,
+    "Dialogue": "Histoire de dire quelque chose d'un peu plus long ! Ou pas."	
+  },
+  
+  "Andre": {
+	"ID": 1,
+    "Nom": "André",
+    "Portrait": "illustration",
+    "Informations": 1,
+    "Dialogue": [
+		[
+		"Salut, salut, encore un test. Histoire de dire quelque chose d'un peu plus long ! Ou pas.",
+		"Pour que cela fonctionne il faut une deuxieme phrase !"
+	],
+		[
+		"Maintenant le deuxieme.",
+		"Histoire de dire quelque chose d'un peu plus long ! Ou pas."
+	]
+],
+  }
+}
