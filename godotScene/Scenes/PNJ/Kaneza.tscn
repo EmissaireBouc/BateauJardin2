@@ -14,4 +14,4 @@ script = ExtResource( 1 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2( 20.8837, -44.4002 )
 scale = Vector2( 0.230599, 0.25317 )
-polygon = PoolVector2Array( -219.661, 174, 96.3386, 170, -27.6614, 374, -163.661, 306 )
+polygon = PoolVector2Array( -294.633, 184.915, 96.3386, 170, 135.192, 338.679, -262.281, 313.051 )

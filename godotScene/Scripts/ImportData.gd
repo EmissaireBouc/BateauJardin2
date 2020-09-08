@@ -4,6 +4,7 @@ var plant_data
 var equipage_data
 var text
 var dialogue_data
+var jour = 0
 
 func _ready():
 	var plantdata_file = File.new()
@@ -19,7 +20,7 @@ func _ready():
 	equipage_data = equipage_json.result
 
 	var dialoguedata_file = File.new()
-	dialoguedata_file.open("res://Assets/Data/DialoguesData.json",File.READ)
+	dialoguedata_file.open("res://Assets/Data/DialogueTest.json",File.READ)
 	var dialoguedata_json = JSON.parse(dialoguedata_file.get_as_text())
 	dialoguedata_file.close()
 	dialogue_data = dialoguedata_json.result

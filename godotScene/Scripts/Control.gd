@@ -15,7 +15,7 @@ export (int) var day = 0
 
 
 
-enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT} #Enum des différentes animations du Player
+enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} #Enum des différentes animations du Player
 enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER} #Enum des différentes actions du Player
 
 
@@ -67,6 +67,7 @@ func _unhandled_input(event):
 					menuEntretenir.close()
 					MouseA.clear_aCollisionNode()
 					destroy_ui_destination()
+
 
 
 """
@@ -153,6 +154,9 @@ func change_action(newaction):
 		DORMIR:
 			posCursor = get_global_mouse_position()
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y+25))
+		PARLER:
+			posCursor = get_global_mouse_position()
+			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y-25))
 
 
 func _on_Player_anim_over(state):
@@ -204,6 +208,11 @@ func _on_Player_anim_over(state):
 				MOVE:
 					fondu("transition_in")
 					change_action(DEFAULT)
+					
+		PARLER:
+			match state :
+				MOVE:
+					"lancer fonction parler"
 
 
 func _on_Inventory_item_selected():

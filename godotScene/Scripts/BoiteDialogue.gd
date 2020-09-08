@@ -1,11 +1,11 @@
 extends Control
 
 var InformationsDial = String("")
-var NomPerso = String("") 
+var NomPerso = String("")
 var DialoguePerso = String("")
 var DialogueArray = []
 
-var index_dialogue = 0
+var index_dialogueArray = 0
 var termine = false
 
 func _ready():
