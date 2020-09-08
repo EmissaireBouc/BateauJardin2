@@ -1,0 +1,237 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/UI/Carnet/Font_BasPage_Livre.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/UI/Carnet/Font_Titre_Livre.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/UI/Carnet/Font_SousTitre1_Livre.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/UI/Carnet/Font_Entete_Livre.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/UI/Carnet/Theme_Livre.tres" type="Theme" id=7]
+[ext_resource path="res://Assets/UI/Carnet/Carnet_PageSommaire.gd" type="Script" id=8]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageGauche" type="MarginContainer" parent="."]
+margin_right = 958.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="PageBck" type="Panel" parent="PageGauche"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 938.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PageGauche"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 938.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnTete" type="MarginContainer" parent="PageGauche/VBoxContainer"]
+margin_right = 918.0
+margin_bottom = 56.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sommaire" type="Label" parent="PageGauche/VBoxContainer/EnTete"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 6 )
+text = "Sommaire"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titre" type="MarginContainer" parent="PageGauche/VBoxContainer"]
+margin_top = 60.0
+margin_right = 918.0
+margin_bottom = 139.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TableDesMatieres" type="Label" parent="PageGauche/VBoxContainer/Titre"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 4 )
+text = "Table des Matières"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SousTitre1" type="MarginContainer" parent="PageGauche/VBoxContainer"]
+margin_top = 143.0
+margin_right = 918.0
+margin_bottom = 213.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equipage" type="Button" parent="PageGauche/VBoxContainer/SousTitre1"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 50.0
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 5 )
+text = "Equipage"
+
+[node name="CorpsTexte" type="CenterContainer" parent="PageGauche/VBoxContainer"]
+margin_top = 217.0
+margin_right = 918.0
+margin_bottom = 217.0
+
+[node name="GridContainer" type="GridContainer" parent="PageGauche/VBoxContainer/CorpsTexte"]
+margin_left = 459.0
+margin_right = 459.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 3
+
+[node name="SousTitre2" type="MarginContainer" parent="PageGauche/VBoxContainer"]
+margin_top = 221.0
+margin_right = 918.0
+margin_bottom = 291.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graines" type="Button" parent="PageGauche/VBoxContainer/SousTitre2"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 50.0
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 5 )
+text = "Graines"
+
+[node name="CorpsTexte2" type="CenterContainer" parent="PageGauche/VBoxContainer"]
+margin_top = 295.0
+margin_right = 918.0
+margin_bottom = 295.0
+
+[node name="GridContainer" type="GridContainer" parent="PageGauche/VBoxContainer/CorpsTexte2"]
+margin_left = 459.0
+margin_right = 459.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 5
+
+[node name="SousTitre3" type="MarginContainer" parent="PageGauche/VBoxContainer"]
+margin_top = 299.0
+margin_right = 918.0
+margin_bottom = 369.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="PageGauche/VBoxContainer/SousTitre3"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 898.0
+margin_bottom = 50.0
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 5 )
+text = "Options"
+
+[node name="BasDePage" type="MarginContainer" parent="PageGauche/VBoxContainer"]
+margin_top = 373.0
+margin_right = 918.0
+margin_bottom = 1040.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumeroDePage" type="Label" parent="PageGauche/VBoxContainer/BasDePage"]
+margin_right = 918.0
+margin_bottom = 647.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageDroite" type="MarginContainer" parent="."]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PageDroite"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 938.0
+margin_bottom = 1060.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PageBck" type="Panel" parent="PageDroite/VBoxContainer"]
+margin_right = 918.0
+margin_bottom = 1040.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
