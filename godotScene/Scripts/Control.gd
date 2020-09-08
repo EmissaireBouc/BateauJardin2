@@ -42,7 +42,7 @@ func _ready():
 	$AudioStreamPlayer2D.play()
 	
 	$Bateau/YSort/Navigatrice.connect("_on_Character_input", self, "character_input")
-
+	
 func _process(delta):
 	debug()
 
@@ -54,7 +54,6 @@ Gestion du clic gauche :
 """
 
 func character_input():
-	print("Jenesaispas")
 	change_action(PARLER)
 
 func _unhandled_input(event):
@@ -216,7 +215,10 @@ func _on_Player_anim_over(state):
 		PARLER:
 			match state :
 				MOVE:
-					$CanvasLayer/Dialogues.visible = true
+					change_action(DEFAULT)
+					$Bateau/YSort/Navigatrice.parle()
+					
+
 
 
 func _on_Inventory_item_selected():

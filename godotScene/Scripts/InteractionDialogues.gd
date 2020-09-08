@@ -4,6 +4,7 @@ var playerZone = false
 var NomPersonnage
 var NumDial 
 var index_dialogueArray = 0
+signal _on_Character_input
 
 onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues/BoiteDialogue")
 onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
@@ -11,19 +12,28 @@ onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasL
 func _ready():
 	get_node("Area2D").connect("body_entered",self,"on_body_entered")
 	get_node("Area2D").connect("body_exited",self,"on_body_exited")
+	get_node("Area2D").connect("input_event",self,"input_event")
+	
 	"z_index = position.y"
+	
 
 """ Lorsque Player chevauche aire de collision de PNJ :
 On instancie la variable DialogueArray de Boite de dialogue avec la valeur contenue dans dialogue_data(NomPersonnage) """
 
-func on_body_entered(body):
-	if body.name == "Player":
+func input_event(_event, _viewport, _shape_idx):
+	if Input.is_action_pressed("ui_left_mouse"):
+		emit_signal("_on_Character_input")
 		playerZone = true
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)]
+		if NumDial == 1:
+			index_dialogueArray = 0
+
+func on_body_entered(body):
+	if body.name == "Player":
+		
 		"print(ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom)"
 		"print(ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Text)"
-	if NumDial == 1:
-		index_dialogueArray = 0
+	
 
 func on_body_exited(body):
 	if body.name == "Player":
@@ -37,9 +47,9 @@ func on_body_exited(body):
 		alors instancier la variable BoiteDialogue.Dialogue avec l'élément contenu dans le tableau à l'index index_dialogue
 		index dialogue s'incrémente de 1 """
 		
-func _input(event):
-	if event.is_action_pressed("ui_accept") && playerZone:
-		parle()
+#func _input(event):
+#	if event.is_action_pressed("ui_accept") && playerZone:
+#		parle()
 
 func parle():
 	if BoiteDialogue.index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1:
