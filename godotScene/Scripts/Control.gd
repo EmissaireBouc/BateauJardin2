@@ -40,7 +40,8 @@ func _ready():
 		$Bateau/WalkArea.update_navigation_polygon(aGarden[0].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[0].get_node("Area2D/CollisionPolygon2D").get_polygon())
 	print_garden()
 	$AudioStreamPlayer2D.play()
-
+	
+	$Bateau/YSort/Navigatrice.connect("_on_Character_input", self, "character_input")
 
 func _process(delta):
 	debug()
@@ -52,6 +53,9 @@ Gestion du clic gauche :
 	Gère le Clic gauche (par défaut : Marcher)
 """
 
+func character_input():
+	print("Jenesaispas")
+	change_action(PARLER)
 
 func _unhandled_input(event):
 	if !Input.is_action_pressed("ui_left_mouse"):
@@ -212,7 +216,7 @@ func _on_Player_anim_over(state):
 		PARLER:
 			match state :
 				MOVE:
-					"lancer fonction parler"
+					$CanvasLayer/Dialogues.visible = true
 
 
 func _on_Inventory_item_selected():

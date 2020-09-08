@@ -24,4 +24,4 @@ func _ready():
 	var dialoguedata_json = JSON.parse(dialoguedata_file.get_as_text())
 	dialoguedata_file.close()
 	dialogue_data = dialoguedata_json.result
-	print(dialogue_data)
+	

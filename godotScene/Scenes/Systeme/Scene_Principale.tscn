@@ -76,12 +76,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "fane",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -91,12 +86,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": false,
 "name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -146,12 +146,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -161,12 +156,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": false,
 "name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -187,12 +187,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -202,12 +197,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": false,
 "name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -257,12 +257,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -272,12 +267,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": false,
 "name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -298,12 +298,7 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -313,12 +308,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": false,
 "name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -356,14 +356,17 @@ font_data = ExtResource( 8 )
 script = ExtResource( 1 )
 
 [node name="Ciel" type="Sprite" parent="."]
-position = Vector2( 83.5455, -2452.67 )
+position = Vector2( 15, -1848 )
 rotation = 3.14159
-scale = Vector2( 240.5, 6.48342 )
+scale = Vector2( 240.5, 4.78125 )
 texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="WaterTextureOffset" parent="." instance=ExtResource( 17 )]
-position = Vector2( 16.0809, 913.175 )
-scale = Vector2( 29.6994, 1.26083 )
+position = Vector2( 10.8679, 292 )
+scale = Vector2( 30, 0.682812 )
 
 [node name="Bateau" parent="." instance=ExtResource( 2 )]
 
@@ -434,7 +437,7 @@ color = Color( 0.337255, 0.152941, 0.541176, 1 )
 polygon = PoolVector2Array( -264, 32, -264, -64, -184, -64, -184, 32 )
 
 [node name="Navigatrice" parent="Bateau/YSort" instance=ExtResource( 19 )]
-position = Vector2( -729.921, -180.656 )
+position = Vector2( -187.27, -685.359 )
 
 [node name="Player" parent="Bateau/YSort" instance=ExtResource( 5 )]
 position = Vector2( -1225.2, 146.996 )
@@ -448,12 +451,6 @@ smoothing_enabled = true
 offset_v = -1.0
 script = ExtResource( 14 )
 
-[node name="Eleanor" parent="Bateau/YSort" instance=ExtResource( 19 )]
-light_mask = -2147483647
-position = Vector2( 149.352, -714.734 )
-script = ExtResource( 26 )
-
-
 [node name="Line2D" type="Line2D" parent="Bateau/YSort"]
 visible = false
 width = 2.0
@@ -466,7 +463,6 @@ texture_mode = -1094713346
 material = SubResource( 3 )
 position = Vector2( 742.977, -350.946 )
 frames = SubResource( 4 )
-animation = "apparition"
 pv = 3
 xp = 3
 
@@ -474,7 +470,6 @@ xp = 3
 material = SubResource( 6 )
 position = Vector2( 1071.1, 571.783 )
 frames = SubResource( 7 )
-animation = "apparition"
 pv = 2
 xp = 3
 lvl = 1
@@ -483,7 +478,6 @@ lvl = 1
 material = SubResource( 8 )
 position = Vector2( 1298.21, -479.34 )
 frames = SubResource( 9 )
-animation = "apparition"
 pv = 1
 lvl = 2
 
@@ -491,7 +485,6 @@ lvl = 2
 material = SubResource( 11 )
 position = Vector2( 379.478, 579.203 )
 frames = SubResource( 12 )
-animation = "apparition"
 pv = 2
 xp = 4
 lvl = 3
@@ -500,7 +493,6 @@ lvl = 3
 material = SubResource( 13 )
 position = Vector2( -667.082, -615.153 )
 frames = SubResource( 14 )
-animation = "apparition"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
