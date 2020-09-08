@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Menu/vague2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Menu/vague3.png" type="Texture" id=7]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "Boucle"
 length = 5.0
 loop = true
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "values": [ Vector2( -105, 639.987 ), Vector2( -50, 639.987 ), Vector2( -150, 639.987 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Boucle"
 length = 3.0
 loop = true
@@ -66,8 +66,7 @@ tracks/1/keys = {
 "values": [ Vector2( -105, 639.987 ), Vector2( -50, 639.987 ), Vector2( -150, 639.987 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Apparition"
+[sub_resource type="Animation" id=3]
 length = 3.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -77,16 +76,14 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 3.5 ),
-"transitions": PoolRealArray( 0.5, 0.297302 ),
+"transitions": PoolRealArray( 0.784584, 0.297302 ),
 "update": 0,
 "values": [ Vector2( -400, 700 ), Vector2( 950, 700 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Depart"
+[sub_resource type="Animation" id=4]
 
-[sub_resource type="Animation" id=3]
-resource_name = "Boucle"
+[sub_resource type="Animation" id=5]
 length = 5.0
 loop = true
 tracks/0/type = "value"
@@ -101,10 +98,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, -6.0, 4.36652 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -150, 700 ), Vector2( 631.51, 715 ), Vector2( 631.51, 685 ) ]
+}
 
-[sub_resource type="Animation" id=4]
-resource_name = "Boucle"
-length = 2.0
+[sub_resource type="Animation" id=6]
+length = 6.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_rotation")
@@ -113,10 +121,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1.8025 ),
+"times": PoolRealArray( 0, 2.1, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 0.999999 ),
 "update": 0,
-"values": [ 0.0, 2.0, -2.0 ]
+"values": [ 0.0, 0.7, -0.7 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rect_position")
@@ -125,10 +133,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1.4 ),
+"times": PoolRealArray( 0, 2.1, 4.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -105, 639.987 ), Vector2( -50, 639.987 ), Vector2( -150, 639.987 ) ]
+"values": [ Vector2( -105, 576 ), Vector2( -50, 576 ), Vector2( -150, 576 ) ]
 }
 
 [node name="Control" type="Control"]
@@ -216,7 +224,7 @@ __meta__ = {
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Vague3"]
 autoplay = "Boucle"
-anims/Boucle = SubResource( 5 )
+anims/Boucle = SubResource( 1 )
 
 [node name="Vague2" type="NinePatchRect" parent="."]
 margin_left = -131.476
@@ -233,29 +241,29 @@ __meta__ = {
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Vague2"]
 autoplay = "Boucle"
-anims/Boucle = SubResource( 6 )
+anims/Boucle = SubResource( 2 )
 
 [node name="Bateau" type="Sprite" parent="."]
 position = Vector2( -400, 700 )
-rotation = 0.0730834
+rotation = 0.0612604
 scale = Vector2( 0.402136, 0.402137 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bateau"]
 autoplay = "Apparition"
-anims/Apparition = SubResource( 1 )
-anims/Depart = SubResource( 2 )
+anims/Apparition = SubResource( 3 )
+anims/Depart = SubResource( 4 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Bateau"]
 autoplay = "Boucle"
-anims/Boucle = SubResource( 3 )
+anims/Boucle = SubResource( 5 )
 
 [node name="Vague1" type="NinePatchRect" parent="."]
-margin_left = -95.6353
-margin_top = 572.055
-margin_right = 2020.83
-margin_bottom = 1115.05
-rect_rotation = -0.000419617
+margin_left = -74.8513
+margin_top = 576.0
+margin_right = 2041.61
+margin_bottom = 1119.0
+rect_rotation = 0.352083
 rect_pivot_offset = Vector2( 1050, 320 )
 texture = ExtResource( 5 )
 axis_stretch_horizontal = 1
@@ -266,7 +274,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Vague1"]
 autoplay = "Boucle"
-anims/Boucle = SubResource( 4 )
+anims/Boucle = SubResource( 6 )
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Jouer" to="MarginContainer/VBoxContainer/Menu/Jouer" method="_on_Jouer_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Options" to="MarginContainer/VBoxContainer/Menu/Options" method="_on_Options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Quitter" to="MarginContainer/VBoxContainer/Menu/Quitter" method="_on_Quitter_pressed"]

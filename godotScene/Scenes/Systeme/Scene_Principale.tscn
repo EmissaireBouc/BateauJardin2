@@ -1,6 +1,5 @@
 [gd_scene load_steps=50 format=2]
 
-
 [ext_resource path="res://scripts/Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decors/Bateau_Pont.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/WalkingArea_Mask/Bateau_Pont.tres" type="NavigationPolygon" id=3]
@@ -19,7 +18,6 @@
 [ext_resource path="res://Scripts/DebugLabel3.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/WaterTextureOffset.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Mask/Ciel.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Mask/water_diffuse2.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/PNJ/Eleanor.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Plante/Scene/Cosmos.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Assets/Plante/Scene/FeuillesVertRouge.tscn" type="PackedScene" id=21]
@@ -61,7 +59,6 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -80,6 +77,11 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
 "name": "lvl2",
 "speed": 5.0
 }, {
@@ -90,12 +92,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -132,7 +129,6 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=6]
 resource_local_to_scene = true
@@ -151,6 +147,11 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
 "name": "lvl2",
 "speed": 5.0
 }, {
@@ -161,12 +162,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -192,6 +188,11 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
 "name": "lvl2",
 "speed": 5.0
 }, {
@@ -202,12 +203,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -244,7 +240,6 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=11]
 resource_local_to_scene = true
@@ -263,6 +258,11 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
 "name": "lvl2",
 "speed": 5.0
 }, {
@@ -273,12 +273,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -304,6 +299,11 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
 "name": "lvl2",
 "speed": 5.0
 }, {
@@ -314,12 +314,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "apparition",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -362,15 +357,14 @@ font_data = ExtResource( 8 )
 script = ExtResource( 1 )
 
 [node name="Ciel" type="Sprite" parent="."]
-position = Vector2( 15.0006, -1630.12 )
+position = Vector2( 83.5455, -2452.67 )
 rotation = 3.14159
 scale = Vector2( 240.5, 6.48342 )
 texture = ExtResource( 18 )
 
 [node name="WaterTextureOffset" parent="." instance=ExtResource( 17 )]
-position = Vector2( 39.4739, 767.025 )
-scale = Vector2( 29.9813, 0.862307 )
-texture = ExtResource( 19 )
+position = Vector2( 16.0809, 913.175 )
+scale = Vector2( 29.6994, 1.26083 )
 
 [node name="Bateau" parent="." instance=ExtResource( 2 )]
 
@@ -454,7 +448,7 @@ script = ExtResource( 14 )
 
 [node name="Eleanor" parent="Bateau/YSort" instance=ExtResource( 19 )]
 light_mask = -2147483647
-position = Vector2( -782.328, -201.36 )
+position = Vector2( 149.352, -714.734 )
 script = ExtResource( 26 )
 
 [node name="Line2D" type="Line2D" parent="Bateau/YSort"]
@@ -469,6 +463,7 @@ texture_mode = -1094713346
 material = SubResource( 3 )
 position = Vector2( 742.977, -350.946 )
 frames = SubResource( 4 )
+animation = "apparition"
 pv = 3
 xp = 3
 
@@ -476,6 +471,7 @@ xp = 3
 material = SubResource( 6 )
 position = Vector2( 1071.1, 571.783 )
 frames = SubResource( 7 )
+animation = "apparition"
 pv = 2
 xp = 3
 lvl = 1
@@ -484,6 +480,7 @@ lvl = 1
 material = SubResource( 8 )
 position = Vector2( 1298.21, -479.34 )
 frames = SubResource( 9 )
+animation = "apparition"
 pv = 1
 lvl = 2
 
@@ -491,6 +488,7 @@ lvl = 2
 material = SubResource( 11 )
 position = Vector2( 379.478, 579.203 )
 frames = SubResource( 12 )
+animation = "apparition"
 pv = 2
 xp = 4
 lvl = 3
@@ -499,6 +497,7 @@ lvl = 3
 material = SubResource( 13 )
 position = Vector2( -667.082, -615.153 )
 frames = SubResource( 14 )
+animation = "apparition"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

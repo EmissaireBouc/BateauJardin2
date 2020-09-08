@@ -3,8 +3,8 @@ extends Sprite
 var playerZone = false
 var NomPersonnage
 
-onready var BoiteDialogue = get_node("../CanvasLayer/Dialogues/BoiteDialogue")
-onready var Dialogues = get_node("../CanvasLayer/Dialogues")
+onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues/BoiteDialogue")
+onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
 
 func _ready():
 	get_node("Area2D").connect("body_entered",self,"on_body_entered")

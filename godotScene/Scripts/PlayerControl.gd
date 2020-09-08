@@ -103,15 +103,15 @@ func animation_loop(mode, backward = false):
 	var animation
 	
 	if anim_mode != "OPEN_INV":
-		if move_direction <= 60 and move_direction >= -60 :
+		if move_direction <= 40 and move_direction >= -40 :
 			anim_direction = "E"
-		elif move_direction <= 120 and move_direction >= 60 :
+		elif move_direction <= 100 and move_direction >= 40 :
 			anim_direction = "S"
-		elif move_direction <= 180 and move_direction >= 120 :
+		elif move_direction <= 180 and move_direction >= 100 :
 			anim_direction = "W"
-		elif move_direction <= -120 :
+		elif move_direction <= -100 :
 			anim_direction = "W"
-		elif move_direction <= -60 and move_direction >= -120 :
+		elif move_direction <= -40 and move_direction >= -100 :
 			anim_direction = "N"
 		animation = anim_mode +"_"+ anim_direction
 	else:
