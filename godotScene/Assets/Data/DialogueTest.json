@@ -1,0 +1,389 @@
+{
+  "0": {
+      "Navigatrice": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Charibe",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Charibe",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Charibe",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Charibe",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+		"Charpentiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Suzy",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Suzy",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzy",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Suzy",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+		"Mecanicienne": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Kaneza",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Kaneza",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Kaneza",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Kaneza",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+	  "Gabiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+
+	  "Matelot": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "AChAB",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "AChAB",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "AChAB",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "AChAB",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+	  "Vigie": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Ismael",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+	  "Mael": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Mael",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Mael",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Mael",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Mael",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+      "Cartographe": {
+      "ID": 0,
+      "Dialogue1":
+          [
+          {
+           "Nom": "Scylla",
+           "Text": "Voici du texte pour le premier jour 2222"
+          },
+          {
+           "Nom": "Scylla",
+           "Text": "Voici du texte ici aussi, le premier jour"
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Scylla",
+           "Text": "Voici du texte du capitaine 2"
+          },
+          {
+           "Nom": "Scylla",
+           "Text": "Voici du texte du capitaine 2 encore"
+          } ]
+        }
+      },
+	  
+   "1": {
+      "Navigatrice": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Charibe",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Charibe",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Charibe",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Charibe",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+		"Charpentiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Suzy",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Suzy",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzy",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Suzy",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+		"Mecanicienne": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Kaneza",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Kaneza",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Kaneza",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Kaneza",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+	  "Gabiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+
+	  "Matelot": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "AChAB",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "AChAB",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "AChAB",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "AChAB",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+	  "Vigie": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Ismael",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+	  "Mael": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Mael",
+           "Text": "Voici du texte pour le premier jour"
+          },
+          {
+           "Nom": "Mael",
+           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Mael",
+           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+          },
+          {
+           "Nom": "Mael",
+           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+          }
+        ]
+      },
+	  
+      "Cartographe": {
+      "ID": 0,
+      "Dialogue1":
+          [
+          {
+           "Nom": "Scylla",
+           "Text": "Voici du texte pour le premier jour 2222"
+          },
+          {
+           "Nom": "Scylla",
+           "Text": "Voici du texte ici aussi, le premier jour"
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Scylla",
+           "Text": "Voici du texte du capitaine 2"
+          },
+          {
+           "Nom": "Scylla",
+           "Text": "Voici du texte du capitaine 2 encore"
+          } ]
+        }
+      }
+}

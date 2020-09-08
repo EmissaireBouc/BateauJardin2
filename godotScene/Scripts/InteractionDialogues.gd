@@ -2,6 +2,8 @@ extends Sprite
 
 var playerZone = false
 var NomPersonnage
+var NumDial 
+var index_dialogueArray = 0
 
 onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues/BoiteDialogue")
 onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
@@ -17,13 +19,17 @@ On instancie la variable DialogueArray de Boite de dialogue avec la valeur conte
 func on_body_entered(body):
 	if body.name == "Player":
 		playerZone = true
-		BoiteDialogue.DialogueArray = ImportData.dialogue_data[NomPersonnage].Dialogue
+		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)]
+		"print(ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom)"
+		"print(ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Text)"
+	if NumDial == 1:
+		index_dialogueArray = 0
 
 func on_body_exited(body):
 	if body.name == "Player":
 		playerZone = false
 		Dialogues.visible = false
-		BoiteDialogue.index_dialogue = 0
+		BoiteDialogue.index_dialogueArray = 0
 		
 """ Lorsque Lea joueurse appuie sur Espace :
 	-> parle()
@@ -36,12 +42,21 @@ func _input(event):
 		parle()
 
 func parle():
-	if BoiteDialogue.index_dialogue <= BoiteDialogue.DialogueArray.size()-1:
+	if BoiteDialogue.index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1:
 		" Pour afficher les noms: "
-		BoiteDialogue.NomPerso = ImportData.dialogue_data[NomPersonnage].Nom
+		if NumDial == 0:
+			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom
+		else:
+			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2[index_dialogueArray].Text
 		" Pour afficher les dialogues: "
-		BoiteDialogue.DialoguePerso = str(BoiteDialogue.DialogueArray[BoiteDialogue.index_dialogue])
-		BoiteDialogue.index_dialogue += 1
+		if NumDial == 0:
+			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Text
+		else:
+			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2[index_dialogueArray].Text
+		BoiteDialogue.index_dialogueArray += 1
+		index_dialogueArray +=1
 		Dialogues.visible = true
 	else:
 		Dialogues.visible = false
+		if NumDial == 0:
+			NumDial += 1
