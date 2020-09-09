@@ -6,8 +6,8 @@
 [resource]
 shader = ExtResource( 2 )
 shader_param/tile_factor = 100.0
-shader_param/aspect_ratio = 0.042453
-shader_param/uv_offset_scale = Vector2( 0.01, 0.01 )
+shader_param/aspect_ratio = 0.05
+shader_param/uv_offset_scale = Vector2( 0.06, 0.06 )
 shader_param/wave_size = 0.1
 shader_param/time_scale = Vector2( 0.01, 0.01 )
 shader_param/uv_offset_texture = ExtResource( 1 )

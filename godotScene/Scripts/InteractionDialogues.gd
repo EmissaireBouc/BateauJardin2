@@ -10,8 +10,8 @@ onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("Can
 onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
 
 func _ready():
-	get_node("Area2D").connect("body_entered",self,"on_body_entered")
-	get_node("Area2D").connect("body_exited",self,"on_body_exited")
+#	get_node("Area2D").connect("body_entered",self,"on_body_entered")
+#	get_node("Area2D").connect("body_exited",self,"on_body_exited")
 	get_node("Area2D").connect("input_event",self,"input_event")
 	
 	"z_index = position.y"

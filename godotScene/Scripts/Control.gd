@@ -43,7 +43,7 @@ func _ready():
 	
 	$Bateau/YSort/Navigatrice.connect("_on_Character_input", self, "character_input")
 	
-func _process(delta):
+func _process(_delta):
 	debug()
 
 """
@@ -56,7 +56,7 @@ Gestion du clic gauche :
 func character_input():
 	change_action(PARLER)
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if !Input.is_action_pressed("ui_left_mouse"):
 		return
 
@@ -81,7 +81,7 @@ Gestion du clic droit :
 """
 
 
-func _input(event):
+func _input(_event):
 
 	if !Input.is_action_pressed("ui_right_mouse"):
 		return
@@ -116,7 +116,7 @@ func cursor_mode(newMode):
 		Input.set_custom_mouse_cursor(planter)
 		MouseA.initiate()
 
-func _on_Jardin_input_event(viewport, event, shape_idx):
+func _on_Jardin_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && !MouseA.overlapPlant):
 		if PA.get_PA() > 0: 
 			match action:
@@ -187,9 +187,9 @@ func _on_Player_anim_over(state):
 					$Bateau/WalkArea.update_navigation_polygon(aGarden[0].get_node(planteName).get_global_transform(),aGarden[0].get_node(planteName).get_polygon())
 					cursor_mode("default")
 					print_garden()
-					Player.change_state(PLANT_BACK)
-				PLANT_BACK:
 					change_action(DEFAULT)
+#				PLANT_BACK:
+#					change_action(DEFAULT)
 		ARROSER:
 			match state:
 				MOVE:
@@ -295,7 +295,7 @@ Gestion de l'action Dormir :
 	-> texte : Un_Jour_Passe -> transition_out -> animation sort de la cabine
 """
 
-func _on_Porte_input_event(viewport, event, shape_idx):
+func _on_Porte_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
 		change_action(DORMIR)
 

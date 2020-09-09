@@ -20,25 +20,25 @@ func initiate():
 Configure la position des éléments du collision shape associés à la souris 
 """
 
-func _process(delta):
+func _process(_delta):
 	global_position = get_global_mouse_position()
 	$Polygon2D.global_position = get_global_mouse_position()
 	$CollisionShape2D.global_position = get_global_mouse_position()
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_pressed("ui_right_mouse") && !item_selected && overlapPlant:
 		item_selected = true
 
 """
 Seules les plantes (layer : plante) sont concernées par les collisions de gMouseCollider.
 """
-func _on_gMouseCollider_area_shape_entered(area_id, area, area_shape, self_shape):
+func _on_gMouseCollider_area_shape_entered(_area_id, area, _area_shape, _self_shape):
 	if item_selected == false:
 		aCollisionNode.push_back(area)
 		if aCollisionNode.size() == 1:
 				select_plant(area)
 
-func _on_gMouseCollider_area_shape_exited(area_id, area, area_shape, self_shape):
+func _on_gMouseCollider_area_shape_exited(_area_id, area, _area_shape, _self_shape):
 	if item_selected == false :
 		if !aCollisionNode.empty() :
 			#Si area est l'aire actuellement en surbrillance : deselectionne l'aire
