@@ -59,6 +59,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -77,11 +78,6 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
 "name": "lvl3",
 "speed": 5.0
 }, {
@@ -98,6 +94,11 @@ animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": false,
 "name": "apparition",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -129,6 +130,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=6]
 resource_local_to_scene = true
@@ -147,11 +149,6 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
 "name": "lvl3",
 "speed": 5.0
 }, {
@@ -168,6 +165,11 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": false,
 "name": "apparition",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -188,11 +190,6 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
 "name": "lvl3",
 "speed": 5.0
 }, {
@@ -209,6 +206,11 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": false,
 "name": "apparition",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -240,6 +242,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=11]
 resource_local_to_scene = true
@@ -258,11 +261,6 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
 "name": "lvl3",
 "speed": 5.0
 }, {
@@ -279,6 +277,11 @@ animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": false,
 "name": "apparition",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -299,11 +302,6 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "fane",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
 "name": "lvl3",
 "speed": 5.0
 }, {
@@ -320,6 +318,11 @@ animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": false,
 "name": "apparition",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -496,7 +499,7 @@ script = ExtResource( 28 )
 
 [node name="Navigatrice" parent="Bateau/YSort/PNJ" instance=ExtResource( 19 )]
 scale = Vector2( 1, 1 )
-frame = 1
+frame = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
