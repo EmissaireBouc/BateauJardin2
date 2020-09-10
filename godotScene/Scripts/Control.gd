@@ -41,8 +41,9 @@ func _ready():
 	print_garden()
 	$AudioStreamPlayer2D.play()
 	
-	$Bateau/YSort/Navigatrice.connect("_on_Character_input", self, "character_input")
-	
+#	$Bateau/YSort/Navigatrice.connect("_on_Character_input", self, "character_input")
+	$Bateau/YSort/PNJ.connect("Engage_Conversation",self,"Engage_Conversation")
+
 func _process(_delta):
 	debug()
 
@@ -53,7 +54,7 @@ Gestion du clic gauche :
 	Gère le Clic gauche (par défaut : Marcher)
 """
 
-func character_input():
+func Engage_Conversation():
 	change_action(PARLER)
 
 func _unhandled_input(_event):
@@ -70,6 +71,8 @@ func _unhandled_input(_event):
 					menuEntretenir.close()
 					MouseA.clear_aCollisionNode()
 					destroy_ui_destination()
+			PARLER :
+				return
 
 
 
@@ -159,7 +162,7 @@ func change_action(newaction):
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y+25))
 		PARLER:
 			posCursor = get_global_mouse_position()
-			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y-25))
+			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y+600))
 
 
 func _on_Player_anim_over(state):
@@ -216,10 +219,7 @@ func _on_Player_anim_over(state):
 			match state :
 				MOVE:
 					change_action(DEFAULT)
-					$Bateau/YSort/Navigatrice.parle()
-					
-
-
+					$Bateau/YSort/PNJ.lancer_dialogue()
 
 func _on_Inventory_item_selected():
 	match action:

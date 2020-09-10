@@ -1,72 +1,81 @@
 extends Sprite
 
-var playerZone = false
+var talking = false
 var NomPersonnage
-var NumDial 
+var NumDial
 var index_dialogueArray = 0
 signal _on_Character_input
 
-onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues/BoiteDialogue")
-onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
+onready var BoiteDialogue = get_parent().get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues/BoiteDialogue")
+onready var Dialogues = get_parent().get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
 
-func _ready():
-#	get_node("Area2D").connect("body_entered",self,"on_body_entered")
-#	get_node("Area2D").connect("body_exited",self,"on_body_exited")
-	get_node("Area2D").connect("input_event",self,"input_event")
-	
-	"z_index = position.y"
-	
+#func _ready():
+#
+#	get_node("Area2D").connect("input_event",self,"character_event")
+#	BoiteDialogue.connect("TexteSuivant", self, "AfficherNouvelleLigne")
 
-""" Lorsque Player chevauche aire de collision de PNJ :
-On instancie la variable DialogueArray de Boite de dialogue avec la valeur contenue dans dialogue_data(NomPersonnage) """
 
-func input_event(_event, _viewport, _shape_idx):
-	if Input.is_action_pressed("ui_left_mouse"):
+""" 
+Lorsque Player chevauche aire de collision de PNJ :
+	On instancie la variable DialogueArray de Boite de dialogue avec la valeur contenue dans dialogue_data(NomPersonnage) 
+"""
+
+func character_event(_event, _viewport, _shape_idx):
+	if Input.is_action_pressed("ui_left_mouse") && !talking:
 		emit_signal("_on_Character_input")
-		playerZone = true
-		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)]
-		if NumDial == 1:
-			index_dialogueArray = 0
+		talking = true
 
-func on_body_entered(body):
-	if body.name == "Player":
-		
-		"print(ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom)"
-		"print(ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Text)"
-	
+#func on_body_entered(body):
+#	if body.name == "Player":
+#
+#		"print(ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom)"
+#		"print(ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Text)"
 
-func on_body_exited(body):
-	if body.name == "Player":
-		playerZone = false
-		Dialogues.visible = false
-		BoiteDialogue.index_dialogueArray = 0
+
+#func on_body_exited(body):
+#	if body.name == "Player":
+#		playerZone = false
+#		Dialogues.visible = false
+#		BoiteDialogue.index_dialogueArray = 0
 		
-""" Lorsque Lea joueurse appuie sur Espace :
+""" 
+Lorsque Lea joueurse appuie sur Espace :
 	-> parle()
 		Si index_dialogue est inférieur à la taille du tableau de dialogue DialogueArray
 		alors instancier la variable BoiteDialogue.Dialogue avec l'élément contenu dans le tableau à l'index index_dialogue
-		index dialogue s'incrémente de 1 """
-		
-#func _input(event):
-#	if event.is_action_pressed("ui_accept") && playerZone:
-#		parle()
+		index dialogue s'incrémente de 1 
+"""
+
+func lancer_dialogue():
+	BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage]
+	parle()
+
+func AfficherNouvelleLigne():
+	parle()
 
 func parle():
-	if BoiteDialogue.index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1:
+
+	if index_dialogueArray < BoiteDialogue.DialogueArray.size()-1:
 		" Pour afficher les noms: "
 		if NumDial == 0:
 			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom
 		else:
-			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2[index_dialogueArray].Text
+			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2[index_dialogueArray].Nom
+		
 		" Pour afficher les dialogues: "
 		if NumDial == 0:
 			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Text
 		else:
 			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2[index_dialogueArray].Text
-		BoiteDialogue.index_dialogueArray += 1
+
 		index_dialogueArray +=1
+
 		Dialogues.visible = true
-	else:
+		BoiteDialogue.chargement_dialog()
+
+	else: # Ferme la scène Dialogue, réinitialise l'index, incrémente NumDial
+		talking = false
 		Dialogues.visible = false
+		index_dialogueArray = 0
 		if NumDial == 0:
 			NumDial += 1

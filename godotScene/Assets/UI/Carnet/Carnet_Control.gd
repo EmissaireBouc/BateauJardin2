@@ -9,7 +9,6 @@ func _ready():
 func setup_manifeste():
 	page = load ("res://Assets/UI/Carnet/ScPageEquipage.tscn").instance()
 	add_child(page)
-	page.connect("BackToMenu",self, "_on_BackToMenu_pressed")
 	$Container.raise()
 
 func setup_sommaire():
@@ -20,6 +19,7 @@ func setup_sommaire():
 
 
 func _on_button_pressed(element, nvllepage):
+	print(element)
 	if nvllepage == "equipage":
 		setup_manifeste()
 	else:

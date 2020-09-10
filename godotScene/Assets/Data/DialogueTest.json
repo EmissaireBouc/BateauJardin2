@@ -1,30 +1,34 @@
 {
-  "0": {
-      "Navigatrice": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Charibe",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Charibe",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Charibe",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Charibe",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
+	"0": {
+		"Navigatrice": {
+		"ID": 0,
+	
+			"Dialogue1": [
+			{
+				"Nom": "Nom_Dialogue_1",
+				"Text": "Text_DIALOGUE_1_1"
+			  },
+			{
+			   "Nom": "Nom_Dialogue_1",
+			   "Text": "Text_DIALOGUE_1_2"
+			 }
+			],
+
+		  "Dialogue2": [
+			  
+			  {
+			   "Nom": "Nom_Dialogue_2",
+			   "Text": "Texte_DIALOGUE_1_2"
+			  },
+
+			  {
+			   "Nom": "Nom_Dialogue_2",
+			   "Text": "Texte_DIALOGUE_1_2"
+			  }
+			]
       },
 	  
-		"Charpentiere": {
+"Charpentiere": {
       "ID": 0,
       "Dialogue1": [
           {

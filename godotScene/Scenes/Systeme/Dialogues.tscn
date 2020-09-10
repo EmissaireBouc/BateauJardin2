@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/UI/Carnet/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/BoiteDialogue.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/Carnet/Font_SousTitre2_Livre.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/UI/Carnet/fleche_haut.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Carnet/fleche_bas.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/Carnet/texture_feuille.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Carnet/fleche_bas_pressed.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -56,6 +57,9 @@ patch_margin_right = 10
 patch_margin_bottom = 10
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="nom" type="RichTextLabel" parent="BoiteDialogue"]
 margin_left = 70.0
@@ -86,13 +90,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="indicateur" type="Sprite" parent="BoiteDialogue"]
-position = Vector2( 1665.98, 283.306 )
-rotation = 3.14159
-texture = ExtResource( 4 )
+[node name="indicateur" type="TextureButton" parent="BoiteDialogue"]
+margin_left = 1700.24
+margin_top = 258.877
+margin_right = 1764.24
+margin_bottom = 322.877
+action_mode = 0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BoiteDialogue/indicateur"]
 anims/Idle = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="BoiteDialogue"]
+[connection signal="pressed" from="BoiteDialogue/indicateur" to="BoiteDialogue" method="_on_indicateur_pressed"]
 [connection signal="tween_completed" from="BoiteDialogue/Tween" to="BoiteDialogue" method="_on_Tween_tween_completed"]

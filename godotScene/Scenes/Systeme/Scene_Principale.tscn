@@ -25,8 +25,8 @@
 [ext_resource path="res://Assets/Plante/Image/oreilles de lapin.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Plante/Image/feuilles vert rouge .png" type="Texture" id=24]
 [ext_resource path="res://Assets/Plante/Image/colorées.png" type="Texture" id=25]
-[ext_resource path="res://Scripts/InteractionDialogues.gd" type="Script" id=26]
 [ext_resource path="res://Scenes/Systeme/Dialogues.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Systeme/PNJ_Interaction.gd" type="Script" id=28]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 102.45
@@ -77,7 +77,17 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
+"name": "fane",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -88,16 +98,6 @@ animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": false,
 "name": "apparition",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "fane",
 "speed": 5.0
 } ]
 
@@ -147,7 +147,17 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
+"name": "fane",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -158,16 +168,6 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": false,
 "name": "apparition",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "fane",
 "speed": 5.0
 } ]
 
@@ -188,7 +188,17 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
+"name": "fane",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -199,16 +209,6 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": false,
 "name": "apparition",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "fane",
 "speed": 5.0
 } ]
 
@@ -258,7 +258,17 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
+"name": "fane",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -269,16 +279,6 @@ animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": false,
 "name": "apparition",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "fane",
 "speed": 5.0
 } ]
 
@@ -299,7 +299,17 @@ resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
+"name": "fane",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -310,16 +320,6 @@ animations = [ {
 "frames": [ ExtResource( 23 ) ],
 "loop": false,
 "name": "apparition",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "fane",
 "speed": 5.0
 } ]
 
@@ -437,10 +437,6 @@ position = Vector2( -1065.6, -68.1622 )
 color = Color( 0.337255, 0.152941, 0.541176, 1 )
 polygon = PoolVector2Array( -264, 32, -264, -64, -184, -64, -184, 32 )
 
-[node name="Navigatrice" parent="Bateau/YSort" instance=ExtResource( 19 )]
-position = Vector2( -145.529, -544.953 )
-script = ExtResource( 26 )
-
 [node name="Player" parent="Bateau/YSort" instance=ExtResource( 5 )]
 position = Vector2( -1225.2, 146.996 )
 scale = Vector2( 1, 1 )
@@ -454,7 +450,6 @@ offset_v = -1.0
 script = ExtResource( 14 )
 
 [node name="Line2D" type="Line2D" parent="Bateau/YSort"]
-visible = false
 width = 2.0
 default_color = Color( 0.780392, 0.262745, 0.192157, 1 )
 texture_mode = -1094713346
@@ -495,6 +490,13 @@ lvl = 3
 material = SubResource( 13 )
 position = Vector2( -667.082, -615.153 )
 frames = SubResource( 14 )
+
+[node name="PNJ" type="YSort" parent="Bateau/YSort"]
+script = ExtResource( 28 )
+
+[node name="Navigatrice" parent="Bateau/YSort/PNJ" instance=ExtResource( 19 )]
+scale = Vector2( 1, 1 )
+frame = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
