@@ -38,7 +38,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 102.45
 
-[sub_resource type="Shader" id=26]
+[sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -66,11 +66,10 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
-custom_defines = ""
 
-[sub_resource type="ShaderMaterial" id=27]
+[sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
-shader = SubResource( 26 )
+shader = SubResource( 2 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.0
 shader_param/maxStrength = 0.3
@@ -80,7 +79,7 @@ shader_param/detail = 1.0
 shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=28]
+[sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 30 ) ],
@@ -88,19 +87,9 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -111,6 +100,16 @@ animations = [ {
 "frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -119,10 +118,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-
-[sub_resource type="ShaderMaterial" id=29]
+[sub_resource type="ShaderMaterial" id=5]
 resource_local_to_scene = true
-shader = SubResource( 26 )
+shader = SubResource( 2 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.0
 shader_param/maxStrength = 0.3
@@ -132,7 +130,7 @@ shader_param/detail = 1.0
 shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=30]
+[sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 30 ) ],
@@ -140,19 +138,9 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -163,6 +151,16 @@ animations = [ {
 "frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -171,7 +169,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=31]
+[sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -199,11 +197,10 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
-custom_defines = ""
 
-[sub_resource type="ShaderMaterial" id=32]
+[sub_resource type="ShaderMaterial" id=8]
 resource_local_to_scene = true
-shader = SubResource( 31 )
+shader = SubResource( 7 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -213,7 +210,7 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=33]
+[sub_resource type="SpriteFrames" id=9]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 33 ) ],
@@ -221,19 +218,9 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -244,6 +231,16 @@ animations = [ {
 "frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -252,9 +249,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=34]
+[sub_resource type="ShaderMaterial" id=10]
 resource_local_to_scene = true
-shader = SubResource( 31 )
+shader = SubResource( 7 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -264,7 +261,7 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=35]
+[sub_resource type="SpriteFrames" id=11]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 33 ) ],
@@ -272,19 +269,9 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -295,6 +282,16 @@ animations = [ {
 "frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -303,33 +300,33 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=12]
 size = 26
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0, 0, 0, 0.262745 )
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=14]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=21]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.227451, 0.203922, 0.203922, 0.360784 )
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=16]
 size = 22
 outline_color = Color( 0, 1, 0.0862745, 1 )
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=23]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0, 0, 0, 0.231373 )
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=18]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=19]
 size = 40
 font_data = ExtResource( 8 )
 
@@ -437,35 +434,35 @@ texture_mode = -1094713346
 [node name="Plante" type="YSort" parent="Bateau/YSort"]
 
 [node name="Fougere2" parent="Bateau/YSort/Plante" instance=ExtResource( 34 )]
-material = SubResource( 27 )
+material = SubResource( 3 )
 position = Vector2( 808, -120 )
-frames = SubResource( 28 )
+frames = SubResource( 4 )
 Plante = "Fougere"
 pv = 2
 xp = 1
 lvl = 1
 
 [node name="Fougere" parent="Bateau/YSort/Plante" instance=ExtResource( 34 )]
-material = SubResource( 29 )
+material = SubResource( 5 )
 position = Vector2( 504, -132.162 )
-frames = SubResource( 30 )
+frames = SubResource( 6 )
 Plante = "Fougere"
 pv = 2
 xp = 2
 lvl = 2
 
 [node name="OreillesDeLapin" parent="Bateau/YSort/Plante" instance=ExtResource( 22 )]
-material = SubResource( 32 )
+material = SubResource( 8 )
 position = Vector2( 1192, -408 )
-frames = SubResource( 33 )
+frames = SubResource( 9 )
 pv = 5
 xp = 2
 lvl = 2
 
 [node name="OreillesDeLapin2" parent="Bateau/YSort/Plante" instance=ExtResource( 22 )]
-material = SubResource( 34 )
+material = SubResource( 10 )
 position = Vector2( 1192, -132.162 )
-frames = SubResource( 35 )
+frames = SubResource( 11 )
 pv = 2
 xp = 3
 lvl = 1
@@ -482,7 +479,7 @@ margin_left = -48.0
 margin_top = 88.0
 margin_right = 48.0
 margin_bottom = 128.0
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "PA : "
 script = ExtResource( 9 )
@@ -496,8 +493,8 @@ margin_top = 144.0
 margin_right = 1896.0
 margin_bottom = 240.0
 grow_horizontal = 0
-custom_styles/normal = SubResource( 19 )
-custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
 text = "Jardin :"
 __meta__ = {
@@ -509,8 +506,8 @@ margin_left = 1568.0
 margin_top = 24.0
 margin_right = 1896.0
 margin_bottom = 128.0
-custom_styles/normal = SubResource( 21 )
-custom_fonts/font = SubResource( 22 )
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.105882, 1, 0, 1 )
 text = "Zoom :"
 align = 2
@@ -523,8 +520,8 @@ margin_left = 1656.0
 margin_top = 792.0
 margin_right = 1904.0
 margin_bottom = 1064.0
-custom_styles/normal = SubResource( 23 )
-custom_fonts/font = SubResource( 24 )
+custom_styles/normal = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 1, 0.156863, 1 )
 text = "Plante Description"
 script = ExtResource( 16 )
@@ -589,7 +586,7 @@ margin_left = -960.0
 margin_top = -45.5
 margin_right = 960.0
 margin_bottom = 45.5
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 19 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Jour"
 align = 1
