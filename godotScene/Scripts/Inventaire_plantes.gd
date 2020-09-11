@@ -37,6 +37,7 @@ func get_selected_item():
 func _on_ItemList_item_selected(index):
 	if itemID != index:
 		itemlist.modulate_icon()
+		$ClicGraine.play()
 	itemID = index
 	itemlist.set_item_icon_modulate(index, Color(1,1,1,1))
 

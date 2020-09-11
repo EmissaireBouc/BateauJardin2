@@ -27,26 +27,30 @@ onready var menuInventaire : Control = get_node("CanvasLayer/Control/Inventory")
 onready var menuEntretenir : MarginContainer = get_node("CanvasLayer/Control/MenuInteractions")
 onready var Cam : Camera2D = get_node("Bateau/YSort/Player/Camera2D")
 onready var PA : Label = get_node("CanvasLayer/PA")
+onready var PNJsort : YSort = get_node("Bateau/YSort/PNJ")
 
 
 func _ready():
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")
-	$CanvasLayer/Transition.visible = true
 	PA.set_PA(5)
+	
+	$CanvasLayer/Transition.visible = true
+	
 	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
 		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
 		$Bateau/WalkArea.update_navigation_polygon(aGarden[0].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[0].get_node("Area2D/CollisionPolygon2D").get_polygon())
 	print_garden()
-	$AudioStreamPlayer2D.play()
+	$Musique.play()
 	
-#	$Bateau/YSort/Navigatrice.connect("_on_Character_input", self, "character_input")
-	$Bateau/YSort/PNJ.connect("Engage_Conversation",self,"Engage_Conversation")
+	PNJsort.connect("Engage_Conversation",self,"Engage_Conversation")
 
 func _process(_delta):
 	debug()
 
+
+	
 """
 Gestion du clic gauche :
 	_unhandled_input(event) récupère l'input souris DANS la scène active 
@@ -162,7 +166,7 @@ func change_action(newaction):
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y+25))
 		PARLER:
 			posCursor = get_global_mouse_position()
-			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y+600))
+			Player.change_state(MOVE, Vector2(posCursor.x-400, posCursor.y+50))
 
 
 func _on_Player_anim_over(state):

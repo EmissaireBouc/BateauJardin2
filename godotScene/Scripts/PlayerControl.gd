@@ -117,11 +117,40 @@ func animation_loop(mode, backward = false):
 	else:
 		animation = anim_mode
 
-	self.play(animation, backward) 
+	self.play(animation, backward)
+
+	son(anim_mode)
+
+func son(anim_mode):
+	if anim_mode == "WALK":
+		if frame == 1 or frame == 5:
+			if !$Pas1.is_playing() && !$Pas2.is_playing():
+				var rng = RandomNumberGenerator.new()
+				rng.randomize()
+				var alea = rng.randi()%2+1
+				get_node("Pas%s" %alea).play()
+
+	if anim_mode == "CUT":
+		if frame == 4:
+			if !$Couper.is_playing():
+				$Couper.play()
+
+	if anim_mode == "OPEN_INV":
+		if frame == 1:
+			if !$OuvrirBoiteGraine.is_playing():
+				$OuvrirBoiteGraine.play()
 	
-#	if frame == 1 or frame == 5:
-#		if !$AudioStreamPlayer2D.is_playing():
-#			$AudioStreamPlayer2D.play()
+	if anim_mode == "SPRAY":
+		if frame == 3:
+			if !$Arroser.is_playing():
+				$Arroser.play()
+	
+	if anim_mode == "PLANT":
+		if frame == 3:
+			if !$Planter.is_playing():
+				$Planter.play()
+
+
 
 #func _on_Area2D_area_shape_entered(_area_id, area, _area_shape, _self_shape):
 #	area.get_parent().get_material().set_shader_param("detail",10)

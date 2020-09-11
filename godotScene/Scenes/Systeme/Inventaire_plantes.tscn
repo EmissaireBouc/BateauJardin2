@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/ItemList.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Inventaire_plantes.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Son/Preselection graine.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/UI/Font/Quicksand_Book.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/UI/Inv/boiteagrainetest1.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/Inv/UI_theme.tres" type="Theme" id=6]
@@ -109,6 +110,9 @@ margin_top = 776.0
 margin_right = 684.0
 margin_bottom = 816.0
 text = "Annuler"
+
+[node name="ClicGraine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="item_selected" from="AnimationPlayer/TextureRect/ItemList" to="." method="_on_ItemList_item_selected"]
 [connection signal="pressed" from="AnimationPlayer/TextureRect/B_Valider" to="." method="_on_B_Valider_pressed"]

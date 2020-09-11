@@ -17,16 +17,16 @@ func update_status():
 	if lvl > 0 :
 		play("lvl"+str(lvl))
 	else :
-		play("apparition")
+		play("lvl1")
 
 	if pv <= 0 :
-		play("fane")
+		fane()
 
 	if pv > 0 && pv <= 2 :
 		deshydrat()
 
 func fane():
-	play("fane")
+	play("fanelvl"+str(lvl))
 
 func setup(plantName):
 	Plante = plantName
@@ -34,12 +34,16 @@ func setup(plantName):
 	xp = ImportData.plant_data[Plante].XP
 	lvl = ImportData.plant_data[Plante].LVL
 
-	play("apparition")
+	play("lvl1")
 	initialize_shader()
 
 func LVL_up():
-	lvl += 1
-	update_status()
+	if lvl < 3:
+		lvl += 1
+		xp = ImportData.plant_data[Plante].XP
+		update_status()
+	else:
+		xp = 100
 
 func initialize_shader():
 	rng.randomize()

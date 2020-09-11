@@ -5,6 +5,9 @@ var index_dialogueArray = 0
 var NumDial = 0
 var talking = false
 
+export (Array) var  Spot_PNJ = [Vector2(-968,-608), Vector2(-392,-616), Vector2(860,-564), Vector2(1264,-80), Vector2(1376,608), Vector2(520,80), Vector2(-72,603), Vector2(-704,552)]
+var Save_Spot_PNJ = []
+
 onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues/BoiteDialogue")
 onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
 
@@ -13,6 +16,8 @@ signal Engage_Conversation
 
 
 func _ready():
+	Save_Spot_PNJ = Spot_PNJ.duplicate(true)
+	PNJ_Setup()
 	connect_child_node()
 	BoiteDialogue.connect("TexteSuivant", self, "AfficherNouvelleLigne")
 
@@ -69,4 +74,30 @@ func fin_dialogue():
 
 	if NumDial == 0:
 		NumDial += 1
+
+
+
+func PNJ_Setup():
+	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
+	for i in range(nbPNJ.size()):
+		var nvPNJ = load ("res://Scenes/PNJ/%s" %"Navigatrice" + ".tscn").instance() #Remplacer "Navigatrice" par : nbPNJ[i] lorsque toutes les scènes seront créées
+		add_child(nvPNJ)
+		nvPNJ.position = PNJ_Position(i, nbPNJ.size())
+
+
+"""
+PNJ_Position définit une position aléatoire parmi 8 définie dans Spot_PNJ
+Elle ne permet pour le moment pas de définir des regroupements de personnage
+"""
+
+func PNJ_Position(n, nb):
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var alea = rng.randi()%Spot_PNJ.size()
+	var pos_aleatoire = Spot_PNJ[alea]
+	Spot_PNJ.remove(alea)
 	
+	if n == nb-1:
+		Spot_PNJ = Save_Spot_PNJ.duplicate(true)
+
+	return(pos_aleatoire)

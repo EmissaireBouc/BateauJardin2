@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Personnage/PJ/PJ.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/PlayerControl.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Son/marcheV01.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Son/marche03.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Son/marche02.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Son/Arrosage.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Son/Couper.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Son/OuvertureBoiteGraine.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Son/Planter.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 213.335, 53.8527 )
@@ -18,9 +23,26 @@ __meta__ = {
 }
 speed = 200
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
-volume_db = -10.097
+[node name="Pas1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Pas2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Pas3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="OuvrirBoiteGraine" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Couper" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Planter" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Arroser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

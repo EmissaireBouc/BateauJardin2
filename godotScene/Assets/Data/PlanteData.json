@@ -4,7 +4,7 @@
     "ID": 0,
     "PV": 3,
     "XP": 5,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "Des jolies fleurs de toutes les couleurs"
   },
@@ -13,7 +13,7 @@
     "ID": 1,
     "PV": 2,
     "XP": 3,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "ForgetMeNot en anglais, la fleur des divorcés géographiques"
   },
@@ -22,7 +22,7 @@
     "ID": 2,
     "PV": 4,
     "XP": 2,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
@@ -31,7 +31,7 @@
     "ID": 3,
     "PV": 8,
     "XP": 8,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "Un arbre larmoyant"
   },
@@ -40,7 +40,7 @@
     "ID": 4,
     "PV": 7,
     "XP": 8,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "un arabesque"
   },
@@ -49,7 +49,7 @@
     "ID": 5,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "un haut arabesque"
   },
@@ -58,7 +58,7 @@
     "ID": 6,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "un buisson qui est plutôt blanc"
   },
@@ -67,7 +67,7 @@
     "ID": 7,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "un autre buisson également blanc"
   },
@@ -76,7 +76,7 @@
     "ID": 8,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "un buisson différent un peu bleu"
   },
@@ -85,7 +85,7 @@
     "ID": 9,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "un buisson pas comme les autres"
   },
@@ -94,7 +94,7 @@
     "ID": 10,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
@@ -103,7 +103,7 @@
     "ID": 11,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
@@ -112,7 +112,7 @@
     "ID": 12,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -121,7 +121,7 @@
     "ID": 13,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -130,7 +130,7 @@
     "ID": 14,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -139,7 +139,7 @@
     "ID": 15,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -148,7 +148,7 @@
     "ID": 16,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -157,7 +157,7 @@
     "ID": 17,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -166,7 +166,7 @@
     "ID": 18,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -175,7 +175,7 @@
     "ID": 19,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -184,7 +184,7 @@
     "ID": 20,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
@@ -193,7 +193,16 @@
     "ID": 21,
     "PV": 7,
     "XP": 7,
-    "LVL": 0,
+    "LVL": 1,
+    "Available": 1,
+    "Description": "etc"
+  },
+  "Fougere": {
+    "Name": "Fougere",
+    "ID": 21,
+    "PV": 7,
+    "XP": 7,
+    "LVL": 1,
     "Available": 1,
     "Description": "etc"
   }

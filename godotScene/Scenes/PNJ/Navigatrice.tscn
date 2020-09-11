@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/PNJ/Eleanor.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/capitaineidle.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Personnage/PNJ/capitaineidledialogue.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Personnage/PNJ/capitainedialogue.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -74,7 +74,6 @@ animations = [ {
 
 [node name="Navigatrice" type="AnimatedSprite"]
 position = Vector2( 197.661, 418.705 )
-scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 12 )
 animation = "IDLE"
 playing = true
