@@ -5,49 +5,465 @@
 	
 			"Dialogue1": [
 			{
-				"Nom": "Nom_Dialogue_1",
-				"Text": "Text_DIALOGUE_1_1"
+				"Nom": "...",
+				"Text": "Salut, bienvenue à bord !"
 			  },
 			{
-			   "Nom": "Nom_Dialogue_1",
-			   "Text": "Text_DIALOGUE_1_2"
+			   "Nom": "...",
+			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée ! Tout le monde, voici Jade, la filleule d'Anna. Tu devrais te plaire parmi nous."
+			 },
+			 {
+			   "Nom": "...",
+			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charibe."
+			 },
+			 {
+			   "Nom": "Suzanne",
+			   "Text": "Tout l’équipage est là pour t’accueillir, sauf notre mécanicienne qui travaille dans la cale, et Maël qui est pas là en ce moment."
 			 }
 			],
 
 		  "Dialogue2": [
 			  
 			  {
-			   "Nom": "Nom_Dialogue_2",
-			   "Text": "Texte_DIALOGUE_2_2"
+
+			   "Nom": "Eleanor",
+			   "Text": "Ça va te changer de faire du jardinage."
 			  },
 
 			  {
-			   "Nom": "Nom_Dialogue_2",
-			   "Text": "Texte_DIALOGUE_2_2"
+			   "Nom": "Eleanor",
+			   "Text": "Je bossais en ville comme toi avant, ça me convenait pas du tout non plus. Je comprend que t’ai pas tenu et que t’ai dû arrêter."
+
 			  }
 			]
       },
 	  
-"Charpentiere": {
+		"Charpentiere": {
+      "ID": 0,
+			"Dialogue1": [
+			{
+				"Nom": "...",
+				"Text": "Salut, bienvenue à bord !"
+			  },
+			{
+			   "Nom": "...",
+			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée ! Tout le monde, voici Jade, la filleule d'Anna. Tu devrais te plaire parmi nous."
+			 },
+			 {
+			   "Nom": "...",
+			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charibe."
+			 },
+			 {
+			   "Nom": "Suzanne",
+			   "Text": "Tout l’équipage est là pour t’accueillir, sauf notre mécanicienne qui travaille dans la cale, et Maël qui est pas là en ce moment."
+			 }
+          ],
+		"Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Ta marraine m’a dit que tu avais fait un burn out. Ici tu va pouvoir reprendre tranquillement, à ton rythme."
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Je suis charpentière et ferronnière, j'aide aussi souvent les autres en fonctions des besoins, comme la coque n'a pas à être rebouchée tout les jours."
+          }
+        ],
+		"Dialogue3": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Tu peux aller t’installer dans ta cabine si tu veux, c’est par la porte au bout du pont."
+          }
+        ]
+      },
+	  
+		"Gabiere": {
       "ID": 0,
       "Dialogue1": [
           {
-           "Nom": "Suzy",
-           "Text": "Voici du texte pour le premier jour"
+           "Nom": "...",
+           "Text": "Hey, moi je m'occupe des voiles, je les prends aussi parfois haha."
           },
           {
-           "Nom": "Suzy",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           "Nom": "...",
+           "Text": "Kaneza, notre mécano est occupée là, elle passe beaucoup de temps dans la cale, tu la rencontreras un autre jour."
            }
           ],
       "Dialogue2": [
           {
-           "Nom": "Suzy",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
+           "Nom": "...",
+           "Text": "Kaneza, notre mécano est occupée là, elle passe beaucoup de temps dans la cale, tu la rencontreras un autre jour."
+          }
+        ]
+      },
+
+		"Matelot": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "...",
+           "Text": "Hello, je m’appelle nathan, je suis un peu homme à tout faire, j’aide là où il y a besoin."
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Nathan",
+           "Text": "Je suis un peu homme à tout faire, j’aide là où il y a besoin."
+          }
+        ]
+      },
+	  
+		"Vigie": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "...",
+           "Text": "Je suis Ismael, vigie et amateur de plante, je pourrais t’aider à l'occasion pour le jardin si tu veux."
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Je pourrais t’aider à l'occasion pour le jardin si tu veux."
+          }
+        ]
+      },
+	  
+		"Cartographe": {
+      "ID": 0,
+      "Dialogue1":
+          [
+          {
+           "Nom": "...",
+           "Text": "Salut, je suis Mazaa, je relève les courants, note nos positions, ...enfin bref je suis cartographe."
           },
           {
-           "Nom": "Suzy",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+           "Nom": "Mazaa",
+           "Text": "J’espère que tu te sentiras bien parmi nous."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Mazaa",
+           "Text": "J’espère que tu te sentiras bien parmi nous."
+          }
+		  ]
+        }
+		},
+	  
+	"1": {
+		"Charpentiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Suzane",
+           "Text": "Comment va ta marraine ? La dernière fois que j’ai eu de ses nouvelles elle avait été hospitalisée pour longtemps, mais là elle va mieux non ?"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Ah, elle a été hospitalisée ?"
+           },
+		   {
+           "Nom": "Suzane",
+           "Text": "Euh oui, régulièrement."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Je sais pas on la voit pas souvent, là c’est un coup de chance qu’on ait eu de ses nouvelles pile quand je re cherchais un travail et qu’elle m’ait parlé de vous."
+           },
+		   {
+           "Nom": "Suzane",
+           "Text": "Bon, tu vas être avec nous pendant toute une tournée avant qu'on revienne à ce port, j'espère vraiment que ces quelques mois avec nous te plairont."
+          }
+          ],
+      "Dialogue2": [
+          {
+          "Nom": "Suzane",
+           "Text": "Bon, tu vas être avec nous pendant toute une tournée avant qu'on revienne à ce port, j'espère vraiment que ces quelques mois avec nous te plairont."
+          }
+        ]
+      },
+	  	  
+		"Gabiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "...",
+           "Text": "Salut... Jeanne c'est ça ?"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Jade..."
+           },
+		   {
+           "Nom": "...",
+           "Text": "Ah oui ! Désolé, je suis complétement nul-le en prénom... Eh mais... je t'ai jamais dis le mien en fait ?"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Non, du tout."
+           },
+		   {
+           "Nom": "...",
+           "Text": "Merde ! Désolé ! Je m'appelle Minh Tâm ! Je suis non-binaire et mon pronom c'est iel. Et je suis lae gabièr-e. La personne qui s'occupe des voiles..."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "La personne qui s'occupe des voiles..."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "En voilà une présentation rondement menée ! Ravi-e de t'avoir parmi nous en tout cas... Sarah ?"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Hein ? Mais ça ressemble même pas !"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "J-A-D-E !"
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Ahahah désolé, je vais y arriver ! En plus c'est un beau prénom Jade."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Tu devrais faire comme moi, je note un peu toutes les infos que j'ai dans ce carnet et ça m'aide à m'y retrouver."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "..."
+          }
+        ]
+      },
+
+		"Vigie": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Ismael",
+           "Text": "Ha ! Te voilà Jade. Je t'attendais. Je t'ai déjà dis hier que j'étais passionné par les plantes, je voulais donc te remettre ma collection de graines que l'on avait entamé avec Maël, mais que nous avions du mettre en pause lors de son départ."
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "J'espère que nous pourrons l'étoffer encore plus avec ton arrivé."
+           },
+		   {
+           "Nom": "Ismael",
+           "Text": "Je m'occuperai de nous trouver de nouvelles graines auprès des bateaux qu'on croisera ou lors de nos escales."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Je m'occuperai de nous trouver de nouvelles graines auprès des bateaux qu'on croisera ou lors de nos escales."
+          }
+		  ]
+        }
+		},
+	  
+	"2": {
+		"Navigatrice": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Eleanor",
+           "Text": "J’espère que tu te plaira avec nous. Hésites pas si t’as des questions sur notre fonctionnement."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Vous avez l'air de toutes et tous bien vous connaître, et de connaître ma marraine, vous vous connaissez depuis longtemps ?"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Ouais ça fait bien quelques années maintenant ! Après, Anna est restée avec nous quelques fois, mais jamais pendant très longtemps. Ça fait presque 10 ans que Mazaa et moi on a récupérée le bateau, les autres sont venu.e.s petit à petit."
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "Le dernier arrivé, à part toi bien sur, est Nathan il y a trois ans, et plusieurs ont fait des pauses comme Maël quand iels en avaient besoin."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Vous avez eu ce bateau comment ?"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "On a trouvé le 'nom du bateau' il y a de ça quelques années déjà. Comme je te disais, on est tombée dessus pendant une de nos balade en amoureuse avec Mazaa, il était abandonné près d'un port submergé."
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "Peu de temps après, Suzy et Kaneza, qu'on connaissait d'avant, de la même coloc qu'Anna, sont venues nous aider pour le retaper. Et regarde comme il claque maintenant !"
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "Le 'bonzai' est d'origine !  Mais tout le reste c'est nous ! "
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Le bonzai ? L'espèce de gigantesque arbre là ?"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Il a bien grandi effectivement."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Comment ça vous est venue l'idée d'avoir un jardin sur le pont ?"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Ça fait longtemps qu'on avait envie d’en avoir un, on avait commencé, mais avec le départ de Maël on s'en sortait plus."
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "On s'est dit que c'était mieux de prendre une nouvelle personne dédiée au jardinage, comme on est touste déjà bien occupé.e.s."
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "Tout est prêt Il n'y a plus qu'à jardiner, et d'après ce que l'on sait de toi, on ne s'inquiète pas pour ça ! "
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Eleanor",
+           "Text": "..."
+          }
+        ]
+      },
+		"Matelot": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Nathan",
+           "Text": "Hum ? Hé mais hello ! Tu vas bien ?"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Oui oui, je prends mes marques petits à petits."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "T'inquiètes faut aller à son rythme, ici tu peux chill sans soucis..."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Merci..."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Je prépare une cargaison là, je sais pas si on t'as déjà expliqué mais c'est comme ça qu'on vit."
+          },
+		  {
+           "Nom": "Nathan",
+           "Text": "On fait de la livraison lente, c'est comme ça qu'on gagne de quoi entretenir le bateau et s'acheter ce dont on a besoin. Ça rapporte pas énormément mais ça nous suffit."
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Nathan",
+           "Text": "Je prépare une cargaison là, je sais pas si on t'as déjà expliqué mais c'est comme ça qu'on vit."
+          },
+		  {
+           "Nom": "Nathan",
+           "Text": "On fait de la livraison lente, c'est comme ça qu'on gagne de quoi entretenir le bateau et s'acheter ce dont on a besoin. Ça rapporte pas énormément mais ça nous suffit."
+          }
+		  ]
+        }
+		},
+	"3": {
+		"Navigatrice": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Toi aussi tu viens profiter de la vue ? J'aime bien prendre mes pauses ici."
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Toi aussi tu viens profiter de la vue ? J'aime bien prendre mes pauses ici."
+          }
+        ]
+      },
+		"Charpentiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Mazaa",
+           "Text": "C'est encore moi qui ai nettoyé toute la cuisine."
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "Ouais, Je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché, ils remarquent pas du tout quand c'est sale."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan, qui foutent vraiment pas grand chose niveau taches ménagères."
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "C'est délicat parce qu'on a tou.te.s du mal à les faire comme on est fols, mais bon, c'est quand même toujours les mêmes qui font tout."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Et toujours les cis mecs qui font rien ! Nous aussi on est folles et on a du mal."
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "On veut pas les culpabiliser, chacun.e fait ce qu'iel peut."
+           },
+		   {
+           "Nom": "Suzane",
+           "Text": "C'est difficile de savoir à quel point ils sont mal et peuvent vraiment pas faire plus et à quel point c’est du sexisme."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Moi je veux bien les culpabiliser !"
+          },
+		  {
+           "Nom": "Mazaa",
+           "Text": "C’est toujours les meufs et non binaires qui font tout, même au fond de la crise y’a toujours l’éducation à faire passer certaines choses avant son bien être, à plus se forcer pour les autres."
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "Faut vraiment qu'on leur en parle, ça sert à rien de râler dans notre coin."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Ouais..."
+          },
+		  {
+           "Nom": "Mazaa",
+           "Text": "Bon je vous laisse, c'est l'heure de ma sieste."
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Jade",
+           "Text": "Mais donc vous avez tou.te.s des maladies psy ?"
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "Oui, Anna t'avait pas dit ? Enfin Ismaël est autiste et c’est pas une maladie, mais ça change pas grand-chose, on est tou.te.s fols quoi."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Non ma marraine m'avait pas dit. Elle m'a juste dit que je m'entendrai bien avec vous sans préciser."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Mes parents m’auraient sûrement pas laissé venir s'ils avaient su."
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "Iels ont l'air particuliers tes parents."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Boarf, ils sont juste un peu stricts."
           }
         ]
       },
@@ -56,148 +472,242 @@
       "ID": 0,
       "Dialogue1": [
           {
-           "Nom": "Kaneza",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
+           "Nom": "...",
+           "Text": "..."
+          }
           ],
       "Dialogue2": [
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+           {
+           "Nom": "...",
+           "Text": "..."
           }
         ]
       },
-	  
-	  "Gabiere": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-
-	  "Matelot": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "AChAB",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "AChAB",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "AChAB",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "AChAB",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-	  "Vigie": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Ismael",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-	  "Mael": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Mael",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Mael",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Mael",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Mael",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-      "Cartographe": {
+	  	  
+		"Cartographe": {
       "ID": 0,
       "Dialogue1":
           [
           {
-           "Nom": "Scylla",
-           "Text": "Voici du texte pour le premier jour 2222"
+           "Nom": "Mazaa",
+           "Text": "C'est encore moi qui ai nettoyé toute la cuisine."
           },
           {
-           "Nom": "Scylla",
-           "Text": "Voici du texte ici aussi, le premier jour"
+           "Nom": "Suzane",
+           "Text": "Ouais, Je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché, ils remarquent pas du tout quand c'est sale."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan, qui foutent vraiment pas grand chose niveau taches ménagères."
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "C'est délicat parce qu'on a tou.te.s du mal à les faire comme on est fols, mais bon, c'est quand même toujours les mêmes qui font tout."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Et toujours les cis mecs qui font rien ! Nous aussi on est folles et on a du mal."
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "On veut pas les culpabiliser, chacun.e fait ce qu'iel peut."
+           },
+		   {
+           "Nom": "Suzane",
+           "Text": "C'est difficile de savoir à quel point ils sont mal et peuvent vraiment pas faire plus et à quel point c’est du sexisme."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Moi je veux bien les culpabiliser !"
+          },
+		  {
+           "Nom": "Mazaa",
+           "Text": "C’est toujours les meufs et non binaires qui font tout, même au fond de la crise y’a toujours l’éducation à faire passer certaines choses avant son bien être, à plus se forcer pour les autres."
+          },
+          {
+           "Nom": "Suzane",
+           "Text": "Faut vraiment qu'on leur en parle, ça sert à rien de râler dans notre coin."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Ouais..."
+          },
+		  {
+           "Nom": "Mazaa",
+           "Text": "Bon je vous laisse, c'est l'heure de ma sieste."
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Mazaa",
+           "Text": "C'est l'heure de ma sieste."
+          } 
+		  ]
+        }
+      },
+	"4": {
+		"Navigatrice": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Jade",
+           "Text": "Bonjour !"
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Bonjour Jade. Comment tu vas ?"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Je commence à m'habituer à l'air marin. D'ailleurs je pensais à un truc, vous avez pas besoin d'un coup de main pour naviguer ?"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Ça doit être beaucoup de travail de faire bouger un bateau pareil."
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "Ah non t'inquiètes ! On est plus que nécessaire pour contrôler notre bateau, comme ça on peut chacun et chacune bosser à notre rythme, même si c'est lent, et se relayer, se remplacer quand ça va trop mal."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "On est pas super bien payé pour le nombre qu’on est mais on préfère ça plutôt que d'être moins nombreuxses et de devoir fonctionner à temps plein en permanence."
+		   },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Il faudrait que tout le monde soit en forme tout le temps. Ca serait ingérable."
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "On croise les doigts pour ne jamais être tous et toutes mal en même temps, pour l’instant c’est jamais arrivé ahah !"
+		   }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Eleanor",
+           "Text": "..."
+          }
+        ]
+      },
+	  
+		"Charpentiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Jade",
+           "Text": "Bonjour !"
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Bonjour Jade. Comment tu vas ?"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Je commence à m'habituer à l'air marin. D'ailleurs je pensais à un truc, vous avez pas besoin d'un coup de main pour naviguer ?"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Ça doit être beaucoup de travail de faire bouger un bateau pareil."
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "Ah non t'inquiètes ! On est plus que nécessaire pour contrôler notre bateau, comme ça on peut chacun et chacune bosser à notre rythme, même si c'est lent, et se relayer, se remplacer quand ça va trop mal."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "On est pas super bien payé pour le nombre qu’on est mais on préfère ça plutôt que d'être moins nombreuxses et de devoir fonctionner à temps plein en permanence."
+		   },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Il faudrait que tout le monde soit en forme tout le temps. Ca serait ingérable."
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "On croise les doigts pour ne jamais être tous et toutes mal en même temps, pour l’instant c’est jamais arrivé ahah !"
+		   }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "..."
+          }
+        ]
+      },
+	  	  
+		"Gabiere": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Ha ! Salut..."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "..."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Jade !!"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Ahah tu t'en souviens maintenant."
            }
           ],
       "Dialogue2": [
           {
-           "Nom": "Scylla",
-           "Text": "Voici du texte du capitaine 2"
+           "Nom": "Minh Tâm",
+           "Text": "Ahahah.."
+          }
+        ]
+      },
+
+		"Matelot": {
+      "ID": 0,
+      "Dialogue1": [
+          {
+           "Nom": "Nathan",
+           "Text": "Hey Jade, On charge certain jour on décharge d'autre. Une cargaison qui nous a accompagné longtemps celle-la."
           },
           {
-           "Nom": "Scylla",
-           "Text": "Voici du texte du capitaine 2 encore"
-          } ]
-        }
+           "Nom": "Nathan",
+           "Text": "Je crois qu'Ismael à quelque chose pour toi, n'hésite pas à aller le voir."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Nathan",
+           "Text": "..."
+          }
+        ]
       },
 	  
-   "1": {
+		"Vigie": {
+      "ID": 0,
+	  "AddGraine": 1,
+      "Dialogue1": [
+          {
+           "Nom": "Ismael",
+           "Text": "J'ai enfin reçu les graines que m'a envoyé Mael. Il est ravi, vraiment, que tu sois venue t'occuper du jardin. Et moi de même !"
+          },
+		  {
+           "Nom": "Ismael",
+           "Text": "Mael ne m'a pas informé des appelations de ces futures merveilles, mais je suis sur que tu découvriras rapidement leur aspect."
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Voilà pour toi. Si jamais j'en obtiens de nouvelles, je les déposerais auprès de tes affaires de jardinages."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Après ne te sens pas obligée de tout planter tout de suite, après tout, le jardinage est une affaire de patience."
+          }
+		  ]
+        }
+      },
+	"5": {
       "Navigatrice": {
       "ID": 0,
       "Dialogue1": [
@@ -387,7 +897,8 @@
           {
            "Nom": "Scylla",
            "Text": "Voici du texte du capitaine 2 encore"
-          } ]
+          } 
+		  ]
         }
       }
 }

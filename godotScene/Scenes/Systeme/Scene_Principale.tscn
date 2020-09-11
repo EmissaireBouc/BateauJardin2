@@ -66,6 +66,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=27]
 resource_local_to_scene = true
@@ -111,7 +112,13 @@ animations = [ {
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "fane",
+"speed": 5.0
 } ]
+
 
 [sub_resource type="ShaderMaterial" id=29]
 resource_local_to_scene = true
@@ -157,6 +164,11 @@ animations = [ {
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "fane",
+"speed": 5.0
 } ]
 
 [sub_resource type="Shader" id=31]
@@ -187,6 +199,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=32]
 resource_local_to_scene = true
@@ -231,6 +244,11 @@ animations = [ {
 "frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "fane",
 "speed": 5.0
 } ]
 
@@ -277,6 +295,11 @@ animations = [ {
 "frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "fane",
 "speed": 5.0
 } ]
 

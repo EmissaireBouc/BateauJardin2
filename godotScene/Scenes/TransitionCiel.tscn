@@ -1,0 +1,577 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Assets/Decors/Ciel.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Decors/nuit.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Menu/vague3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Menu/Bateau_Menu_02.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Menu/ciel01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Menu/vague1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Menu/vague2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Decors/soir.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Decors/aube-1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Decors/aube-2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Decors/lune.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Decors/soleil.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/transition ciel.gd" type="Script" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "aube"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("nuit:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 5.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("aube 1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 5.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("aube 1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.4, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("aube 2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("aube 2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.8, 5.6, 7.2, 9.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("jour:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 5.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("soleil:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4.7, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 182.5, 845.033 ), Vector2( 107, 826 ), Vector2( 828.974, 170 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("soir:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "aubeRateLeReveil"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("nuit:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 5.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("aube 1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 5.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("aube 1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.4, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("aube 2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("aube 2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.8, 5.6, 7.2, 9.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("jour:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 5.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("soleil:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4.7, 9.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 182.5, 845.033 ), Vector2( 107, 826 ), Vector2( 1150.46, -153 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("soir:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "nuitTombe"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("soir:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("jour:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("soir:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("nuit:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("nuit:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("lune:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1593.96, 767.121 ), Vector2( 1200, -80 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("aube 1:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("aube 2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("soleil:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 156.798, 838.554 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1.8025 ),
+"update": 0,
+"values": [ 0.0, 2.0, -2.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -105, 639.987 ), Vector2( -50, 639.987 ), Vector2( -150, 639.987 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1.8025 ),
+"update": 0,
+"values": [ 0.0, 2.0, -2.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -105, 639.987 ), Vector2( -50, 639.987 ), Vector2( -150, 639.987 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3.8 ),
+"transitions": PoolRealArray( 0.450625, 0.378929, 0.450625 ),
+"update": 0,
+"values": [ 0.0, -6.0, 4.36652 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -150, 700 ), Vector2( 631.51, 715 ), Vector2( 631.51, 685 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 0.999999 ),
+"update": 0,
+"values": [ 0.0, 0.7, -0.7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.1, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -105, 576 ), Vector2( -50, 576 ), Vector2( -150, 576 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -16.886
+margin_top = -17.0
+margin_right = 26.114
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ciel" type="Node2D" parent="."]
+script = ExtResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ciel"]
+anims/aube = SubResource( 1 )
+anims/aubeRateLeReveil = SubResource( 2 )
+anims/nuitTombe = SubResource( 3 )
+
+[node name="jour" type="Sprite" parent="ciel"]
+position = Vector2( 966.843, 376.063 )
+rotation = -3.14159
+scale = Vector2( 61.1196, 3.04847 )
+texture = ExtResource( 1 )
+
+[node name="soir" type="Sprite" parent="ciel"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 956.355, 379.059 )
+scale = Vector2( 64.959, 3.07188 )
+texture = ExtResource( 8 )
+
+[node name="nuit" type="Sprite" parent="ciel"]
+visible = false
+position = Vector2( 956.355, 397.039 )
+scale = Vector2( 64.959, 3.21234 )
+texture = ExtResource( 2 )
+
+[node name="aube 1" type="Sprite" parent="ciel"]
+visible = false
+modulate = Color( 1, 1, 1, 0.857143 )
+position = Vector2( 956.355, 371.568 )
+scale = Vector2( 64.959, 3.01335 )
+texture = ExtResource( 9 )
+
+[node name="aube 2" type="Sprite" parent="ciel"]
+visible = false
+modulate = Color( 1, 1, 1, 3.13709e-08 )
+position = Vector2( 956.355, 391.046 )
+scale = Vector2( 64.959, 3.16552 )
+texture = ExtResource( 10 )
+
+[node name="soleil" type="Sprite" parent="ciel"]
+position = Vector2( 182.5, 845.033 )
+texture = ExtResource( 12 )
+
+[node name="lune" type="Sprite" parent="ciel"]
+position = Vector2( 1200, -80 )
+texture = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="ciel"]
+one_shot = true
+
+[node name="Vague3" type="NinePatchRect" parent="."]
+margin_left = -116.698
+margin_top = 639.987
+margin_right = 2000.3
+margin_bottom = 1182.99
+rect_rotation = -0.837551
+texture = ExtResource( 3 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Vague3"]
+autoplay = "Boucle"
+anims/Boucle = SubResource( 4 )
+
+[node name="Vague2" type="NinePatchRect" parent="."]
+margin_left = -66.1382
+margin_top = 639.987
+margin_right = 2051.86
+margin_bottom = 1063.99
+rect_rotation = 1.41316
+texture = ExtResource( 7 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Vague2"]
+autoplay = "Boucle"
+anims/Boucle = SubResource( 5 )
+
+[node name="Bateau" type="Sprite" parent="."]
+position = Vector2( 950, 700 )
+rotation = 0.0456426
+scale = Vector2( 0.402136, 0.402137 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Bateau"]
+autoplay = "Boucle"
+anims/Boucle = SubResource( 6 )
+
+[node name="Vague1" type="NinePatchRect" parent="."]
+margin_left = -124.283
+margin_top = 576.0
+margin_right = 1992.18
+margin_bottom = 1119.0
+rect_rotation = -0.299956
+rect_pivot_offset = Vector2( 1050, 320 )
+texture = ExtResource( 6 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Vague1"]
+autoplay = "Boucle"
+anims/Boucle = SubResource( 7 )
