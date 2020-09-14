@@ -130,7 +130,7 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 		if PA.get_PA() > 0: 
 			match action:
 				DEFAULT:
-					
+					print("je suis passe par là")
 					change_action(PLANTER)
 					create_ui_destination(get_global_mouse_position(),"PLANTATION")
 

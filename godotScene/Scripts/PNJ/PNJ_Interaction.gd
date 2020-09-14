@@ -80,6 +80,7 @@ func fin_dialogue():
 func PNJ_Setup():
 	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
 	for i in range(nbPNJ.size()):
+		print(nbPNJ[i])
 		var nvPNJ = load ("res://Scenes/PNJ/%s" %"Navigatrice" + ".tscn").instance() #Remplacer "Navigatrice" par : nbPNJ[i] lorsque toutes les scènes seront créées
 		add_child(nvPNJ)
 		nvPNJ.position = PNJ_Position(i, nbPNJ.size())

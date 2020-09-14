@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/UI/Carnet/Font_Titre_Livre.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/UI/Carnet/Font_SousTitre1_Livre.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/UI/Carnet/Font_Entete_Livre.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Assets/UI/Carnet/Carnet_PageSommaire.gd" type="Script" id=8]
+[ext_resource path="res://Assets/UI/Carnet/script_carnet/Carnet_PageSommaire.gd" type="Script" id=8]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 anchor_left = 0.5

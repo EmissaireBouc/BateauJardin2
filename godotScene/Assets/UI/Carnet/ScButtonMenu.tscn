@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/UI/Carnet/Font_SousTitre2_Livre.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/UI/Carnet/ButtonGraineMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/Carnet/script_carnet/ButtonGraineMenu.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/Carnet/Theme_Livre.tres" type="Theme" id=3]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "apparition"
