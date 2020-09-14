@@ -1,6 +1,6 @@
 extends AnimatedSprite
 
-export var NomPersonnage = "Navigatrice"
+export var NomPersonnage = ""
 export var NumDial = 0
 signal character_input
 

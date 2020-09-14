@@ -29,6 +29,7 @@ func on_Character_input(n):
 	if !talking:
 		NomPersonnage = n
 		emit_signal("Engage_Conversation")
+		print("Engage_conversation")
 		talking = true
 
 
@@ -37,6 +38,7 @@ func on_Character_input(n):
 
 func lancer_dialogue():
 	BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage]
+	print(NomPersonnage)
 	get_node("%s" %NomPersonnage).play("TALK")
 	parle()
 
@@ -81,7 +83,7 @@ func PNJ_Setup():
 	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
 	for i in range(nbPNJ.size()):
 		print(nbPNJ[i])
-		var nvPNJ = load ("res://Scenes/PNJ/%s" %"Navigatrice" + ".tscn").instance() #Remplacer "Navigatrice" par : nbPNJ[i] lorsque toutes les scènes seront créées
+		var nvPNJ = load ("res://Scenes/PNJ/%s" %nbPNJ[i] + ".tscn").instance() #Remplacer "Navigatrice" par : nbPNJ[i] lorsque toutes les scènes seront créées
 		add_child(nvPNJ)
 		nvPNJ.position = PNJ_Position(i, nbPNJ.size())
 
