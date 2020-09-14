@@ -4,7 +4,7 @@ export (String) var Plante
 
 export (int) var pv
 export (int) var xp
-export (int) var lvl
+export (int) var lvl = 1
 var rng = RandomNumberGenerator.new()
 var shader_vent
 

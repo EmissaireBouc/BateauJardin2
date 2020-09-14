@@ -3,22 +3,26 @@ extends MarginContainer
 export (int) var page
 export (int) var nbElement
 var Equipage = []
-onready var membre : VBoxContainer = get_node("VBoxContainer")
+onready var membre : GridContainer = get_node("VBoxContainer/MarginContainer/Contenu")
 signal BackToMenu
 
-func _ready():
+func setup():
+
+	if page == 2:
+		$VBoxContainer/Titre.queue_free()
+
 	DictionaryToArray()
 	var key
-	for i in Equipage.size():
-		if membre.get_child_count() < nbElement :
-			key = Equipage[i+((nbElement-2)*page)]
+	for i in range(0,nbElement):
+		if i < Equipage.size() :
+			key = Equipage[i+(page*nbElement)]
 			var nvmembre = load ("res://Assets/UI/Carnet/ScMembreEquipage.tscn").instance()
 			membre.add_child(nvmembre)
 			nvmembre.setup(key, ImportData.equipage_data[key].Prenom,ImportData.equipage_data[key].Aka,ImportData.equipage_data[key].Genre,ImportData.equipage_data[key].Pronom,ImportData.equipage_data[key].Fonction,ImportData.equipage_data[key].Histoire)
 			
 		else:
 			break
-	membre.move_child(get_node("VBoxContainer/BasDePage"),nbElement)
+#	membre.move_child(get_node("VBoxContainer/BasDePage"),membre.get_child_count())
 
 func DictionaryToArray():
 	for key in ImportData.equipage_data:

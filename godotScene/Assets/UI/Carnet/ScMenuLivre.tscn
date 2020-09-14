@@ -1,13 +1,35 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/UI/Carnet/Carnet_Control.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/Carnet/fleche_droite.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/Carnet/fleche_gauche.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/Carnet/fleche_haut.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Carnet/croix_pressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Carnet/croix_normal.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Carnet/PageTourne.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/UI/Carnet/Ouverture carnet.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/UI/Carnet/Fermeture carnet.wav" type="AudioStream" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Disparition"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Control" type="Control"]
 margin_right = 1920.0
 margin_bottom = 1080.0
+rect_pivot_offset = Vector2( 960, 540 )
 size_flags_horizontal = 2
 size_flags_vertical = 2
 script = ExtResource( 1 )
@@ -18,8 +40,23 @@ __meta__ = {
 [node name="Container" type="Container" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Croix" type="TextureButton" parent="Container"]
+margin_left = 1784.0
+margin_top = 72.0
+margin_right = 1848.0
+margin_bottom = 136.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PagePrecedente" type="TextureButton" parent="Container"]
+visible = false
 show_behind_parent = true
 margin_left = 56.0
 margin_top = 960.0
@@ -46,4 +83,20 @@ texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="OuvertureCarnet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="FermetureCarnet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="PageTourne" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Disparition = SubResource( 1 )
+[connection signal="pressed" from="Container/Croix" to="." method="_on_Croix_pressed"]
+[connection signal="pressed" from="Container/PagePrecedente" to="." method="_on_PagePrecedente_pressed"]
+[connection signal="pressed" from="Container/PageSuivante" to="." method="_on_PageSuivante_pressed"]
 [connection signal="pressed" from="Container/RetourMenu" to="." method="_on_RetourMenu_pressed"]
+[connection signal="finished" from="FermetureCarnet" to="." method="_on_FermetureCarnet_finished"]

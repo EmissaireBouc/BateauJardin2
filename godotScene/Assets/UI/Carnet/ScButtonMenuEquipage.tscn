@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/UI/Carnet/Illustration/illu_Suzanne.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/Carnet/ButtonEquipageMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/Carnet/Font_SousTitre2_Livre.tres" type="DynamicFont" id=3]
+
+[node name="TextureButton" type="TextureButton"]
+margin_left = 32.0
+margin_top = 8.0
+margin_right = 128.0
+margin_bottom = 104.0
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -32.0
+margin_top = 104.0
+margin_right = 122.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 46, 0 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+text = "Nom Personnage"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

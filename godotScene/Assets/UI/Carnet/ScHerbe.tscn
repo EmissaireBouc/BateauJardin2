@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/UI/Carnet/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/Carnet/Carnet_Herbe.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/Carnet/Font_SousTitre2_Livre.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/UI/Carnet/Illustration/illu_Cosmos.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="Theme" id=2]
+PanelContainer/styles/panel = SubResource( 1 )
+
+[node name="Herbe" type="MarginContainer"]
+margin_top = 556.0
+margin_right = 914.0
+margin_bottom = 856.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_constants/margin_right = 50
+custom_constants/margin_top = 10
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 10
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 30.0
+margin_top = 10.0
+margin_right = 864.0
+margin_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_right = 834.0
+margin_bottom = 280.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_right = 834.0
+margin_bottom = 133.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 133.0
+texture = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_left = 68.0
+margin_right = 234.0
+margin_bottom = 133.0
+
+[node name="NomHerbe" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 166.0
+margin_bottom = 55.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/NomHerbe"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 156.0
+margin_bottom = 45.0
+grow_horizontal = 0
+
+[node name="Nom" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/NomHerbe/HBoxContainer"]
+margin_right = 146.0
+margin_bottom = 35.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+text = "Nom Herbe"
+valign = 1
+
+[node name="InformationHerbe" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 59.0
+margin_right = 166.0
+margin_bottom = 133.0
+grow_horizontal = 0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 156.0
+margin_bottom = 64.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 54.0
+custom_constants/separation = 10
+
+[node name="PV" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer/VBoxContainer"]
+margin_right = 24.0
+margin_bottom = 22.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+text = "PV"
+valign = 1
+
+[node name="XP" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer/VBoxContainer"]
+margin_top = 32.0
+margin_right = 25.0
+margin_bottom = 54.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+text = "XP"
+valign = 1
+
+[node name="DescriptionHerbe" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 143.0
+margin_right = 834.0
+margin_bottom = 280.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="PanelContainer/VBoxContainer/DescriptionHerbe"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 824.0
+margin_bottom = 127.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+autowrap = true

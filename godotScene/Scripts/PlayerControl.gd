@@ -8,6 +8,8 @@ var path : PoolVector2Array
 var destination = Vector2()
 var animManager = [0]
 
+signal Open_Carnet
+
 onready var nav2D : Navigation2D = get_parent().get_parent().get_parent().get_node("Bateau/WalkArea")
 
 enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT}
@@ -135,10 +137,10 @@ func son(anim_mode):
 			if !$Couper.is_playing():
 				$Couper.play()
 
-	if anim_mode == "OPEN_INV":
-		if frame == 1:
-			if !$OuvrirBoiteGraine.is_playing():
-				$OuvrirBoiteGraine.play()
+#	if anim_mode == "OPEN_INV":
+#		if frame == 1:
+#			if !$OuvrirBoiteGraine.is_playing():
+#				$OuvrirBoiteGraine.play()
 	
 	if anim_mode == "SPRAY":
 		if frame == 3:
@@ -160,3 +162,9 @@ func son(anim_mode):
 #	if area != null:
 #		area.get_parent().get_material().set_shader_param("detail",1)
 #
+
+
+func _on_Area2D_input_event(_viewport, event, _shape_idx):
+	if Input.is_action_pressed("ui_left_mouse"):
+		emit_signal("Open_Carnet")
+		

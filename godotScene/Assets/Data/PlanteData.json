@@ -2,8 +2,8 @@
   "Cosmos": {
     "Name": "Cosmos",
     "ID": 0,
-    "PV": 3,
-    "XP": 5,
+    "PV": 4,
+    "XP": 2,
     "LVL": 1,
     "Available": 1,
     "Description": "Des jolies fleurs de toutes les couleurs"
@@ -11,7 +11,7 @@
   "Myosotis": {
     "Name": "Myosotis",
     "ID": 1,
-    "PV": 2,
+    "PV": 5,
     "XP": 3,
     "LVL": 1,
     "Available": 1,
@@ -20,8 +20,8 @@
   "Cactus": {
     "Name": "Cactus",
     "ID": 2,
-    "PV": 4,
-    "XP": 2,
+    "PV": 10,
+    "XP": 5,
     "LVL": 1,
     "Available": 1,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
@@ -30,7 +30,7 @@
     "Name": "Pleureur",
     "ID": 3,
     "PV": 8,
-    "XP": 8,
+    "XP": 6,
     "LVL": 1,
     "Available": 1,
     "Description": "Un arbre larmoyant"
@@ -39,7 +39,7 @@
     "Name": "Arbuste",
     "ID": 4,
     "PV": 7,
-    "XP": 8,
+    "XP": 5,
     "LVL": 1,
     "Available": 1,
     "Description": "un arabesque"
@@ -47,8 +47,8 @@
   "HautArbuste": {
     "Name": "HautArbuste",
     "ID": 5,
-    "PV": 7,
-    "XP": 7,
+    "PV": 5,
+    "XP": 5,
     "LVL": 1,
     "Available": 1,
     "Description": "un haut arabesque"
@@ -56,8 +56,8 @@
   "BuissonBlanc": {
     "Name": "BuissonBlanc",
     "ID": 6,
-    "PV": 7,
-    "XP": 7,
+    "PV": 5,
+    "XP": 4,
     "LVL": 1,
     "Available": 1,
     "Description": "un buisson qui est plutôt blanc"
@@ -65,8 +65,8 @@
   "BuissonBlanc2": {
     "Name": "BuissonBlanc2",
     "ID": 7,
-    "PV": 7,
-    "XP": 7,
+    "PV": 5,
+    "XP": 4,
     "LVL": 1,
     "Available": 1,
     "Description": "un autre buisson également blanc"
@@ -74,8 +74,8 @@
   "BuissonBleu": {
     "Name": "BuissonBleu",
     "ID": 8,
-    "PV": 7,
-    "XP": 7,
+    "PV": 5,
+    "XP": 4,
     "LVL": 1,
     "Available": 1,
     "Description": "un buisson différent un peu bleu"
@@ -83,8 +83,8 @@
   "BuissonRose": {
     "Name": "BuissonRose",
     "ID": 9,
-    "PV": 7,
-    "XP": 7,
+    "PV": 5,
+    "XP": 4,
     "LVL": 1,
     "Available": 1,
     "Description": "un buisson pas comme les autres"
@@ -92,8 +92,8 @@
   "CactusOrange": {
     "Name": "CactusOrange",
     "ID": 10,
-    "PV": 7,
-    "XP": 7,
+    "PV": 10,
+    "XP": 5,
     "LVL": 1,
     "Available": 1,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
@@ -101,8 +101,8 @@
   "CactusRouge": {
     "Name": "CactusRouge",
     "ID": 11,
-    "PV": 7,
-    "XP": 7,
+    "PV": 10,
+    "XP": 5,
     "LVL": 1,
     "Available": 1,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
@@ -111,7 +111,7 @@
     "Name": "FeuillesVertRouge",
     "ID": 12,
     "PV": 7,
-    "XP": 7,
+    "XP": 3,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -119,8 +119,8 @@
   "Flocons": {
     "Name": "Flocons",
     "ID": 13,
-    "PV": 7,
-    "XP": 7,
+    "PV": 4,
+    "XP": 3,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -128,8 +128,8 @@
   "Glycines": {
     "Name": "Glycines",
     "ID": 14,
-    "PV": 7,
-    "XP": 7,
+    "PV": 6,
+    "XP": 5,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -137,8 +137,8 @@
   "JaunesHautes": {
     "Name": "JaunesHautes",
     "ID": 15,
-    "PV": 7,
-    "XP": 7,
+    "PV": 3,
+    "XP": 3,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -146,8 +146,8 @@
   "OrangeFines": {
     "Name": "OrangeFines",
     "ID": 16,
-    "PV": 7,
-    "XP": 7,
+    "PV": 3,
+    "XP": 3,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -155,8 +155,8 @@
   "OreillesDeLapin": {
     "Name": "OreillesDeLapin",
     "ID": 17,
-    "PV": 7,
-    "XP": 7,
+    "PV": 8,
+    "XP": 4,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -164,8 +164,8 @@
   "Pompom": {
     "Name": "Pompom",
     "ID": 18,
-    "PV": 7,
-    "XP": 7,
+    "PV": 4,
+    "XP": 4,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -173,8 +173,8 @@
   "RoseTremiere": {
     "Name": "RoseTremiere",
     "ID": 19,
-    "PV": 7,
-    "XP": 7,
+    "PV": 6,
+    "XP": 6,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -182,8 +182,8 @@
   "RosesPlates": {
     "Name": "RosesPlates",
     "ID": 20,
-    "PV": 7,
-    "XP": 7,
+    "PV": 4,
+    "XP": 5,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
@@ -191,17 +191,26 @@
   "Rouge": {
     "Name": "Rouge",
     "ID": 21,
-    "PV": 7,
-    "XP": 7,
+    "PV": 2,
+    "XP": 2,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"
   },
   "Fougere": {
     "Name": "Fougere",
-    "ID": 21,
+    "ID": 22,
     "PV": 7,
-    "XP": 7,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 1,
+    "Description": "etc"
+  },
+  "Bleuet": {
+    "Name": "Bleuet",
+    "ID": 23,
+    "PV": 3,
+    "XP": 2,
     "LVL": 1,
     "Available": 1,
     "Description": "etc"

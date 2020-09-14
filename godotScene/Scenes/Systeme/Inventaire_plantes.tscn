@@ -1,15 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/ItemList.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Inventaire_plantes.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Son/Preselection graine.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/UI/Font/Quicksand_Book.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/UI/Inv/boiteagrainetest1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Inv/Button_theme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/Inv/UI_theme.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/UI/Inv/boiteagraineV2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Son/OuvertureBoiteGraine.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apparition"
-length = 0.5
+length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationPlayer/TextureRect:rect_position")
 tracks/0/interp = 1
@@ -17,15 +19,27 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 0.517633, 0.34151 ),
 "update": 0,
-"values": [ Vector2( -900, -8 ), Vector2( -232, -8 ) ]
+"values": [ Vector2( -584, 86 ), Vector2( 60, 86 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/OuvreBoite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=2]
 resource_name = "Fermeture"
-length = 0.5
+length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationPlayer/TextureRect:rect_position")
 tracks/0/interp = 1
@@ -33,10 +47,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 2.46228, 1.86607 ),
 "update": 0,
-"values": [ Vector2( -232, -8 ), Vector2( -900, -8 ) ]
+"values": [ Vector2( 60, 86 ), Vector2( -584, 86 ) ]
 }
 
 [sub_resource type="StyleBoxEmpty" id=3]
@@ -46,6 +60,7 @@ size = 14
 font_data = ExtResource( 4 )
 
 [node name="Inventory" type="Control"]
+visible = false
 anchor_top = -0.007
 anchor_bottom = -0.007
 margin_left = -232.0
@@ -62,11 +77,11 @@ anims/Apparition = SubResource( 1 )
 anims/Fermeture = SubResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
-margin_left = -900.0
-margin_top = -8.0
-margin_right = -6.10352e-05
-margin_bottom = 976.0
-texture = ExtResource( 5 )
+margin_left = -584.0
+margin_top = 86.0
+margin_right = -4.0
+margin_bottom = 1070.0
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -76,10 +91,10 @@ anchor_left = -2.0
 anchor_top = -5.45
 anchor_right = -2.0
 anchor_bottom = -5.45
-margin_left = 2113.0
-margin_top = 5531.8
-margin_right = 2633.0
-margin_bottom = 6216.8
+margin_left = 1195.75
+margin_top = 5439.49
+margin_right = 1715.75
+margin_bottom = 6124.49
 theme = ExtResource( 6 )
 custom_styles/bg = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -95,21 +110,29 @@ __meta__ = {
 }
 
 [node name="B_Valider" type="Button" parent="AnimationPlayer/TextureRect"]
-margin_left = 708.0
-margin_top = 776.0
-margin_right = 792.0
-margin_bottom = 816.0
+margin_left = 441.229
+margin_top = 654.213
+margin_right = 545.229
+margin_bottom = 735.213
+theme = ExtResource( 5 )
 text = "Valider"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="B_Annuler" type="Button" parent="AnimationPlayer/TextureRect"]
-margin_left = 596.0
-margin_top = 776.0
-margin_right = 684.0
-margin_bottom = 816.0
+margin_left = 329.664
+margin_top = 657.777
+margin_right = 433.664
+margin_bottom = 738.777
+theme = ExtResource( 5 )
 text = "Annuler"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OuvreBoite" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource( 8 )
 
 [node name="ClicGraine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

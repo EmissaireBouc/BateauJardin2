@@ -1,7 +1,7 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://scripts/Control.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Decors/Bateau_Pont.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Decors/BateauArrierePlan.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/WalkingArea_Mask/Bateau_Pont.tres" type="NavigationPolygon" id=3]
 [ext_resource path="res://Scenes/Decors/Cabine.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Personnage.tscn" type="PackedScene" id=5]
@@ -27,13 +27,15 @@
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 3 s.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Plante/Image/fougere 2.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/Systeme/Dialogues.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Scenes/Systeme/PNJ_Interaction.gd" type="Script" id=28]
+[ext_resource path="res://Scripts/PNJ/PNJ_Interaction.gd" type="Script" id=28]
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 1.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Plante/Image/fougere 3.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Plante/Image/fougere 2 s.png" type="Texture" id=31]
 [ext_resource path="res://Assets/Plante/Image/fougere 1 s.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 3.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Plante/Scene/Fougere.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Assets/Decors/bordurebateauavant.png" type="Texture" id=35]
+[ext_resource path="res://Assets/UI/Carnet/Font_SousTitre1_Livre.tres" type="DynamicFont" id=36]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 102.45
@@ -82,14 +84,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl1",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -97,9 +94,9 @@ animations = [ {
 "name": "fanelvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ) ],
@@ -107,14 +104,14 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 31 ) ],
 "loop": true,
 "name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "fane",
 "speed": 5.0
 } ]
 
@@ -133,14 +130,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl1",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -148,9 +140,9 @@ animations = [ {
 "name": "fanelvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ) ],
@@ -158,14 +150,14 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 31 ) ],
 "loop": true,
 "name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "fane",
 "speed": 5.0
 } ]
 
@@ -213,14 +205,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=9]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "lvl1",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -228,9 +215,9 @@ animations = [ {
 "name": "fanelvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 21 ) ],
+"frames": [ ExtResource( 33 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -238,14 +225,14 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 19 ) ],
 "loop": true,
 "name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "fane",
 "speed": 5.0
 } ]
 
@@ -264,14 +251,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=11]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "lvl1",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -279,9 +261,9 @@ animations = [ {
 "name": "fanelvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 21 ) ],
+"frames": [ ExtResource( 33 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -289,44 +271,40 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 19 ) ],
 "loop": true,
 "name": "fanelvl2",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "fane",
-"speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=12]
-size = 26
-font_data = ExtResource( 13 )
-
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0, 0, 0, 0.262745 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=13]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.227451, 0.203922, 0.203922, 0.360784 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=15]
 size = 22
 outline_color = Color( 0, 1, 0.0862745, 1 )
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0, 0, 0, 0.231373 )
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=17]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=18]
 size = 40
 font_data = ExtResource( 8 )
 
@@ -346,26 +324,26 @@ __meta__ = {
 position = Vector2( 10.8679, 292 )
 scale = Vector2( 30, 0.682812 )
 
-[node name="Bateau" parent="." instance=ExtResource( 2 )]
+[node name="Bateau" type="Node2D" parent="."]
+
+[node name="BateauArrierePlan" parent="Bateau" instance=ExtResource( 2 )]
 
 [node name="WalkArea" type="Navigation2D" parent="Bateau"]
 script = ExtResource( 10 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Bateau/WalkArea"]
 modulate = Color( 0.113725, 0.443137, 0.517647, 1 )
-position = Vector2( 0, 8 )
 navpoly = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Area2D" type="Area2D" parent="Bateau/WalkArea"]
 
 [node name="Jardin" type="Area2D" parent="Bateau"]
+visible = false
+position = Vector2( 8.20215, 133.617 )
+scale = Vector2( 1, 0.887283 )
 collision_layer = 8
 collision_mask = 2
 __meta__ = {
@@ -373,10 +351,13 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bateau/Jardin"]
-position = Vector2( -928, -624 )
-polygon = PoolVector2Array( -608, 1392, 2528, 1392, 2528, -272, -672, -272 )
+position = Vector2( -928, -559.217 )
+polygon = PoolVector2Array( -1680, 1424.24, 1832, 1424.24, 2592, 285.235, 1792, -489.661, -1656, -498.997 )
 
 [node name="YSort" type="YSort" parent="Bateau"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="gMouseCollider" type="Area2D" parent="Bateau/YSort"]
 position = Vector2( -1741.41, -857.486 )
@@ -414,7 +395,7 @@ color = Color( 0.337255, 0.152941, 0.541176, 1 )
 polygon = PoolVector2Array( -264, 32, -264, -64, -184, -64, -184, 32 )
 
 [node name="Player" parent="Bateau/YSort" instance=ExtResource( 5 )]
-position = Vector2( -1225.2, 146.996 )
+position = Vector2( -1290.56, 140.451 )
 scale = Vector2( 1, 1 )
 animation = "CUT_W"
 
@@ -440,7 +421,6 @@ frames = SubResource( 4 )
 Plante = "Fougere"
 pv = 2
 xp = 1
-lvl = 1
 
 [node name="Fougere" parent="Bateau/YSort/Plante" instance=ExtResource( 34 )]
 material = SubResource( 5 )
@@ -465,10 +445,13 @@ position = Vector2( 1192, -132.162 )
 frames = SubResource( 11 )
 pv = 2
 xp = 3
-lvl = 1
 
 [node name="PNJ" type="YSort" parent="Bateau/YSort"]
 script = ExtResource( 28 )
+
+[node name="BateauPremierPlan" type="Sprite" parent="Bateau"]
+position = Vector2( 157.03, -138.492 )
+texture = ExtResource( 35 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -476,10 +459,10 @@ script = ExtResource( 28 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -48.0
-margin_top = 88.0
+margin_top = 87.0
 margin_right = 48.0
-margin_bottom = 128.0
-custom_fonts/font = SubResource( 12 )
+margin_bottom = 127.0
+custom_fonts/font = ExtResource( 36 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "PA : "
 script = ExtResource( 9 )
@@ -493,8 +476,8 @@ margin_top = 144.0
 margin_right = 1896.0
 margin_bottom = 240.0
 grow_horizontal = 0
-custom_styles/normal = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
 text = "Jardin :"
 __meta__ = {
@@ -506,8 +489,8 @@ margin_left = 1568.0
 margin_top = 24.0
 margin_right = 1896.0
 margin_bottom = 128.0
-custom_styles/normal = SubResource( 15 )
-custom_fonts/font = SubResource( 16 )
+custom_styles/normal = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.105882, 1, 0, 1 )
 text = "Zoom :"
 align = 2
@@ -520,8 +503,8 @@ margin_left = 1656.0
 margin_top = 792.0
 margin_right = 1904.0
 margin_bottom = 1064.0
-custom_styles/normal = SubResource( 17 )
-custom_fonts/font = SubResource( 18 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 1, 0.156863, 1 )
 text = "Plante Description"
 script = ExtResource( 16 )
@@ -565,13 +548,12 @@ margin_left = 168.0
 margin_right = 232.0
 
 [node name="Inventory" parent="CanvasLayer/Control" instance=ExtResource( 12 )]
-visible = false
 anchor_top = 0.0
 anchor_bottom = 0.0
-margin_left = 696.0
-margin_top = 420.0
-margin_right = 696.0
-margin_bottom = 420.0
+margin_left = -9.39795
+margin_top = 70.9609
+margin_right = -9.39795
+margin_bottom = 70.9609
 
 [node name="Transition" parent="CanvasLayer" instance=ExtResource( 7 )]
 visible = false
@@ -586,7 +568,7 @@ margin_left = -960.0
 margin_top = -45.5
 margin_right = 960.0
 margin_bottom = 45.5
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Jour"
 align = 1

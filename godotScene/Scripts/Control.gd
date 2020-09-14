@@ -45,10 +45,11 @@ func _ready():
 	$Musique.play()
 	
 	PNJsort.connect("Engage_Conversation",self,"Engage_Conversation")
+	Player.connect("Open_Carnet",self,"Open_Carnet")
 
 func _process(_delta):
-	debug()
-
+#	debug()
+	pass
 
 	
 """
@@ -57,6 +58,11 @@ Gestion du clic gauche :
 	(distingue des inputs qui ont lieu dans le HUD)
 	Gère le Clic gauche (par défaut : Marcher)
 """
+
+func Open_Carnet():
+	var Carnet = load("res://Assets/UI/Carnet/ScMenuLivre.tscn").instance()
+	$CanvasLayer.add_child(Carnet)
+	Carnet.set_scale(Vector2(0.9,0.9))
 
 func Engage_Conversation():
 	change_action(PARLER)
@@ -107,10 +113,6 @@ func _input(_event):
 					posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
 					menuEntretenir.open()
 
-	#Debug fonction
-	if Input.is_action_pressed("ui_select"):
-		get_node("CanvasLayer/Control/Inventory/ItemList").add_graine("Cactus")
-		#get_tree().call_group("Plantes", "fane")
 
 func cursor_mode(newMode):
 	#Inutilisé pour le moment
@@ -128,6 +130,7 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 		if PA.get_PA() > 0: 
 			match action:
 				DEFAULT:
+					
 					change_action(PLANTER)
 					create_ui_destination(get_global_mouse_position(),"PLANTATION")
 
@@ -184,7 +187,6 @@ func _on_Player_anim_over(state):
 				PLANT:
 					PA.PA_down(1)
 					var planteName = menuInventaire.get_selected_item()
-					print(planteName)
 					var plante = load ("res://Assets/Plante/Scene/%s" %planteName + ".tscn").instance()
 					$Bateau/YSort/Plante.add_child(plante)
 					plante.setup(planteName)

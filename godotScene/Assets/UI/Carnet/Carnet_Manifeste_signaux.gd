@@ -1,8 +1,8 @@
 extends HBoxContainer
 
-signal BackToMenu
+func setup_pages(page1, page2):
 
-
-func _on_RetourAuMenu_pressed():
-	emit_signal("BackToMenu")
-	queue_free()
+	$PageGauche.page = page1
+	$PageGauche.setup()
+	$PageDroite.page = page2
+	$PageDroite.setup()

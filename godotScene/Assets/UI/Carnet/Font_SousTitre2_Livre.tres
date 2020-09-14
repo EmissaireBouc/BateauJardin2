@@ -1,8 +1,10 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://Assets/UI/Font/Quicksand_Book.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/UI/Font/Gravity-Regular.otf" type="DynamicFontData" id=1]
 
 [resource]
-size = 20
+size = 18
+use_mipmaps = true
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 1 )
