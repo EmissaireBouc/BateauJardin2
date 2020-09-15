@@ -18,6 +18,7 @@ func _process(delta):
 
 
 func start(day):
+	$soleil.position = Vector2(156,838)
 	get_node("../").visible = true
 	jour = day
 	$Timer.start()

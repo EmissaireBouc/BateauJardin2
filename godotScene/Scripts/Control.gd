@@ -331,8 +331,8 @@ func a_day_pass():
 	ImportData.jour += 1
 	PNJsort.new_day()
 	PA.set_PA(5)
-	$CanvasLayer/Transition/Jour.text = "Jour "+str(day)
-	$CanvasLayer/Transition/Jour.visible = true
+	#$CanvasLayer/Transition/Jour.text = "Jour "+str(day)
+	#$CanvasLayer/Transition/Jour.visible = true
 	$CanvasLayer/Transition.waitForClick = true
 	plante_XP_up()
 	plante_PV_down()
@@ -359,7 +359,7 @@ Gestion de la fonction Fondu
 		transition_in (fondu au noir)
 		transition_out (ouverture).
 	Lorsque le fondu est terminée, elle émet le signal 'on_Transition_transition_over' avec en paramètre 
-	le nom de l'animation terminée
+	le nom de l'animation terminée + si c'est le fondu de début de transition de jour ou de fin
 """
 
 
@@ -379,7 +379,8 @@ func _on_Transition_transition_over(t):
 		fondu("transition_out")
 		
 	if t == "transition_out":
-		$CanvasLayer/Transition/Jour.visible = false
+		pass
+		#$CanvasLayer/Transition/Jour.visible = false
 		
 	if t == "transition_out_fin":
 		$CanvasLayer/Transition.transitionCiel = false
