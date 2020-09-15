@@ -16,7 +16,7 @@ func setup():
 	for i in range(0,nbElement):
 		if i < Equipage.size() :
 			key = Equipage[i+(page*nbElement)]
-			var nvmembre = load ("res://Assets/UI/Carnet/ScMembreEquipage.tscn").instance()
+			var nvmembre = load ("res://Assets/UI/Carnet/Scene_Carnet/ScMembreEquipage.tscn").instance()
 			membre.add_child(nvmembre)
 			nvmembre.setup(key, ImportData.equipage_data[key].Prenom,ImportData.equipage_data[key].Aka,ImportData.equipage_data[key].Genre,ImportData.equipage_data[key].Pronom,ImportData.equipage_data[key].Fonction,ImportData.equipage_data[key].Histoire)
 			

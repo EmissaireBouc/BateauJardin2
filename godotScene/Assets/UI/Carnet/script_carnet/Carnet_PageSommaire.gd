@@ -26,14 +26,14 @@ func make_graine_menu():
 			graine.add_child(setup_button_herbe(key, 2+ceil(i/6)))
 
 func setup_button_herbe(m, p):
-	var button = load ("res://Assets/UI/Carnet/ScButtonMenu.tscn").instance()
+	var button = load ("res://Assets/UI/Carnet/Scene_Carnet/ScButtonMenu.tscn").instance()
 	button.text = m
 	button.PageToLoad = p
 	button.connect("pressed", self, "_on_button_pressed", [button.text, button.PageToLoad])
 	return button
 	
 func setup_button_equipage(m, p):
-	var button = load ("res://Assets/UI/Carnet/ScButtonMenuEquipage.tscn").instance()
+	var button = load ("res://Assets/UI/Carnet/Scene_Carnet/ScButtonMenuEquipage.tscn").instance()
 	button.nomPersonnage = m
 	button.PageToLoad = p
 	button.connect("pressed", self, "_on_button_pressed", [button.nomPersonnage, button.PageToLoad])

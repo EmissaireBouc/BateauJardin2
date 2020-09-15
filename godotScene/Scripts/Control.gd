@@ -2,6 +2,9 @@ extends Node2D
 
 var default = load("res://Assets/UI/Curseur/curseur_normal.png")
 var planter = load("res://Assets/UI/Curseur/curseur_normal.png")
+var lire = load("res://Assets/UI/Curseur/curseur_livre.png")
+var parler = load("res://Assets/UI/Curseur/Curs__6.png") 
+
 var cursor = "default"
 var posCursor
 signal anim_over
@@ -34,38 +37,50 @@ func _ready():
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")
+	setup_nav2D()
 	PA.set_PA(5)
 	
 	$CanvasLayer/Transition.visible = true
 	
-	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
-		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
-		$Bateau/WalkArea.update_navigation_polygon(aGarden[0].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[0].get_node("Area2D/CollisionPolygon2D").get_polygon())
 	print_garden()
 	$Musique.play()
 	
 	PNJsort.connect("Engage_Conversation",self,"Engage_Conversation")
 	Player.connect("Open_Carnet",self,"Open_Carnet")
+	Player.connect("Change_Cursor", self, "cursor_mode")
+	PNJsort.connect("Change_Cursor", self, "cursor_mode")
 
 func _process(_delta):
 #	debug()
 	pass
 
-	
+
+func setup_nav2D():
+	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
+		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
+		$Bateau/WalkArea.update_navigation_polygon(aGarden[0].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[0].get_node("Area2D/CollisionPolygon2D").get_polygon())
+		
+func setup_nav2D_PNJ(t,p):
+	$Bateau/WalkArea.update_navigation_polygon(t,p)
+
+
+
+func Open_Carnet():
+	var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
+	$CanvasLayer.add_child(Carnet)
+	Carnet.set_scale(Vector2(0.9,0.9))
+
+
+func Engage_Conversation():
+	change_action(PARLER)
+
+
 """
 Gestion du clic gauche :
 	_unhandled_input(event) récupère l'input souris DANS la scène active 
 	(distingue des inputs qui ont lieu dans le HUD)
 	Gère le Clic gauche (par défaut : Marcher)
 """
-
-func Open_Carnet():
-	var Carnet = load("res://Assets/UI/Carnet/ScMenuLivre.tscn").instance()
-	$CanvasLayer.add_child(Carnet)
-	Carnet.set_scale(Vector2(0.9,0.9))
-
-func Engage_Conversation():
-	change_action(PARLER)
 
 func _unhandled_input(_event):
 	if !Input.is_action_pressed("ui_left_mouse"):
@@ -83,8 +98,6 @@ func _unhandled_input(_event):
 					destroy_ui_destination()
 			PARLER :
 				return
-
-
 
 """
 Gestion du clic droit :
@@ -123,7 +136,13 @@ func cursor_mode(newMode):
 
 	if (newMode == "planter"):
 		Input.set_custom_mouse_cursor(planter)
-		MouseA.initiate()
+
+	if (newMode == "lire"):
+		Input.set_custom_mouse_cursor(lire)
+	
+	if (newMode == "parler"):
+		Input.set_custom_mouse_cursor(parler)
+
 
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && !MouseA.overlapPlant):
@@ -307,6 +326,8 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 
 func a_day_pass():
 	day += 1
+	ImportData.jour += 1
+	PNJsort.new_day()
 	PA.set_PA(5)
 	$CanvasLayer/Transition/Jour.text = "Jour "+str(day)
 	$CanvasLayer/Transition/Jour.visible = true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TournerPlrsPage01.ogg-b0ea88fd8cc37c74ab206389a4d22f38.oggstr"
+
+[deps]
+
+source_file="res://Assets/UI/Carnet/Sons/TournerPlrsPage01.ogg"
+dest_files=[ "res://.import/TournerPlrsPage01.ogg-b0ea88fd8cc37c74ab206389a4d22f38.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

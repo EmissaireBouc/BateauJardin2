@@ -8,7 +8,9 @@ var path : PoolVector2Array
 var destination = Vector2()
 var animManager = [0]
 
+
 signal Open_Carnet
+signal Change_Cursor
 
 onready var nav2D : Navigation2D = get_parent().get_parent().get_parent().get_node("Bateau/WalkArea")
 
@@ -168,3 +170,11 @@ func _on_Area2D_input_event(_viewport, event, _shape_idx):
 	if Input.is_action_pressed("ui_left_mouse"):
 		emit_signal("Open_Carnet")
 		
+
+
+func _on_Area2D_mouse_entered():
+	emit_signal("Change_Cursor", "lire")
+
+
+func _on_Area2D_mouse_exited():
+	emit_signal("Change_Cursor", "default")

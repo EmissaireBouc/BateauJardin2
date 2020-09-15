@@ -1,107 +1,132 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://Scripts/PNJ/Eleanor.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Personnage/PNJ/mécano/idle mécano.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Personnage/PNJ/mécano/dialogue mécano.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Personnage/PNJ/soudeuse/idle soudeuse.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Personnage/PNJ/soudeuse/dialogue soudeuse.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 425, 650 )
+region = Rect2( 0, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 425, 0, 425, 650 )
+region = Rect2( 425, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 850, 0, 425, 650 )
+region = Rect2( 850, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 1275, 0, 425, 650 )
+region = Rect2( 1275, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 1700, 0, 425, 650 )
+region = Rect2( 1700, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 2125, 0, 425, 650 )
+region = Rect2( 2125, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 2550, 0, 425, 650 )
+region = Rect2( 2550, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 2975, 0, 425, 650 )
+region = Rect2( 2975, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 3400, 0, 425, 650 )
+region = Rect2( 3400, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 3825, 0, 425, 650 )
+region = Rect2( 3825, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 4250, 0, 425, 650 )
+region = Rect2( 4250, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 4675, 0, 425, 650 )
+region = Rect2( 4675, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 5100, 0, 425, 750 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 5525, 0, 425, 750 )
+
+[sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 425, 650 )
+region = Rect2( 0, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=35]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 425, 0, 425, 650 )
+region = Rect2( 425, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=36]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 850, 0, 425, 650 )
+region = Rect2( 850, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=37]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 1275, 0, 425, 650 )
+region = Rect2( 1275, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=38]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 1700, 0, 425, 650 )
+region = Rect2( 1700, 0, 425, 750 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=39]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 2125, 0, 425, 650 )
+region = Rect2( 2125, 0, 425, 750 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2550, 0, 425, 750 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2975, 0, 425, 750 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 3400, 0, 425, 750 )
 
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
 "loop": true,
 "name": "TALK",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
 "loop": true,
 "name": "IDLE",
 "speed": 5.0
@@ -110,7 +135,7 @@ animations = [ {
 [node name="Charpentiere" type="AnimatedSprite"]
 frames = SubResource( 19 )
 animation = "IDLE"
-frame = 5
+frame = 1
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -124,4 +149,11 @@ collision_mask = 8
 position = Vector2( 20.3373, -19.691 )
 scale = Vector2( 0.281833, 0.141111 )
 polygon = PoolVector2Array( -384.336, -3127.69, 292.307, -3243.94, 285.031, 170.937, -478.92, 156.406 )
+
+[node name="Nav2DCol" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 38.7921, 31.5724 )
+scale = Vector2( 0.281833, 0.141111 )
+polygon = PoolVector2Array( -515.106, -325.626, -740.653, 342.818, 518.046, 328.286, 307.05, -412.814 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

@@ -19,7 +19,7 @@ func setup():
 
 		if i+(page*nbElement) < Herbes.size() :
 			key = Herbes[i+(page*nbElement)]
-			var nvHerbe = load ("res://Assets/UI/Carnet/ScHerbe.tscn").instance()
+			var nvHerbe = load ("res://Assets/UI/Carnet/Scene_Carnet/ScHerbe.tscn").instance()
 			$VBoxContainer/MarginContainer/Contenu.add_child(nvHerbe)
 			nvHerbe.setup(ImportData.plant_data[key].Name,ImportData.plant_data[key].PV,ImportData.plant_data[key].XP,ImportData.plant_data[key].Description)
 		else:

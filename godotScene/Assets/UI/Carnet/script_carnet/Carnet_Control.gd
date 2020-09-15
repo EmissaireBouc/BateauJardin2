@@ -68,19 +68,19 @@ func load_page():
 
 
 func setup_herbier(p1,p2):
-	page = load ("res://Assets/UI/Carnet/ScPageEquipage2.tscn").instance()
+	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageEquipage2.tscn").instance()
 	page.setup_pages(p1,p2)
 	add_child(page)
 	$Container.raise()
 
 func setup_manifeste(p1,p2):
-	page = load ("res://Assets/UI/Carnet/ScPageEquipage.tscn").instance()
+	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageEquipage.tscn").instance()
 	add_child(page)
 	page.setup_pages(p1,p2)
 	$Container.raise()
 
 func setup_sommaire():
-	page = load ("res://Assets/UI/Carnet/ScPageSommaire.tscn").instance()
+	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageSommaire.tscn").instance()
 	add_child(page)
 	page.connect("button_pressed", self, "_on_button_pressed")
 	$Container.raise()

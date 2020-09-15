@@ -35,7 +35,7 @@
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 3.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Plante/Scene/Fougere.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Assets/Decors/bordurebateauavant.png" type="Texture" id=35]
-[ext_resource path="res://Assets/UI/Carnet/Font_SousTitre1_Livre.tres" type="DynamicFont" id=36]
+[ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=36]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 102.45
@@ -84,6 +84,26 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
 "name": "fanelvl3",
@@ -92,26 +112,6 @@ animations = [ {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -130,6 +130,26 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
 "name": "fanelvl3",
@@ -138,26 +158,6 @@ animations = [ {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -205,6 +205,26 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=9]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "fanelvl3",
@@ -213,26 +233,6 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 33 ) ],
-"loop": true,
-"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -251,6 +251,26 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=11]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "fanelvl3",
@@ -259,26 +279,6 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 33 ) ],
-"loop": true,
-"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -312,17 +312,14 @@ font_data = ExtResource( 8 )
 script = ExtResource( 1 )
 
 [node name="Ciel" type="Sprite" parent="."]
-position = Vector2( 15, -1684.18 )
+position = Vector2( 67.9277, -2033.5 )
 rotation = 3.14159
-scale = Vector2( 240.5, 4.78125 )
+scale = Vector2( 425.085, 7.67572 )
 texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="WaterTextureOffset" parent="." instance=ExtResource( 17 )]
-position = Vector2( 10.8679, 292 )
-scale = Vector2( 30, 0.682812 )
+position = Vector2( 53.2106, -163.176 )
+scale = Vector2( 53.2385, 0.860615 )
 
 [node name="Bateau" type="Node2D" parent="."]
 
@@ -470,6 +467,7 @@ __meta__ = {
 }
 
 [node name="DebugLabel" type="Label" parent="CanvasLayer"]
+visible = false
 margin_left = 1568.0
 margin_top = 144.0
 margin_right = 1896.0
@@ -484,6 +482,7 @@ __meta__ = {
 }
 
 [node name="DebugLabel2" type="Label" parent="CanvasLayer"]
+visible = false
 margin_left = 1568.0
 margin_top = 24.0
 margin_right = 1896.0
@@ -498,6 +497,7 @@ __meta__ = {
 }
 
 [node name="DebugLabel3" type="Label" parent="CanvasLayer"]
+visible = false
 margin_left = 1656.0
 margin_top = 792.0
 margin_right = 1904.0
@@ -578,6 +578,7 @@ __meta__ = {
 }
 
 [node name="Musique" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource( 15 )
 [connection signal="anim_over" from="." to="Bateau/YSort/Player" method="_on_ScenePrincipale_anim_over"]
 [connection signal="mouse_entered" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_entered"]

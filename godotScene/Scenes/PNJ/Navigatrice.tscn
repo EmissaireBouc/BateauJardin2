@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scripts/PNJ/Eleanor.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/capitaineidle.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Personnage/PNJ/capitainedialogue.png" type="Texture" id=3]
 
@@ -89,4 +89,11 @@ collision_mask = 8
 position = Vector2( 19.0752, -7.58517 )
 scale = Vector2( 0.279933, 0.115468 )
 polygon = PoolVector2Array( -651.67, -5308.26, 650.223, -5285.88, 557.89, 377.42, -633.203, 287.881 )
+
+[node name="Nav2DCol" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 19.0752, -7.58517 )
+scale = Vector2( 0.279933, 0.115468 )
+polygon = PoolVector2Array( -607.699, -615.016, -760.735, 154.491, 633.598, 291.903, 435.218, -628.757 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

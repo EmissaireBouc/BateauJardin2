@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ouverture carnet.wav-431c585097e77cd78b907f219be0464d.sample"
+
+[deps]
+
+source_file="res://Assets/UI/Carnet/Sons/Ouverture carnet.wav"
+dest_files=[ "res://.import/Ouverture carnet.wav-431c585097e77cd78b907f219be0464d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

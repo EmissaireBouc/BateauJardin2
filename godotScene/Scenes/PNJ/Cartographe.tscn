@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Scripts/PNJ/Eleanor.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/cartographe/idle carto.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Personnage/PNJ/cartographe/dialogue carto.png" type="Texture" id=3]
 
@@ -95,7 +95,7 @@ animations = [ {
 [node name="Cartographe" type="AnimatedSprite"]
 frames = SubResource( 16 )
 animation = "IDLE"
-frame = 1
+frame = 4
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -109,4 +109,11 @@ collision_mask = 8
 position = Vector2( 59.3524, -22.445 )
 scale = Vector2( 1, 0.149488 )
 polygon = PoolVector2Array( -232.706, -3318.41, 70.3475, -3456.39, 146.508, 555.704, -186.219, 482.834 )
+
+[node name="Nav2DCol" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 51.5526, -22.445 )
+scale = Vector2( 0.898649, 0.149488 )
+polygon = PoolVector2Array( -225.069, -130.255, -243.575, 563.006, 235.734, 649.664, 165.41, -155.014 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

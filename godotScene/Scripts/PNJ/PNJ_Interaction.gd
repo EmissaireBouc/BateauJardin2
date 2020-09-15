@@ -12,11 +12,21 @@ onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("Can
 onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
 
 signal Engage_Conversation
+signal Change_Cursor
 
 
 
 func _ready():
 	Save_Spot_PNJ = Spot_PNJ.duplicate(true)
+	
+	initiate()
+
+func new_day():
+	for i in range(get_child_count()):
+		get_child(i).queue_free()
+	initiate()
+
+func initiate():
 	PNJ_Setup()
 	connect_child_node()
 	BoiteDialogue.connect("TexteSuivant", self, "AfficherNouvelleLigne")
@@ -24,22 +34,20 @@ func _ready():
 func connect_child_node():
 	for i in range (get_child_count()):
 		get_child(i).connect("character_input", self, "on_Character_input")
+		get_child(i).connect("Change_Cursor", self, "Change_Cursor")
 
 func on_Character_input(n):
 	if !talking:
 		NomPersonnage = n
 		emit_signal("Engage_Conversation")
-		print("Engage_conversation")
 		talking = true
 
-
-
-
+func Change_Cursor(newCursor):
+	emit_signal("Change_Cursor",newCursor)
 
 func lancer_dialogue():
 	BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage]
-	print(NomPersonnage)
-	get_node("%s" %NomPersonnage).play("TALK")
+	get_node_character(NomPersonnage).play("TALK")
 	parle()
 
 func parle():
@@ -65,33 +73,40 @@ func parle():
 	else: # Ferme la scène Dialogue, réinitialise l'index, incrémente NumDial
 		fin_dialogue()
 
+func get_node_character(n):
+	for i in range(get_child_count()):
+		if get_child(i).NomPersonnage == NomPersonnage :
+			return(get_child(i))
+
 func AfficherNouvelleLigne():
 	parle()
 
+
 func fin_dialogue():
-	get_node("%s" %NomPersonnage).play("IDLE")
+	get_node_character(NomPersonnage).play("IDLE")
 	talking = false
 	Dialogues.visible = false
 	index_dialogueArray = 0
 
 	if NumDial == 0:
-		NumDial += 1
-
+		NumDial == 1
 
 
 func PNJ_Setup():
 	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
 	for i in range(nbPNJ.size()):
-		print(nbPNJ[i])
 		var nvPNJ = load ("res://Scenes/PNJ/%s" %nbPNJ[i] + ".tscn").instance() #Remplacer "Navigatrice" par : nbPNJ[i] lorsque toutes les scènes seront créées
 		add_child(nvPNJ)
 		nvPNJ.position = PNJ_Position(i, nbPNJ.size())
+		
+		get_parent().get_parent().get_parent().setup_nav2D_PNJ(nvPNJ.get_node("Area2D/Nav2DCol").get_global_transform(), nvPNJ.get_node("Area2D/Nav2DCol").get_polygon())
 
 
 """
 PNJ_Position définit une position aléatoire parmi 8 définie dans Spot_PNJ
 Elle ne permet pour le moment pas de définir des regroupements de personnage
 """
+
 
 func PNJ_Position(n, nb):
 	var rng = RandomNumberGenerator.new()
