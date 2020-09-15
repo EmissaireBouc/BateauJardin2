@@ -28,6 +28,7 @@ onready var menuEntretenir : MarginContainer = get_node("CanvasLayer/Control/Men
 onready var Cam : Camera2D = get_node("Bateau/YSort/Player/Camera2D")
 onready var PA : Label = get_node("CanvasLayer/PA")
 onready var PNJsort : YSort = get_node("Bateau/YSort/PNJ")
+onready var transitionJours = get_node("CanvasLayer/ciel transition/ciel")
 
 
 func _ready():
@@ -304,6 +305,7 @@ Gestion de l'action Dormir :
 func _on_Porte_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
 		change_action(DORMIR)
+		
 
 func a_day_pass():
 	day += 1
@@ -344,10 +346,23 @@ func fondu(animName):
 	$CanvasLayer/Transition/AnimationPlayer.play(animName)
 
 func _on_Transition_transition_over(t):
-	if t == "transition_in":
+	if t == "transition_in_debut":
 		a_day_pass()
+		transitionJours.start(day)
+		$CanvasLayer/Transition.transitionCiel = true
+		fondu("transition_out")
+		
+	if t == "transition_in_fin":
+		transitionJours.stop()
+		$CanvasLayer/Transition.transitionCiel = false
+		fondu("transition_out")
+		
 	if t == "transition_out":
 		$CanvasLayer/Transition/Jour.visible = false
+		
+	if t == "transition_out_fin":
+		$CanvasLayer/Transition.transitionCiel = false
+		fondu("transition_in")
 
 
 func create_ui_destination(pos, anim):
