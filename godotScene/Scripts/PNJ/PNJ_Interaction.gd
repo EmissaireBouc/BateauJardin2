@@ -89,8 +89,7 @@ func fin_dialogue():
 	index_dialogueArray = 0
 
 	if NumDial == 0:
-		NumDial == 1
-
+		NumDial += 1
 
 func PNJ_Setup():
 	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()

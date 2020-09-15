@@ -110,7 +110,7 @@ animations = [ {
 [node name="Mecano" type="AnimatedSprite"]
 frames = SubResource( 19 )
 animation = "IDLE"
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )

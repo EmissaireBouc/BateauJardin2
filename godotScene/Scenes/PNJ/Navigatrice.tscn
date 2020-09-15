@@ -75,11 +75,9 @@ animations = [ {
 [node name="Navigatrice" type="AnimatedSprite"]
 frames = SubResource( 12 )
 animation = "IDLE"
-frame = 2
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
-NomPersonnage = "Navigatrice"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
