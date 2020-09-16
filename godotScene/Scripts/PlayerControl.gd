@@ -79,7 +79,7 @@ func move_along_path(distance):
 # Déplacement PJ sur le chemin tracé grâce à Navigation 2D
 	var starting_point : = position
 
-	for i in range(path.size()):
+	for _i in range(path.size()):
 		var distance_to_next : = starting_point.distance_to(path[0])
 		move_direction = rad2deg(path[0].angle_to_point(position))
 
@@ -166,7 +166,7 @@ func son(anim_mode):
 #
 
 
-func _on_Area2D_input_event(_viewport, event, _shape_idx):
+func _on_Area2D_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_pressed("ui_left_mouse"):
 		emit_signal("Open_Carnet")
 		

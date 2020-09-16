@@ -7,7 +7,6 @@ var parler = load("res://Assets/UI/Curseur/Curs__6.png")
 
 var cursor = "default"
 var posCursor
-signal anim_over
 var action
 
 #Tableau des plantes
@@ -38,30 +37,39 @@ func _ready():
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")
-	setup_nav2D()
+	
 	PA.set_PA(5)
 	
 	$CanvasLayer/Transition.visible = true
 	
-	print_garden()
+	print_garden() #Debug 
 	$Musique.play()
 	
+	connectique()
+	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
+		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
+	
+	setup_nav2D_plant()
+	
+
+func connectique():
 	PNJsort.connect("Engage_Conversation",self,"Engage_Conversation")
 	Player.connect("Open_Carnet",self,"Open_Carnet")
 	Player.connect("Change_Cursor", self, "cursor_mode")
 	PNJsort.connect("Change_Cursor", self, "cursor_mode")
+	PNJsort.connect("Nav2D_Update", self, "Nav_2D_Update")
 
 func _process(_delta):
-#	debug()
+	debug()
 	pass
 
 
-func setup_nav2D():
-	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
-		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
-		$Bateau/WalkArea.update_navigation_polygon(aGarden[0].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[0].get_node("Area2D/CollisionPolygon2D").get_polygon())
-		
-func setup_nav2D_PNJ(t,p):
+func setup_nav2D_plant():
+#	for i in range (aGarden.size()) :
+#		Nav_2D_Update(aGarden[i].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[i].get_node("Area2D/CollisionPolygon2D").get_polygon())
+	pass
+
+func Nav_2D_Update(t,p):
 	$Bateau/WalkArea.update_navigation_polygon(t,p)
 
 
@@ -91,8 +99,9 @@ func _unhandled_input(_event):
 		match action :
 			DEFAULT :
 				if !menuEntretenir.is_open():
-					Player.change_state(MOVE)
-					create_ui_destination(get_global_mouse_position(),"DESTINATION")
+					if get_cursor_mode() == "default":
+						Player.change_state(MOVE)
+						create_ui_destination(get_global_mouse_position(),"DESTINATION")
 				else:
 					menuEntretenir.close()
 					MouseA.clear_aCollisionNode()
@@ -128,8 +137,24 @@ func _input(_event):
 					menuEntretenir.open()
 
 
+func _on_Jardin_input_event(_viewport, event, _shape_idx):
+	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && !MouseA.overlapPlant):
+		if PA.get_PA() > 0: 
+			match action:
+				DEFAULT:
+					change_action(PLANTER)
+					create_ui_destination(get_global_mouse_position(),"PLANTATION")
+
+"""
+Gestion du curseur :
+	Fonctionne avec les signaux des areas2D. 
+	Lorsque la souris sort ou entre de l'aire du PJ ou d'un PNJ, envoie un signal vers cursor_mode()
+	avec en argument le nouveau curseur à afficher
+	
+	!! les signaux sont paramétrés depuis la fonction connectique()
+"""
+
 func cursor_mode(newMode):
-	#Inutilisé pour le moment
 	cursor = newMode
 	if (newMode == "default"):
 		Input.set_custom_mouse_cursor(default)
@@ -144,17 +169,8 @@ func cursor_mode(newMode):
 	if (newMode == "parler"):
 		Input.set_custom_mouse_cursor(parler)
 
-
-func _on_Jardin_input_event(_viewport, event, _shape_idx):
-	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && !MouseA.overlapPlant):
-		if PA.get_PA() > 0: 
-			match action:
-				DEFAULT:
-					print("je suis passe par là")
-					change_action(PLANTER)
-					create_ui_destination(get_global_mouse_position(),"PLANTATION")
-
-
+func get_cursor_mode():
+	return cursor
 
 """
 Gestion des actions du joueur :
@@ -211,14 +227,11 @@ func _on_Player_anim_over(state):
 					$Bateau/YSort/Plante.add_child(plante)
 					plante.setup(planteName)
 					aGarden.push_front(plante)
-					plante.position = posCursor
-					planteName = "Area2D/CollisionPolygon2D"
-					$Bateau/WalkArea.update_navigation_polygon(aGarden[0].get_node(planteName).get_global_transform(),aGarden[0].get_node(planteName).get_polygon())
+					plante.position = posCursor + Vector2(0,30)
+#					Nav_2D_Update(plante.get_node("Area2D/CollisionPolygon2D").get_global_transform(),plante.get_node("Area2D/CollisionPolygon2D").get_polygon())
 					cursor_mode("default")
-					print_garden()
+					print_garden() #debug
 					change_action(DEFAULT)
-#				PLANT_BACK:
-#					change_action(DEFAULT)
 		ARROSER:
 			match state:
 				MOVE:
@@ -329,7 +342,9 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 func a_day_pass():
 	day += 1
 	ImportData.jour += 1
+	$Bateau/WalkArea.reboot()
 	PNJsort.new_day()
+	setup_nav2D_plant()
 	PA.set_PA(5)
 	#$CanvasLayer/Transition/Jour.text = "Jour "+str(day)
 	#$CanvasLayer/Transition/Jour.visible = true
@@ -408,7 +423,9 @@ func print_garden():
 	var array = ""
 	for i in range(aGarden.size()):
 		array += "\ni="+str(i)+" [" + str(aGarden[i].get_name()) + "] : " + aGarden[i].get_child(0).get_name()
-	$CanvasLayer/DebugLabel.text = "Jardin : " + array
+
+	$CanvasLayer/DebugLabel.text = "Jardin : " + str(aGarden.size()) + array
+	
 
 func debug():
 	$CanvasLayer/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100)

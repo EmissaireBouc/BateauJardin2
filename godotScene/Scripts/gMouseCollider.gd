@@ -7,13 +7,6 @@ var item_selected = false
 signal debug
 
 func initiate():
-#	visible = true
-#	if get_overlapping_areas().size() <= 2:
-#		overlapPlant = false
-#		$Polygon2D.set_self_modulate(45)
-#	else:
-#		overlapPlant = true
-#		$Polygon2D.set_self_modulate(130)
 	pass
 
 """

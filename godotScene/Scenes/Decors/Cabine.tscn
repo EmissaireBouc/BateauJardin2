@@ -12,5 +12,5 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite"]
-polygon = PoolVector2Array( -168, 16, -168, 168, 176, 168, 168, 16 )
+polygon = PoolVector2Array( -259.177, -55.2567, -259.177, 224.565, 288.509, 222.173, 276.55, -48.0817 )
 disabled = true

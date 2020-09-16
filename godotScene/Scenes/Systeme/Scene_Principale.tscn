@@ -69,7 +69,6 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -86,9 +85,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ) ],
@@ -96,9 +100,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "fanelvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 31 ) ],
@@ -106,14 +110,9 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl1",
+"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -132,9 +131,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ) ],
@@ -142,9 +146,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "fanelvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 31 ) ],
@@ -152,14 +156,9 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl1",
+"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -191,7 +190,6 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=8]
 resource_local_to_scene = true
@@ -208,9 +206,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=9]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -218,9 +216,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 21 ) ],
+"frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "fanelvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ) ],
@@ -228,9 +226,9 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ) ],
+"frames": [ ExtResource( 33 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -249,9 +247,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=11]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -259,9 +262,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 21 ) ],
+"frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "fanelvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ) ],
@@ -269,14 +272,9 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ) ],
+"frames": [ ExtResource( 33 ) ],
 "loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "lvl1",
+"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -316,12 +314,13 @@ scale = Vector2( 425.085, 7.67572 )
 texture = ExtResource( 18 )
 
 [node name="WaterTextureOffset" parent="." instance=ExtResource( 17 )]
-position = Vector2( 53.2106, -163.176 )
-scale = Vector2( 53.2385, 0.860615 )
+position = Vector2( 35.0592, 352.07 )
+scale = Vector2( 53.2385, 0.762158 )
 
 [node name="Bateau" type="Node2D" parent="."]
 
 [node name="BateauArrierePlan" parent="Bateau" instance=ExtResource( 2 )]
+position = Vector2( -0.698364, 2.095 )
 
 [node name="WalkArea" type="Navigation2D" parent="Bateau"]
 script = ExtResource( 10 )
@@ -465,7 +464,6 @@ __meta__ = {
 }
 
 [node name="DebugLabel" type="Label" parent="CanvasLayer"]
-visible = false
 margin_left = 1568.0
 margin_top = 144.0
 margin_right = 1896.0
@@ -480,7 +478,6 @@ __meta__ = {
 }
 
 [node name="DebugLabel2" type="Label" parent="CanvasLayer"]
-visible = false
 margin_left = 1568.0
 margin_top = 24.0
 margin_right = 1896.0
@@ -495,7 +492,6 @@ __meta__ = {
 }
 
 [node name="DebugLabel3" type="Label" parent="CanvasLayer"]
-visible = false
 margin_left = 1656.0
 margin_top = 792.0
 margin_right = 1904.0
@@ -581,7 +577,6 @@ __meta__ = {
 [node name="Musique" type="AudioStreamPlayer2D" parent="."]
 visible = false
 stream = ExtResource( 15 )
-[connection signal="anim_over" from="." to="Bateau/YSort/Player" method="_on_ScenePrincipale_anim_over"]
 [connection signal="mouse_entered" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_exited"]
 [connection signal="input_event" from="Bateau/Jardin" to="." method="_on_Jardin_input_event"]

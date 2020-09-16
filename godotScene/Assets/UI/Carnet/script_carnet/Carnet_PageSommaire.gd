@@ -40,6 +40,6 @@ func setup_button_equipage(m, p):
 	return button
 
 
-func _on_button_pressed(btnPressed, numeroPage):
+func _on_button_pressed(_btnPressed, numeroPage):
 	emit_signal("button_pressed", numeroPage)
 	queue_free()
