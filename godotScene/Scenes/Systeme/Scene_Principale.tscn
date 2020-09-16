@@ -85,9 +85,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ) ],
@@ -100,9 +100,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 31 ) ],
@@ -110,9 +110,9 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -131,9 +131,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ) ],
@@ -146,9 +146,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 31 ) ],
@@ -156,9 +156,9 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -206,9 +206,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=9]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 21 ) ],
+"frames": [ ExtResource( 33 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ) ],
@@ -216,9 +216,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ) ],
@@ -226,9 +226,9 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -247,9 +247,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=11]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 21 ) ],
+"frames": [ ExtResource( 33 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -262,9 +262,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ) ],
@@ -272,9 +272,9 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 25 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -340,7 +340,8 @@ scale = Vector2( 1, 0.887283 )
 collision_layer = 8
 collision_mask = 2
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bateau/Jardin"]
