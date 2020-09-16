@@ -18,7 +18,7 @@ export (int) var day = 0
 
 
 enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} #Enum des différentes animations du Player
-enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER} #Enum des différentes actions du Player
+enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER, CONVERS} #Enum des différentes actions du Player
 
 
 onready var nav2D : Navigation2D = $Bateau/WalkArea # Navigation2D est un noeud qui permet le pathfinding depuis une aire de navigation (NavigationPolygon)
@@ -205,8 +205,9 @@ func change_action(newaction):
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y+25))
 		PARLER:
 			posCursor = get_global_mouse_position()
-			Player.change_state(MOVE, Vector2(posCursor.x-400, posCursor.y+50))
-
+			Player.change_state(MOVE, Vector2(posCursor.x-400, posCursor.y))
+		CONVERS:
+			Player.change_state(IDLE)
 
 func _on_Player_anim_over(state):
 	match action:
@@ -257,7 +258,7 @@ func _on_Player_anim_over(state):
 		PARLER:
 			match state :
 				MOVE:
-					change_action(DEFAULT)
+					change_action(CONVERS)
 					$Bateau/YSort/PNJ.lancer_dialogue()
 
 func _on_Inventory_item_selected():
@@ -429,3 +430,7 @@ func print_garden():
 
 func debug():
 	$CanvasLayer/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100)
+
+
+func _on_PNJ_Fin_Conversation():
+	change_action(DEFAULT)

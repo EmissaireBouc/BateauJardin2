@@ -4,7 +4,7 @@ extends Control
 var NomPerso = String("Nom_Par_Defaut")
 var DialoguePerso = String("Texte_Par_Defaut")
 var DialogueArray = []
-signal TexteSuivant
+signal Texte_Suivant
 
 #var index_dialogueArray = 0
 var termine = false
@@ -18,6 +18,7 @@ func _ready():
 #		chargement_dialog()
 		
 func chargement_dialog():
+		$indicateur.visible = false
 		termine = false
 		$nom.bbcode_text = NomPerso
 		$texte.bbcode_text = DialoguePerso
@@ -30,7 +31,8 @@ func chargement_dialog():
 
 func _on_Tween_tween_completed(_object, _key):
 		termine = true
+		$indicateur.visible = true
 
 
 func _on_indicateur_pressed():
-	emit_signal("TexteSuivant")
+	emit_signal("Texte_Suivant")

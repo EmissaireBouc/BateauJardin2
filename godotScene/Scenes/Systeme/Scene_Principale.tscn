@@ -85,6 +85,16 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
 "name": "lvl3",
@@ -95,24 +105,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
 "name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -131,6 +131,16 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
 "name": "lvl3",
@@ -141,24 +151,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
 "name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -206,14 +206,9 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=9]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 19 ) ],
 "loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 21 ) ],
@@ -221,14 +216,19 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 33 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -247,6 +247,16 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=11]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "lvl3",
@@ -257,24 +267,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -588,6 +588,7 @@ stream = ExtResource( 15 )
 [connection signal="debug" from="Bateau/YSort/gMouseCollider" to="CanvasLayer/DebugLabel3" method="_on_gMouseCollider_debug"]
 [connection signal="input_event" from="Bateau/YSort/Porte" to="." method="_on_Porte_input_event"]
 [connection signal="anim_over" from="Bateau/YSort/Player" to="." method="_on_Player_anim_over"]
+[connection signal="Fin_Conversation" from="Bateau/YSort/PNJ" to="." method="_on_PNJ_Fin_Conversation"]
 [connection signal="pressed" from="CanvasLayer/Control/MenuInteractions/HBoxContainer/Button_Spray" to="." method="_on_Button_Spray_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MenuInteractions/HBoxContainer/Button_Cut" to="." method="_on_Button_Cut_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Control/Inventory" to="." method="_on_Inventory_item_selected"]
