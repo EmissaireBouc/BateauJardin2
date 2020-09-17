@@ -4,9 +4,10 @@ var overlapPlant = false
 var areaName = ""
 var aCollisionNode = []
 var item_selected = false
+onready var nPA = get_parent().get_parent().get_parent().get_node("CanvasLayer/PA")
 signal debug
 
-func initiate():
+func _ready():
 	pass
 
 """
@@ -19,7 +20,7 @@ func _process(_delta):
 	$CollisionShape2D.global_position = get_global_mouse_position()
 
 func _unhandled_input(_event):
-	if Input.is_action_pressed("ui_right_mouse") && !item_selected && overlapPlant:
+	if Input.is_action_pressed("ui_right_mouse") && !item_selected && overlapPlant && nPA.PA > 0:
 		item_selected = true
 
 """
@@ -48,13 +49,13 @@ func select_plant(area):
 	areaName = area.get_parent().get_name()
 	emit_signal("debug", area.get_parent().get_name(), area.get_parent().pv, area.get_parent().lvl, area.get_parent().xp)
 	area.get_parent().set_material(preload("res://Assets/Mask/Outline.tres"))
-#	$Polygon2D.set_self_modulate(130)
+
 
 func unselect_plant(area):
 	overlapPlant = false
 	areaName = ""
 	area.get_parent().set_material(area.get_parent().shader_vent)
-#	$Polygon2D.set_self_modulate(45)
+
 
 func clear_aCollisionNode():
 	unselect_plant(aCollisionNode[0])

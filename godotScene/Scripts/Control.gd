@@ -18,7 +18,7 @@ export (int) var day = 0
 
 
 enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} #Enum des différentes animations du Player
-enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER, CONVERS} #Enum des différentes actions du Player
+enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER, CONVERS, CARNET, DEPLACER} #Enum des différentes actions du Player
 
 
 onready var nav2D : Navigation2D = $Bateau/WalkArea # Navigation2D est un noeud qui permet le pathfinding depuis une aire de navigation (NavigationPolygon)
@@ -75,13 +75,22 @@ func Nav_2D_Update(t,p):
 
 
 func Open_Carnet():
-	var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
-	$CanvasLayer.add_child(Carnet)
-	Carnet.set_scale(Vector2(0.9,0.9))
+	match action : 
+		DEFAULT :
+			if !menuEntretenir.is_open():
+				var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
+				$CanvasLayer.add_child(Carnet)
+				Carnet.set_scale(Vector2(0.9,0.9))
+				Carnet.connect("Close_Carnet", self, "Close_Carnet")
+				change_action(CARNET)
 
+func Close_Carnet():
+	change_action(DEFAULT)
 
 func Engage_Conversation():
-	change_action(PARLER)
+	match action :
+		DEFAULT :
+			change_action(PARLER)
 
 
 """
@@ -100,14 +109,15 @@ func _unhandled_input(_event):
 			DEFAULT :
 				if !menuEntretenir.is_open():
 					if get_cursor_mode() == "default":
+						change_action(DEPLACER)
 						Player.change_state(MOVE)
 						create_ui_destination(get_global_mouse_position(),"DESTINATION")
 				else:
 					menuEntretenir.close()
 					MouseA.clear_aCollisionNode()
 					destroy_ui_destination()
-			PARLER :
-				return
+#			PARLER :
+#				return
 
 """
 Gestion du clic droit :
@@ -164,10 +174,14 @@ func cursor_mode(newMode):
 		Input.set_custom_mouse_cursor(planter)
 
 	if (newMode == "lire"):
-		Input.set_custom_mouse_cursor(lire)
+		match action:
+			DEFAULT :
+				Input.set_custom_mouse_cursor(lire)
 	
 	if (newMode == "parler"):
-		Input.set_custom_mouse_cursor(parler)
+		match action:
+			DEFAULT :
+				Input.set_custom_mouse_cursor(parler)
 
 func get_cursor_mode():
 	return cursor
@@ -215,6 +229,13 @@ func _on_Player_anim_over(state):
 			match state :
 				MOVE:
 					Player.change_state(IDLE)
+					change_action(DEFAULT)
+					destroy_ui_destination()
+		DEPLACER :
+			match state :
+				MOVE:
+					Player.change_state(IDLE)
+					change_action(DEFAULT)
 					destroy_ui_destination()
 		PLANTER:
 			match state:

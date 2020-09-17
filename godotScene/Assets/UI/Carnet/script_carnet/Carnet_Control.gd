@@ -2,7 +2,7 @@ extends Control
 
 var numeroPage = 0
 var page
-
+signal Close_Carnet
 
 func _ready():
 	setup_sommaire()
@@ -87,4 +87,5 @@ func setup_sommaire():
 
 
 func _on_FermetureCarnet_finished():
+	emit_signal("Close_Carnet")
 	queue_free()

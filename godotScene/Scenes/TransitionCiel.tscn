@@ -497,6 +497,7 @@ scale = Vector2( 61.1196, 3.04847 )
 texture = ExtResource( 1 )
 
 [node name="soir" type="Sprite" parent="ciel"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 956.355, 379.059 )
 scale = Vector2( 64.959, 3.07188 )
@@ -510,35 +511,32 @@ texture = ExtResource( 2 )
 
 [node name="aube 1" type="Sprite" parent="ciel"]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 956.355, 371.568 )
 scale = Vector2( 64.959, 3.01335 )
 texture = ExtResource( 9 )
 
 [node name="aube 2" type="Sprite" parent="ciel"]
-visible = false
-modulate = Color( 1, 1, 1, 0.851852 )
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 956.355, 391.046 )
 scale = Vector2( 64.959, 3.16552 )
 texture = ExtResource( 10 )
 
 [node name="soleil" type="Sprite" parent="ciel"]
-position = Vector2( 156.798, 838.554 )
+position = Vector2( 828.974, 170 )
 texture = ExtResource( 12 )
 
 [node name="lune" type="Sprite" parent="ciel"]
-position = Vector2( 1593.96, 796.121 )
+position = Vector2( 1561.7, 796.897 )
 texture = ExtResource( 11 )
 
 [node name="Timer" type="Timer" parent="ciel"]
 one_shot = true
 
 [node name="Vague3" type="NinePatchRect" parent="."]
-margin_left = -116.698
+margin_left = -105.0
 margin_top = 639.987
-margin_right = 2000.3
+margin_right = 2012.0
 margin_bottom = 1182.99
-rect_rotation = -0.837551
 texture = ExtResource( 3 )
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1

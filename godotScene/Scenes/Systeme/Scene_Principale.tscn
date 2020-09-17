@@ -85,19 +85,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ) ],
@@ -113,6 +108,11 @@ animations = [ {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
 "name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -131,19 +131,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ) ],
@@ -159,6 +154,11 @@ animations = [ {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
 "name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -206,19 +206,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=9]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -229,6 +224,11 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
 "name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -247,19 +247,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=11]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -275,6 +270,11 @@ animations = [ {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
 "name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -308,12 +308,14 @@ font_data = ExtResource( 8 )
 script = ExtResource( 1 )
 
 [node name="Ciel" type="Sprite" parent="."]
+modulate = Color( 0.960784, 0.694118, 0.694118, 1 )
 position = Vector2( 67.9277, -2033.5 )
 rotation = 3.14159
 scale = Vector2( 425.085, 7.67572 )
 texture = ExtResource( 18 )
 
 [node name="WaterTextureOffset" parent="." instance=ExtResource( 17 )]
+modulate = Color( 0.517647, 0.533333, 0.509804, 1 )
 position = Vector2( 35.0592, 352.07 )
 scale = Vector2( 53.2385, 0.762158 )
 
@@ -465,6 +467,7 @@ __meta__ = {
 }
 
 [node name="DebugLabel" type="Label" parent="CanvasLayer"]
+visible = false
 margin_left = 1568.0
 margin_top = 144.0
 margin_right = 1896.0
@@ -479,6 +482,7 @@ __meta__ = {
 }
 
 [node name="DebugLabel2" type="Label" parent="CanvasLayer"]
+visible = false
 margin_left = 1568.0
 margin_top = 24.0
 margin_right = 1896.0
@@ -493,6 +497,7 @@ __meta__ = {
 }
 
 [node name="DebugLabel3" type="Label" parent="CanvasLayer"]
+visible = false
 margin_left = 1656.0
 margin_top = 792.0
 margin_right = 1904.0
