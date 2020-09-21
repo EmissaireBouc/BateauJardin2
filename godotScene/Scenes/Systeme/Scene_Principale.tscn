@@ -1,46 +1,57 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://scripts/Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decors/BateauArrierePlan.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/WalkingArea_Mask/Bateau_Pont.tres" type="NavigationPolygon" id=3]
-[ext_resource path="res://Assets/Decors/arrierebateauavant.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Personnage.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Decors/Bateau_PremierPlan.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Systeme/Menu_interactions.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Transition.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/UI/Font/Quicksand_Bold.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Scripts/PA.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/WalkArea.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/gMouseCollider.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Personnage.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Systeme/Inventaire_plantes.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/UI/Font/Quicksand_Book.otf" type="DynamicFontData" id=13]
-[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/gMouseCollider.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Son/Mer+Vent+CigalesV1.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Scripts/DebugLabel3.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/WaterTextureOffset.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Assets/Mask/Ciel.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 2 s.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Plante/Image/fougere 1.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 1 s.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Plante/Scene/OreillesDeLapin.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Assets/Plante/Image/fougere 3 s.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 2.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 3 s.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Plante/Image/fougere 2.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/Decors/Background.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scripts/PNJ/PNJ_Interaction.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Plante/Image/oreille de lapin 3.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Plante/Image/bleue jaunes 1.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Plante/Image/bleue jaunes 2 s.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Plante/Image/bleue jaunes 2.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Plante/Image/oreille de lapin 3 s.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Plante/Image/oreille de lapin 1 s.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Plante/Image/oreille de lapin 2 s.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/Systeme/Dialogues.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Scripts/PNJ/PNJ_Interaction.gd" type="Script" id=28]
+[ext_resource path="res://Assets/Plante/Image/bleue jaunes 3 s.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 1.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Plante/Image/fougere 3.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Plante/Image/fougere 2 s.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Plante/Image/fougere 1 s.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 3.png" type="Texture" id=33]
-[ext_resource path="res://Assets/Plante/Scene/Fougere.tscn" type="PackedScene" id=34]
-[ext_resource path="res://Assets/Decors/bordurebateauavant.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Plante/Image/oreille de lapin 2.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Plante/Image/bleue jaunes 3.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Plante/Image/bleue jaunes 1 s.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Plante/Scene/Myosotis.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Assets/Plante/Scene/OreillesDeLapin.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=36]
 [ext_resource path="res://Scenes/TransitionCiel.tscn" type="PackedScene" id=37]
-[ext_resource path="res://Assets/Decors/arrierebateauarbre.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Plante/Image/fougere 1 s.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Plante/Image/fougere 2 s.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Plante/Image/fougere 1.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Plante/Image/fougere 3 s.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Plante/Image/fougere 3.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Plante/Image/arbuste haut 1 s.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Plante/Image/arbuste haut 3 s.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Plante/Image/arbuste haut 1.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Plante/Image/arbuste haut 2 s.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Plante/Image/fougere 2.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Plante/Image/arbuste haut 3.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Plante/Image/arbuste haut 2.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Plante/Scene/HautArbuste.tscn" type="PackedScene" id=51]
+[ext_resource path="res://Assets/Plante/Scene/Fougere.tscn" type="PackedScene" id=52]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 102.45
+radius = 107.72
 
 [sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
@@ -75,95 +86,49 @@ void vertex() {
 resource_local_to_scene = true
 shader = SubResource( 2 )
 shader_param/speed = 2.0
-shader_param/minStrength = 0.0
-shader_param/maxStrength = 0.3
-shader_param/strengthScale = 50.0
+shader_param/minStrength = 0.092
+shader_param/maxStrength = 0.333
+shader_param/strengthScale = 100.0
 shader_param/interval = 3.5
 shader_param/detail = 1.0
-shader_param/distortion = 0.0
+shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ) ],
+"frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 31 ) ],
+"frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "fanelvl3",
 "speed": 5.0
-} ]
-
-[sub_resource type="ShaderMaterial" id=5]
-resource_local_to_scene = true
-shader = SubResource( 2 )
-shader_param/speed = 2.0
-shader_param/minStrength = 0.0
-shader_param/maxStrength = 0.3
-shader_param/strengthScale = 50.0
-shader_param/interval = 3.5
-shader_param/detail = 1.0
-shader_param/distortion = 0.0
-shader_param/heightOffset = 0.0
-
-[sub_resource type="SpriteFrames" id=6]
-resource_local_to_scene = true
-animations = [ {
+}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=7]
+[sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -192,9 +157,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=8]
+[sub_resource type="ShaderMaterial" id=6]
 resource_local_to_scene = true
-shader = SubResource( 7 )
+shader = SubResource( 5 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -204,131 +169,232 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=7]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 33 ) ],
+"frames": [ ExtResource( 31 ) ],
 "loop": true,
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "fanelvl2",
 "speed": 5.0
-} ]
-
-[sub_resource type="ShaderMaterial" id=10]
-resource_local_to_scene = true
-shader = SubResource( 7 )
-shader_param/speed = 2.0
-shader_param/minStrength = 0.092
-shader_param/maxStrength = 0.333
-shader_param/strengthScale = 100.0
-shader_param/interval = 3.5
-shader_param/detail = 1.0
-shader_param/distortion = null
-shader_param/heightOffset = 0.0
-
-[sub_resource type="SpriteFrames" id=11]
-resource_local_to_scene = true
-animations = [ {
-"frames": [ ExtResource( 33 ) ],
-"loop": true,
-"name": "lvl3",
-"speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 21 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 28 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+// Wind settings.
+uniform float speed = 1.0;
+uniform float minStrength : hint_range(0.0, 1.0);
+uniform float maxStrength : hint_range(0.0, 1.0);
+uniform float strengthScale = 100.0;
+uniform float interval = 3.5;
+uniform float detail = 1.0;
+uniform float distortion : hint_range(0.0, 1.0);
+uniform float heightOffset = 0.0;
+
+float getWind(vec2 vertex, vec2 uv, float timer){
+	vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
+	float time = timer * speed + pos.x * pos.y;
+	float diff = pow(maxStrength - minStrength, 2.0);
+	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
+	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
+	
+	return wind;
+	}
+
+void vertex() {
+	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+shader = SubResource( 8 )
+shader_param/speed = 2.0
+shader_param/minStrength = 0.092
+shader_param/maxStrength = 0.333
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = 0.0
+
+[sub_resource type="SpriteFrames" id=10]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 49 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+} ]
+
+[sub_resource type="Shader" id=11]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+// Wind settings.
+uniform float speed = 1.0;
+uniform float minStrength : hint_range(0.0, 1.0);
+uniform float maxStrength : hint_range(0.0, 1.0);
+uniform float strengthScale = 100.0;
+uniform float interval = 3.5;
+uniform float detail = 1.0;
+uniform float distortion : hint_range(0.0, 1.0);
+uniform float heightOffset = 0.0;
+
+float getWind(vec2 vertex, vec2 uv, float timer){
+	vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
+	float time = timer * speed + pos.x * pos.y;
+	float diff = pow(maxStrength - minStrength, 2.0);
+	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
+	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
+	
+	return wind;
+	}
+
+void vertex() {
+	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=12]
+resource_local_to_scene = true
+shader = SubResource( 11 )
+shader_param/speed = 2.0
+shader_param/minStrength = 0.0
+shader_param/maxStrength = 0.3
+shader_param/strengthScale = 50.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = 0.0
+
+[sub_resource type="SpriteFrames" id=13]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 43 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 40 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 39 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 131.233, 327.793 )
+
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0, 0, 0, 0.262745 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=16]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.227451, 0.203922, 0.203922, 0.360784 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=18]
 size = 22
 outline_color = Color( 0, 1, 0.0862745, 1 )
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0, 0, 0, 0.231373 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=20]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=21]
 size = 40
 font_data = ExtResource( 8 )
 
 [node name="ScenePrincipale" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Ciel" type="Sprite" parent="."]
-modulate = Color( 0.960784, 0.694118, 0.694118, 1 )
-position = Vector2( -2089.85, -3086.84 )
-rotation = 3.14159
-scale = Vector2( 543.171, 12.406 )
-texture = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Background" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3996.87, -1413.53 )
+scale = Vector2( -19.3, 1.2 )
 
-[node name="WaterTextureOffset" parent="." instance=ExtResource( 17 )]
-position = Vector2( -2045.24, 1510.22 )
-scale = Vector2( 68.4, 1.32447 )
+[node name="Bateau_ArrierePlan" parent="." instance=ExtResource( 2 )]
 
 [node name="Bateau" type="Node2D" parent="."]
 
-[node name="BateauArrierePlan" parent="Bateau" instance=ExtResource( 2 )]
-
 [node name="WalkArea" type="Navigation2D" parent="Bateau"]
-visible = false
-position = Vector2( 0.0236492, 0 )
+position = Vector2( -2.56107, 2.58472 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -341,7 +407,6 @@ navpoly = ExtResource( 3 )
 [node name="Area2D" type="Area2D" parent="Bateau/WalkArea"]
 
 [node name="Jardin" type="Area2D" parent="Bateau"]
-visible = false
 position = Vector2( 8.20215, 133.617 )
 scale = Vector2( 1, 0.887283 )
 collision_layer = 8
@@ -354,102 +419,82 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bateau/Jardin"]
 position = Vector2( -2317.07, -559.217 )
 scale = Vector2( 1.3586, 1 )
-polygon = PoolVector2Array( -1680, 1424.24, 2381.59, 1417.14, 2919.97, 627.855, 2948.61, 268.294, 2822.61, -38.6485, 2393.05, -564.836, -1661.97, -547.296 )
+polygon = PoolVector2Array( -987.62, 1393.77, 2381.59, 1417.14, 2919.97, 627.855, 2948.61, 268.294, 2822.61, -38.6485, 2393.05, -564.836, -997.958, -553.256 )
 
 [node name="YSort" type="YSort" parent="Bateau"]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="gMouseCollider" type="Area2D" parent="Bateau/YSort"]
-position = Vector2( -1741.41, -857.486 )
-scale = Vector2( 0.5, 0.5 )
+collision_layer = 0
 collision_mask = 2
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_group_": true
-}
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bateau/YSort/gMouseCollider"]
+position = Vector2( 839.52, -760.618 )
 shape = SubResource( 1 )
 
-[node name="Polygon2D" type="Polygon2D" parent="Bateau/YSort/gMouseCollider"]
-modulate = Color( 0.235294, 0.721569, 0.152941, 0.670588 )
-polygon = PoolVector2Array( -48, -80, -80, -48, -96, 16, -64, 80, 0, 96, 64, 64, 96, 16, 80, -48, 48, -80, 16, -96 )
-
-[node name="Porte" type="Area2D" parent="Bateau/YSort"]
-position = Vector2( -4752.03, -133.096 )
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bateau/YSort/Porte"]
-polygon = PoolVector2Array( 26.4307, -165.582, -171.845, -468.402, -200.685, -360.252, 22.8252, 227.364 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Bateau/YSort/Porte"]
+[node name="Line2D" type="Line2D" parent="Bateau/YSort"]
 visible = false
-position = Vector2( -4674.02, -553.415 )
-color = Color( 0.337255, 0.152941, 0.541176, 1 )
-polygon = PoolVector2Array( -42.6143, 682.819, -305.89, 11.725, -202.645, -55.3845, -21.9653, 254.351 )
 
-[node name="Player" parent="Bateau/YSort" instance=ExtResource( 5 )]
-position = Vector2( -4134.97, 26.8812 )
+[node name="Player" parent="Bateau/YSort" instance=ExtResource( 11 )]
+position = Vector2( -3000, 54.661 )
 scale = Vector2( 1, 1 )
-animation = "CUT_W"
 
 [node name="Camera2D" type="Camera2D" parent="Bateau/YSort/Player"]
 visible = false
 current = true
-smoothing_enabled = true
-offset_v = -1.0
-script = ExtResource( 14 )
-
-[node name="Line2D" type="Line2D" parent="Bateau/YSort"]
-visible = false
-width = 2.0
-default_color = Color( 0.780392, 0.262745, 0.192157, 1 )
-texture_mode = -1094713346
+script = ExtResource( 5 )
 
 [node name="Plante" type="YSort" parent="Bateau/YSort"]
 
-[node name="Fougere2" parent="Bateau/YSort/Plante" instance=ExtResource( 34 )]
+[node name="OreillesDeLapin" parent="Bateau/YSort/Plante" instance=ExtResource( 34 )]
 material = SubResource( 3 )
-position = Vector2( -2532.46, 248.057 )
+position = Vector2( -2892.84, 109.322 )
 frames = SubResource( 4 )
-Plante = "Fougere"
 pv = 2
+xp = 2
+lvl = 2
+
+[node name="Myosotis" parent="Bateau/YSort/Plante" instance=ExtResource( 33 )]
+material = SubResource( 6 )
+position = Vector2( -2148.61, -155.574 )
+frames = SubResource( 7 )
+Plante = "Myosotis"
+pv = 1
 xp = 1
-
-[node name="Fougere" parent="Bateau/YSort/Plante" instance=ExtResource( 34 )]
-material = SubResource( 5 )
-position = Vector2( -2533.63, -122.844 )
-frames = SubResource( 6 )
-Plante = "Fougere"
-pv = 2
-xp = 2
 lvl = 2
 
-[node name="OreillesDeLapin" parent="Bateau/YSort/Plante" instance=ExtResource( 22 )]
-material = SubResource( 8 )
-position = Vector2( -2132.5, 516.045 )
-frames = SubResource( 9 )
-animation = "lvl2"
+[node name="HautArbuste" parent="Bateau/YSort/Plante" instance=ExtResource( 51 )]
+material = SubResource( 9 )
+position = Vector2( -2713.27, -739.619 )
+frames = SubResource( 10 )
+Plante = "HautArbuste"
 pv = 5
-xp = 2
+xp = 1
 lvl = 2
 
-[node name="OreillesDeLapin2" parent="Bateau/YSort/Plante" instance=ExtResource( 22 )]
-material = SubResource( 10 )
-position = Vector2( -2148.46, -122.844 )
-frames = SubResource( 11 )
-pv = 2
+[node name="Fougere" parent="Bateau/YSort/Plante" instance=ExtResource( 52 )]
+material = SubResource( 12 )
+position = Vector2( -1845.87, 252.282 )
+frames = SubResource( 13 )
+pv = 3
 xp = 3
 
 [node name="PNJ" type="YSort" parent="Bateau/YSort"]
-script = ExtResource( 28 )
+script = ExtResource( 19 )
 
-[node name="BateauPremierPlan" type="Sprite" parent="Bateau"]
-position = Vector2( 157.03, -138.492 )
-texture = ExtResource( 35 )
+[node name="Porte" type="Area2D" parent="Bateau"]
+position = Vector2( -3964.3, -164.435 )
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bateau/Porte"]
+shape = SubResource( 14 )
+
+[node name="Bateau_PremierPlan" parent="." instance=ExtResource( 4 )]
+position = Vector2( -5114.46, 456.847 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -469,14 +514,13 @@ __meta__ = {
 }
 
 [node name="DebugLabel" type="Label" parent="CanvasLayer"]
-visible = false
 margin_left = 1568.0
 margin_top = 144.0
 margin_right = 1896.0
 margin_bottom = 240.0
 grow_horizontal = 0
-custom_styles/normal = SubResource( 12 )
-custom_fonts/font = SubResource( 13 )
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
 text = "Jardin :"
 __meta__ = {
@@ -484,13 +528,12 @@ __meta__ = {
 }
 
 [node name="DebugLabel2" type="Label" parent="CanvasLayer"]
-visible = false
 margin_left = 1568.0
 margin_top = 24.0
 margin_right = 1896.0
 margin_bottom = 128.0
-custom_styles/normal = SubResource( 14 )
-custom_fonts/font = SubResource( 15 )
+custom_styles/normal = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0.105882, 1, 0, 1 )
 text = "Zoom :"
 align = 2
@@ -499,13 +542,12 @@ __meta__ = {
 }
 
 [node name="DebugLabel3" type="Label" parent="CanvasLayer"]
-visible = false
 margin_left = 1656.0
 margin_top = 792.0
 margin_right = 1904.0
 margin_bottom = 1064.0
-custom_styles/normal = SubResource( 16 )
-custom_fonts/font = SubResource( 17 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 custom_colors/font_color = Color( 0, 1, 0.156863, 1 )
 text = "Plante Description"
 script = ExtResource( 16 )
@@ -551,10 +593,10 @@ margin_right = 232.0
 [node name="Inventory" parent="CanvasLayer/Control" instance=ExtResource( 12 )]
 anchor_top = 0.0
 anchor_bottom = 0.0
-margin_left = -9.39795
-margin_top = 70.9609
-margin_right = -9.39795
-margin_bottom = 70.9609
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
 
 [node name="ciel transition" parent="CanvasLayer" instance=ExtResource( 37 )]
 visible = false
@@ -572,7 +614,7 @@ margin_left = -960.0
 margin_top = -45.5
 margin_right = 960.0
 margin_bottom = 45.5
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Jour"
 align = 1
@@ -582,17 +624,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Musique" type="AudioStreamPlayer2D" parent="."]
-visible = false
+[node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
-
-[node name="arrierebateauavant" type="Sprite" parent="."]
-position = Vector2( -5115.46, 454.883 )
-texture = ExtResource( 4 )
-
-[node name="arrierebateauarbre" type="Sprite" parent="."]
-position = Vector2( -6625.01, -769.877 )
-texture = ExtResource( 38 )
 [connection signal="mouse_entered" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_exited"]
 [connection signal="input_event" from="Bateau/Jardin" to="." method="_on_Jardin_input_event"]
@@ -600,10 +633,9 @@ texture = ExtResource( 38 )
 [connection signal="mouse_exited" from="Bateau/Jardin" to="." method="_on_Jardin_mouse_exited"]
 [connection signal="area_shape_entered" from="Bateau/YSort/gMouseCollider" to="Bateau/YSort/gMouseCollider" method="_on_gMouseCollider_area_shape_entered"]
 [connection signal="area_shape_exited" from="Bateau/YSort/gMouseCollider" to="Bateau/YSort/gMouseCollider" method="_on_gMouseCollider_area_shape_exited"]
-[connection signal="debug" from="Bateau/YSort/gMouseCollider" to="CanvasLayer/DebugLabel3" method="_on_gMouseCollider_debug"]
-[connection signal="input_event" from="Bateau/YSort/Porte" to="." method="_on_Porte_input_event"]
 [connection signal="anim_over" from="Bateau/YSort/Player" to="." method="_on_Player_anim_over"]
 [connection signal="Fin_Conversation" from="Bateau/YSort/PNJ" to="." method="_on_PNJ_Fin_Conversation"]
+[connection signal="input_event" from="Bateau/Porte" to="." method="_on_Porte_input_event"]
 [connection signal="pressed" from="CanvasLayer/Control/MenuInteractions/HBoxContainer/Button_Spray" to="." method="_on_Button_Spray_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MenuInteractions/HBoxContainer/Button_Cut" to="." method="_on_Button_Cut_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Control/Inventory" to="." method="_on_Inventory_item_selected"]

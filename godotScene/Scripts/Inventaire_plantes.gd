@@ -49,7 +49,6 @@ func _on_ItemList_item_selected(index):
 	if itemID != index:
 		itemlist.modulate_icon()
 		$ClicGraine.play()
-	print(get_selected_item())
 	illustration.visible = true
 	illustration.texture = load("res://Assets/UI/Carnet/Illustration/Plantes/%s" %"illu_" + get_selected_item() + ".png")
 	itemID = index

@@ -61,6 +61,7 @@ size = 14
 font_data = ExtResource( 4 )
 
 [node name="Inventory" type="Control"]
+visible = false
 anchor_top = -0.007
 anchor_bottom = -0.007
 margin_left = -232.0

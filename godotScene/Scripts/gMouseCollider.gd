@@ -16,7 +16,7 @@ Configure la position des éléments du collision shape associés à la souris
 
 func _process(_delta):
 	global_position = get_global_mouse_position()
-	$Polygon2D.global_position = get_global_mouse_position()
+#	$Polygon2D.global_position = get_global_mouse_position()
 	$CollisionShape2D.global_position = get_global_mouse_position()
 
 func _unhandled_input(_event):

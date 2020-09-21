@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrierebateauarriere.png-4597bde0df0bea446cf4840c3b875c07.stex"
+path="res://.import/arrierebateaucabine.png-f5c8edab038e75685d0f39e663983f04.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Decors/arrierebateauarriere.png"
-dest_files=[ "res://.import/arrierebateauarriere.png-4597bde0df0bea446cf4840c3b875c07.stex" ]
+source_file="res://Assets/Decors/Bateau/arrierebateaucabine.png"
+dest_files=[ "res://.import/arrierebateaucabine.png-f5c8edab038e75685d0f39e663983f04.stex" ]
 
 [params]
 

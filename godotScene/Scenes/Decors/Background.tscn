@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/WaterTextureOffset.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Decors/Ciel.png" type="Texture" id=4]
+
+[node name="Background" type="Node2D"]
+scale = Vector2( 1.4, 1 )
+
+[node name="Ciel" type="Sprite" parent="."]
+modulate = Color( 0.960784, 0.694118, 0.694118, 1 )
+position = Vector2( 314.04, -1385.03 )
+rotation = -3.14159
+scale = Vector2( 18.9421, 12.5121 )
+texture = ExtResource( 4 )
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.639216, 0.745098, 0.8, 1 )

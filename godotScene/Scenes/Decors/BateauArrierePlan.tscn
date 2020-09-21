@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Decors/bordurecentraleariere.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Decors/Bateau/bordurecentraleariere.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Decors/prouesol.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Decors/proueavantarriere.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Decors/Bateau/proueavantarriere.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Decors/Bateau_Pont.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Decors/arrierebateauarriere.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Decors/arrierebateaucabine.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Decors/arrierebateauportecabine.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Decors/Bateau/arrierebateauarriere.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Decors/Bateau/arrierebateaucabine.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Decors/Bateau/arrierebateauportecabine.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Decors/Bateau/arrierebateauarbre.png" type="Texture" id=8]
+
 
 [node name="BateauArrierePlan" type="Node2D"]
 
@@ -24,19 +26,25 @@ scale = Vector2( 1, 0.887283 )
 texture = ExtResource( 2 )
 
 [node name="arrierebateauarriere" type="Sprite" parent="."]
-position = Vector2( -5104.99, -1013.97 )
+position = Vector2( -4681.57, -1013.97 )
+scale = Vector2( 0.83231, 1 )
 texture = ExtResource( 5 )
 
 [node name="Bateau" parent="." instance=ExtResource( 4 )]
-margin_left = -7475.0
+margin_left = -6674.0
 margin_top = -867.0
 margin_right = 518.0
 margin_bottom = 726.0
 
 [node name="arrierebateauportecabine" type="Sprite" parent="."]
-position = Vector2( -4822.65, -246.001 )
+position = Vector2( -4031.23, -228.417 )
 texture = ExtResource( 7 )
 
 [node name="arrierebateaucabine" type="Sprite" parent="."]
-position = Vector2( -6118.11, -559.307 )
+position = Vector2( -5322.76, -544.943 )
 texture = ExtResource( 6 )
+
+[node name="arrierebateauarbre" type="Sprite" parent="."]
+visible = false
+position = Vector2( -5764.51, -741.496 )
+texture = ExtResource( 8 )

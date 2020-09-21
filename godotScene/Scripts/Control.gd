@@ -214,7 +214,7 @@ func change_action(newaction):
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y-25))
 			menuEntretenir.close()
 		DORMIR:
-			posCursor = $Bateau/YSort/Porte.get_position()
+			posCursor = $Bateau/Porte.get_position()
 			Player.change_state(MOVE, Vector2(posCursor.x + 100, posCursor.y))
 		PARLER:
 			posCursor = get_global_mouse_position()
