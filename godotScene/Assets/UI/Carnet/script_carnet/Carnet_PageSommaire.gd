@@ -9,21 +9,20 @@ func _ready():
 	make_equipage_menu()
 	make_graine_menu()
 
-
 func make_equipage_menu():
 	var i = 0.0
 	for key in ImportData.equipage_data:
 		i += 1
 		var membre_id = key + " " + ImportData.equipage_data[key].Prenom 
-		equipage.add_child(setup_button_equipage(membre_id, ceil(i/4)))
-		
+		equipage.add_child(setup_button_equipage(membre_id, key, ceil(i/4)))
 
 func make_graine_menu():
 	var i = 0.0
 	for key in ImportData.plant_data:
-		if ImportData.plant_data[key].Available == 1:
+		if ImportData.plant_data[key].Available == 0:
 			i += 1
 			graine.add_child(setup_button_herbe(key, 2+ceil(i/6)))
+
 
 func setup_button_herbe(m, p):
 	var button = load ("res://Assets/UI/Carnet/Scene_Carnet/ScButtonMenu.tscn").instance()
@@ -31,10 +30,12 @@ func setup_button_herbe(m, p):
 	button.PageToLoad = p
 	button.connect("pressed", self, "_on_button_pressed", [button.text, button.PageToLoad])
 	return button
-	
-func setup_button_equipage(m, p):
+
+
+func setup_button_equipage(m, n, p):
 	var button = load ("res://Assets/UI/Carnet/Scene_Carnet/ScButtonMenuEquipage.tscn").instance()
 	button.nomPersonnage = m
+	button.nom = n
 	button.PageToLoad = p
 	button.connect("pressed", self, "_on_button_pressed", [button.nomPersonnage, button.PageToLoad])
 	return button

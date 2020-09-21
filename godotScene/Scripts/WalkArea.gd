@@ -12,8 +12,8 @@ Chaque jour :
 
 
 func _ready():
-	update_navigation_polygon(get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_global_transform(),get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_polygon())
-
+#	update_navigation_polygon(get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_global_transform(),get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_polygon())
+	pass
 
 func update_navigation_polygon(t, p):
 	var newpolygon = PoolVector2Array()
@@ -34,4 +34,4 @@ func reboot():
 	NaviPoly.set_navigation_polygon(original_walkableArea)
 	get_node("NavigationPolygonInstance").enabled = false
 	get_node("NavigationPolygonInstance").enabled = true
-	update_navigation_polygon(get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_global_transform(),get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_polygon())
+#	update_navigation_polygon(get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_global_transform(),get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_polygon())

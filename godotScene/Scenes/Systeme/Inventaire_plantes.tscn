@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/ItemList.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Inventaire_plantes.gd" type="Script" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://Assets/UI/Font/Quicksand_Book.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/UI/Inv/Button_theme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/Inv/UI_theme.tres" type="Theme" id=6]
-[ext_resource path="res://Assets/UI/Inv/boiteagraineV2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Inv/boiteagraineV2postit.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Son/OuvertureBoiteGraine.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/UI/icon.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apparition"
@@ -22,7 +23,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 0.517633, 0.34151 ),
 "update": 0,
-"values": [ Vector2( -584, 86 ), Vector2( 60, 86 ) ]
+"values": [ Vector2( -883, 86 ), Vector2( 60, 86 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimationPlayer/OuvreBoite:playing")
@@ -50,7 +51,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 2.46228, 1.86607 ),
 "update": 0,
-"values": [ Vector2( 60, 86 ), Vector2( -584, 86 ) ]
+"values": [ Vector2( 60, 86 ), Vector2( -883, 86 ) ]
 }
 
 [sub_resource type="StyleBoxEmpty" id=3]
@@ -60,7 +61,6 @@ size = 14
 font_data = ExtResource( 4 )
 
 [node name="Inventory" type="Control"]
-visible = false
 anchor_top = -0.007
 anchor_bottom = -0.007
 margin_left = -232.0
@@ -77,9 +77,9 @@ anims/Apparition = SubResource( 1 )
 anims/Fermeture = SubResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
-margin_left = -584.0
+margin_left = -883.0
 margin_top = 86.0
-margin_right = -4.0
+margin_right = 17.0
 margin_bottom = 1070.0
 texture = ExtResource( 7 )
 __meta__ = {
@@ -91,10 +91,10 @@ anchor_left = -2.0
 anchor_top = -5.45
 anchor_right = -2.0
 anchor_bottom = -5.45
-margin_left = 1195.75
-margin_top = 5439.49
-margin_right = 1715.75
-margin_bottom = 6124.49
+margin_left = 1889.38
+margin_top = 5532.35
+margin_right = 2409.38
+margin_bottom = 6217.35
 theme = ExtResource( 6 )
 custom_styles/bg = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -106,14 +106,15 @@ icon_mode = 0
 fixed_icon_size = Vector2( 64, 64 )
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="B_Valider" type="Button" parent="AnimationPlayer/TextureRect"]
-margin_left = 441.229
-margin_top = 654.213
-margin_right = 545.229
-margin_bottom = 735.213
+margin_left = 496.457
+margin_top = 750.603
+margin_right = 600.457
+margin_bottom = 831.603
 theme = ExtResource( 5 )
 text = "Valider"
 __meta__ = {
@@ -121,15 +122,21 @@ __meta__ = {
 }
 
 [node name="B_Annuler" type="Button" parent="AnimationPlayer/TextureRect"]
-margin_left = 329.664
-margin_top = 657.777
-margin_right = 433.664
-margin_bottom = 738.777
+margin_left = 391.517
+margin_top = 751.681
+margin_right = 495.517
+margin_bottom = 832.681
 theme = ExtResource( 5 )
 text = "Annuler"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Illustration" type="Sprite" parent="AnimationPlayer/TextureRect"]
+visible = false
+position = Vector2( 721.911, 181.146 )
+rotation = 0.23911
+texture = ExtResource( 9 )
 
 [node name="OuvreBoite" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource( 8 )

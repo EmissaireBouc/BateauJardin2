@@ -49,7 +49,7 @@ func _ready():
 	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
 		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
 	
-	setup_nav2D_plant()
+#	setup_nav2D_plant()
 	
 
 func connectique():
@@ -116,8 +116,7 @@ func _unhandled_input(_event):
 					menuEntretenir.close()
 					MouseA.clear_aCollisionNode()
 					destroy_ui_destination()
-#			PARLER :
-#				return
+
 
 """
 Gestion du clic droit :
@@ -215,8 +214,8 @@ func change_action(newaction):
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y-25))
 			menuEntretenir.close()
 		DORMIR:
-			posCursor = get_global_mouse_position()
-			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y+25))
+			posCursor = $Bateau/YSort/Porte.get_position()
+			Player.change_state(MOVE, Vector2(posCursor.x + 100, posCursor.y))
 		PARLER:
 			posCursor = get_global_mouse_position()
 			Player.change_state(MOVE, Vector2(posCursor.x-400, posCursor.y))
@@ -359,7 +358,7 @@ Gestion de l'action Dormir :
 func _on_Porte_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
 		change_action(DORMIR)
-		
+
 
 func a_day_pass():
 	day += 1
@@ -373,6 +372,9 @@ func a_day_pass():
 	$CanvasLayer/Transition.waitForClick = true
 	plante_XP_up()
 	plante_PV_down()
+	menuInventaire.Add_New_Seed(ImportData.jour)
+
+
 
 func plante_PV_down():
 	for i in range(aGarden.size()):

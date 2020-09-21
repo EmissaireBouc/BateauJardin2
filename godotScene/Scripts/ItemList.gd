@@ -6,13 +6,13 @@ A l'ouverture de l'inventaire, itération dans le dictionnaire plant_data (impor
 est disponible (available), le bouton associé devient visible
 """
 
-func _ready():
+func setup_ItemList():
 	make_inventory()
 	modulate_icon()
 
 func make_inventory():
 	for key in ImportData.plant_data:
-		if ImportData.plant_data[key].Available == 1:
+		if ImportData.plant_data[key].Available == 0:
 			create_item(key)
 
 func create_item(plante):
@@ -29,8 +29,8 @@ func return_selected_item():
 		return
 
 func add_graine(plante):
-	ImportData.plant_data[plante].Available = 1
 	create_item(plante)
+	modulate_icon()
 
 func unselect_graine():
 	if is_anything_selected():

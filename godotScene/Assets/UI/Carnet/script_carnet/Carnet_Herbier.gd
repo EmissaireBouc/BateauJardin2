@@ -24,11 +24,10 @@ func setup():
 			nvHerbe.setup(ImportData.plant_data[key].Name,ImportData.plant_data[key].PV,ImportData.plant_data[key].XP,ImportData.plant_data[key].Description)
 		else:
 			break
-#	$VBoxContainer.move_child(get_node("VBoxContainer/BasDePage"),$VBoxContainer.get_child_count())
 
 func DictionaryToArray():
 	for key in ImportData.plant_data:
-		if ImportData.plant_data[key].Available == 1 :
+		if ImportData.plant_data[key].Available == 0 :
 			Herbes.push_back(key)
 
 

@@ -48,7 +48,8 @@ func LVL_up():
 func initialize_shader():
 	rng.randomize()
 	get_material().set_shader_param("Speed",rng.randf_range(1,2))
-	get_material().set_shader_param("maxStrength",rng.randf_range(0.2,0.8))
+	if get_material().get_shader_param("maxStrength") != 0:
+		get_material().set_shader_param("maxStrength",rng.randf_range(0.2,0.8))
 	get_material().set_shader_param("interval",rng.randf_range(1,2))
 	get_material().set_shader_param("strengthScale",rng.randf_range(10,40))
 	shader_vent = get_material()
@@ -56,11 +57,14 @@ func initialize_shader():
 func hydrat():
 	pv += 5
 	if pv > 2 :
-		set_self_modulate(Color(1,1,1,1))
+#		set_self_modulate(Color(1,1,1,1))
+		$Goutte.visible = false
 
 
 func deshydrat():
-	set_self_modulate(Color(0.6,0.6,0.6,1))
+#	set_self_modulate(Color(0.6,0.6,0.6,1))
+	$Goutte.visible = true
+	pass
 
 
 

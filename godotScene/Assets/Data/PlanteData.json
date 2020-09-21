@@ -5,7 +5,7 @@
     "PV": 4,
     "XP": 2,
     "LVL": 1,
-    "Available": 1,
+    "Available": 0,
     "Description": "Des jolies fleurs de toutes les couleurs"
   },
   "Myosotis": {
@@ -14,7 +14,7 @@
     "PV": 5,
     "XP": 3,
     "LVL": 1,
-    "Available": 1,
+    "Available": 0,
     "Description": "ForgetMeNot en anglais, la fleur des divorcés géographiques"
   },
   "Cactus": {
@@ -23,7 +23,7 @@
     "PV": 10,
     "XP": 5,
     "LVL": 1,
-    "Available": 1,
+    "Available": 0,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
   "Pleureur": {
@@ -32,7 +32,7 @@
     "PV": 8,
     "XP": 6,
     "LVL": 1,
-    "Available": 1,
+    "Available": 0,
     "Description": "Un arbre larmoyant"
   },
   "Arbuste": {
@@ -41,7 +41,7 @@
     "PV": 7,
     "XP": 5,
     "LVL": 1,
-    "Available": 1,
+    "Available": 0,
     "Description": "un arabesque"
   },
   "HautArbuste": {
@@ -86,7 +86,7 @@
     "PV": 5,
     "XP": 4,
     "LVL": 1,
-    "Available": 1,
+    "Available": 2,
     "Description": "un buisson pas comme les autres"
   },
   "CactusOrange": {
@@ -95,7 +95,7 @@
     "PV": 10,
     "XP": 5,
     "LVL": 1,
-    "Available": 1,
+    "Available": 2,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
   "CactusRouge": {
@@ -104,7 +104,7 @@
     "PV": 10,
     "XP": 5,
     "LVL": 1,
-    "Available": 1,
+    "Available": 2,
     "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux ou celles qui lui barrent la route"
   },
   "FeuillesVertRouge": {
@@ -113,7 +113,7 @@
     "PV": 7,
     "XP": 3,
     "LVL": 1,
-    "Available": 1,
+    "Available": 3,
     "Description": "etc"
   },
   "Flocons": {
@@ -122,7 +122,7 @@
     "PV": 4,
     "XP": 3,
     "LVL": 1,
-    "Available": 1,
+    "Available": 4,
     "Description": "etc"
   },
   "Glycines": {
@@ -131,7 +131,7 @@
     "PV": 6,
     "XP": 5,
     "LVL": 1,
-    "Available": 1,
+    "Available": 4,
     "Description": "etc"
   },
   "JaunesHautes": {
@@ -140,7 +140,7 @@
     "PV": 3,
     "XP": 3,
     "LVL": 1,
-    "Available": 1,
+    "Available": 5,
     "Description": "etc"
   },
   "OrangeFines": {
@@ -149,7 +149,7 @@
     "PV": 3,
     "XP": 3,
     "LVL": 1,
-    "Available": 1,
+    "Available": 6,
     "Description": "etc"
   },
   "OreillesDeLapin": {
@@ -158,7 +158,7 @@
     "PV": 8,
     "XP": 4,
     "LVL": 1,
-    "Available": 1,
+    "Available": 8,
     "Description": "etc"
   },
   "Pompom": {
@@ -167,7 +167,7 @@
     "PV": 4,
     "XP": 4,
     "LVL": 1,
-    "Available": 1,
+    "Available": 9,
     "Description": "etc"
   },
   "RoseTremiere": {
@@ -176,7 +176,7 @@
     "PV": 6,
     "XP": 6,
     "LVL": 1,
-    "Available": 1,
+    "Available": 9,
     "Description": "etc"
   },
   "RosesPlates": {
@@ -185,7 +185,7 @@
     "PV": 4,
     "XP": 5,
     "LVL": 1,
-    "Available": 1,
+    "Available": 10,
     "Description": "etc"
   },
   "Rouge": {
@@ -194,7 +194,7 @@
     "PV": 2,
     "XP": 2,
     "LVL": 1,
-    "Available": 1,
+    "Available": 10,
     "Description": "etc"
   },
   "Fougere": {
@@ -203,7 +203,7 @@
     "PV": 7,
     "XP": 3,
     "LVL": 1,
-    "Available": 1,
+    "Available": 12,
     "Description": "etc"
   },
   "Bleuet": {
@@ -212,7 +212,7 @@
     "PV": 3,
     "XP": 2,
     "LVL": 1,
-    "Available": 1,
+    "Available": 12,
     "Description": "etc"
   }
 }

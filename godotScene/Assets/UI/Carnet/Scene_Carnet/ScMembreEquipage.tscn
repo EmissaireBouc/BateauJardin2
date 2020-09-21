@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/UI/Carnet/script_carnet/Carnet_BlocPerso.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre2_Livre.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/UI/Carnet/Illustration/illu_Suzanne.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Carnet/Illustration/Equipage/illu_Roche.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -57,7 +57,7 @@ margin_right = 116.0
 margin_bottom = 101.0
 custom_styles/panel = SubResource( 3 )
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+[node name="Illustration" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer"]
 margin_left = 20.0
 margin_right = 116.0
 margin_bottom = 101.0

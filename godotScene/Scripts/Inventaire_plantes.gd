@@ -6,6 +6,17 @@ signal plant_abort
 var itemID
 
 onready var itemlist : ItemList = get_node("AnimationPlayer/TextureRect/ItemList")
+onready var illustration : Sprite = get_node("AnimationPlayer/TextureRect/Illustration")
+
+func _ready():
+	itemlist.setup_ItemList()
+
+
+func Add_New_Seed(jour):
+	for key in ImportData.plant_data :
+		if  ImportData.plant_data[key].Available == jour:
+			ImportData.plant_data[key].Available = 0
+			itemlist.add_graine(key)
 
 
 func is_open():
@@ -38,8 +49,12 @@ func _on_ItemList_item_selected(index):
 	if itemID != index:
 		itemlist.modulate_icon()
 		$ClicGraine.play()
+	print(get_selected_item())
+	illustration.visible = true
+	illustration.texture = load("res://Assets/UI/Carnet/Illustration/Plantes/%s" %"illu_" + get_selected_item() + ".png")
 	itemID = index
 	itemlist.set_item_icon_modulate(index, Color(1,1,1,1))
+	
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
