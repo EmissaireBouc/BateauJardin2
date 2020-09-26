@@ -135,8 +135,9 @@ __meta__ = {
 
 [node name="Illustration" type="Sprite" parent="AnimationPlayer/TextureRect"]
 visible = false
-position = Vector2( 721.911, 181.146 )
-rotation = 0.23911
+position = Vector2( 720.961, 192.546 )
+rotation = 0.279253
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 9 )
 
 [node name="OuvreBoite" type="AudioStreamPlayer" parent="AnimationPlayer"]
