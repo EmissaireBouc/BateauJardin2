@@ -1,10 +1,10 @@
 extends Node2D
 
-var default = load("res://Assets/UI/Curseur/curseur_normal.png")
-var planter = load("res://Assets/UI/Curseur/curseur_normal.png")
+var default = load("res://Assets/UI/Curseur/curseur_default.png")
+var planter = load("res://Assets/UI/Curseur/curseur_planter.png")
 var lire = load("res://Assets/UI/Curseur/curseur_livre.png")
-var parler = load("res://Assets/UI/Curseur/Curs__6.png") 
-var dormir = load("res://Assets/UI/Curseur/Curseur_dormir.png")
+var parler = load("res://Assets/UI/Curseur/curseur_parler.png") 
+var dormir = load("res://Assets/UI/Curseur/curseur_dormir.png")
 
 var cursor = "default"
 var posCursor
@@ -13,17 +13,13 @@ var action
 #Tableau des plantes
 var aGarden = []
 
-
 export (int) var day = 0
-
-
 
 enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} #Enum des différentes animations du Player
 enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER, CONVERS, CARNET, DEPLACER} #Enum des différentes actions du Player
 
-
 onready var nav2D : Navigation2D = $Bateau/WalkArea # Navigation2D est un noeud qui permet le pathfinding depuis une aire de navigation (NavigationPolygon)
-onready var Line2D : Line2D = $Bateau/YSort/Line2D # Line2D trace une ligne (débug)
+onready var Line2D : Line2D = $Bateau/YSort/Line2D # Line2D trace une ligne
 onready var Player : AnimatedSprite = $Bateau/YSort/Player
 onready var MouseA : Area2D = get_node("Bateau/YSort/gMouseCollider")
 onready var menuInventaire : Control = get_node("CanvasLayer/Control/Inventory")
@@ -32,6 +28,10 @@ onready var Cam : Camera2D = get_node("Bateau/YSort/Player/Camera2D")
 onready var PA : Label = get_node("CanvasLayer/PA")
 onready var PNJsort : YSort = get_node("Bateau/YSort/PNJ")
 onready var transitionJours = get_node("CanvasLayer/ciel transition/ciel")
+
+"""
+Initialisation du jeu
+"""
 
 
 func _ready():
@@ -60,7 +60,6 @@ func connectique():
 func _process(_delta):
 	debug()
 
-
 func setup_nav2D_plant():
 #	for i in range (aGarden.size()) :
 #		Nav_2D_Update(aGarden[i].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[i].get_node("Area2D/CollisionPolygon2D").get_polygon())
@@ -71,31 +70,14 @@ func Nav_2D_Update(t,p):
 
 
 
-func Open_Carnet():
-	match action : 
-		DEFAULT :
-			if !menuEntretenir.is_open():
-				var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
-				$CanvasLayer.add_child(Carnet)
-				Carnet.set_scale(Vector2(0.9,0.9))
-				Carnet.connect("Close_Carnet", self, "Close_Carnet")
-				change_action(CARNET)
-
-func Close_Carnet():
-	change_action(DEFAULT)
-
-func Engage_Conversation():
-	match action :
-		DEFAULT :
-			change_action(PARLER)
-
-
 """
 Gestion du clic gauche :
 	_unhandled_input(event) récupère l'input souris DANS la scène active 
 	(distingue des inputs qui ont lieu dans le HUD)
 	Gère le Clic gauche (par défaut : Marcher)
 """
+
+
 
 func _unhandled_input(_event):
 	if !Input.is_action_pressed("ui_left_mouse"):
@@ -105,7 +87,7 @@ func _unhandled_input(_event):
 		match action :
 			DEFAULT :
 				if !menuEntretenir.is_open():
-					if get_cursor_mode() == "default":
+					if cursor == "default":
 						change_action(DEPLACER)
 						Player.change_state(MOVE)
 						create_ui_destination(get_global_mouse_position(),"DESTINATION")
@@ -115,12 +97,14 @@ func _unhandled_input(_event):
 					destroy_ui_destination()
 
 
+
 """
 Gestion du clic droit :
 	- Si une plante est en surbrillance (chevauchée par la souris) : ouvre le menu Entretenir
 	- Si L'inventaire des graines n'est pas ouvert : ouvre le menu Graine
 	- Sinon : fermeture du menu Graine et du menu Entretenir et retour sur le curseur par défaut
 """
+
 
 
 func _input(_event):
@@ -145,7 +129,6 @@ func _input(_event):
 					posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
 					menuEntretenir.open()
 
-
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && !MouseA.overlapPlant):
 		if PA.get_PA() > 0: 
@@ -161,6 +144,8 @@ func _encart(nom, sentence, dicTxt = {}):
 	$CanvasLayer.add_child(encart)
 	$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
 
+
+
 """
 Gestion du curseur :
 	Fonctionne avec les signaux des areas2D. 
@@ -170,8 +155,11 @@ Gestion du curseur :
 	!! les signaux sont paramétrés depuis la fonction connectique()
 """
 
+
 func cursor_mode(newMode):
+
 	cursor = newMode
+
 	if (newMode == "default"):
 		Input.set_custom_mouse_cursor(default)
 		MouseA.visible = false
@@ -183,19 +171,17 @@ func cursor_mode(newMode):
 		match action:
 			DEFAULT :
 				Input.set_custom_mouse_cursor(lire)
-	
+
 	if (newMode == "parler"):
 		match action:
 			DEFAULT :
 				Input.set_custom_mouse_cursor(parler)
-				
+
 	if (newMode == "dormir"):
 		match action:
 			DEFAULT :
 				Input.set_custom_mouse_cursor(dormir)
 
-func get_cursor_mode():
-	return cursor
 
 """
 Gestion des actions du joueur :
@@ -205,8 +191,15 @@ Gestion des actions du joueur :
 	et de l'animation (state) terminée, l'action suivante se joue.
 	- Lorsque la suite d'une action n'est pas conditionnée par la fin d'une animation du PJ mais par autre chose
 	(fermerture d'un menu, pression d'un bouton etc.), se référer aux autres signaux présents dans cette section
-	 
 """
+
+
+
+func Engage_Conversation():
+	match action :
+		DEFAULT :
+			change_action(PARLER)
+
 func change_action(newaction):
 	action = newaction
 
@@ -316,12 +309,20 @@ func _on_Button_Spray_pressed():
 	else:
 		menuEntretenir.close()
 
+func _on_PNJ_Fin_Conversation():
+	change_action(DEFAULT)
+
+
+
+
 """
 Gestion des actions Entretenir :
 	plante_PV_up(plant) : Augmente les pv de 5 et coûte 1PA
 	plante_Remove(plant) : Retire une plante du tableau (Manque l'animation de 
 	destruction) et coûte 1PA
 """
+
+
 
 func plante_PV_up(plant):
 	get_node("Bateau/YSort/Plante/%s" %plant).hydrat()
@@ -337,12 +338,16 @@ func plante_Remove(plant):
 	MouseA.clear_aCollisionNode()
 
 
+
+
 """
 Gestion de l'action Dormir :
 	Lors clic sur porte de la cabine : 
 	Player marche vers la porte -> animation entre dans la cabine -> transition_in -> actualisation du bateau
 	-> texte : Un_Jour_Passe -> transition_out -> animation sort de la cabine
 """
+
+
 
 func _on_Porte_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
@@ -401,6 +406,8 @@ func plante_XP_up():
 			aGarden[i].LVL_up()
 
 
+
+
 """
 Gestion de la fonction Fondu
 	deux animations à mettre en paramètre : 
@@ -409,6 +416,7 @@ Gestion de la fonction Fondu
 	Lorsque le fondu est terminée, elle émet le signal 'on_Transition_transition_over' avec en paramètre 
 	le nom de l'animation terminée + si c'est le fondu de début de transition de jour ou de fin
 """
+
 
 
 func fondu(animName):
@@ -443,9 +451,16 @@ func start_new_day():
 		if ImportData.plant_data[key].Available == ImportData.jour :
 			nbText += 1
 			dicTexture["key"+ str(nbText)] = "res://Assets/Plante/Icone/icon_%s.png" %key
-	print(dicTexture)
 	if !dicTexture.empty():
 		_encart("", "De nouvelles graines sont à votre disposition :", dicTexture)
+
+
+
+"""
+gestion des feedbacks DESTINATION et PLANTER
+"""
+
+
 
 func create_ui_destination(pos, anim):
 	if get_node_or_null("Bateau/YSort/UI_Destination") == null :
@@ -459,6 +474,31 @@ func create_ui_destination(pos, anim):
 func destroy_ui_destination():
 	if get_node_or_null("Bateau/YSort/UI_Destination") != null :
 		get_node("Bateau/YSort/UI_Destination").queue_free()
+
+
+
+
+"""
+Gestion du Carnet
+"""
+
+
+
+
+func Open_Carnet():
+	match action : 
+		DEFAULT :
+			if !menuEntretenir.is_open():
+				var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
+				$CanvasLayer.add_child(Carnet)
+				Carnet.set_scale(Vector2(0.9,0.9))
+				Carnet.connect("Close_Carnet", self, "Close_Carnet")
+				change_action(CARNET)
+
+func Close_Carnet():
+	change_action(DEFAULT)
+
+
 
 """
 Gestion des fonctions Debug
@@ -474,10 +514,6 @@ func print_garden():
 
 func debug():
 	$CanvasLayer/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100)
-
-
-func _on_PNJ_Fin_Conversation():
-	change_action(DEFAULT)
 
 
 class MyCustomSorter:

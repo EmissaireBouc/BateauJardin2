@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Curs__6.png-de59913f789ff8ed0c5a9a898fb13359.stex"
+path="res://.import/curseur_planter.png-07b0f354f592da4b040d0d8f0b0956f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Curseur/Curs__6.png"
-dest_files=[ "res://.import/Curs__6.png-de59913f789ff8ed0c5a9a898fb13359.stex" ]
+source_file="res://Assets/UI/Curseur/curseur_planter.png"
+dest_files=[ "res://.import/curseur_planter.png-07b0f354f592da4b040d0d8f0b0956f4.stex" ]
 
 [params]
 
