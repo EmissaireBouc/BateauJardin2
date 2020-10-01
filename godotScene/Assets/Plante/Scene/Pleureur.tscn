@@ -29,16 +29,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "fanelvl2",
@@ -53,6 +43,16 @@ animations = [ {
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
 } ]
 
 [node name="Pleureur" instance=ExtResource( 1 )]
@@ -62,3 +62,6 @@ offset = Vector2( 115, -550 )
 
 [node name="Area2D" parent="." index="0"]
 visible = true
+
+[node name="Goutte" parent="." index="1"]
+position = Vector2( -16, 0 )

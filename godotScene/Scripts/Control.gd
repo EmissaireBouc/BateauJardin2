@@ -4,6 +4,7 @@ var default = load("res://Assets/UI/Curseur/curseur_normal.png")
 var planter = load("res://Assets/UI/Curseur/curseur_normal.png")
 var lire = load("res://Assets/UI/Curseur/curseur_livre.png")
 var parler = load("res://Assets/UI/Curseur/Curs__6.png") 
+var dormir = load("res://Assets/UI/Curseur/Curseur_dormir.png")
 
 var cursor = "default"
 var posCursor
@@ -37,20 +38,17 @@ func _ready():
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")
-	
-	PA.set_PA(5)
+#	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
+	PA.set_PA(2)
 	
 	$CanvasLayer/Transition.visible = true
-	
-	print_garden() #Debug 
 	$Musique.play()
-	
+
 	connectique()
+
 	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
 		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
-	
-#	setup_nav2D_plant()
-	
+	print_garden() #Debug 
 
 func connectique():
 	PNJsort.connect("Engage_Conversation",self,"Engage_Conversation")
@@ -61,7 +59,6 @@ func connectique():
 
 func _process(_delta):
 	debug()
-	pass
 
 
 func setup_nav2D_plant():
@@ -134,9 +131,12 @@ func _input(_event):
 	if Input.is_action_pressed("ui_right_mouse"):
 		match action:
 			DEFAULT:
-				if MouseA.overlapPlant : 
-					posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
-					menuEntretenir.open()
+				if MouseA.overlapPlant :
+					if PA.get_PA() > 0:
+						posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
+						menuEntretenir.open()
+					else:
+						_encart("Jade","Je suis fatiguée maintenant, je dois me reposer")
 
 			PLANTER:
 				change_action(DEFAULT)
@@ -153,6 +153,13 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 				DEFAULT:
 					change_action(PLANTER)
 					create_ui_destination(get_global_mouse_position(),"PLANTATION")
+		else:
+			_encart("Jade","Je suis fatiguée maintenant, je dois me reposer")
+
+func _encart(nom, sentence, dicTxt = {}):
+	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
+	$CanvasLayer.add_child(encart)
+	$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
 
 """
 Gestion du curseur :
@@ -181,6 +188,11 @@ func cursor_mode(newMode):
 		match action:
 			DEFAULT :
 				Input.set_custom_mouse_cursor(parler)
+				
+	if (newMode == "dormir"):
+		match action:
+			DEFAULT :
+				Input.set_custom_mouse_cursor(dormir)
 
 func get_cursor_mode():
 	return cursor
@@ -324,29 +336,6 @@ func plante_Remove(plant):
 	print_garden()
 	MouseA.clear_aCollisionNode()
 
-"""
-Gestion du curseur de la souris :
-	Pour le moment : aucune gestion
-"""
-
-func _on_Jardin_mouse_entered():
-	if cursor == "planter":
-		Input.set_custom_mouse_cursor(planter)
-
-func _on_Jardin_mouse_exited():
-	if cursor == "planter":
-		var nplanter = load("res://Assets/UI/Curseur/curseur_normal.png")
-		Input.set_custom_mouse_cursor(nplanter)
-
-func _on_Area2D_mouse_entered():
-	if cursor == "default":
-		Input.set_custom_mouse_cursor(default)
-
-func _on_Area2D_mouse_exited():
-	if cursor == "default":
-		var ndefault = load("res://Assets/UI/Curseur/curseur_normal.png")
-		Input.set_custom_mouse_cursor(ndefault)
-
 
 """
 Gestion de l'action Dormir :
@@ -357,8 +346,20 @@ Gestion de l'action Dormir :
 
 func _on_Porte_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
-		change_action(DORMIR)
+		if ImportData.jour >= 5 && ImportData.jour <= 9 :
+			if PA.get_PA() == 0:
+				change_action(DORMIR)
+			else:
+				_encart("Jade", "J'ai une montagne de choses à faire et l'énergie pour le faire... AU BOULOT !")
+				change_action(DEFAULT)
+		else : 
+			change_action(DORMIR)
 
+func _on_Porte_mouse_entered():
+	cursor_mode("dormir")
+	
+func _on_Porte_mouse_exited():
+	cursor_mode("default")
 
 func a_day_pass():
 	day += 1
@@ -366,15 +367,23 @@ func a_day_pass():
 	$Bateau/WalkArea.reboot()
 	PNJsort.new_day()
 	setup_nav2D_plant()
-	PA.set_PA(5)
+	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
 	#$CanvasLayer/Transition/Jour.text = "Jour "+str(day)
 	#$CanvasLayer/Transition/Jour.visible = true
 	$CanvasLayer/Transition.waitForClick = true
 	plante_XP_up()
 	plante_PV_down()
-	menuInventaire.Add_New_Seed(ImportData.jour)
+	
+	
+	if ImportData.jour == 10:
+		arrose_plrs_plantes(5)
 
-
+func arrose_plrs_plantes(n = 0):
+	aGarden.sort_custom(MyCustomSorter, "sort_ascending")
+	for i in range(aGarden.size()):
+		if aGarden[i].pv > 0 && n > 0:
+			aGarden[i].hydrat()
+			n -= 1
 
 func plante_PV_down():
 	for i in range(aGarden.size()):
@@ -418,6 +427,8 @@ func _on_Transition_transition_over(t):
 		fondu("transition_out")
 		
 	if t == "transition_out":
+		start_new_day()
+		menuInventaire.Add_New_Seed(ImportData.jour)
 		pass
 		#$CanvasLayer/Transition/Jour.visible = false
 		
@@ -425,6 +436,16 @@ func _on_Transition_transition_over(t):
 		$CanvasLayer/Transition.transitionCiel = false
 		fondu("transition_in")
 
+func start_new_day():
+	var nbText = 0
+	var dicTexture = {}
+	for key in ImportData.plant_data:
+		if ImportData.plant_data[key].Available == ImportData.jour :
+			nbText += 1
+			dicTexture["key"+ str(nbText)] = "res://Assets/Plante/Icone/icon_%s.png" %key
+	print(dicTexture)
+	if !dicTexture.empty():
+		_encart("", "De nouvelles graines sont à votre disposition :", dicTexture)
 
 func create_ui_destination(pos, anim):
 	if get_node_or_null("Bateau/YSort/UI_Destination") == null :
@@ -449,7 +470,7 @@ func print_garden():
 		array += "\ni="+str(i)+" [" + str(aGarden[i].get_name()) + "] : " + aGarden[i].get_child(0).get_name()
 
 	$CanvasLayer/DebugLabel.text = "Jardin : " + str(aGarden.size()) + array
-	
+
 
 func debug():
 	$CanvasLayer/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100)
@@ -457,3 +478,10 @@ func debug():
 
 func _on_PNJ_Fin_Conversation():
 	change_action(DEFAULT)
+
+
+class MyCustomSorter:
+	static func sort_ascending(a, b):
+		if a.pv < b.pv:
+			return true
+		return false

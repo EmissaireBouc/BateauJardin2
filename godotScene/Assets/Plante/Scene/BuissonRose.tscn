@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Plante/Image/buisson rouge 3.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Plante/Image/buisson rouge 1 s.png" type="Texture" id=7]
 
-[sub_resource type="Shader" id=72]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -37,9 +37,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=73]
+[sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 72 )
+shader = SubResource( 1 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -49,7 +49,7 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=74]
+[sub_resource type="SpriteFrames" id=3]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 6 ) ],
@@ -57,14 +57,9 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "fanelvl1",
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -72,22 +67,30 @@ animations = [ {
 "name": "fanelvl3",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "lvl1",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
 [node name="BuissonRose" instance=ExtResource( 1 )]
-material = SubResource( 73 )
-frames = SubResource( 74 )
+material = SubResource( 2 )
+frames = SubResource( 3 )
 offset = Vector2( 0, -150 )
 
 [node name="CollisionPolygon2D" parent="Area2D" index="0"]
 position = Vector2( -27.8437, -10.5659 )
 scale = Vector2( 5.24152, 1 )
+
+[node name="Goutte" parent="." index="1"]
+position = Vector2( 8, -16 )

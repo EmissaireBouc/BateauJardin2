@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Encart.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre2_Livre.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/UI/Carnet/fleche_bas.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Carnet/Journal/texture_feuille.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Carnet/fleche_bas_pressed.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1665.98, 283.306 ), Vector2( 1665.98, 311.306 ) ]
+}
+
+[node name="Encart" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zone" type="Control" parent="."]
+light_mask = 16
+anchor_top = 0.619
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 60.0
+margin_top = 17.48
+margin_right = -60.0
+margin_bottom = -60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fond" type="NinePatchRect" parent="Zone"]
+anchor_right = 1.0
+anchor_bottom = 1.051
+margin_bottom = -0.0339966
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 5 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nom" type="RichTextLabel" parent="Zone"]
+margin_left = 70.0
+margin_top = 33.0
+margin_right = 444.0
+margin_bottom = 82.0
+custom_fonts/mono_font = ExtResource( 1 )
+custom_fonts/bold_italics_font = ExtResource( 1 )
+custom_fonts/italics_font = ExtResource( 1 )
+custom_fonts/bold_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_text = "Nom du personnage"
+text = "Nom du personnage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="texte" type="RichTextLabel" parent="Zone"]
+margin_left = 70.0
+margin_top = 83.0
+margin_right = 1711.0
+margin_bottom = 289.0
+custom_fonts/normal_font = ExtResource( 3 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="indicateur" type="TextureButton" parent="Zone"]
+margin_left = 1700.24
+margin_top = 258.877
+margin_right = 1764.24
+margin_bottom = 322.877
+action_mode = 0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Zone/indicateur"]
+anims/Idle = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="Zone"]
+[connection signal="pressed" from="Zone/indicateur" to="." method="_on_indicateur_pressed"]
+[connection signal="tween_completed" from="Zone/Tween" to="." method="_on_Tween_tween_completed"]

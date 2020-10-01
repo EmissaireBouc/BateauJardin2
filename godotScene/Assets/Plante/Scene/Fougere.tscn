@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Plante/Image/fougere 2 s.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Plante/Image/fougere 1 s.png" type="Texture" id=7]
 
-[sub_resource type="Shader" id=26]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -39,7 +39,7 @@ void vertex() {
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 26 )
+shader = SubResource( 1 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.0
 shader_param/maxStrength = 0.3
@@ -57,16 +57,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "fanelvl2",
@@ -81,8 +71,21 @@ animations = [ {
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
 } ]
 
 [node name="Fougere" instance=ExtResource( 1 )]
 material = SubResource( 2 )
 frames = SubResource( 3 )
+
+[node name="Goutte" parent="." index="1"]
+position = Vector2( 0, 32 )

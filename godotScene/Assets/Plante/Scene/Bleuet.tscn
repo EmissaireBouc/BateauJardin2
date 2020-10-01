@@ -57,16 +57,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "fanelvl2",
@@ -81,6 +71,16 @@ animations = [ {
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
 } ]
 
 [node name="Bleuet" instance=ExtResource( 1 )]
@@ -91,3 +91,6 @@ offset = Vector2( -10, -150 )
 [node name="CollisionPolygon2D" parent="Area2D" index="0"]
 position = Vector2( -16, -16 )
 scale = Vector2( 2.2816, 1 )
+
+[node name="Goutte" parent="." index="1"]
+position = Vector2( -8, 0 )

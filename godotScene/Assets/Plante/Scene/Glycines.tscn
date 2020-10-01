@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Plante/Image/glycines 1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Plante/Image/glycines 1 s.png" type="Texture" id=7]
 
-[sub_resource type="Shader" id=70]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -37,9 +37,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=71]
+[sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 70 )
+shader = SubResource( 1 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -49,22 +49,12 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=72]
+[sub_resource type="SpriteFrames" id=3]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -81,9 +71,22 @@ animations = [ {
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
 } ]
 
 [node name="Glycines" instance=ExtResource( 2 )]
-material = SubResource( 71 )
-frames = SubResource( 72 )
+material = SubResource( 2 )
+frames = SubResource( 3 )
 offset = Vector2( 25, -140 )
+
+[node name="Goutte" parent="." index="1"]
+position = Vector2( 32, 7 )

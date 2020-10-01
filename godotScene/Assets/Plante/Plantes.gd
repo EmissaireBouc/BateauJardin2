@@ -9,6 +9,7 @@ var rng = RandomNumberGenerator.new()
 var shader_vent
 
 func _ready():
+	$Goutte/AnimationPlayer.play("Modulate_humide") #set_self_modulate(Color(0.5,1,1,1))
 	update_status()
 	initialize_shader()
 
@@ -57,14 +58,12 @@ func initialize_shader():
 func hydrat():
 	pv += 5
 	if pv > 2 :
-#		set_self_modulate(Color(1,1,1,1))
-		$Goutte.visible = false
+		$Goutte/AnimationPlayer.play("Modulate_humide")
 
 
 func deshydrat():
-#	set_self_modulate(Color(0.6,0.6,0.6,1))
-	$Goutte.visible = true
-	pass
+	$Goutte/AnimationPlayer.play("Modulate_sec")
+
 
 
 

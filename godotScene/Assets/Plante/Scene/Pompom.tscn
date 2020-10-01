@@ -57,16 +57,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "fanelvl2",
@@ -81,9 +71,22 @@ animations = [ {
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
 } ]
 
 [node name="Pompom" instance=ExtResource( 1 )]
 material = SubResource( 2 )
 frames = SubResource( 3 )
 offset = Vector2( 0, -75 )
+
+[node name="Goutte" parent="." index="1"]
+position = Vector2( 8, -8 )

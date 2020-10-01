@@ -57,16 +57,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fanelvl2",
@@ -81,6 +71,16 @@ animations = [ {
 "loop": true,
 "name": "fanelvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
 } ]
 
 [node name="HautArbuste" instance=ExtResource( 1 )]
@@ -88,3 +88,6 @@ material = SubResource( 2 )
 position = Vector2( -5.43384, -8 )
 frames = SubResource( 3 )
 offset = Vector2( 20, -290 )
+
+[node name="Goutte" parent="." index="1"]
+position = Vector2( 13.4338, 16 )

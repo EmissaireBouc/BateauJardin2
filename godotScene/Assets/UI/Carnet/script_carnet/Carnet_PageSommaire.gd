@@ -21,13 +21,16 @@ func make_graine_menu():
 	for key in ImportData.plant_data:
 		if ImportData.plant_data[key].Available == 0:
 			i += 1
-			graine.add_child(setup_button_herbe(key, 2+ceil(i/6)))
+			graine.add_child(setup_button_herbe(ImportData.plant_data[key].Name, key, 2+ceil(i/6)))
 
 
-func setup_button_herbe(m, p):
+func setup_button_herbe(m,t, p):
 	var button = load ("res://Assets/UI/Carnet/Scene_Carnet/ScButtonMenu.tscn").instance()
 	button.text = m
 	button.PageToLoad = p
+	var texture = Texture
+	texture = load("res://Assets/Plante/Icone/icon_" + t + ".png")
+	button.set_button_icon(texture)
 	button.connect("pressed", self, "_on_button_pressed", [button.text, button.PageToLoad])
 	return button
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Personnage/PJ/PJ.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://scripts/PlayerControl.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/PlayerControl.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Son/marche03.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Son/marche02.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Son/Arrosage.wav" type="AudioStream" id=6]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/Son/Planter.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 213.335, 53.8527 )
+extents = Vector2( 93.8132, 260.061 )
 
 [node name="Player" type="AnimatedSprite"]
 scale = Vector2( 0.5, 0.5 )
@@ -48,7 +48,7 @@ stream = ExtResource( 6 )
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -2.32454, -56.241 )
+position = Vector2( 14.3774, -273.365 )
 shape = SubResource( 1 )
 [connection signal="animation_finished" from="." to="." method="_on_Player_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

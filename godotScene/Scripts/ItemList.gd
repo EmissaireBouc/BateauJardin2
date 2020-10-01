@@ -16,7 +16,7 @@ func make_inventory():
 			create_item(key)
 
 func create_item(plante):
-	var texture = load("res://Assets/Plante/Icone/%s" %"icon"+ImportData.plant_data[plante].Name+".png")
+	var texture = load("res://Assets/Plante/Icone/%s" %"icon_"+ plante +".png")
 	add_item(ImportData.plant_data[plante].Name, texture)
 
 
