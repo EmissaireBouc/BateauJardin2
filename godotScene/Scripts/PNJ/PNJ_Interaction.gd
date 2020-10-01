@@ -5,6 +5,7 @@ var index_dialogueArray = 0
 var NumDial = 0
 var talking = false
 
+
 """
 A propos de Spot_PNJ :
 	Spot_PNJ correspond aux 8 positions que les PNJ peuvent occuper. En l'état, c'est loin d'être une
@@ -77,13 +78,16 @@ func on_Character_input(n):
 		NomPersonnage = n
 		emit_signal("Engage_Conversation")
 		talking = true
-
+		print(NumDial)
 
 func Change_Cursor(newCursor):
 	emit_signal("Change_Cursor",newCursor)
 
 func lancer_dialogue():
-	BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage]
+	if NumDial == 0:
+		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1
+	else:
+		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2
 	get_node_character(NomPersonnage).play("TALK")
 	parle()
 
@@ -108,19 +112,13 @@ func parle():
 	"""
 
 	if index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1:
-		" Pour afficher les noms: "
 		if NumDial == 0:
 			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom
-		else:
-			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2[index_dialogueArray].Nom
-		
-		" Pour afficher les dialogues: "
-		if NumDial == 0:
-			
 			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Text
 		else:
+			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2[index_dialogueArray].Nom
 			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2[index_dialogueArray].Text
-
+		
 		index_dialogueArray +=1
 
 		Dialogues.visible = true
@@ -139,8 +137,8 @@ func fin_dialogue():
 	index_dialogueArray = 0
 	emit_signal("Fin_Conversation")
 
-	if NumDial == 0:
-		NumDial += 1
+#	if NumDial == 0:
+#		NumDial += 1
 
 
 func get_node_character(n):
