@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 export var NomPersonnage = ""
-export var NumDial = 0
+#export var NumDial = 0
 
 signal character_input
 
