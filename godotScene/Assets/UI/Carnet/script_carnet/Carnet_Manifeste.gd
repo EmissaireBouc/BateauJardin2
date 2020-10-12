@@ -8,17 +8,17 @@ signal BackToMenu
 
 func setup():
 
-	if page == 2:
+	if page == 2 || page == 4:
 		$VBoxContainer/Titre.queue_free()
 
 	DictionaryToArray()
 	var key
 	for i in range(0,nbElement):
-		if i < Equipage.size() :
+		if i+(page*nbElement) < Equipage.size() :
 			key = Equipage[i+(page*nbElement)]
 			var nvmembre = load ("res://Assets/UI/Carnet/Scene_Carnet/ScMembreEquipage.tscn").instance()
 			membre.add_child(nvmembre)
-			nvmembre.setup(key, ImportData.equipage_data[key].Prenom,ImportData.equipage_data[key].Aka,ImportData.equipage_data[key].Genre,ImportData.equipage_data[key].Pronom,ImportData.equipage_data[key].Fonction,ImportData.equipage_data[key].Histoire)
+			nvmembre.setup(key, ImportData.equipage_data[key].Prenom,ImportData.equipage_data[key].Aka,ImportData.equipage_data[key].Pronom,ImportData.equipage_data[key].Fonction,ImportData.equipage_data[key].Histoire)
 			
 		else:
 			break

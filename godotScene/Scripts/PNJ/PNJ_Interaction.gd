@@ -73,11 +73,12 @@ func disconnect_child_node():
 		get_child(i).get_node("Area2D").disconnect("mouse_exited", self, "Change_Cursor")
 
 
-func on_Character_input(n):
+func on_Character_input(n, d):
 	if !talking:
 		NomPersonnage = n
-		emit_signal("Engage_Conversation")
+		NumDial = d
 		talking = true
+		emit_signal("Engage_Conversation")
 		print(NumDial)
 
 func Change_Cursor(newCursor):
@@ -132,6 +133,7 @@ func Texte_Suivant():
 
 func fin_dialogue():
 	get_node_character(NomPersonnage).play("IDLE")
+	get_node_character(NomPersonnage).Dialogue += 1
 	talking = false
 	Dialogues.visible = false
 	index_dialogueArray = 0

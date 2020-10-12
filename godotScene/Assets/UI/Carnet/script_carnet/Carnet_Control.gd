@@ -36,7 +36,7 @@ func _on_PagePrecedente_pressed():
 func _on_Croix_pressed():
 	$AnimationPlayer.play("Disparition")
 	$FermetureCarnet.play()
-	
+
 
 func load_page():
 	
@@ -58,12 +58,14 @@ func load_page():
 	if numeroPage == 2 : 
 		setup_manifeste(2,3)
 	if numeroPage == 3 : 
-		setup_herbier(0,1)
+		setup_manifeste(4,5)
 	if numeroPage == 4 : 
-		setup_herbier(2,3)
+		setup_herbier(0,1)
 	if numeroPage == 5 : 
-		setup_herbier(4,5)
+		setup_herbier(2,3)
 	if numeroPage == 6 : 
+		setup_herbier(4,5)
+	if numeroPage == 7 : 
 		setup_herbier(6,7)
 
 

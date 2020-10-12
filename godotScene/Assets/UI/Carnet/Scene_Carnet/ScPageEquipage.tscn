@@ -19,7 +19,7 @@ __meta__ = {
 
 [node name="PageGauche" type="MarginContainer" parent="."]
 margin_right = 958.0
-margin_bottom = 1178.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 20
@@ -34,7 +34,7 @@ nbElement = 2
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 938.0
-margin_bottom = 1158.0
+margin_bottom = 1060.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 5 )
@@ -49,7 +49,7 @@ axis_stretch_vertical = 2
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 938.0
-margin_bottom = 1158.0
+margin_bottom = 1060.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -121,7 +121,7 @@ valign = 1
 [node name="MarginContainer" type="MarginContainer" parent="PageGauche/VBoxContainer"]
 margin_top = 274.0
 margin_right = 918.0
-margin_bottom = 1052.0
+margin_bottom = 954.0
 size_flags_vertical = 3
 custom_constants/margin_top = 10
 custom_constants/margin_left = 100
@@ -129,16 +129,16 @@ custom_constants/margin_bottom = 10
 
 [node name="Contenu" type="GridContainer" parent="PageGauche/VBoxContainer/MarginContainer"]
 margin_left = 100.0
-margin_top = 389.0
+margin_top = 340.0
 margin_right = 918.0
-margin_bottom = 389.0
+margin_bottom = 340.0
 size_flags_vertical = 6
 custom_constants/vseparation = 100
 
 [node name="BasDePage" type="MarginContainer" parent="PageGauche/VBoxContainer"]
-margin_top = 1062.0
+margin_top = 964.0
 margin_right = 918.0
-margin_bottom = 1138.0
+margin_bottom = 1040.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 3
@@ -160,7 +160,7 @@ valign = 2
 [node name="PageDroite" type="MarginContainer" parent="."]
 margin_left = 962.0
 margin_right = 1920.0
-margin_bottom = 1178.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 20
@@ -168,14 +168,14 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 script = ExtResource( 4 )
-page = 3
+page = 2
 nbElement = 2
 
 [node name="PageBck" type="NinePatchRect" parent="PageDroite"]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 938.0
-margin_bottom = 1158.0
+margin_bottom = 1060.0
 texture = ExtResource( 5 )
 patch_margin_left = 10
 patch_margin_top = 10
@@ -188,7 +188,7 @@ axis_stretch_vertical = 2
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 938.0
-margin_bottom = 1158.0
+margin_bottom = 1060.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -218,7 +218,7 @@ valign = 1
 [node name="MarginContainer" type="MarginContainer" parent="PageDroite/VBoxContainer"]
 margin_top = 94.0
 margin_right = 918.0
-margin_bottom = 1058.0
+margin_bottom = 960.0
 size_flags_vertical = 3
 custom_constants/margin_top = 10
 custom_constants/margin_left = 100
@@ -226,16 +226,16 @@ custom_constants/margin_bottom = 10
 
 [node name="Contenu" type="GridContainer" parent="PageDroite/VBoxContainer/MarginContainer"]
 margin_left = 100.0
-margin_top = 482.0
+margin_top = 433.0
 margin_right = 918.0
-margin_bottom = 482.0
+margin_bottom = 433.0
 size_flags_vertical = 6
 custom_constants/vseparation = 100
 
 [node name="BasDePage" type="MarginContainer" parent="PageDroite/VBoxContainer"]
-margin_top = 1062.0
+margin_top = 964.0
 margin_right = 918.0
-margin_bottom = 1138.0
+margin_bottom = 1040.0
 size_flags_horizontal = 3
 custom_constants/margin_top = 30
 custom_constants/margin_left = 100

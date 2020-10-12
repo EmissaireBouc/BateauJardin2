@@ -7,17 +7,17 @@ est disponible (available), le bouton associé devient visible
 """
 
 func setup_ItemList():
-	make_inventory()
+#	make_inventory()
 	modulate_icon()
 
-func make_inventory():
-	for key in ImportData.plant_data:
-		if ImportData.plant_data[key].Available == 0:
-			create_item(key)
+#func make_inventory():
+#	for key in ImportData.plant_data:
+#		if ImportData.plant_data[key].Available == 0:
+#			create_item(key)
 
 func create_item(plante):
 	var texture = load("res://Assets/Plante/Icone/%s" %"icon_"+ plante +".png")
-	add_item(ImportData.plant_data[plante].Name, texture)
+	add_item(ImportData.plant_data[plante].Alias, texture)
 
 
 func return_selected_item():

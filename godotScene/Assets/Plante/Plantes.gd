@@ -72,3 +72,10 @@ func _on_Area2D_area_shape_entered(_area_id, _area, _area_shape, _self_shape):
 
 func _on_Area2D_area_shape_exited(_area_id, _area, _area_shape, _self_shape):
 	pass
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Disparition":
+		queue_free()
+		print("plante animation player finished : queue free")
+	pass # Replace with function body.

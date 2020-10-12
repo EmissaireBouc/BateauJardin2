@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/curseur_livre.png-62d80a6274ab131b26ab1e6e8e3b7eb6.stex"
+path="res://.import/tutojadeapercu3.jpg-60d39ac0a12cf725145eef2400f383a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Curseur/curseur_livre.png"
-dest_files=[ "res://.import/curseur_livre.png-62d80a6274ab131b26ab1e6e8e3b7eb6.stex" ]
+source_file="res://Assets/UI/Tuto/tutojadeapercu3.jpg"
+dest_files=[ "res://.import/tutojadeapercu3.jpg-60d39ac0a12cf725145eef2400f383a7.stex" ]
 
 [params]
 

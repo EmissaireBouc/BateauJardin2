@@ -43,7 +43,9 @@ func is_item_selected():
 		return true
 
 func get_selected_item():
-	return itemlist.return_selected_item()
+	for key in ImportData.plant_data :
+		if ImportData.plant_data[key].Alias == itemlist.return_selected_item():
+			return key
 
 func _on_ItemList_item_selected(index):
 	if itemID != index:

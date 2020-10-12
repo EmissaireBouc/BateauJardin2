@@ -32,8 +32,9 @@ tracks/0/keys = {
 }
 
 [node name="Control" type="Control"]
+margin_top = -23.0
 margin_right = 1920.0
-margin_bottom = 1080.0
+margin_bottom = 1057.0
 rect_pivot_offset = Vector2( 960, 540 )
 size_flags_horizontal = 2
 size_flags_vertical = 2

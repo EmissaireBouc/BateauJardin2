@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Plante/Image/arbuste 2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Plante/Plantes.gd" type="Script" id=2]
@@ -58,24 +58,24 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -85,7 +85,38 @@ animations = [ {
 } ]
 
 [sub_resource type="Animation" id=4]
-resource_name = "Modulate_humide"
+resource_name = "Apparition"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Disparition"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:self_modulate")
 tracks/0/interp = 1
@@ -99,8 +130,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.45098, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Modulate_sec"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:self_modulate")
 tracks/0/interp = 1
@@ -115,10 +145,16 @@ tracks/0/keys = {
 }
 
 [node name="Arbuste" type="AnimatedSprite"]
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 2 )
 frames = SubResource( 3 )
 animation = "lvl1"
 script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Apparition"
+anims/Apparition = SubResource( 4 )
+anims/Disparition = SubResource( 7 )
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -136,7 +172,8 @@ position = Vector2( 0, 16 )
 texture = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Goutte"]
-anims/Modulate_humide = SubResource( 4 )
-anims/Modulate_sec = SubResource( 5 )
+anims/Modulate_humide = SubResource( 5 )
+anims/Modulate_sec = SubResource( 6 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
 [connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]

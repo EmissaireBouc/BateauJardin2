@@ -21,7 +21,7 @@ func make_graine_menu():
 	for key in ImportData.plant_data:
 		if ImportData.plant_data[key].Available == 0:
 			i += 1
-			graine.add_child(setup_button_herbe(ImportData.plant_data[key].Name, key, 2+ceil(i/6)))
+			graine.add_child(setup_button_herbe(ImportData.plant_data[key].Alias, key, 3+ceil(i/6)))
 
 
 func setup_button_herbe(m,t, p):
@@ -47,3 +47,7 @@ func setup_button_equipage(m, n, p):
 func _on_button_pressed(_btnPressed, numeroPage):
 	emit_signal("button_pressed", numeroPage)
 	queue_free()
+
+
+func _on_RetourMenu_pressed():
+	get_tree().change_scene("res://Scenes/Systeme/Ecran_Titre.tscn")

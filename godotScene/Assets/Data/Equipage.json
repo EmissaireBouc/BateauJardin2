@@ -1,66 +1,72 @@
 {
-    "Gribou": {
-      "Prenom": "Jade",
-      "Aka": "na",
-      "Genre": "na",
-      "Pronom": "na",
-      "Fonction": "Jardinière",
-      "Histoire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. Pellentesque venenatis aliquet turpis, vitae dignissim leo.  "
-    },
-    "Bigbiz": {
-      "Prenom": "Eleanor",
-      "Aka": "Charibe",
-      "Genre": "na",
-      "Pronom": "na",
-      "Fonction": "Navigatrice",
-      "Histoire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. Pellentesque venenatis aliquet turpis, vitae dignissim leo.  "
-    },
-    "Kuma": {
-      "Prenom": "Mazaa",
-      "Aka": "Scylla",
-      "Genre": "na",
-      "Pronom": "na",
-      "Fonction": "Cartographe",
-      "Histoire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. Pellentesque venenatis aliquet turpis, vitae dignissim leo.  "
-    },
-    "Roche": {
-      "Prenom": "Suzanne",
-      "Aka": "Suzy",
-      "Genre": "na",
-      "Pronom": "na",
-      "Fonction": "Charpentière",
-      "Histoire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. Pellentesque venenatis aliquet turpis, vitae dignissim leo. "
-    },
-    "Darzi": {
-      "Prenom": "Kaneza",
-      "Aka": "na",
-      "Genre": "na",
-      "Pronom": "na",
-      "Fonction": "Mécanicienne",
-      "Histoire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna."
-    },
-    "Duong": {
-      "Prenom": "Minh Tâm",
-      "Aka": "na",
-      "Genre": "na",
-      "Pronom": "na",
-      "Fonction": "Gabière",
-      "Histoire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. Pellentesque venenatis aliquet turpis, vitae dignissim leo. "
-    },
-    "na": {
-      "Prenom": "Ismael",
-      "Aka": "na",
-      "Genre": "na",
-      "Pronom": "na",
-      "Fonction": "Vigie",
-      "Histoire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. Pellentesque venenatis aliquet turpis, vitae dignissim leo. Donec eleifend sem nibh, ut varius eros ullamcorper ac. "
-    },
-    "Dupré": {
-      "Prenom": "Mael",
-      "Aka": "na",
-      "Genre": "na",
-      "Pronom": "na",
-      "Fonction": "Individu en HP",
-      "Histoire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. Pellentesque venenatis aliquet turpis, vitae dignissim leo. Donec eleifend sem nibh, ut varius eros ullamcorper ac. In lacinia massa purus, quis consectetur dui sollicitudin posuere. Nulla maximus quis nibh at fringilla. Nulla a blandit turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque non lorem et quam placerat iaculis sit amet at tellus. "
-    }
+  "Gribou": {
+    "Prenom": "Jade",
+    "Aka": "na",
+    "Pronom": "elle",
+    "Fonction": "Jardinière",
+    "Histoire": "Jade, c'est moi. En recherche d'un travail depuis mon Burn-out, j'ai eu la chance d'atterir sur le Bonny&Read comme jardinière grâce à ma maraine."
+  },
+  "Bigbiz": {
+    "Prenom": "Eleanor",
+    "Aka": "Charibe",
+    "Pronom": "elle",
+    "Fonction": "Navigatrice",
+    "Histoire": "La fière co-capitaine du Bonny&Read, c'est elle qui s'occupe de gader le cap. Malgré son côté direct, elle semble savoir beaucoup de chose à m'apprendre. Elle est en couple avec Mazaa."
+  },
+  "Kuma": {
+    "Prenom": "Mazaa",
+    "Aka": "Scylla",
+    "Pronom": "elle",
+    "Fonction": "Cartographe",
+    "Histoire": "Je ne la vois pas souvent, son état la fatigue beaucoup, mais elle assure comme co-capitaine ! Elle dessine les cartes des nouvelles routes maritimes après la grande montée des eaux et elle les vend ensuite à d'autres marins. Elle est en couple avec Eleanore."
+  },
+  "Roche": {
+    "Prenom": "Suzanne",
+    "Aka": "Suzy",
+    "Pronom": "elle",
+    "Fonction": "Charpentière",
+    "Histoire": "Suzy est une touche à tout. C'est elle qui m'a accueillie lors de mon arrivée sur le navire. Elle a l'air de tenir à coeur à ce que tout le monde se sente bien, et semble toujours affairée à droite et à gauche."
+  },
+"Duong": {
+    "Prenom": "Minh Tâm",
+    "Aka": "na",
+    "Pronom": "iel",
+    "Fonction": "Gabière",
+    "Histoire": "Toujours dans l'arbre et dans les cordages, Minh Tam, lae gabière, semble très énergique et doté d'un certain humour (douteux ?)."
+  },
+  "Darzi": {
+    "Prenom": "Kaneza",
+    "Aka": "na",
+    "Pronom": "elle",
+    "Fonction": "Mécanicienne",
+    "Histoire": "La mécanicienne. Très mystérieuse... À priori, elle cultive des champignons dans la soute ? Elle à l'air... très... très... très timide."
+  },
+  "Guilmette": {
+    "Prenom": "Nathan",
+    "Aka": "AChAB",
+    "Pronom": "lui",
+    "Fonction": "Matelot",
+    "Histoire": "Responsable des livraisons. Cool, peut être un peu trop ? Semble se laisser porter par le vent."
+  },
+  "Aubin": {
+    "Prenom": "Ismael",
+    "Aka": "na",
+    "Pronom": "lui",
+    "Fonction": "Vigie",
+    "Histoire": "Parfois, il fait poète. Pour une vigie, il semble un peu dans la lune, mais il s'y connait beaucoup en plante."
+  },
+  "Duval": {
+    "Prenom": "Anna",
+    "Aka": "La Marainne",
+    "Pronom": "elle",
+    "Fonction": "Marraine",
+    "Histoire": "Ma marraine, je ne la vois pas souvent, mais quand je la retrouve, elle arrive toujours à trouver les bons mots pour me réconforter. C'est elle qui m'a conseillé de venir travailler sur ce bateau."
+  },
+  "Dupré": {
+    "Prenom": "Mael",
+    "Aka": "na",
+    "Pronom": "lui",
+    "Fonction": "Jardinier",
+    "Histoire": "Mael est absent, il n'est pas sur le bateau pour raison de santé, je le remplace."
+  }
 }

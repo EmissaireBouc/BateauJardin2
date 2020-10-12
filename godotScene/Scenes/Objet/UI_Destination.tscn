@@ -5,18 +5,20 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "PLANTATION",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "DESTINATION",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "PLANTATION",
+"speed": 5.0
 } ]
 
 [node name="UI_Destination" type="AnimatedSprite"]
+position = Vector2( -0.698364, -0.494886 )
+scale = Vector2( 1, 0.623199 )
 frames = SubResource( 1 )
 animation = "DESTINATION"
-offset = Vector2( 0, 20 )
+offset = Vector2( 5, 20 )

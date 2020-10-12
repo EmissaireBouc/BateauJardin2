@@ -1,22 +1,13 @@
 extends Node2D
 
-var default = load("res://Assets/UI/Curseur/curseur_default.png")
-var planter = load("res://Assets/UI/Curseur/curseur_planter.png")
-var lire = load("res://Assets/UI/Curseur/curseur_livre.png")
-var parler = load("res://Assets/UI/Curseur/curseur_parler.png") 
-var dormir = load("res://Assets/UI/Curseur/curseur_dormir.png")
-
 var cursor = "default"
 var posCursor
+var aGarden = []
+export (int) var day = 0
 var action
 
-#Tableau des plantes
-var aGarden = []
-
-export (int) var day = 0
-
-enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} #Enum des différentes animations du Player
-enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER, CONVERS, CARNET, DEPLACER} #Enum des différentes actions du Player
+enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} # State
+enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER, CONVERS, CARNET, DEPLACER} # Action
 
 onready var nav2D : Navigation2D = $Bateau/WalkArea # Navigation2D est un noeud qui permet le pathfinding depuis une aire de navigation (NavigationPolygon)
 onready var Line2D : Line2D = $Bateau/YSort/Line2D # Line2D trace une ligne
@@ -38,8 +29,7 @@ func _ready():
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")
-#	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
-	PA.set_PA(2)
+	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
 	
 	$CanvasLayer/Transition.visible = true
 	$Musique.play()
@@ -55,19 +45,9 @@ func connectique():
 	Player.connect("Open_Carnet",self,"Open_Carnet")
 	Player.connect("Change_Cursor", self, "cursor_mode")
 	PNJsort.connect("Change_Cursor", self, "cursor_mode")
-	PNJsort.connect("Nav2D_Update", self, "Nav_2D_Update")
 
 func _process(_delta):
 	debug()
-
-func setup_nav2D_plant():
-#	for i in range (aGarden.size()) :
-#		Nav_2D_Update(aGarden[i].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[i].get_node("Area2D/CollisionPolygon2D").get_polygon())
-	pass
-
-func Nav_2D_Update(t,p):
-	$Bateau/WalkArea.update_navigation_polygon(t,p)
-
 
 
 """
@@ -80,10 +60,9 @@ Gestion du clic gauche :
 
 
 func _unhandled_input(_event):
-	if !Input.is_action_pressed("ui_left_mouse"):
+	if !Input.is_action_just_pressed("ui_left_mouse"):
 		return
-
-	if Input.is_action_pressed("ui_left_mouse"):
+	else:
 		match action :
 			DEFAULT :
 				if !menuEntretenir.is_open():
@@ -95,6 +74,8 @@ func _unhandled_input(_event):
 					menuEntretenir.close()
 					MouseA.clear_aCollisionNode()
 					destroy_ui_destination()
+			DEPLACER :
+				_on_Player_anim_over(MOVE)
 
 
 
@@ -109,10 +90,10 @@ Gestion du clic droit :
 
 func _input(_event):
 
-	if !Input.is_action_pressed("ui_right_mouse"):
+	if !Input.is_action_just_pressed("ui_right_mouse"):
 		return
 
-	if Input.is_action_pressed("ui_right_mouse"):
+	else:
 		match action:
 			DEFAULT:
 				if MouseA.overlapPlant :
@@ -122,12 +103,12 @@ func _input(_event):
 					else:
 						_encart("Jade","Je suis fatiguée maintenant, je dois me reposer")
 
-			PLANTER:
-				change_action(DEFAULT)
-				menuInventaire.close()
-				if MouseA.overlapPlant :
-					posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
-					menuEntretenir.open()
+#			PLANTER:
+#				change_action(DEFAULT)
+#				menuInventaire.close()
+#				if MouseA.overlapPlant :
+#					posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
+#					menuEntretenir.open()
 
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && !MouseA.overlapPlant):
@@ -138,11 +119,6 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 					create_ui_destination(get_global_mouse_position(),"PLANTATION")
 		else:
 			_encart("Jade","Je suis fatiguée maintenant, je dois me reposer")
-
-func _encart(nom, sentence, dicTxt = {}):
-	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
-	$CanvasLayer.add_child(encart)
-	$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
 
 
 
@@ -159,28 +135,9 @@ Gestion du curseur :
 func cursor_mode(newMode):
 
 	cursor = newMode
-
-	if (newMode == "default"):
-		Input.set_custom_mouse_cursor(default)
-		MouseA.visible = false
-
-	if (newMode == "planter"):
-		Input.set_custom_mouse_cursor(planter)
-
-	if (newMode == "lire"):
-		match action:
-			DEFAULT :
-				Input.set_custom_mouse_cursor(lire)
-
-	if (newMode == "parler"):
-		match action:
-			DEFAULT :
-				Input.set_custom_mouse_cursor(parler)
-
-	if (newMode == "dormir"):
-		match action:
-			DEFAULT :
-				Input.set_custom_mouse_cursor(dormir)
+	var texture = Texture
+	texture = load("res://Assets/UI/Curseur/curseur_%s.png" %newMode)
+	Input.set_custom_mouse_cursor(texture)
 
 
 """
@@ -199,6 +156,8 @@ func Engage_Conversation():
 	match action :
 		DEFAULT :
 			change_action(PARLER)
+		_:
+			PNJsort.talking = false
 
 func change_action(newaction):
 	action = newaction
@@ -207,7 +166,6 @@ func change_action(newaction):
 		DEFAULT:
 			Player.change_state(IDLE)
 		PLANTER:
-			cursor_mode("planter")
 			posCursor = get_global_mouse_position()
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y-25))
 
@@ -305,7 +263,12 @@ func _on_Button_Cut_pressed():
 
 func _on_Button_Spray_pressed():
 	if PA.get_PA() > 0 :
-		change_action(ARROSER)
+		if MouseA.return_select_plant().pv > 0:
+			change_action(ARROSER)
+		else:
+			_encart("Jade", "Cette plante est fânée, il n'y a rien à faire sinon l'arracher...")
+			menuEntretenir.close()
+			MouseA.clear_aCollisionNode()
 	else:
 		menuEntretenir.close()
 
@@ -332,7 +295,7 @@ func plante_Remove(plant):
 	for i in range(aGarden.size()):
 		if aGarden[i] == get_node("Bateau/YSort/Plante/%s" %plant):
 			aGarden.remove(i)
-			get_node("Bateau/YSort/Plante/%s" %plant).queue_free()
+			get_node("Bateau/YSort/Plante/%s/AnimationPlayer" %plant).play_backwards("Apparition")
 			break
 	print_garden()
 	MouseA.clear_aCollisionNode()
@@ -371,7 +334,6 @@ func a_day_pass():
 	ImportData.jour += 1
 	$Bateau/WalkArea.reboot()
 	PNJsort.new_day()
-	setup_nav2D_plant()
 	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
 	#$CanvasLayer/Transition/Jour.text = "Jour "+str(day)
 	#$CanvasLayer/Transition/Jour.visible = true
@@ -455,29 +417,6 @@ func start_new_day():
 		_encart("", "De nouvelles graines sont à votre disposition :", dicTexture)
 
 
-
-"""
-gestion des feedbacks DESTINATION et PLANTER
-"""
-
-
-
-func create_ui_destination(pos, anim):
-	if get_node_or_null("Bateau/YSort/UI_Destination") == null :
-		var UI_Destination = load("res://Scenes/Objet/UI_Destination.tscn").instance()
-		$Bateau/YSort.add_child(UI_Destination)
-		get_node("Bateau/YSort/UI_Destination").play(anim)
-		get_node("Bateau/YSort/UI_Destination").set_global_position(pos)
-	else :
-		get_node("Bateau/YSort/UI_Destination").set_global_position(pos)
-
-func destroy_ui_destination():
-	if get_node_or_null("Bateau/YSort/UI_Destination") != null :
-		get_node("Bateau/YSort/UI_Destination").queue_free()
-
-
-
-
 """
 Gestion du Carnet
 """
@@ -490,8 +429,9 @@ func Open_Carnet():
 		DEFAULT :
 			if !menuEntretenir.is_open():
 				var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
-				$CanvasLayer.add_child(Carnet)
 				Carnet.set_scale(Vector2(0.9,0.9))
+				$CanvasLayer.add_child(Carnet)
+				
 				Carnet.connect("Close_Carnet", self, "Close_Carnet")
 				change_action(CARNET)
 
@@ -501,8 +441,20 @@ func Close_Carnet():
 
 
 """
+gestion des encarts
+"""
+
+
+func _encart(nom, sentence, dicTxt = {}):
+	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
+	$CanvasLayer.add_child(encart)
+	$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
+
+
+"""
 Gestion des fonctions Debug
 """
+
 
 func print_garden():
 	var array = ""
@@ -521,3 +473,27 @@ class MyCustomSorter:
 		if a.pv < b.pv:
 			return true
 		return false
+
+
+"""
+gestion des feedbacks DESTINATION et PLANTER
+DESACTIVEE
+"""
+
+
+
+func create_ui_destination(_pos, _anim):
+#	if get_node_or_null("Bateau/YSort/UI_Destination") == null :
+#		var UI_Destination = load("res://Scenes/Objet/UI_Destination.tscn").instance()
+#		$Bateau/YSort.add_child(UI_Destination)
+#		get_node("Bateau/YSort/UI_Destination").play(anim)
+#		get_node("Bateau/YSort/UI_Destination").set_global_position(pos)
+#	else :
+#		get_node("Bateau/YSort/UI_Destination").set_global_position(pos)
+	pass
+
+func destroy_ui_destination():
+#	if get_node_or_null("Bateau/YSort/UI_Destination") != null :
+#		get_node("Bateau/YSort/UI_Destination").queue_free()
+	pass
+

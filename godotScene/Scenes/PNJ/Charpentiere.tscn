@@ -135,7 +135,7 @@ animations = [ {
 [node name="Charpentiere" type="AnimatedSprite"]
 frames = SubResource( 24 )
 animation = "IDLE"
-frame = 5
+frame = 8
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )

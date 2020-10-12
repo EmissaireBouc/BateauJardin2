@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/UI/Carnet/script_carnet/Carnet_BlocPerso.gd" type="Script" id=2]
@@ -13,7 +13,24 @@ PanelContainer/styles/panel = SubResource( 1 )
 [sub_resource type="StyleBoxEmpty" id=3]
 content_margin_left = 20.0
 
+[sub_resource type="Animation" id=4]
+resource_name = "Apparition"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="MembreEquipage" type="MarginContainer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 556.0
 margin_right = 914.0
 margin_bottom = 872.0
@@ -66,11 +83,11 @@ stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_left = 126.0
-margin_right = 445.0
+margin_right = 390.0
 margin_bottom = 101.0
 
 [node name="NomPersonnage" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 319.0
+margin_right = 264.0
 margin_bottom = 55.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 10
@@ -83,7 +100,7 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/NomPersonnage"]
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 299.0
+margin_right = 244.0
 margin_bottom = 45.0
 grow_horizontal = 0
 
@@ -97,20 +114,9 @@ custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 text = "Nom Personnage"
 valign = 1
 
-[node name="Aka" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/NomPersonnage/HBoxContainer"]
-margin_left = 228.0
-margin_right = 279.0
-margin_bottom = 35.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
-text = "Aka"
-valign = 1
-
 [node name="InformationPersonnage" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 59.0
-margin_right = 319.0
+margin_right = 264.0
 margin_bottom = 101.0
 grow_horizontal = 0
 custom_constants/margin_right = 20
@@ -124,23 +130,12 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationPersonnage"]
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 299.0
+margin_right = 244.0
 margin_bottom = 32.0
 grow_horizontal = 0
 
-[node name="Genre" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationPersonnage/HBoxContainer"]
-margin_right = 51.0
-margin_bottom = 22.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
-text = "Genre"
-valign = 1
-
 [node name="Pronom" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationPersonnage/HBoxContainer"]
-margin_left = 55.0
-margin_right = 122.0
+margin_right = 67.0
 margin_bottom = 22.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 3 )
@@ -149,8 +144,8 @@ text = "Pronom"
 valign = 1
 
 [node name="Fonction" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationPersonnage/HBoxContainer"]
-margin_left = 126.0
-margin_right = 200.0
+margin_left = 71.0
+margin_right = 145.0
 margin_bottom = 22.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 3 )
@@ -183,3 +178,7 @@ custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. "
 autowrap = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Apparition"
+anims/Apparition = SubResource( 4 )

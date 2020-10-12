@@ -8,10 +8,12 @@ scale = Vector2( 1.4, 1 )
 
 [node name="Ciel" type="Sprite" parent="."]
 modulate = Color( 0.960784, 0.694118, 0.694118, 1 )
-position = Vector2( 314.04, -1385.03 )
+position = Vector2( -71.0251, -1400.99 )
 rotation = -3.14159
-scale = Vector2( 18.9421, 12.5121 )
+scale = Vector2( 32.4814, 12.5 )
 texture = ExtResource( 4 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.639216, 0.745098, 0.8, 1 )
+position = Vector2( -72.7977, 2109.82 )
+scale = Vector2( 4.09178, 1.00267 )

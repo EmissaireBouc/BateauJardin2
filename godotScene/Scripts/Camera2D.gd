@@ -2,12 +2,20 @@ extends Camera2D
 
 var Czoom = Vector2(2,2)
 var a = Vector2()
+export (bool) var SquareX_Camera = false
 
 func _ready():
 	a = Czoom
 
 func _physics_process(delta):
-	global_position = Vector2(get_parent().global_position.x, get_parent().global_position.y-200)
+	var px = get_parent().global_position.x
+	var py = get_parent().global_position.y-200
+	
+	if SquareX_Camera == true :
+		global_position = Vector2(px, lerp(py, py + (-1 * ((py * py)/30)), 1.2 * delta))
+	else:
+		global_position = Vector2(px, py)
+
 	Czoom = Vector2(lerp(Czoom.x, clamp(a.x,0.5,2), 1.5 * delta), lerp(Czoom.y, clamp(a.y,0.5,2), 1.5 * delta))
 	set_zoom(Czoom)
 	

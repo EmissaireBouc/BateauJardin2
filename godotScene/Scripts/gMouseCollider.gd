@@ -5,9 +5,12 @@ var areaName = ""
 var aCollisionNode = []
 var item_selected = false
 onready var nPA = get_parent().get_parent().get_parent().get_node("CanvasLayer/PA")
+enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER, CONVERS, CARNET, DEPLACER} # Action
+
 signal debug
 
 func _ready():
+	
 	pass
 
 """
@@ -27,10 +30,13 @@ func _unhandled_input(_event):
 Seules les plantes (layer : plante) sont concernées par les collisions de gMouseCollider.
 """
 func _on_gMouseCollider_area_shape_entered(_area_id, area, _area_shape, _self_shape):
+	var action = get_parent().get_parent().get_parent().action
 	if item_selected == false:
-		aCollisionNode.push_back(area)
-		if aCollisionNode.size() == 1:
-				select_plant(area)
+		match action:
+			DEFAULT :
+				aCollisionNode.push_back(area)
+				if aCollisionNode.size() == 1:
+						select_plant(area)
 
 func _on_gMouseCollider_area_shape_exited(_area_id, area, _area_shape, _self_shape):
 	if item_selected == false :
@@ -50,6 +56,8 @@ func select_plant(area):
 	emit_signal("debug", area.get_parent().get_name(), area.get_parent().pv, area.get_parent().lvl, area.get_parent().xp)
 	area.get_parent().set_material(preload("res://Assets/Mask/Outline.tres"))
 
+func return_select_plant():
+	return get_parent().get_node("Plante/%s" %areaName)
 
 func unselect_plant(area):
 	overlapPlant = false

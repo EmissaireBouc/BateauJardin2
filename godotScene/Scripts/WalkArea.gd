@@ -13,7 +13,8 @@ Chaque jour :
 
 func _ready():
 #	update_navigation_polygon(get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_global_transform(),get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_polygon())
-	pass
+	get_parent().get_node("YSort/PNJ").connect("Nav2D_Update", self, "update_navigation_polygon")
+
 
 func update_navigation_polygon(t, p):
 	var newpolygon = PoolVector2Array()
@@ -35,3 +36,9 @@ func reboot():
 	get_node("NavigationPolygonInstance").enabled = false
 	get_node("NavigationPolygonInstance").enabled = true
 #	update_navigation_polygon(get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_global_transform(),get_parent().get_parent().get_node("Bateau/YSort/Cabine/Sprite/CollisionPolygon2D").get_polygon())
+
+
+#func setup_nav2D_plant():
+#	for i in range (aGarden.size()) :
+#		Nav_2D_Update(aGarden[i].get_node("Area2D/CollisionPolygon2D").get_global_transform(),aGarden[i].get_node("Area2D/CollisionPolygon2D").get_polygon())
+#	pass

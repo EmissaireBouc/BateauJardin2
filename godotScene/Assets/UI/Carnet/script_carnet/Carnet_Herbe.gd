@@ -1,11 +1,11 @@
 extends MarginContainer
 
-func setup(nom, PV, XP, Description):
+func setup(nomCode, nom, PV, XP, Description):
 	var pvText = get_node("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer/VBoxContainer/PV")
 	var xpText = get_node("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer/VBoxContainer/XP")
 	$PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/NomHerbe/HBoxContainer/Nom.text = nom
 	$PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/DescriptionHerbe/Description.text = Description
-	$PanelContainer/VBoxContainer/HBoxContainer/CadreIllu/Illustration.texture = load("res://Assets/UI/Carnet/Illustration/Plantes/%s" %"illu_" + nom + ".png")
+	$PanelContainer/VBoxContainer/HBoxContainer/CadreIllu/Illustration.texture = load("res://Assets/UI/Carnet/Illustration/Plantes/%s" %"illu_" + nomCode + ".png")
 	if PV >= 0 && PV < 3 :
 		pvText.text = "Arrosage : Important"
 	if PV >= 3 && PV < 6 :
