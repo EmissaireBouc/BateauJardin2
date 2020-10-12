@@ -2,6 +2,7 @@ extends AnimatedSprite
 
 export var NomPersonnage = ""
 var Dialogue = 0
+var emplacement = ""
 
 signal character_input
 

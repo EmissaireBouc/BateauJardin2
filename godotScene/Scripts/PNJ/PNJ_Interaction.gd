@@ -12,8 +12,9 @@ A propos de Spot_PNJ :
 	méthode efficiente. Elle est à retravailler. 
 """
 
-export (Array) var  Spot_PNJ = [Vector2(-968,-608), Vector2(-392,-616), Vector2(860,-564), Vector2(1264,-80), Vector2(1376,608), Vector2(520,80), Vector2(-72,603), Vector2(-704,552)]
-var Save_Spot_PNJ = []
+export (Array) var  Spot_PNJ = [["A1", Vector2(-3311,-465)],["A4", Vector2(-2946,514)],["B1", Vector2(-2105,-488)],["E1", Vector2(232,-787)],["E4", Vector2(-1364,465)],["F4", Vector2(-120,465)],["G3", Vector2(974,545)]]
+var Lieu_PNJ = [["D1", Vector2(-704,-384), Vector2(-320,-768), Vector2(-896,-768)],["F2", Vector2(704,192), Vector2(1088,64), Vector2(704,-192)],["C3", Vector2(-1792,512), Vector2(-1344,384), Vector2(-1792,192)]]
+var Save_Lieu_PNJ = []
 
 onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues/BoiteDialogue")
 onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
@@ -27,19 +28,10 @@ signal Fin_Conversation
 
 
 func _ready():
-	Save_Spot_PNJ = Spot_PNJ.duplicate(true)
+	Save_Lieu_PNJ = Lieu_PNJ.duplicate(true)
 	initiate()
 	BoiteDialogue.connect("Texte_Suivant", self, "Texte_Suivant")
 
-
-func PNJ_Setup():
-	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
-	for i in range(nbPNJ.size()):
-		var nvPNJ = load ("res://Scenes/PNJ/%s" %nbPNJ[i] + ".tscn").instance() #Remplacer "Navigatrice" par : nbPNJ[i] lorsque toutes les scènes seront créées
-		add_child(nvPNJ)
-		nvPNJ.position = PNJ_Position(i, nbPNJ.size())
-		var Nav2DCol =  nvPNJ.get_node("Area2D/Nav2DCol")
-		emit_signal("Nav2D_Update",Nav2DCol.get_global_transform(), Nav2DCol.get_polygon())
 
 """
 A chaque changement de jour : 
@@ -65,13 +57,55 @@ func connect_child_node():
 		get_child(i).get_node("Area2D").connect("mouse_entered", self, "Change_Cursor", ["parler"])
 		get_child(i).get_node("Area2D").connect("mouse_exited", self, "Change_Cursor", ["default"])
 
-
 func disconnect_child_node():
 	for i in range (get_child_count()):
 		get_child(i).disconnect("character_input", self, "on_Character_input")
 		get_child(i).get_node("Area2D").disconnect("mouse_entered", self, "Change_Cursor")
 		get_child(i).get_node("Area2D").disconnect("mouse_exited", self, "Change_Cursor")
 
+
+func PNJ_Setup():
+
+	# On récupère les personnages présents ce nouveau jour
+
+	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
+
+	for i in range(nbPNJ.size()):
+
+		# Création du nouveau noeud PNJ
+
+		var nvPNJ = load ("res://Scenes/PNJ/%s" %nbPNJ[i] + ".tscn").instance()
+		add_child(nvPNJ)
+		var jr = ImportData.PosPNJ[nbPNJ[i]].keys()
+		var coord = ImportData.PosPNJ[nbPNJ[i]].values()
+		nvPNJ.emplacement = coord[jr.find(str(ImportData.jour))]
+
+		# Attribution des positions depuis les tableaux Spot_PNJ et Lieu_PNJ
+
+		if nvPNJ.emplacement == "D1" || nvPNJ.emplacement == "F2" || nvPNJ.emplacement == "C3": # Si plusieurs PNJ discutent ensemble
+			for j in range(Lieu_PNJ.size()):
+				if str(Lieu_PNJ[j][0]) == nvPNJ.emplacement:
+					nvPNJ.position = Lieu_PNJ[j][1]
+					Lieu_PNJ[j].remove(1) # Retire la position assignée du pool de positions
+		else: # Si PNJ seul
+			for k in range (Spot_PNJ.size()):
+				if str(Spot_PNJ[k][0]) == nvPNJ.emplacement:
+					nvPNJ.position = Spot_PNJ[k][1]
+
+		# Une fois les positions assignées : reinitialisation du tableau Lieu_PNJ pour le jour suivant
+
+		if i == nbPNJ.size() - 1 :
+			Lieu_PNJ = Save_Lieu_PNJ.duplicate(true)
+
+		# Redécoupage de l'aire de marche en fonction de l'area2D du nouveau PNJ
+
+		var Nav2DCol =  nvPNJ.get_node("Area2D/Nav2DCol")
+		emit_signal("Nav2D_Update",Nav2DCol.get_global_transform(), Nav2DCol.get_polygon())
+
+
+"""
+Gestion des dialogues
+"""
 
 func on_Character_input(n, d):
 	if !talking:
@@ -80,9 +114,6 @@ func on_Character_input(n, d):
 		talking = true
 		emit_signal("Engage_Conversation")
 		print(NumDial)
-
-func Change_Cursor(newCursor):
-	emit_signal("Change_Cursor",newCursor)
 
 func lancer_dialogue():
 	if NumDial == 0:
@@ -148,20 +179,5 @@ func get_node_character(n):
 		if get_child(i).NomPersonnage == n :
 			return(get_child(i))
 
-
-"""
-PNJ_Position définit une position aléatoire parmi 8 définie dans Spot_PNJ
-Elle ne permet pour le moment pas de définir des regroupements de personnage
-"""
-
-func PNJ_Position(n, nb):
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	var alea = rng.randi()%Spot_PNJ.size()
-	var pos_aleatoire = Spot_PNJ[alea]
-	Spot_PNJ.remove(alea)
-	
-	if n == nb-1:
-		Spot_PNJ = Save_Spot_PNJ.duplicate(true)
-
-	return(pos_aleatoire)
+func Change_Cursor(newCursor):
+	emit_signal("Change_Cursor",newCursor)

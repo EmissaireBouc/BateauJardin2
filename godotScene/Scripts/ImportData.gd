@@ -5,6 +5,7 @@ var equipage_data
 var text
 var dialogue_data
 var PAJ
+var PosPNJ
 var jour = 0
 
 func _ready():
@@ -31,4 +32,10 @@ func _ready():
 	var PAJ_json = JSON.parse(PAJ_file.get_as_text())
 	PAJ_file.close()
 	PAJ = PAJ_json.result
+
+	var PosPNJ_file = File.new()
+	PosPNJ_file.open("res://Assets/Data/PosPNJ.json",File.READ)
+	var PosPNJ_json = JSON.parse(PosPNJ_file.get_as_text())
+	PosPNJ_file.close()
+	PosPNJ = PosPNJ_json.result
 	
