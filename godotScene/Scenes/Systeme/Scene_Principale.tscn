@@ -102,11 +102,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "lvl1",
@@ -125,6 +120,11 @@ animations = [ {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -177,11 +177,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "lvl1",
@@ -200,6 +195,11 @@ animations = [ {
 "frames": [ ExtResource( 32 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -252,11 +252,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 45 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 46 ) ],
 "loop": true,
 "name": "lvl1",
@@ -275,6 +270,11 @@ animations = [ {
 "frames": [ ExtResource( 44 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -327,11 +327,6 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 42 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 41 ) ],
 "loop": true,
 "name": "lvl1",
@@ -350,6 +345,11 @@ animations = [ {
 "frames": [ ExtResource( 39 ) ],
 "loop": true,
 "name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ) ],
+"loop": true,
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -436,7 +436,7 @@ shape = SubResource( 1 )
 visible = false
 
 [node name="Player" parent="Bateau/YSort" instance=ExtResource( 11 )]
-position = Vector2( 704, 192 )
+position = Vector2( -3520, 0 )
 scale = Vector2( 1, 1 )
 speed = 400
 

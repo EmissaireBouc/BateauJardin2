@@ -97,10 +97,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Mael" type="AnimatedSprite"]
+[node name="Matelot" type="AnimatedSprite"]
 frames = SubResource( 17 )
 animation = "IDLE"
-frame = 2
+frame = 4
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -119,5 +119,5 @@ polygon = PoolVector2Array( -437.143, -4045.69, 202.938, -4120.02, 190.263, 129.
 [node name="Nav2DCol" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2( -26.1944, 60.4721 )
 scale = Vector2( 0.237846, 0.121673 )
-polygon = PoolVector2Array( -511.46, -516.181, -658.925, 238.794, 359.283, 293.701, 169.685, -598.542 )
+polygon = PoolVector2Array( -539.549, -282.825, -658.925, 238.794, 359.283, 293.701, 211.818, -282.825 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
