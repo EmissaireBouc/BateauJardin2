@@ -26,6 +26,7 @@ Initialisation du jeu
 
 
 func _ready():
+	ImportData.jour = day
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")

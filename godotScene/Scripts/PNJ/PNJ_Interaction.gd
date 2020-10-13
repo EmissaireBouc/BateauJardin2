@@ -112,8 +112,7 @@ func on_Character_input(n, d):
 		NomPersonnage = n
 		NumDial = d
 		talking = true
-		print_tree_pretty()
-		emit_signal("Engage_Conversation", get_node(n).position)
+		emit_signal("Engage_Conversation", get_node_character(n).position)
 		print(NumDial)
 
 func lancer_dialogue():
