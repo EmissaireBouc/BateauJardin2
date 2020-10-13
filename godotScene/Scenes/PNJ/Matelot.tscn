@@ -97,10 +97,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Mael" type="AnimatedSprite"]
+[node name="Matelot" type="AnimatedSprite"]
 frames = SubResource( 17 )
 animation = "IDLE"
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
