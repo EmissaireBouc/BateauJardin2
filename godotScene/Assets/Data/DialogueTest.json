@@ -652,10 +652,10 @@
         ]
       },
 	  
-		"Charpentiere": {
+		"Cartographe": {
       "Dialogue1": [
           {
-           "Nom": "Suzanne",
+           "Nom": "Mazaa",
            "Text": "Salut !"
           },
           {
@@ -663,7 +663,7 @@
            "Text": "Oh t'as l'air endormie."
            },
 		   {
-           "Nom": "Suzanne",
+           "Nom": "Mazaa",
            "Text": "Ouais, je reviens d'une sieste. Ça fait du bien."
           },
           {
@@ -671,7 +671,7 @@
            "Text": "Tu dors souvent non ?"
            },
 		   {
-           "Nom": "Suzanne",
+           "Nom": "Mazaa",
            "Text": "Oui, j'ai une maladie physique qui me prend pas mal d'énergie, et surtout je prend des médicaments qui fatiguent beaucoup."
           },
           {
@@ -679,11 +679,11 @@
            "Text": "Ah ok. Ça doit être chiant."
            },
 		   {
-           "Nom": "Suzanne",
+           "Nom": "Mazaa",
            "Text": "Bof ça va, je sui schizophrène, et sans médicament je suis encore plus à l'ouest. Là en faisant des siestes et en buvant plein de café je vais bien."
           },
 		  {
-           "Nom": "Suzanne",
+           "Nom": "Mazaa",
            "Text": "J'avance mes cartes lentement du coup mais ça me convient."
           },
           {
@@ -691,14 +691,14 @@
            "Text": "Et malgré ça t'as le temps de plus faire le ménage que d'autres."
            },
 		   {
-           "Nom": "Suzanne",
+           "Nom": "Mazaa",
            "Text": "Ouais ... Va falloir en parler de ça."
           }
           ],
       "Dialogue2": [
           {
-           "Nom": "Suzanne",
-           "Text": "Si tu as besoin de quoi que ce soit, n'hésite pas !"
+           "Nom": "Mazaa",
+           "Text": "Faut que je me concentre sur la mer pour mes cartes."
           }
         ]
       },

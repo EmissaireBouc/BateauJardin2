@@ -6,7 +6,7 @@ var text
 var dialogue_data
 var PAJ
 var PosPNJ
-var jour = 0
+var jour = 3
 var DialJour = 0
 var nbrPNJ = 0
 
