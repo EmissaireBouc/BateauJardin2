@@ -325,7 +325,11 @@ func _on_Porte_mouse_exited():
 
 func a_day_pass():
 	day += 1
-	ImportData.jour += 1
+	if ImportData.DialJour == ImportData.nbrPNJ:
+		ImportData.jour += 1
+	else:
+		ImportData.jour = ImportData.jour
+#	ImportData.jour += 1
 	$Bateau/WalkArea.reboot()
 	PNJsort.new_day()
 	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))

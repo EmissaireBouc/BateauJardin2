@@ -69,6 +69,8 @@ func PNJ_Setup():
 	# On récupère les personnages présents ce nouveau jour
 
 	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
+	ImportData.nbrPNJ = nbPNJ.size()
+	print(ImportData.nbrPNJ)
 
 	for i in range(nbPNJ.size()):
 
@@ -101,6 +103,8 @@ func PNJ_Setup():
 
 		var Nav2DCol =  nvPNJ.get_node("Area2D/Nav2DCol")
 		emit_signal("Nav2D_Update",Nav2DCol.get_global_transform(), Nav2DCol.get_polygon())
+		
+
 
 
 """
@@ -144,7 +148,7 @@ func parle():
 	"""
 
 	if index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1:
-		if NumDial == 0:
+		if  NumDial == 0:
 			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom
 			BoiteDialogue.DialoguePerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Text
 		else:
@@ -170,9 +174,12 @@ func fin_dialogue():
 	index_dialogueArray = 0
 	emit_signal("Fin_Conversation")
 
-#	if NumDial == 0:
+	if NumDial == 0:
+		ImportData.DialJour += 1
+		print(ImportData.DialJour)
 #		NumDial += 1
-
+	if NumDial == 1:
+		get_node_character(NomPersonnage).queue_free() 
 
 func get_node_character(n):
 	for i in range(get_child_count()):
