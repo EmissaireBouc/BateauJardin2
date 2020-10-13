@@ -7,6 +7,8 @@ var dialogue_data
 var PAJ
 var PosPNJ
 var jour = 0
+var DialJour = 0
+var nbrPNJ = 0
 
 func _ready():
 	var plantdata_file = File.new()
