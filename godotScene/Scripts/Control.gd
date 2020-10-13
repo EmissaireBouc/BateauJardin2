@@ -326,8 +326,10 @@ func a_day_pass():
 	day += 1
 	if ImportData.DialJour == ImportData.nbrPNJ:
 		ImportData.jour += 1
+		ImportData.DialJour = 0
 	else:
 		ImportData.jour = ImportData.jour
+		ImportData.DialJour = 0
 #	ImportData.jour += 1
 	$Bateau/WalkArea.reboot()
 	PNJsort.new_day()
