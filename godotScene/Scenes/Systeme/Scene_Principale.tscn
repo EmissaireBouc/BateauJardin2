@@ -99,14 +99,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "lvl1",
 "speed": 5.0
 } ]
 
@@ -164,14 +164,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "lvl1",
 "speed": 5.0
 } ]
 
@@ -229,14 +229,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 45 ) ],
+"frames": [ ExtResource( 50 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 47 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "lvl1",
 "speed": 5.0
 } ]
 
@@ -294,14 +294,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 42 ) ],
+"frames": [ ExtResource( 48 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 40 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "lvl1",
 "speed": 5.0
 } ]
 

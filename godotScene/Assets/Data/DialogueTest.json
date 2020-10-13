@@ -759,7 +759,7 @@
 		   {
            "Nom": "Ismael",
            "Text": "Oui pendant 5 ans, iels se sont rencontré.e.s en hôpital psy, et iels se sont installé.e.s ensemble quand iels en sont sorti.e.s"
-           },
+           }
           ],
       "Dialogue2": [
           {
@@ -774,7 +774,7 @@
           [
           {
            "Nom": "Mazaa",
-           "Text": "er !! J'ai voulu aller vite ce matin et j'ai renversé mon café sur la carte que j'étais en train de finir !"
+           "Text": "Fait chier !! J'ai voulu aller vite ce matin et j'ai renversé mon café sur la carte que j'étais en train de finir !"
           },
 		  {
            "Nom": "Mazaa",
@@ -786,7 +786,7 @@
            },
 		   {
            "Nom": "Mazaa",
-           "Text": "out qu'iels sont vachement psychophobes, iels me reprochent toujours de pas avoir un 'vrai' travail,",
+           "Text": "C'est surtout qu'iels sont vachement psychophobes, iels me reprochent toujours de pas avoir un 'vrai' travail."
           },
 		  {
            "Nom": "Mazaa",
@@ -860,7 +860,7 @@
           {
            "Nom": "Ismael",
            "Text": "Oui, je vais faire attention à tout ça."
-           },
+           }
           ],
       "Dialogue2": [
           {
@@ -895,7 +895,7 @@
 		   {
            "Nom": "Kaneza",
            "Text": "Euh ... le moteur se porte bien en ce moment du coup j'ai le temps de cultiver mes champignons dans la cale. C'est pas très intéressant peut être... Désolée."
-          },
+          }
           ],
       "Dialogue2": [
           {
@@ -948,7 +948,6 @@
         ]
       },
 
-		  
 		"Vigie": {
       "Dialogue1": [
           {
@@ -1021,7 +1020,6 @@
       },
 	  
 		"Charpentiere": {
-      "ID": 0,
       "Dialogue1": [
           {
            "Nom": "Suzanne",
@@ -1081,7 +1079,7 @@
 		  {
            "Nom": "Suzanne",
            "Text": "Si jamais ça va trop mal tu sais qu'on est là."
-           },
+           }
           ],
       "Dialogue2": [
           {
@@ -1089,9 +1087,11 @@
            "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
           }
         ]
-      },
+      }
 	},
 	"9": {
+	},
+	"10": {
 		"Navigatrice": {
       "Dialogue1": [
           {
@@ -1133,7 +1133,7 @@
 		  {
            "Nom": "Eleanor",
            "Text": "D'ailleurs je crois qu'Ismael voulait te voir, c'est surtout lui qui s'est occupé des plantes ces derniers jours."
-          },
+          }
           ],
       "Dialogue2": [
           {
@@ -1215,346 +1215,157 @@
            "Text": "Un bateau bien vert, ça fait plaisir à voir."
           }
         ]	 
-      },
+      }
 	},
-	"10": {
-		"Navigatrice": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Charibe",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Charibe",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Charibe",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Charibe",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-		"Charpentiere": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Suzy",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Suzy",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Suzy",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Suzy",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-		"Mecanicienne": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-		"Gabiere": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-
-		"Matelot": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "AChAB",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "AChAB",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "AChAB",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "AChAB",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-		"Vigie": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Ismael",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-		"Cartographe": {
-      "ID": 0,
-      "Dialogue1":
-          [
-          {
-           "Nom": "Scylla",
-           "Text": "Voici du texte pour le premier jour 2222"
-          },
-          {
-           "Nom": "Scylla",
-           "Text": "Voici du texte ici aussi, le premier jour"
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Scylla",
-           "Text": "Voici du texte du capitaine 2"
-          },
-          {
-           "Nom": "Scylla",
-           "Text": "Voici du texte du capitaine 2 encore"
-          } 
-		  ]
-        }
-      },
 	"11": {
 		"Navigatrice": {
-      "ID": 0,
       "Dialogue1": [
           {
-           "Nom": "Charibe",
-           "Text": "Voici du texte pour le premier jour"
+           "Nom": "Eleanor",
+           "Text": "Ha ! Jade contente de te voir ! On parlait de nos traitements et de ce que ça nous fait."
           },
           {
-           "Nom": "Charibe",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
+           "Nom": "Nathan",
+           "Text": "Je disais que mon psy est plus compétent que la moyenne, ça fait plaisir. Il comprend que les médicaments font pas tout et m'encourage à chercher les causes."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Ça change de celle et ceux qui font comme si tout était juste une question de chimie du cerveau et qui dépolitisent nos problèmes."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "'Dépolitiser' ? En quoi c'est politique ?"
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "On est pas dépressif-ve pour rien, et les causes sont souvent liées aux souffrances que créent le capitalisme et les oppressions systémiques."
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Pas tout le temps bien sur, mais même, faire comme si on était juste des machines qui se sont déréglées sans raison et à qui faut donner des médicaments pour les remettre en marche, c'est passer à coté du problème."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Haha ! On est pas des machines ! Bip Boop."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Toi aussi tu as des traitements Jade ?"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Oui j'en prends. Personnellement j'ai bien vu que ça m'a aidé à aller mieux."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Après mes parents ont jamais voulu parler de ça à qui que soit. Ils utilisaient même pas le mot 'traitement'. D'après eux, la volonté c'est le plus important."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "C'est le genre à sortir des 'si tu veux, tu peux y arriver', 'Personne viendra t'aider, c'est à toi de t'en sortir'."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Les médicaments c'est un aveux de faiblesse pour eux."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Ouais non la volonté... C'est bien une idée de valide ça."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "On dit pas que les médicaments sont inutiles, au contraire c'est indispensable pour plein de gens, mais juste c'est pas magique et souvent pas suffisant pour aller vraiment mieux."
+           }		   
           ],
       "Dialogue2": [
           {
-           "Nom": "Charibe",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Charibe",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-		"Charpentiere": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Suzy",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Suzy",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Suzy",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Suzy",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+           "Nom": "Eleanor",
+           "Text": "Rien de plus revigorant que l'air marin."
           }
         ]
       },
 	  
 		"Mecanicienne": {
-      "ID": 0,
+
       "Dialogue1": [
           {
            "Nom": "Kaneza",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
+           "Text": "...."
+          }
           ],
       "Dialogue2": [
           {
            "Nom": "Kaneza",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Kaneza",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+           "Text": "..."
           }
         ]
       },
 	  
 		"Gabiere": {
-      "ID": 0,
       "Dialogue1": [
           {
+           "Nom": "Jade",
+           "Text": "Hé ! ça va mieux vous deux ?"
+           },
+		  {
            "Nom": "Minh Tâm",
-           "Text": "Voici du texte pour le premier jour"
+           "Text": "Euh salut, oui oui ça va, il y avait pas de problème en fait."
           },
           {
+           "Nom": "Kaneza ",
+           "Text": "Coucou ! Moi c'est Kaneza. Minh Tâm m'a beaucoup parlé de toi."
+           },
+		   {
            "Nom": "Minh Tâm",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
+           "Text": "... Mais... Tu la connais non ?"
+          },
+		  {
+           "Nom": "Kaneza ",
+           "Text": "On s'est jamais vraiment présentées en fait."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "C'est vrai que notre dernière rencontre à été un peu expéditive. En tout cas je suis contente de voir que ça va mieux. Vous avez l'air d'être très proche."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Ahahahahahahahahah pas tant que ça ! Enfin je trouve pas ! Tu trouves ?"
+          },
+		  {
+           "Nom": "Kaneza ",
+           "Text": "Non non non non c'est une relation tout à fait amicale oulah oui peut être non on s'apprécie juste bien !"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Mmmmh..."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Ok."
            }
           ],
       "Dialogue2": [
           {
            "Nom": "Minh Tâm",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Minh Tâm",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+           "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
           }
         ]
       },
 
 		"Matelot": {
-      "ID": 0,
       "Dialogue1": [
           {
-           "Nom": "AChAB",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "AChAB",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
+           "Nom": "Nathan",
+           "Text": "...."
+          }
           ],
       "Dialogue2": [
           {
-           "Nom": "AChAB",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "AChAB",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
+           "Nom": "Nathan",
+           "Text": "Tu peux chill quand tu veux."
           }
         ]
-      },
-	  
-		"Vigie": {
-      "ID": 0,
-      "Dialogue1": [
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte pour le premier jour"
-          },
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte ici aussi, le premier jour. Deuième phrase."
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Ismael",
-           "Text": "Voici du texte du dialogue 2 car l'ID est égal à 1."
-          },
-          {
-           "Nom": "Ismael",
-           "Text": "Voici la suite du texte du dialogue 2 de l'ID 1."
-          }
-        ]
-      },
-	  
-		"Cartographe": {
-      "ID": 0,
-      "Dialogue1":
-          [
-          {
-           "Nom": "Scylla",
-           "Text": "Voici du texte pour le premier jour 2222"
-          },
-          {
-           "Nom": "Scylla",
-           "Text": "Voici du texte ici aussi, le premier jour"
-           }
-          ],
-      "Dialogue2": [
-          {
-           "Nom": "Scylla",
-           "Text": "Voici du texte du capitaine 2"
-          },
-          {
-           "Nom": "Scylla",
-           "Text": "Voici du texte du capitaine 2 encore"
-          } 
-		  ]
-        }
       }
+	  
+    }
 }
