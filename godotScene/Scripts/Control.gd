@@ -87,7 +87,6 @@ Gestion du clic droit :
 """
 
 
-
 func _input(_event):
 
 	if !Input.is_action_just_pressed("ui_right_mouse"):
@@ -103,12 +102,6 @@ func _input(_event):
 					else:
 						_encart("Jade","Je suis fatiguée maintenant, je dois me reposer")
 
-#			PLANTER:
-#				change_action(DEFAULT)
-#				menuInventaire.close()
-#				if MouseA.overlapPlant :
-#					posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
-#					menuEntretenir.open()
 
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && !MouseA.overlapPlant):
@@ -152,9 +145,10 @@ Gestion des actions du joueur :
 
 
 
-func Engage_Conversation():
+func Engage_Conversation(pos):
 	match action :
 		DEFAULT :
+			posCursor = Vector2(pos.x-400,pos.y)
 			change_action(PARLER)
 		_:
 			PNJsort.talking = false
@@ -180,8 +174,7 @@ func change_action(newaction):
 			posCursor = $Bateau/Porte.get_position()
 			Player.change_state(MOVE, Vector2(posCursor.x + 100, posCursor.y))
 		PARLER:
-			posCursor = get_global_mouse_position()
-			Player.change_state(MOVE, Vector2(posCursor.x-400, posCursor.y))
+			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y))
 		CONVERS:
 			Player.change_state(IDLE)
 

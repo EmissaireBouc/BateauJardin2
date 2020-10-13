@@ -112,7 +112,7 @@ func on_Character_input(n, d):
 		NomPersonnage = n
 		NumDial = d
 		talking = true
-		emit_signal("Engage_Conversation")
+		emit_signal("Engage_Conversation", get_node(n).position)
 		print(NumDial)
 
 func lancer_dialogue():

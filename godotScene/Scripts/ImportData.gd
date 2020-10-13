@@ -38,4 +38,4 @@ func _ready():
 	var PosPNJ_json = JSON.parse(PosPNJ_file.get_as_text())
 	PosPNJ_file.close()
 	PosPNJ = PosPNJ_json.result
-	
+
