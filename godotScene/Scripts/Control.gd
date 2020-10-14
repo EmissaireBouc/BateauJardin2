@@ -27,7 +27,7 @@ Initialisation du jeu
 
 func _ready():
 
-	_encart("Jade", "Me voilà à bord du B&R... Je dois parler à la Capitaine")
+	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")
