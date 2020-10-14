@@ -4,6 +4,7 @@ var NomPersonnage
 var index_dialogueArray = 0
 var NumDial = 0
 var talking = false
+var DisPNG = 0
 
 
 """
@@ -111,13 +112,14 @@ func PNJ_Setup():
 Gestion des dialogues
 """
 
-func on_Character_input(n, d):
+func on_Character_input(n, d, c):
 	if !talking:
 		NomPersonnage = n
 		NumDial = d
+		DisPNG = c
 		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
-		print(NumDial)
+#		print(NumDial)
 
 func lancer_dialogue():
 	if NumDial == 0:
@@ -169,6 +171,7 @@ func Texte_Suivant():
 func fin_dialogue():
 	get_node_character(NomPersonnage).play("IDLE")
 	get_node_character(NomPersonnage).Dialogue += 1
+	get_node_character(NomPersonnage).Disparition += 1
 	talking = false
 	Dialogues.visible = false
 	index_dialogueArray = 0
@@ -176,8 +179,20 @@ func fin_dialogue():
 
 	if NumDial == 0:
 		ImportData.DialJour += 1
-		print(ImportData.DialJour)
 #		NumDial += 1
+	disparitionPNG()
+
+func disparitionPNG():
+	if ImportData.jour == 3 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+	if ImportData.jour == 3 && NomPersonnage == 'Cartographe' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+	if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && get_node_character(NomPersonnage).Disparition == 2:
+		get_node_character(NomPersonnage).queue_free()
 
 func get_node_character(n):
 	for i in range(get_child_count()):
