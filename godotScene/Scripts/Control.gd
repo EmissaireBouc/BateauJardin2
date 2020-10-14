@@ -3,7 +3,7 @@ extends Node2D
 var cursor = "default"
 var posCursor
 var aGarden = []
-export (int) var day = 0
+export (int) var day = 7
 var action
 
 enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} # State
@@ -26,7 +26,8 @@ Initialisation du jeu
 
 
 func _ready():
-	ImportData.jour = day
+
+	_encart("Jade", "Me voilà à bord du B&R... Je dois parler à la Capitaine")
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")
@@ -314,6 +315,14 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 			else:
 				_encart("Jade", "J'ai une montagne de choses à faire et l'énergie pour le faire... AU BOULOT !")
 				change_action(DEFAULT)
+		if ImportData.jour == 0 :
+			var t = 0
+			for i in range ($Bateau/YSort/PNJ.get_child_count()):
+				t += $Bateau/YSort/PNJ.get_child(i).Dialogue
+			if t != 6:
+				_encart("Jade", "Je n'ai pas encore parlé à tout le monde")
+			else:
+				change_action(DORMIR)
 		else : 
 			change_action(DORMIR)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://scripts/Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decors/BateauArrierePlan.tscn" type="PackedScene" id=2]
@@ -21,24 +21,32 @@
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 3.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Plante/Image/bleue jaunes 1.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Plante/Image/bleue jaunes 2 s.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Plante/Image/bleue jaunes 2.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 3 s.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Plante/Image/oreille de lapin 1 s.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 2 s.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/Systeme/Dialogues.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/Plante/Image/bleue jaunes 3 s.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Plante/Image/oreille de lapin 1.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Plante/Image/oreille de lapin 2.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Plante/Image/bleue jaunes 3.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Plante/Image/bleue jaunes 1 s.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Plante/Scene/Myosotis.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Assets/Plante/Scene/OreillesDeLapin.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=36]
 [ext_resource path="res://Scenes/TransitionCiel.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Assets/Plante/Image/fougere 1 s.png" type="Texture" id=39]
 [ext_resource path="res://Assets/Plante/Image/fougere 2 s.png" type="Texture" id=40]
 [ext_resource path="res://Assets/Plante/Image/fougere 1.png" type="Texture" id=41]
 [ext_resource path="res://Assets/Plante/Image/fougere 3 s.png" type="Texture" id=42]
 [ext_resource path="res://Assets/Plante/Image/fougere 3.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Plante/Image/arbuste haut 1 s.png" type="Texture" id=44]
 [ext_resource path="res://Assets/Plante/Image/arbuste haut 3 s.png" type="Texture" id=45]
 [ext_resource path="res://Assets/Plante/Image/arbuste haut 1.png" type="Texture" id=46]
 [ext_resource path="res://Assets/Plante/Image/arbuste haut 2 s.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Plante/Image/fougere 2.png" type="Texture" id=48]
 [ext_resource path="res://Assets/Plante/Image/arbuste haut 3.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Plante/Image/arbuste haut 2.png" type="Texture" id=50]
 [ext_resource path="res://Assets/Plante/Scene/HautArbuste.tscn" type="PackedScene" id=51]
 [ext_resource path="res://Assets/Plante/Scene/Fougere.tscn" type="PackedScene" id=52]
 
@@ -89,6 +97,16 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "lvl3",
@@ -99,14 +117,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
-"name": "lvl1",
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -154,6 +172,16 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=7]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 31 ) ],
 "loop": true,
 "name": "lvl3",
@@ -164,14 +192,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
-"name": "lvl1",
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -219,6 +247,16 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=10]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 49 ) ],
 "loop": true,
 "name": "lvl3",
@@ -229,14 +267,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 47 ) ],
 "loop": true,
-"name": "lvl1",
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -284,6 +322,16 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=13]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 42 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 43 ) ],
 "loop": true,
 "name": "lvl3",
@@ -294,14 +342,14 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 48 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 40 ) ],
 "loop": true,
-"name": "lvl1",
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 39 ) ],
+"loop": true,
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -336,6 +384,7 @@ font_data = ExtResource( 8 )
 
 [node name="ScenePrincipale" type="Node2D"]
 script = ExtResource( 1 )
+day = 0
 
 [node name="Background" parent="." instance=ExtResource( 17 )]
 position = Vector2( -3008, -1344 )
@@ -388,7 +437,7 @@ shape = SubResource( 1 )
 visible = false
 
 [node name="Player" parent="Bateau/YSort" instance=ExtResource( 11 )]
-position = Vector2( -3520, 0 )
+position = Vector2( -3456, 0 )
 scale = Vector2( 1, 1 )
 speed = 400
 
