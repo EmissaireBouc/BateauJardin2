@@ -3,7 +3,7 @@ extends Node2D
 var cursor = "default"
 var posCursor
 var aGarden = []
-export (int) var day = 7
+export (int) var day = 0
 var action
 
 enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} # State
