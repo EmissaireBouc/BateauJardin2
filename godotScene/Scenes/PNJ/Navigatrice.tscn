@@ -75,6 +75,7 @@ animations = [ {
 [node name="Navigatrice" type="AnimatedSprite"]
 frames = SubResource( 12 )
 animation = "IDLE"
+frame = 3
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )

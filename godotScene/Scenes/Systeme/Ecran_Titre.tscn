@@ -139,7 +139,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 2.1, 4.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -105, 576 ), Vector2( -50, 576 ), Vector2( -150, 576 ) ]
+"values": [ Vector2( -150, 610 ), Vector2( -50, 610 ), Vector2( -150, 610 ) ]
 }
 
 [node name="Control" type="Control"]
@@ -180,7 +180,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_bottom = 0
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -273,11 +272,10 @@ autoplay = "Boucle"
 anims/Boucle = SubResource( 5 )
 
 [node name="Vague1" type="NinePatchRect" parent="."]
-margin_left = -74.8513
+margin_left = -130.0
 margin_top = 576.0
-margin_right = 2041.61
+margin_right = 1986.46
 margin_bottom = 1119.0
-rect_rotation = 0.352083
 rect_pivot_offset = Vector2( 1050, 320 )
 texture = ExtResource( 5 )
 axis_stretch_horizontal = 1

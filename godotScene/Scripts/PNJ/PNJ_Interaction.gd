@@ -4,6 +4,7 @@ var NomPersonnage
 var index_dialogueArray = 0
 var NumDial = 0
 var talking = false
+var DisPNG = 0
 
 
 """
@@ -111,42 +112,31 @@ func PNJ_Setup():
 Gestion des dialogues
 """
 
-func on_Character_input(n, d):
+func on_Character_input(n, d, c):
 	if !talking:
 		NomPersonnage = n
 		NumDial = d
+		DisPNG = c
 		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
 		print(NumDial)
 
 func lancer_dialogue():
+	if ImportData.ChangDial == 1 && NomPersonnage == 'Charpentiere' && NumDial == 0:
+		NumDial = 1
+		ImportData.DialJour += 1
+	
 	if NumDial == 0:
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1
 	else:
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2
 	get_node_character(NomPersonnage).play("TALK")
+		
 	parle()
+	print(NomPersonnage)
 
 func parle():
-
-	"""
-		Je pense comprendre d'où vient le bug des dialogues 
-		En fait il y a plusieurs choses :
-		À chaque fois que on clique sur le bouton "dialogue suivant", on lance le dialogue suivant, ça incrémente index_dialogueArray et ça finit par faire tout planter. ça, je crois que c'est réglé et push
-		Les noms des PNJ étaient mal indiqués, c'est réglé aussi.
-		Mais ce que je ne peux pas régler, c'est la ligne :
 		
-		```if index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1: ```
-		
-		BoiteDialogue.DialogueArray est en fait égal au nombre de dialogues de la journée du personnage en clé + l'élément 'ID:0' présent dans toutes les clés. Son contenu est par exemple pour Suzanne : "Dialogue1", "Dialogue2", "Dialogue3" et "ID:0". Donc
-		```BoiteDialogue.DialogueArray.size() = 4``` en ajoutant le -1 de l'index, ```BoiteDialogue.DialogueArray.size()-1 = 3```
-		
-		Vu que le nombre de ligne de dialogue du [dialogue1] de Suzanne est égale à 4 (0 ,1, 2 ,3), son dialogue fonctionne. Mais c'est un pur hasard. Pour les autres, c'est variable en fonction du nombre d'éléments qui composent le tableau. Des fois ça marche, des fois ça marche pas. 
-		
-		Pour régler ça, il faut évidemment que index_dialogueArray soit <= _au nombre de lignes de dialogue qui doivent être jouées pendant la conversation._
-		Sachant que ce nombre varie en fonction que l'on soit sur le [dialogue1] ou sur le [dialogue2] (d'ailleurs Suzanne a trois dialogues ce qui ne devrait pas être le cas vu que le programme ne le permet pas) et bien c'est un vrai sac de nœud. 
-	"""
-
 	if index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1:
 		if  NumDial == 0:
 			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom
@@ -169,15 +159,34 @@ func Texte_Suivant():
 func fin_dialogue():
 	get_node_character(NomPersonnage).play("IDLE")
 	get_node_character(NomPersonnage).Dialogue += 1
+	get_node_character(NomPersonnage).Disparition += 1
 	talking = false
 	Dialogues.visible = false
 	index_dialogueArray = 0
+#	ChangDial += 1
 	emit_signal("Fin_Conversation")
-
+	
+	if ImportData.jour == 0 && NomPersonnage == 'Navigatrice' && NumDial == 0:
+		ImportData.ChangDial += 1
+		
 	if NumDial == 0:
 		ImportData.DialJour += 1
-		print(ImportData.DialJour)
 #		NumDial += 1
+	disparitionPNG()
+	print(ImportData.DialJour)
+	print("var pour changement: ", ImportData.ChangDial)
+
+func disparitionPNG():
+	if ImportData.jour == 3 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+	if ImportData.jour == 3 && NomPersonnage == 'Cartographe' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+	if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && get_node_character(NomPersonnage).Disparition == 2:
+		get_node_character(NomPersonnage).queue_free()
 
 func get_node_character(n):
 	for i in range(get_child_count()):
