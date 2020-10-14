@@ -119,7 +119,7 @@ func on_Character_input(n, d, c):
 		DisPNG = c
 		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
-#		print(NumDial)
+		print(NumDial)
 
 func lancer_dialogue():
 	if NumDial == 0:
@@ -128,27 +128,12 @@ func lancer_dialogue():
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2
 	get_node_character(NomPersonnage).play("TALK")
 	parle()
+	print(NomPersonnage)
 
 func parle():
-
-	"""
-		Je pense comprendre d'où vient le bug des dialogues 
-		En fait il y a plusieurs choses :
-		À chaque fois que on clique sur le bouton "dialogue suivant", on lance le dialogue suivant, ça incrémente index_dialogueArray et ça finit par faire tout planter. ça, je crois que c'est réglé et push
-		Les noms des PNJ étaient mal indiqués, c'est réglé aussi.
-		Mais ce que je ne peux pas régler, c'est la ligne :
+#	if ImportData.jour == 0 && NomPersonnage == 'Navigatrice' && get_node_character(NomPersonnage).Dialogue == 0:
+#		get_node_character(str(NomPersonnage['Charpentiere'])).Dialogue += 2
 		
-		```if index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1: ```
-		
-		BoiteDialogue.DialogueArray est en fait égal au nombre de dialogues de la journée du personnage en clé + l'élément 'ID:0' présent dans toutes les clés. Son contenu est par exemple pour Suzanne : "Dialogue1", "Dialogue2", "Dialogue3" et "ID:0". Donc
-		```BoiteDialogue.DialogueArray.size() = 4``` en ajoutant le -1 de l'index, ```BoiteDialogue.DialogueArray.size()-1 = 3```
-		
-		Vu que le nombre de ligne de dialogue du [dialogue1] de Suzanne est égale à 4 (0 ,1, 2 ,3), son dialogue fonctionne. Mais c'est un pur hasard. Pour les autres, c'est variable en fonction du nombre d'éléments qui composent le tableau. Des fois ça marche, des fois ça marche pas. 
-		
-		Pour régler ça, il faut évidemment que index_dialogueArray soit <= _au nombre de lignes de dialogue qui doivent être jouées pendant la conversation._
-		Sachant que ce nombre varie en fonction que l'on soit sur le [dialogue1] ou sur le [dialogue2] (d'ailleurs Suzanne a trois dialogues ce qui ne devrait pas être le cas vu que le programme ne le permet pas) et bien c'est un vrai sac de nœud. 
-	"""
-
 	if index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1:
 		if  NumDial == 0:
 			BoiteDialogue.NomPerso = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1[index_dialogueArray].Nom
@@ -181,6 +166,7 @@ func fin_dialogue():
 		ImportData.DialJour += 1
 #		NumDial += 1
 	disparitionPNG()
+	print(ImportData.DialJour)
 
 func disparitionPNG():
 	if ImportData.jour == 3 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:

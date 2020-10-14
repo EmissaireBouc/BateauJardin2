@@ -102,7 +102,7 @@ func _input(_event):
 						posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
 						menuEntretenir.open()
 					else:
-						_encart("Jade","Je suis fatiguée maintenant, je dois me reposer")
+						_encart("Jade","Je suis fatiguée maintenant, je dois me reposer.")
 
 
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
@@ -113,7 +113,7 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 					change_action(PLANTER)
 					create_ui_destination(get_global_mouse_position(),"PLANTATION")
 		else:
-			_encart("Jade","Je suis fatiguée maintenant, je dois me reposer")
+			_encart("Jade","Je suis fatiguée maintenant, je dois me reposer.")
 
 
 
@@ -319,8 +319,9 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 			var t = 0
 			for i in range ($Bateau/YSort/PNJ.get_child_count()):
 				t += $Bateau/YSort/PNJ.get_child(i).Dialogue
-			if t != 6:
-				_encart("Jade", "Je n'ai pas encore parlé à tout le monde")
+#			if t != 6:
+			if ImportData.DialJour != 6:
+				_encart("Jade", "Je n'ai pas encore parlé à tout le monde.")
 			else:
 				change_action(DORMIR)
 		else : 
