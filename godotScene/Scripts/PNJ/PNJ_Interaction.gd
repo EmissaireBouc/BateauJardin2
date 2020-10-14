@@ -178,8 +178,6 @@ func fin_dialogue():
 		ImportData.DialJour += 1
 		print(ImportData.DialJour)
 #		NumDial += 1
-	if NumDial == 1:
-		get_node_character(NomPersonnage).queue_free() 
 
 func get_node_character(n):
 	for i in range(get_child_count()):
