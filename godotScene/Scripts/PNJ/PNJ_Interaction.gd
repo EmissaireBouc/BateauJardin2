@@ -122,17 +122,20 @@ func on_Character_input(n, d, c):
 		print(NumDial)
 
 func lancer_dialogue():
+	if ImportData.ChangDial == 1 && NomPersonnage == 'Charpentiere' && NumDial == 0:
+		NumDial = 1
+		ImportData.DialJour += 1
+	
 	if NumDial == 0:
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1
 	else:
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2
 	get_node_character(NomPersonnage).play("TALK")
+		
 	parle()
 	print(NomPersonnage)
 
 func parle():
-#	if ImportData.jour == 0 && NomPersonnage == 'Navigatrice' && get_node_character(NomPersonnage).Dialogue == 0:
-#		get_node_character(str(NomPersonnage['Charpentiere'])).Dialogue += 2
 		
 	if index_dialogueArray <= BoiteDialogue.DialogueArray.size()-1:
 		if  NumDial == 0:
@@ -160,13 +163,18 @@ func fin_dialogue():
 	talking = false
 	Dialogues.visible = false
 	index_dialogueArray = 0
+#	ChangDial += 1
 	emit_signal("Fin_Conversation")
-
+	
+	if ImportData.jour == 0 && NomPersonnage == 'Navigatrice' && NumDial == 0:
+		ImportData.ChangDial += 1
+		
 	if NumDial == 0:
 		ImportData.DialJour += 1
 #		NumDial += 1
 	disparitionPNG()
 	print(ImportData.DialJour)
+	print("var pour changement: ", ImportData.ChangDial)
 
 func disparitionPNG():
 	if ImportData.jour == 3 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
