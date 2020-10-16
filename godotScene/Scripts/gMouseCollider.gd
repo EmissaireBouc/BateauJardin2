@@ -53,6 +53,7 @@ func _on_gMouseCollider_area_shape_exited(_area_id, area, _area_shape, _self_sha
 func select_plant(area):
 	overlapPlant = true
 	areaName = area.get_parent().get_name()
+	print(areaName)
 	emit_signal("debug", area.get_parent().get_name(), area.get_parent().pv, area.get_parent().lvl, area.get_parent().xp)
 	area.get_parent().set_material(preload("res://Assets/Mask/Outline.tres"))
 
@@ -63,7 +64,6 @@ func unselect_plant(area):
 	overlapPlant = false
 	areaName = ""
 	area.get_parent().set_material(area.get_parent().shader_vent)
-
 
 func clear_aCollisionNode():
 	unselect_plant(aCollisionNode[0])

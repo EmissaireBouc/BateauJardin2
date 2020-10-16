@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre2_Livre.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/Carnet/Font/Font_CorpsTexte.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/UI/Carnet/script_carnet/ButtonGraineMenu.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/Carnet/Journal/Theme_Livre.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Plante/Icone/icon_Arbuste.png" type="Texture" id=5]
@@ -26,9 +26,11 @@ margin_bottom = 38.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_constants/hseparation = 4
 shortcut_in_tooltip = false
 text = "Myosotis"
 icon = ExtResource( 5 )
+align = 0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

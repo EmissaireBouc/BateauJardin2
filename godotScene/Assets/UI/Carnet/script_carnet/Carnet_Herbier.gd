@@ -8,7 +8,7 @@ signal BackToMenu
 
 
 func setup():
-	if page == 2 || page == 4 || page == 6 :
+	if page == 2 || page == 4 || page == 6 || page == 8 :
 		$VBoxContainer/Titre.queue_free()
 
 	DictionaryToArray()
@@ -27,7 +27,7 @@ func setup():
 
 func DictionaryToArray():
 	for key in ImportData.plant_data:
-		if ImportData.plant_data[key].Available == 0 :
+		if ImportData.plant_data[key].Available <= ImportData.jour :
 			Herbes.push_back(key)
 
 

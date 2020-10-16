@@ -13,12 +13,12 @@ onready var nav2D : Navigation2D = $Bateau/WalkArea # Navigation2D est un noeud 
 onready var Line2D : Line2D = $Bateau/YSort/Line2D # Line2D trace une ligne
 onready var Player : AnimatedSprite = $Bateau/YSort/Player
 onready var MouseA : Area2D = get_node("Bateau/YSort/gMouseCollider")
-onready var menuInventaire : Control = get_node("CanvasLayer/Control/Inventory")
 onready var menuEntretenir : MarginContainer = get_node("CanvasLayer/Control/MenuInteractions")
 onready var Cam : Camera2D = get_node("Bateau/YSort/Player/Camera2D")
 onready var PA : Label = get_node("CanvasLayer/PA")
 onready var PNJsort : YSort = get_node("Bateau/YSort/PNJ")
 onready var transitionJours = get_node("CanvasLayer/ciel transition/ciel")
+var inventaire
 
 """
 Initialisation du jeu
@@ -26,12 +26,23 @@ Initialisation du jeu
 
 
 func _ready():
+	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
+	$CanvasLayer.add_child(tuto)
+	$CanvasLayer/Commande.connect("fin_tuto",self,"init_game")
 
+
+func init_game():
 	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
 	change_action(DEFAULT)
 	fondu("transition_out")
 	cursor_mode("default")
 	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
+
+#	Création de l'inventaire
+
+	var inv = load("res://Scenes/Systeme/Inventaire_plantes.tscn").instance()
+	$CanvasLayer.add_child(inv)
+	inventaire = get_node("CanvasLayer/Inventory")
 	
 	$CanvasLayer/Transition.visible = true
 	$Musique.play()
@@ -40,6 +51,9 @@ func _ready():
 
 	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
 		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
+
+#	Debug
+
 	print_garden() #Debug 
 
 func connectique():
@@ -47,8 +61,16 @@ func connectique():
 	Player.connect("Open_Carnet",self,"Open_Carnet")
 	Player.connect("Change_Cursor", self, "cursor_mode")
 	PNJsort.connect("Change_Cursor", self, "cursor_mode")
+	inventaire.connect("item_selected", self, "_on_Inventory_item_selected")
+	inventaire.connect("plant_abort", self, "_on_Inventory_plant_abort")
 
 func _process(_delta):
+	if Input.is_action_just_pressed("Debug"):
+		if !$CanvasLayer/Debug.visible:
+			$CanvasLayer/Debug.visible = true
+		else:
+			$CanvasLayer/Debug.visible = false
+
 	debug()
 
 
@@ -111,7 +133,6 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 			match action:
 				DEFAULT:
 					change_action(PLANTER)
-					create_ui_destination(get_global_mouse_position(),"PLANTATION")
 		else:
 			_encart("Jade","Je suis fatiguée maintenant, je dois me reposer.")
 
@@ -197,11 +218,11 @@ func _on_Player_anim_over(state):
 		PLANTER:
 			match state:
 				MOVE : 
-					menuInventaire.open()
+					inventaire.open()
 					Player.change_state(OPEN_INV)
 				PLANT:
 					PA.PA_down(1)
-					var planteName = menuInventaire.get_selected_item()
+					var planteName = inventaire.get_selected_item()
 					var plante = load ("res://Assets/Plante/Scene/%s" %planteName + ".tscn").instance()
 					$Bateau/YSort/Plante.add_child(plante)
 					plante.setup(planteName)
@@ -239,16 +260,15 @@ func _on_Player_anim_over(state):
 					change_action(CONVERS)
 					$Bateau/YSort/PNJ.lancer_dialogue()
 
+
 func _on_Inventory_item_selected():
 	match action:
 		PLANTER:
-			destroy_ui_destination()
-			menuInventaire.close()
 			Player.change_state(PLANT)
 
 func _on_Inventory_plant_abort():
-	destroy_ui_destination()
 	change_action(DEFAULT)
+
 
 func _on_Button_Cut_pressed():
 	if PA.get_PA() > 0 :
@@ -290,7 +310,7 @@ func plante_Remove(plant):
 	for i in range(aGarden.size()):
 		if aGarden[i] == get_node("Bateau/YSort/Plante/%s" %plant):
 			aGarden.remove(i)
-			get_node("Bateau/YSort/Plante/%s/AnimationPlayer" %plant).play_backwards("Apparition")
+			get_node("Bateau/YSort/Plante/%s/AnimationPlayer" %plant).play("Disparition")
 			break
 	print_garden()
 	MouseA.clear_aCollisionNode()
@@ -309,12 +329,6 @@ Gestion de l'action Dormir :
 
 func _on_Porte_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
-		if ImportData.jour >= 5 && ImportData.jour <= 9 :
-			if PA.get_PA() == 0:
-				change_action(DORMIR)
-			else:
-				_encart("Jade", "J'ai une montagne de choses à faire et l'énergie pour le faire... AU BOULOT !")
-				change_action(DEFAULT)
 		if ImportData.jour == 0 :
 			var t = 0
 			for i in range ($Bateau/YSort/PNJ.get_child_count()):
@@ -324,6 +338,14 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				_encart("Jade", "Je n'ai pas encore parlé à tout le monde.")
 			else:
 				change_action(DORMIR)
+
+		elif ImportData.jour >= 5 && ImportData.jour <= 9 :
+			if PA.get_PA() == 0:
+				change_action(DORMIR)
+			else:
+				_encart("Jade", "J'ai une montagne de choses à faire et l'énergie pour le faire... AU BOULOT !")
+				change_action(DEFAULT)
+
 		else : 
 			change_action(DORMIR)
 
@@ -354,8 +376,8 @@ func a_day_pass():
 	plante_PV_down()
 	
 	
-	if ImportData.jour == 10:
-		arrose_plrs_plantes(5)
+	if ImportData.jour >= 10:
+		arrose_plrs_plantes(10)
 
 func arrose_plrs_plantes(n = 0):
 	aGarden.sort_custom(MyCustomSorter, "sort_ascending")
@@ -375,7 +397,8 @@ func plante_PV_down():
 
 func plante_XP_up():
 	for i in range(aGarden.size()):
-		aGarden[i].xp -= 1
+		if aGarden[i].pv > 0:
+			aGarden[i].xp -= 1
 		if aGarden[i].xp == 0:
 			aGarden[i].LVL_up()
 
@@ -410,15 +433,13 @@ func _on_Transition_transition_over(t):
 		
 	if t == "transition_out":
 		start_new_day()
-		menuInventaire.Add_New_Seed(ImportData.jour)
-		pass
-		#$CanvasLayer/Transition/Jour.visible = false
 		
 	if t == "transition_out_fin":
 		$CanvasLayer/Transition.transitionCiel = false
 		fondu("transition_in")
 
 func start_new_day():
+
 	var nbText = 0
 	var dicTexture = {}
 	for key in ImportData.plant_data:
@@ -427,6 +448,15 @@ func start_new_day():
 			dicTexture["key"+ str(nbText)] = "res://Assets/Plante/Icone/icon_%s.png" %key
 	if !dicTexture.empty():
 		_encart("", "De nouvelles graines sont à votre disposition :", dicTexture)
+
+	var last_day = 0
+
+	for key in ImportData.dialogue_data:
+		if int(key) > last_day:
+			last_day = int(key)
+	
+	if ImportData.jour >= last_day:
+		_encart("", "Vous avez atteint la fin du proto de Bateau fol ! Merci d'avoir joué !/n Vous pouvez continuer à embellir le jardin si vous le souhaitez !")
 
 
 """
@@ -441,7 +471,7 @@ func Open_Carnet():
 		DEFAULT :
 			if !menuEntretenir.is_open():
 				var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
-				Carnet.set_scale(Vector2(0.9,0.9))
+#				Carnet.set_scale(Vector2(0.9,0.9))
 				$CanvasLayer.add_child(Carnet)
 				
 				Carnet.connect("Close_Carnet", self, "Close_Carnet")
@@ -473,11 +503,11 @@ func print_garden():
 	for i in range(aGarden.size()):
 		array += "\ni="+str(i)+" [" + str(aGarden[i].get_name()) + "] : " + aGarden[i].get_child(0).get_name()
 
-	$CanvasLayer/DebugLabel.text = "Jardin : " + str(aGarden.size()) + array
+	$CanvasLayer/Debug/DebugLabel.text = "Jardin : " + str(aGarden.size()) + array
 
 
 func debug():
-	$CanvasLayer/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100)
+	$CanvasLayer/Debug/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100)
 
 
 class MyCustomSorter:

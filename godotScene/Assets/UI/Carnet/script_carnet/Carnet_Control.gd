@@ -6,50 +6,54 @@ signal Close_Carnet
 
 func _ready():
 	setup_sommaire()
-	$OuvertureCarnet.play()
+	$Sons/OuvertureCarnet.play()
+	$Container/VBoxContainer.raise()
+	
 
 func _on_button_pressed(n):
 	numeroPage = n
 	load_page()
+	$Sons/PageTourne.play()
 
 func _on_BackToMenu_pressed():
 	setup_sommaire()
-	$FermetureCarnet.play()
+	$Sons/FermetureCarnet.play()
 
 
 func _on_RetourMenu_pressed():
 	numeroPage = 0
 	load_page()
+	$Sons/OuvertureCarnet.play()
 
 func _on_PageSuivante_pressed():
-	if numeroPage < 6 :
-		$PageTourne.play()
+	if numeroPage < 7 :
+		$Sons/PageTourne.play()
 		numeroPage += 1
 		load_page()
 
 func _on_PagePrecedente_pressed():
 	if numeroPage > 0:
-		$PageTourne.play()
+		$Sons/PageTourne.play()
 		numeroPage -= 1
 		load_page()
 
 func _on_Croix_pressed():
 	$AnimationPlayer.play("Disparition")
-	$FermetureCarnet.play()
+	$Sons/FermetureCarnet.play()
 
 
 func load_page():
 	
 	page.queue_free()
 	if numeroPage == 0 :
-		$Container/PagePrecedente.visible = false
+		$Container/VBoxContainer/HBoxContainer2/MarginContainer/PagePrecedente.visible = false
 	else :
-		$Container/PagePrecedente.visible = true
+		$Container/VBoxContainer/HBoxContainer2/MarginContainer/PagePrecedente.visible = true
 	
-	if numeroPage == 6 :
-		$Container/PageSuivante.visible = false
+	if numeroPage == 7 :
+		$Container/VBoxContainer/HBoxContainer2/MarginContainer2/PageSuivante.visible = false
 	else :
-		$Container/PageSuivante.visible = true
+		$Container/VBoxContainer/HBoxContainer2/MarginContainer2/PageSuivante.visible = true
 	
 	if numeroPage == 0 :
 		setup_sommaire()
@@ -68,24 +72,23 @@ func load_page():
 	if numeroPage == 7 : 
 		setup_herbier(6,7)
 
+	$Container/VBoxContainer.raise()
+
 
 func setup_herbier(p1,p2):
 	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageEquipage2.tscn").instance()
 	page.setup_pages(p1,p2)
-	add_child(page)
-	$Container.raise()
+	$Container.add_child(page)
 
 func setup_manifeste(p1,p2):
 	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageEquipage.tscn").instance()
-	add_child(page)
+	$Container.add_child(page)
 	page.setup_pages(p1,p2)
-	$Container.raise()
 
 func setup_sommaire():
 	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageSommaire.tscn").instance()
-	add_child(page)
+	$Container.add_child(page)
 	page.connect("button_pressed", self, "_on_button_pressed")
-	$Container.raise()
 
 
 func _on_FermetureCarnet_finished():

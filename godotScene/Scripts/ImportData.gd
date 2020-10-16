@@ -1,5 +1,6 @@
 extends Node
 
+var debugMode = false
 var plant_data
 var equipage_data
 var text
@@ -42,3 +43,6 @@ func _ready():
 	PosPNJ_file.close()
 	PosPNJ = PosPNJ_json.result
 
+func All_Plant_Available():
+	for key in plant_data:
+			plant_data[key].Available = 0

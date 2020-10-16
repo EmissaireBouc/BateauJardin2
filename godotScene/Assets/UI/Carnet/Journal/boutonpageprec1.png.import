@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/capitaineidledialogue.png-99cd7ffd6ed0f1d72fab686ceabbd0bd.stex"
+path="res://.import/boutonpageprec1.png-f3ed1622ef3da0bf52cd3fc5266798b4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personnage/PNJ/capitaineidledialogue.png"
-dest_files=[ "res://.import/capitaineidledialogue.png-99cd7ffd6ed0f1d72fab686ceabbd0bd.stex" ]
+source_file="res://Assets/UI/Carnet/Journal/boutonpageprec1.png"
+dest_files=[ "res://.import/boutonpageprec1.png-f3ed1622ef3da0bf52cd3fc5266798b4.stex" ]
 
 [params]
 

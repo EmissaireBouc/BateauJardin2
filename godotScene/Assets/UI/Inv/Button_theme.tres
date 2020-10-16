@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/UI/Inv/boutonboiteagraine1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/Inv/boutonboiteagraine1clic.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/Inv/boutonboiteagraine1survol.png" type="Texture" id=3]
-[ext_resource path="res://Assets/UI/Font/Quicksand_Bold_Oblique.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/UI/Font/Gravity-Regular.otf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18

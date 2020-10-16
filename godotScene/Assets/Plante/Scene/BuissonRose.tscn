@@ -52,9 +52,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=3]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "fanelvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -62,24 +67,19 @@ animations = [ {
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "lvl1",
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -88,9 +88,13 @@ material = SubResource( 2 )
 frames = SubResource( 3 )
 offset = Vector2( 0, -150 )
 
+[node name="Area2D" parent="." index="0"]
+visible = true
+
 [node name="CollisionPolygon2D" parent="Area2D" index="0"]
 position = Vector2( -27.8437, -10.5659 )
 scale = Vector2( 5.24152, 1 )
+polygon = PoolVector2Array( -14.5294, -69.4341, -14.5294, 26.5659, 28.2063, 26.5659, 28.2063, -69.4341 )
 
 [node name="Goutte" parent="." index="1"]
 position = Vector2( 8, -16 )

@@ -57,19 +57,19 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -77,9 +77,9 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "lvl1",
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -87,3 +87,10 @@ animations = [ {
 material = SubResource( 2 )
 frames = SubResource( 3 )
 offset = Vector2( 0, -100 )
+
+[node name="Area2D" parent="." index="0"]
+visible = true
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0"]
+position = Vector2( -24, -11.5 )
+polygon = PoolVector2Array( -7.82485, -76.5, -7.82485, 35.5, 28.6911, 35.5, 28.6911, -76.5 )

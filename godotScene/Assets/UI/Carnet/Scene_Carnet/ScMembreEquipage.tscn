@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/UI/Carnet/script_carnet/Carnet_BlocPerso.gd" type="Script" id=2]
-[ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre2_Livre.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/UI/Carnet/Illustration/Equipage/illu_Roche.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Carnet/Font/Font_CorpsTexte.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -30,26 +30,25 @@ tracks/0/keys = {
 }
 
 [node name="MembreEquipage" type="MarginContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 556.0
 margin_right = 914.0
-margin_bottom = 872.0
+margin_bottom = 783.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_constants/margin_right = 50
-custom_constants/margin_top = 10
+custom_constants/margin_right = 30
+custom_constants/margin_top = 5
 custom_constants/margin_left = 30
-custom_constants/margin_bottom = 10
+custom_constants/margin_bottom = 5
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="MarginContainer" parent="."]
 margin_left = 30.0
-margin_top = 10.0
-margin_right = 864.0
-margin_bottom = 306.0
+margin_top = 5.0
+margin_right = 884.0
+margin_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -57,38 +56,38 @@ size_flags_vertical = 3
 theme = SubResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-margin_right = 834.0
-margin_bottom = 296.0
+margin_right = 854.0
+margin_bottom = 217.0
 grow_horizontal = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_right = 834.0
-margin_bottom = 101.0
+margin_right = 854.0
+margin_bottom = 106.0
 custom_constants/separation = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_right = 116.0
-margin_bottom = 101.0
+margin_bottom = 106.0
 custom_styles/panel = SubResource( 3 )
 
 [node name="Illustration" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer"]
 margin_left = 20.0
 margin_right = 116.0
-margin_bottom = 101.0
+margin_bottom = 106.0
 texture = ExtResource( 4 )
-stretch_mode = 1
+stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_left = 126.0
-margin_right = 390.0
-margin_bottom = 101.0
+margin_right = 406.0
+margin_bottom = 106.0
 
 [node name="NomPersonnage" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 264.0
-margin_bottom = 55.0
+margin_right = 280.0
+margin_bottom = 57.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 10
 custom_constants/margin_left = 20
@@ -100,13 +99,13 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/NomPersonnage"]
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 244.0
-margin_bottom = 45.0
+margin_right = 260.0
+margin_bottom = 47.0
 grow_horizontal = 0
 
 [node name="Nom" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/NomPersonnage/HBoxContainer"]
-margin_right = 224.0
-margin_bottom = 35.0
+margin_right = 240.0
+margin_bottom = 37.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
@@ -115,9 +114,9 @@ text = "Nom Personnage"
 valign = 1
 
 [node name="InformationPersonnage" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 59.0
-margin_right = 264.0
-margin_bottom = 101.0
+margin_top = 61.0
+margin_right = 280.0
+margin_bottom = 106.0
 grow_horizontal = 0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 10
@@ -130,33 +129,33 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationPersonnage"]
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 244.0
-margin_bottom = 32.0
+margin_right = 260.0
+margin_bottom = 35.0
 grow_horizontal = 0
 
 [node name="Pronom" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationPersonnage/HBoxContainer"]
-margin_right = 67.0
-margin_bottom = 22.0
+margin_right = 73.0
+margin_bottom = 25.0
 size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 text = "Pronom"
 valign = 1
 
 [node name="Fonction" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationPersonnage/HBoxContainer"]
-margin_left = 71.0
-margin_right = 145.0
-margin_bottom = 22.0
+margin_left = 77.0
+margin_right = 160.0
+margin_bottom = 25.0
 size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 text = "Fonction"
 valign = 1
 
 [node name="HistoirePersonnage" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 111.0
-margin_right = 834.0
-margin_bottom = 296.0
+margin_top = 116.0
+margin_right = 854.0
+margin_bottom = 217.0
 grow_horizontal = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -171,12 +170,13 @@ __meta__ = {
 [node name="Description" type="Label" parent="PanelContainer/VBoxContainer/HistoirePersonnage"]
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 824.0
-margin_bottom = 175.0
+margin_right = 844.0
+margin_bottom = 91.0
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat vel massa ultricies fringilla. Praesent tincidunt accumsan mi eu porta. Ut et magna magna. Praesent congue ac metus ut semper. Ut vitae odio sed eros lobortis sollicitudin et et purus. "
+align = 3
 autowrap = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

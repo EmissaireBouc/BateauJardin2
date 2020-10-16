@@ -1,8 +1,8 @@
 extends MarginContainer
 
 func setup(nomCode, nom, PV, XP, Description):
-	var pvText = get_node("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer/VBoxContainer/PV")
-	var xpText = get_node("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer/VBoxContainer/XP")
+	var pvText = get_node("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer/MargPV/PV")
+	var xpText = get_node("PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/InformationHerbe/HBoxContainer/MargXP/XP")
 	$PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/NomHerbe/HBoxContainer/Nom.text = nom
 	$PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/DescriptionHerbe/Description.text = Description
 	$PanelContainer/VBoxContainer/HBoxContainer/CadreIllu/Illustration.texture = load("res://Assets/UI/Carnet/Illustration/Plantes/%s" %"illu_" + nomCode + ".png")

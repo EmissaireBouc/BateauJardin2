@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/ItemList.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Inventaire_plantes.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Son/Preselection graine.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/UI/Font/Quicksand_Book.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/UI/Font/Gravity-Regular.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/UI/Inv/Button_theme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/Inv/UI_theme.tres" type="Theme" id=6]
 [ext_resource path="res://Assets/UI/Inv/boiteagraineV2postit.png" type="Texture" id=7]
@@ -57,7 +57,7 @@ tracks/0/keys = {
 [sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="DynamicFont" id=4]
-size = 14
+use_filter = true
 font_data = ExtResource( 4 )
 
 [node name="Inventory" type="Control"]
@@ -99,7 +99,7 @@ margin_bottom = 6217.35
 theme = ExtResource( 6 )
 custom_styles/bg = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.137255, 0.164706, 0.121569, 1 )
 max_columns = 5
 same_column_width = true
 fixed_column_width = 96

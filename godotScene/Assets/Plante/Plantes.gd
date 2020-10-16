@@ -56,9 +56,10 @@ func initialize_shader():
 	shader_vent = get_material()
 
 func hydrat():
-	pv += 5
-	if pv > 2 :
-		$Goutte/AnimationPlayer.play("Modulate_humide")
+	if pv > 0:
+		pv += ImportData.plant_data[Plante].PV
+		if pv > 2 :
+			$Goutte/AnimationPlayer.play("Modulate_humide")
 
 
 func deshydrat():

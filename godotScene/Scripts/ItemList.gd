@@ -7,17 +7,21 @@ est disponible (available), le bouton associé devient visible
 """
 
 func setup_ItemList():
-#	make_inventory()
 	modulate_icon()
 
-#func make_inventory():
-#	for key in ImportData.plant_data:
-#		if ImportData.plant_data[key].Available == 0:
-#			create_item(key)
+
+func add_graine(plante):
+	create_item(plante)
+	modulate_icon()
 
 func create_item(plante):
 	var texture = load("res://Assets/Plante/Icone/%s" %"icon_"+ plante +".png")
 	add_item(ImportData.plant_data[plante].Alias, texture)
+
+func modulate_icon():
+	for i in range(get_item_count()):
+			if get_item_icon_modulate(i) != iconModulate:
+				set_item_icon_modulate(i,iconModulate)
 
 
 func return_selected_item():
@@ -28,17 +32,9 @@ func return_selected_item():
 	else: 
 		return
 
-func add_graine(plante):
-	create_item(plante)
-	modulate_icon()
-
 func unselect_graine():
 	if is_anything_selected():
 		unselect_all()
 		modulate_icon()
-	
 
-func modulate_icon():
-	for i in range(get_item_count()):
-			if get_item_icon_modulate(i) != iconModulate:
-				set_item_icon_modulate(i,iconModulate)
+
