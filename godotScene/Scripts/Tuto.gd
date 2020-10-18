@@ -3,6 +3,9 @@ extends Control
 var page = 1
 signal fin_tuto
 
+func _ready():
+	set_scale(Vector2(0.9,0.9))
+
 func _on_PagePrecedente_pressed():
 	if page > 1:
 		page -= 1
@@ -16,7 +19,8 @@ func _on_PageSuivante_button_down():
 
 
 func _on_Quitter_pressed():
-	emit_signal("fin_tuto")
+	if ImportData.jour == 0:
+		emit_signal("fin_tuto")
 	queue_free()
 
 func update():

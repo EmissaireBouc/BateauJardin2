@@ -54,3 +54,9 @@ func _on_button_pressed(_btnPressed, numeroPage):
 
 func _on_RetourMenu_pressed():
 	get_tree().change_scene("res://Scenes/Systeme/Ecran_Titre.tscn")
+
+
+func _on_Tuto_pressed():
+	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
+	get_parent().get_parent().add_child(tuto)
+	tuto.raise()
