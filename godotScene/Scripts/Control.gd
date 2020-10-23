@@ -340,10 +340,19 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				change_action(DORMIR)
 
 		elif ImportData.jour >= 5 && ImportData.jour <= 9 :
-			if PA.get_PA() == 0:
+			if PA.get_PA() <= 3:
 				change_action(DORMIR)
 			else:
-				_encart("Jade", "J'ai une montagne de choses à faire et l'énergie pour le faire... AU BOULOT !")
+				if ImportData.jour == 5:
+					_encart("Jade", "J'ai presque rien fait aujourd’hui, je vais travailler encore un peu")
+				if ImportData.jour == 6:
+					_encart("Jade", "Je vais continuer un peu, j'ai pas fait grand chose aujourd'hui")
+				if ImportData.jour == 7:
+					_encart("Jade", "J'ai déjà raté une demi journée, je vais travailler encore un peu avant de me coucher")
+				if ImportData.jour == 8:
+					_encart("Jade", "J'ai pas fait grand chose aujourd'hui, je vais continuer encore un peu.")
+				if ImportData.jour == 9:
+					_encart("Jade", "En ce moment je suis pas efficace, je peux pas finir ma journée comme ça.")
 				change_action(DEFAULT)
 
 		else : 
@@ -456,7 +465,7 @@ func start_new_day():
 			last_day = int(key)
 	
 	if ImportData.jour >= last_day:
-		_encart("", "Vous avez atteint la fin du proto de Bateau fol ! Merci d'avoir joué !/n Vous pouvez continuer à embellir le jardin si vous le souhaitez !")
+		_encart("", "Ce message marque la fin du prototype de Bateau fol ! Merci d'avoir joué ! Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez !")
 
 
 """

@@ -23,7 +23,7 @@ func update_status():
 	if pv <= 0 :
 		fane()
 
-	if pv > 0 && pv <= 2 :
+	if pv > 0 && pv <= 3 :
 		deshydrat()
 
 func fane():
@@ -58,7 +58,7 @@ func initialize_shader():
 func hydrat():
 	if pv > 0:
 		pv += ImportData.plant_data[Plante].PV
-		if pv > 2 :
+		if pv > 3 && $Goutte/AnimationPlayer.get_assigned_animation() == "Modulate_sec":
 			$Goutte/AnimationPlayer.play("Modulate_humide")
 
 

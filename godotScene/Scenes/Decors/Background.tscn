@@ -7,7 +7,6 @@
 scale = Vector2( 1.4, 1 )
 
 [node name="Ciel" type="Sprite" parent="."]
-modulate = Color( 0.960784, 0.694118, 0.694118, 1 )
 position = Vector2( -71.0251, -1400.99 )
 rotation = -3.14159
 scale = Vector2( 32.4814, 12.5 )
