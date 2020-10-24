@@ -26,6 +26,7 @@ Initialisation du jeu
 
 
 func _ready():
+	cursor_mode("default")
 	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 	$CanvasLayer.add_child(tuto)
 	$CanvasLayer/Commande.connect("fin_tuto",self,"init_game")
@@ -35,7 +36,6 @@ func init_game():
 	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
 	change_action(DEFAULT)
 	fondu("transition_out")
-	cursor_mode("default")
 	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
 
 #	Création de l'inventaire

@@ -36,6 +36,9 @@ func _on_HSlider_value_changed(value):
 
 
 func _on_SpinBox_value_changed(value):
-	print()
 	for i in range(get_parent().get_parent().get_parent().get_node("Bateau/YSort/Plante").get_child_count()):
 		get_parent().get_parent().get_parent().get_node("Bateau/YSort/Plante").get_child(i).set_lvl(value)
+
+
+func _on_HSlider2_value_changed(value):
+	get_parent().get_parent().get_parent().get_node("Bateau/YSort/Player/Camera2D").a = Vector2(value, value)

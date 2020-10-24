@@ -16,7 +16,7 @@ func _physics_process(delta):
 	else:
 		global_position = Vector2(px, py)
 
-	Czoom = Vector2(lerp(Czoom.x, clamp(a.x,0.5,2), 1.5 * delta), lerp(Czoom.y, clamp(a.y,0.5,2), 1.5 * delta))
+	Czoom = Vector2(lerp(Czoom.x, clamp(a.x,0.5,5), 1.5 * delta), lerp(Czoom.y, clamp(a.y,0.5,5), 1.5 * delta))
 	set_zoom(Czoom)
 	
 func _input(_event):
