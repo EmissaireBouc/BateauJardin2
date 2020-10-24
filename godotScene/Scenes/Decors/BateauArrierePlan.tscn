@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets/Decors/Bateau/arrierebateauportecabine.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Decors/Bateau/arrierebateauarbre.png" type="Texture" id=8]
 
-
 [node name="BateauArrierePlan" type="Node2D"]
 
 [node name="bordurecentraleariere" type="Sprite" parent="."]

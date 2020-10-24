@@ -46,6 +46,10 @@ func LVL_up():
 	else:
 		xp = 100
 
+func set_lvl(value):
+	lvl = value
+	update_status()
+
 func initialize_shader():
 	rng.randomize()
 	get_material().set_shader_param("Speed",rng.randf_range(1,2))
@@ -78,5 +82,4 @@ func _on_Area2D_area_shape_exited(_area_id, _area, _area_shape, _self_shape):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Disparition":
 		queue_free()
-		print("plante animation player finished : queue free")
 	pass # Replace with function body.

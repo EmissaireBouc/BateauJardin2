@@ -1,141 +1,142 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/soudeuse/idle soudeuse.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Personnage/PNJ/soudeuse/dialogue soudeuse.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Personnage/testombre2.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 425, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 850, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 1275, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 1700, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 2125, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 2550, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 2975, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 3400, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 3825, 0, 425, 750 )
+region = Rect2( 0, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 4250, 0, 425, 750 )
+region = Rect2( 425, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 4675, 0, 425, 750 )
+region = Rect2( 850, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 5100, 0, 425, 750 )
+region = Rect2( 1275, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 5525, 0, 425, 750 )
+region = Rect2( 1700, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 2125, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 425, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 2550, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 850, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 2975, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1275, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 3400, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1700, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 3825, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 2125, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 4250, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 2550, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 4675, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 2975, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 5100, 0, 425, 750 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 3400, 0, 425, 750 )
+atlas = ExtResource( 3 )
+region = Rect2( 5525, 0, 425, 750 )
 
 [sub_resource type="SpriteFrames" id=24]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
-"loop": true,
-"name": "TALK",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "IDLE",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "TALK",
 "speed": 5.0
 } ]
 
 [node name="Charpentiere" type="AnimatedSprite"]
 frames = SubResource( 24 )
 animation = "IDLE"
-frame = 2
+frame = 8
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -146,12 +147,20 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2( 20.3373, -19.691 )
 scale = Vector2( 0.281833, 0.141111 )
 polygon = PoolVector2Array( -384.336, -3127.69, 292.307, -3243.94, 285.031, 170.937, -478.92, 156.406 )
 
 [node name="Nav2DCol" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2( 38.7921, 31.5724 )
 scale = Vector2( 0.281833, 0.141111 )
 polygon = PoolVector2Array( -515.106, -325.626, -740.653, 342.818, 518.046, 328.286, 307.05, -412.814 )
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 17.6848, 57.1354 )
+scale = Vector2( 1.48743, 1.62104 )
+texture = ExtResource( 4 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

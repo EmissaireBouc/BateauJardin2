@@ -25,7 +25,7 @@ func _on_LineEdit_text_entered(new_text):
 
 	ImportData.DialJour = get_parent().get_parent().get_parent().get_node("Bateau/YSort/PNJ").get_child_count()
 
-	if int(new_text) > ImportData.jour && int(new_text) <= last_day :
+	if int(new_text) <= last_day :
 		ImportData.jour = int(new_text)-1
 		get_parent().get_parent().get_parent().fondu("transition_in")
 	
@@ -33,3 +33,9 @@ func _on_LineEdit_text_entered(new_text):
 
 func _on_HSlider_value_changed(value):
 	get_parent().get_parent().get_parent().get_node("Bateau/YSort/Player").speed = value
+
+
+func _on_SpinBox_value_changed(value):
+	print()
+	for i in range(get_parent().get_parent().get_parent().get_node("Bateau/YSort/Plante").get_child_count()):
+		get_parent().get_parent().get_parent().get_node("Bateau/YSort/Plante").get_child(i).set_lvl(value)

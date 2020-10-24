@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/gabier.ère/idle gabierère.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Personnage/PNJ/gabier.ère/dialogue gabierère.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Personnage/testombre2.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -115,7 +116,6 @@ animations = [ {
 [node name="Gabiere" type="AnimatedSprite"]
 frames = SubResource( 20 )
 animation = "IDLE"
-frame = 2
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -126,12 +126,20 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2( 8.54531, -26.68 )
 scale = Vector2( 0.208889, 0.165953 )
 polygon = PoolVector2Array( -404.692, -2877.53, 449.335, -2865.18, 400.254, 396.842, -394.875, 297.993 )
 
 [node name="Nav2DCol" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2( 8.54531, -26.68 )
 scale = Vector2( 0.208889, 0.165953 )
 polygon = PoolVector2Array( -450.58, -393.912, -686.173, 532.799, 678.306, 495.73, 442.712, -443.336 )
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 5.57292, 35.5809 )
+scale = Vector2( 0.991622, 1.438 )
+texture = ExtResource( 4 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

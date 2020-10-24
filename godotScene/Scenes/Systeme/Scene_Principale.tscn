@@ -96,19 +96,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -116,14 +111,19 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 30 ) ],
 "loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -171,19 +171,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=7]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 31 ) ],
 "loop": true,
 "name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 21 ) ],
@@ -191,14 +186,19 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -246,19 +246,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=10]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 44 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 49 ) ],
 "loop": true,
 "name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 45 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 46 ) ],
@@ -266,14 +261,19 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 47 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 50 ) ],
 "loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 44 ) ],
-"loop": true,
-"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -321,19 +321,14 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=13]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 39 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 43 ) ],
 "loop": true,
 "name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 42 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 40 ) ],
-"loop": true,
-"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 41 ) ],
@@ -341,14 +336,19 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 40 ) ],
+"loop": true,
+"name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 48 ) ],
 "loop": true,
 "name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ) ],
-"loop": true,
-"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -421,7 +421,7 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bateau/Jardin"]
 position = Vector2( -2317.07, -559.217 )
 scale = Vector2( 1.3586, 1 )
-polygon = PoolVector2Array( -987.62, 1393.77, 2381.59, 1417.14, 2919.97, 627.855, 2948.61, 268.294, 2822.61, -38.6485, 2393.05, -564.836, -997.958, -553.256 )
+polygon = PoolVector2Array( -985.671, 1274.19, 2311.84, 1274.19, 2877.13, 336.496, 2358.95, -456.938, -985.671, -456.938 )
 
 [node name="YSort" type="YSort" parent="Bateau"]
 
@@ -438,7 +438,7 @@ shape = SubResource( 1 )
 visible = false
 
 [node name="Player" parent="Bateau/YSort" instance=ExtResource( 11 )]
-position = Vector2( -3456, 0 )
+position = Vector2( -3648, -64 )
 scale = Vector2( 1, 1 )
 speed = 400
 
@@ -467,7 +467,7 @@ lvl = 2
 
 [node name="HautArbuste" parent="Bateau/YSort/Plante" instance=ExtResource( 51 )]
 material = SubResource( 9 )
-position = Vector2( -2713.27, -739.619 )
+position = Vector2( -2752, -640 )
 frames = SubResource( 10 )
 Plante = "HautArbuste"
 pv = 5
@@ -478,7 +478,6 @@ lvl = 2
 material = SubResource( 12 )
 position = Vector2( -1408, 128 )
 frames = SubResource( 13 )
-Plante = "Fougere"
 pv = 3
 xp = 3
 

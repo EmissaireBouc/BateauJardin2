@@ -22,10 +22,6 @@ func _process(_delta):
 #	$Polygon2D.global_position = get_global_mouse_position()
 	$CollisionShape2D.global_position = get_global_mouse_position()
 
-func _unhandled_input(_event):
-	if Input.is_action_pressed("ui_right_mouse") && !item_selected && overlapPlant && nPA.PA > 0:
-		item_selected = true
-
 """
 Seules les plantes (layer : plante) sont concernées par les collisions de gMouseCollider.
 """
@@ -53,7 +49,6 @@ func _on_gMouseCollider_area_shape_exited(_area_id, area, _area_shape, _self_sha
 func select_plant(area):
 	overlapPlant = true
 	areaName = area.get_parent().get_name()
-	print(areaName)
 	emit_signal("debug", area.get_parent().get_name(), area.get_parent().pv, area.get_parent().lvl, area.get_parent().xp)
 	area.get_parent().set_material(preload("res://Assets/Mask/Outline.tres"))
 

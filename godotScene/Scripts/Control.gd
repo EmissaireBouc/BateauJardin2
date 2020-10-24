@@ -119,12 +119,14 @@ func _input(_event):
 	else:
 		match action:
 			DEFAULT:
-				if MouseA.overlapPlant :
-					if PA.get_PA() > 0:
-						posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
-						menuEntretenir.open()
-					else:
-						_encart("Jade","Je suis fatiguée maintenant, je dois me reposer.")
+				if MouseA.overlapPlant && !menuEntretenir.is_open():
+					if !MouseA.item_selected:
+						if PA.get_PA() > 0:
+							MouseA.item_selected = true
+							posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
+							menuEntretenir.open()
+						else:
+							_encart("Jade","La journée est finie, le soleil va se coucher. C'est le moment de rejoindre ma cabine.")
 
 
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
@@ -278,12 +280,13 @@ func _on_Button_Cut_pressed():
 
 func _on_Button_Spray_pressed():
 	if PA.get_PA() > 0 :
-		if MouseA.return_select_plant().pv > 0:
-			change_action(ARROSER)
-		else:
-			_encart("Jade", "Cette plante est fânée, il n'y a rien à faire sinon l'arracher...")
-			menuEntretenir.close()
-			MouseA.clear_aCollisionNode()
+		if MouseA.item_selected:
+			if MouseA.return_select_plant().pv > 0:
+				change_action(ARROSER)
+			else:
+				_encart("Jade", "Cette plante est fânée, il n'y a rien à faire sinon l'arracher...")
+				menuEntretenir.close()
+				MouseA.clear_aCollisionNode()
 	else:
 		menuEntretenir.close()
 

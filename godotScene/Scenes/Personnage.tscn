@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Personnage/PJ/PJ.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/PlayerControl.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Personnage/testombre2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Son/marche03.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Son/marche02.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Son/Arrosage.wav" type="AudioStream" id=6]
@@ -13,9 +14,10 @@
 extents = Vector2( 93.8132, 260.061 )
 
 [node name="Player" type="AnimatedSprite"]
+position = Vector2( 0.630249, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 1 )
-animation = "CUT_S"
+animation = "IDLE_E"
 offset = Vector2( 0, -325 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -50,6 +52,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 14.3774, -273.365 )
 shape = SubResource( 1 )
+
+[node name="testombre" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 15.4756, -21.674 )
+scale = Vector2( 1.11117, 1.49706 )
+texture = ExtResource( 3 )
 [connection signal="animation_finished" from="." to="." method="_on_Player_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]

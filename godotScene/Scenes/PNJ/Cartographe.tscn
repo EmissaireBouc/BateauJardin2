@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/cartographe/idle carto.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Personnage/PNJ/cartographe/dialogue carto.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Personnage/testombre2.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -95,7 +96,7 @@ animations = [ {
 [node name="Cartographe" type="AnimatedSprite"]
 frames = SubResource( 16 )
 animation = "IDLE"
-frame = 4
+frame = 1
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -106,12 +107,19 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2( 59.3524, -22.445 )
 scale = Vector2( 1, 0.149488 )
 polygon = PoolVector2Array( -232.706, -3318.41, 70.3475, -3456.39, 146.508, 555.704, -186.219, 482.834 )
 
 [node name="Nav2DCol" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 position = Vector2( 51.5526, -22.445 )
 scale = Vector2( 0.898649, 0.149488 )
 polygon = PoolVector2Array( -225.069, -130.255, -243.575, 563.006, 235.734, 649.664, 165.41, -155.014 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 13.7841, 26.0387 )
+scale = Vector2( 1.71058, 1.71058 )
+texture = ExtResource( 4 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

@@ -7,7 +7,7 @@
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -360.0
-margin_bottom = 168.0
+margin_bottom = 271.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -21,13 +21,13 @@ __meta__ = {
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 350.0
-margin_bottom = 232.0
+margin_bottom = 261.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 350.0
-margin_bottom = 232.0
+margin_bottom = 261.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -37,7 +37,7 @@ custom_constants/margin_bottom = 10
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 330.0
-margin_bottom = 212.0
+margin_bottom = 241.0
 
 [node name="CB_Graines" type="CheckBox" parent="MarginContainer/VBoxContainer"]
 margin_right = 320.0
@@ -115,9 +115,34 @@ step = 50.0
 value = 300.0
 rounded = true
 scrollable = false
+
+[node name="PlanteLvl" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 206.0
+margin_right = 320.0
+margin_bottom = 231.0
+
+[node name="plLvl" type="Label" parent="MarginContainer/VBoxContainer/PlanteLvl"]
+margin_right = 94.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.231373, 0.803922, 0.509804, 1 )
+text = "Plante_lvl"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/PlanteLvl"]
+margin_left = 98.0
+margin_right = 172.0
+margin_bottom = 25.0
+min_value = 1.0
+max_value = 3.0
+value = 1.0
+rounded = true
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CB_Graines" to="." method="_on_CB_Graines_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CB_PA" to="." method="_on_CB_PA_pressed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CB_DebugPannel" to="." method="_on_CB_DebugPannel_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CB_Camera" to="." method="_on_CB_Camera_toggled"]
 [connection signal="text_entered" from="MarginContainer/VBoxContainer/MarginContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/MarginContainer2/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PlanteLvl/SpinBox" to="." method="_on_SpinBox_value_changed"]

@@ -13,7 +13,7 @@ A propos de Spot_PNJ :
 	méthode efficiente. Elle est à retravailler. 
 """
 
-export (Array) var  Spot_PNJ = [["A1", Vector2(-3311,-465)],["A4", Vector2(-2946,514)],["B1", Vector2(-2105,-488)],["E1", Vector2(232,-787)],["E4", Vector2(-1364,465)],["F4", Vector2(-120,465)],["G3", Vector2(974,545)]]
+export (Array) var  Spot_PNJ = [["A1", Vector2(-3311,-465)],["A4", Vector2(-2946,514)],["B1", Vector2(-2105,-488)],["E1", Vector2(232,-787)],["E4", Vector2(-1364,465)],["F4", Vector2(-120,465)],["G3", Vector2(896,512)]]
 var Lieu_PNJ = [["D1", Vector2(-704,-384), Vector2(-320,-768), Vector2(-896,-768)],["F2", Vector2(704,192), Vector2(1088,64), Vector2(704,-192)],["C3", Vector2(-1792,512), Vector2(-1344,384), Vector2(-1792,192)]]
 var Save_Lieu_PNJ = []
 

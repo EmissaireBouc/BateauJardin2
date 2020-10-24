@@ -9,7 +9,7 @@
 [node name="arrierebateauavant" type="Node2D"]
 
 [node name="BateauPremierPlan_Avant" type="Sprite" parent="."]
-position = Vector2( 5277.04, -594.667 )
+position = Vector2( 5277.04, -599.667 )
 texture = ExtResource( 3 )
 
 [node name="PorteCabine" type="Sprite" parent="."]
