@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/BoutonMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menu/BtnMenu.tres" type="Theme" id=2]
@@ -46,42 +46,42 @@ length = 3.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_rotation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.1, 2.3 ),
-"transitions": PoolRealArray( 1, 1, 1.8025 ),
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 2.0, -2.0 ]
+"values": [ 0.0, 2.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:rect_position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.1, 2.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -105, 639.987 ), Vector2( -50, 639.987 ), Vector2( -150, 639.987 ) ]
+"values": [ Vector2( -105, 639.987 ), Vector2( -50, 639.987 ) ]
 }
 
 [sub_resource type="Animation" id=3]
-length = 3.5
+length = 5.0
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3.5 ),
-"transitions": PoolRealArray( 0.784584, 0.297302 ),
+"times": PoolRealArray( 0.3, 5 ),
+"transitions": PoolRealArray( 0.420448, 1 ),
 "update": 0,
-"values": [ Vector2( -400, 700 ), Vector2( 950, 700 ) ]
+"values": [ Vector2( -450, 700 ), Vector2( 950, 700 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -91,30 +91,34 @@ length = 5.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 3.8 ),
-"transitions": PoolRealArray( 0.450625, 0.378929, 0.450625 ),
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 0.965936, 1.07177 ),
 "update": 0,
-"values": [ 0.0, -6.0, 4.36652 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2, 3.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -150, 700 ), Vector2( 631.51, 715 ), Vector2( 631.51, 685 ) ]
+"values": [ 3.0, -3.0 ]
 }
 
 [sub_resource type="Animation" id=6]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 30 ) ]
+}
+
+[sub_resource type="Animation" id=7]
 length = 6.0
 loop = true
 tracks/0/type = "value"
@@ -240,11 +244,11 @@ autoplay = "Boucle"
 anims/Boucle = SubResource( 1 )
 
 [node name="Vague2" type="NinePatchRect" parent="."]
-margin_left = -131.476
+margin_left = -105.0
 margin_top = 639.987
-margin_right = 1986.52
+margin_right = 2013.0
 margin_bottom = 1063.99
-rect_rotation = -1.25905
+rect_pivot_offset = Vector2( 1059, 212 )
 texture = ExtResource( 6 )
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
@@ -256,25 +260,31 @@ __meta__ = {
 autoplay = "Boucle"
 anims/Boucle = SubResource( 2 )
 
-[node name="Bateau" type="Sprite" parent="."]
-position = Vector2( -400, 700 )
-rotation = 0.0612604
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -450, 700 )
+
+[node name="Bateau" type="Sprite" parent="Node2D"]
+rotation = 0.0523599
 scale = Vector2( 0.402136, 0.402137 )
 texture = ExtResource( 3 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Bateau"]
+[node name="Node2D" type="AnimationPlayer" parent="Node2D/Bateau"]
 autoplay = "Apparition"
 anims/Apparition = SubResource( 3 )
 anims/Depart = SubResource( 4 )
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Bateau"]
+[node name="BateauRotation" type="AnimationPlayer" parent="Node2D/Bateau"]
 autoplay = "Boucle"
 anims/Boucle = SubResource( 5 )
 
+[node name="BateauY" type="AnimationPlayer" parent="Node2D/Bateau"]
+autoplay = "Boucle"
+anims/Boucle = SubResource( 6 )
+
 [node name="Vague1" type="NinePatchRect" parent="."]
-margin_left = -130.0
+margin_left = -128.0
 margin_top = 576.0
-margin_right = 1986.46
+margin_right = 1988.46
 margin_bottom = 1119.0
 rect_pivot_offset = Vector2( 1050, 320 )
 texture = ExtResource( 5 )
@@ -286,6 +296,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Vague1"]
 autoplay = "Boucle"
-anims/Boucle = SubResource( 6 )
+anims/Boucle = SubResource( 7 )
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Jouer" to="MarginContainer/VBoxContainer/Menu/Jouer" method="_on_Jouer_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Quitter" to="MarginContainer/VBoxContainer/Menu/Quitter" method="_on_Quitter_pressed"]

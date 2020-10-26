@@ -136,7 +136,7 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 				DEFAULT:
 					change_action(PLANTER)
 		else:
-			_encart("Jade","Je suis fatiguée maintenant, je dois me reposer.")
+			_encart("Jade","La journée est finie, le soleil va se coucher. C'est le moment de rejoindre ma cabine.")
 
 
 
@@ -401,7 +401,7 @@ func arrose_plrs_plantes(n = 0):
 func plante_PV_down():
 	for i in range(aGarden.size()):
 		aGarden[i].pv -= 1
-		if aGarden[i].pv > 0 && aGarden[i].pv < 2 :
+		if aGarden[i].pv > 0 && aGarden[i].pv <= 3 :
 			aGarden[i].deshydrat()
 		
 		if aGarden[i].pv <= 0:

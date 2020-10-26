@@ -41,7 +41,8 @@ func _on_gMouseCollider_area_shape_exited(_area_id, area, _area_shape, _self_sha
 			if area == aCollisionNode[0]:
 				unselect_plant(area)
 			#On supprime du tableau le noeud qui quitte l'aire d'influence de la souris
-			aCollisionNode.remove(aCollisionNode.find(area))
+			if aCollisionNode.find(area) != -1:
+				aCollisionNode.remove(aCollisionNode.find(area))
 			#S'il reste des elements dans le tableau, le premier element devient l'element selectionne
 			if aCollisionNode.size() != 0:
 				select_plant(aCollisionNode[0])
