@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/mécano/idle mécano.png" type="Texture" id=2]
@@ -7,106 +7,121 @@
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 425, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 850, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 1275, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 1700, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 2125, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 425, 650 )
+region = Rect2( 2550, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 425, 0, 425, 650 )
+region = Rect2( 2975, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 850, 0, 425, 650 )
+region = Rect2( 3400, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 1275, 0, 425, 650 )
+region = Rect2( 3825, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 1700, 0, 425, 650 )
+region = Rect2( 4250, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 2125, 0, 425, 650 )
+region = Rect2( 4675, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 2550, 0, 425, 650 )
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 2975, 0, 425, 650 )
+atlas = ExtResource( 2 )
+region = Rect2( 425, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 3400, 0, 425, 650 )
+atlas = ExtResource( 2 )
+region = Rect2( 850, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 3825, 0, 425, 650 )
+atlas = ExtResource( 2 )
+region = Rect2( 1275, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 4250, 0, 425, 650 )
+atlas = ExtResource( 2 )
+region = Rect2( 1700, 0, 425, 650 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 4675, 0, 425, 650 )
+atlas = ExtResource( 2 )
+region = Rect2( 2125, 0, 425, 650 )
 
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "IDLE",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
 "name": "TALK",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "IDLE",
+"speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=20]
+resource_name = "disparition"
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Mecano" type="AnimatedSprite"]
 frames = SubResource( 19 )
@@ -130,6 +145,9 @@ visible = false
 position = Vector2( 20.8837, -44.4002 )
 scale = Vector2( 0.230599, 0.25317 )
 polygon = PoolVector2Array( -611.293, -4.05385, -831.473, 434.65, 744.192, 459.719, 503.37, -35.3897 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+anims/disparition = SubResource( 20 )
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
