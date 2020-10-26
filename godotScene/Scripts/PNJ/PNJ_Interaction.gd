@@ -178,8 +178,7 @@ func fin_dialogue():
 
 func disparitionPNG():
 	if ImportData.jour == 3 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
-		$AnimationPlayer.play('disparition')
-		get_node_character(NomPersonnage).queue_free()
+		get_node("Mecanicienne/Area2D/AnimationPlayer").play('disparition')
 	if ImportData.jour == 3 && NomPersonnage == 'Cartographe' && get_node_character(NomPersonnage).Disparition == 1:
 		get_node_character(NomPersonnage).queue_free()
 	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:

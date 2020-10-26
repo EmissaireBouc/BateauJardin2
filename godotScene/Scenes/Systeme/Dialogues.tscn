@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_NomDialogue.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/BoiteDialogue.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/UI/Carnet/fleche_bas.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/Carnet/Journal/texture_feuille.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/Carnet/fleche_bas_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Decors/icon.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -109,5 +110,9 @@ __meta__ = {
 anims/Idle = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="BoiteDialogue"]
+
+[node name="portrait" type="Sprite" parent="BoiteDialogue"]
+position = Vector2( 72.3135, 209.942 )
+texture = ExtResource( 7 )
 [connection signal="pressed" from="BoiteDialogue/indicateur" to="BoiteDialogue" method="_on_indicateur_pressed"]
 [connection signal="tween_completed" from="BoiteDialogue/Tween" to="BoiteDialogue" method="_on_Tween_tween_completed"]

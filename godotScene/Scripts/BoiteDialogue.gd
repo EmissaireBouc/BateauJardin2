@@ -27,6 +27,12 @@ func chargement_dialog():
 			$texte, "percent_visible", 0, 1, 1,
 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 			)
+		# transformation de NomPerso pour qu'il corresponde au nom de fichier
+		var textName = NomPerso.to_upper().dedent()
+		textName = textName.replace("Â", "A")
+		# Chargement de la texture dans le Sprite
+		$portrait.texture = load("res://Assets/Personnage/PNJ/portraitsDial/%s" %textName + ".png")
+		
 		$Tween.start()
 
 func _on_Tween_tween_completed(_object, _key):
