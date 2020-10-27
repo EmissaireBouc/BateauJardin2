@@ -80,6 +80,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -96,19 +97,19 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "fanelvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -121,9 +122,9 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ) ],
+"frames": [ ExtResource( 30 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -155,6 +156,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=6]
 resource_local_to_scene = true
@@ -171,19 +173,19 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=7]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 28 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "fanelvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 21 ) ],
@@ -196,9 +198,9 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -230,6 +232,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=9]
 resource_local_to_scene = true
@@ -246,19 +249,19 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=10]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 49 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 47 ) ],
 "loop": true,
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 45 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 49 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "fanelvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 46 ) ],
@@ -271,9 +274,9 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 45 ) ],
+"frames": [ ExtResource( 50 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -305,6 +308,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=12]
 resource_local_to_scene = true
@@ -321,19 +325,19 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=13]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 43 ) ],
+"loop": true,
+"name": "lvl3",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 40 ) ],
 "loop": true,
 "name": "fanelvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 48 ) ],
+"frames": [ ExtResource( 42 ) ],
 "loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 43 ) ],
-"loop": true,
-"name": "lvl3",
+"name": "fanelvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 41 ) ],
@@ -346,9 +350,9 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 42 ) ],
+"frames": [ ExtResource( 48 ) ],
 "loop": true,
-"name": "fanelvl3",
+"name": "lvl2",
 "speed": 5.0
 } ]
 

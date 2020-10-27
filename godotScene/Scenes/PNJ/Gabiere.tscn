@@ -1,36 +1,36 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/gabier.ère/idle gabierère.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Personnage/PNJ/gabier.ère/dialogue gabierère.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Personnage/testombre2.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 500, 700 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 500, 0, 500, 700 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1000, 0, 500, 700 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1500, 0, 500, 700 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 2000, 0, 500, 700 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 2500, 0, 500, 700 )
@@ -100,9 +100,9 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 6000, 0, 500, 700 )
 
-[sub_resource type="SpriteFrames" id=20]
+[sub_resource type="SpriteFrames" id=26]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
 "name": "IDLE",
 "speed": 5.0
@@ -113,9 +113,24 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=27]
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Gabiere" type="AnimatedSprite"]
-frames = SubResource( 20 )
+frames = SubResource( 26 )
 animation = "IDLE"
+frame = 2
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -124,6 +139,9 @@ NomPersonnage = "Gabiere"
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+anims/disparition = SubResource( 27 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 visible = false
@@ -143,3 +161,4 @@ position = Vector2( 5.57292, 35.5809 )
 scale = Vector2( 0.991622, 1.438 )
 texture = ExtResource( 4 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="animation_finished" from="Area2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -22,17 +22,13 @@
 			],
 
 		"Dialogue2": [
-			  
 			  {
-
 			   "Nom": "Eleanor",
 			   "Text": "Ça va te changer de faire du jardinage."
 			  },
-
 			  {
 			   "Nom": "Eleanor",
 			   "Text": "Je bossais en ville comme toi avant, ça me convenait pas du tout non plus. Je comprend que t’ai pas tenu et que t’ai dû arrêter."
-
 			  }
 			]
       },
@@ -42,7 +38,19 @@
 			"Dialogue1": [
 			 {
 			   "Nom": "...",
-			   "Text": "......"
+			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée ! Tout le monde, voici Jade, la filleule d'Anna. Tu devrais te plaire parmi nous."
+			 },
+			 {
+				"Nom": "...",
+				"Text": "Salut, bienvenue à bord !"
+			  },
+			  {
+			   "Nom": "...",
+			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charibe."
+			 },
+			 {
+			   "Nom": "Suzanne",
+			   "Text": "Tout l’équipage est là pour t’accueillir, sauf notre mécanicienne qui travaille dans la cale, et Maël qui est pas là en ce moment."
 			 }
           ],
 		"Dialogue2": [
@@ -137,7 +145,7 @@
 		"Charpentiere": {
       "Dialogue1": [
           {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "Comment va ta marraine ? La dernière fois que j’ai eu de ses nouvelles elle avait été hospitalisée pour longtemps, mais là elle va mieux non ?"
           },
           {
@@ -145,7 +153,7 @@
            "Text": "Ah, elle a été hospitalisée ?"
            },
 		   {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "Euh oui, régulièrement."
           },
           {
@@ -153,13 +161,13 @@
            "Text": "Je sais pas on la voit pas souvent, là c’est un coup de chance qu’on ait eu de ses nouvelles pile quand je re cherchais un travail et qu’elle m’ait parlé de vous."
            },
 		   {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "Bon, tu vas être avec nous pendant toute une tournée avant qu'on revienne à ce port, j'espère vraiment que ces quelques mois avec nous te plairont."
           }
           ],
       "Dialogue2": [
           {
-          "Nom": "Suzane",
+          "Nom": "Suzanne",
            "Text": "Si tu as besoin de quoi que ce soit, n'hésite pas !"
           }
         ]
@@ -269,7 +277,7 @@
            },
 		   {
            "Nom": "Eleanor",
-           "Text": "On a trouvé le 'nom du bateau' il y a de ça quelques années déjà. Comme je te disais, on est tombée dessus pendant une de nos balade en amoureuse avec Mazaa, il était abandonné près d'un port submergé."
+           "Text": "On a trouvé le Bonny & Read il y a de ça quelques années déjà. Comme je te disais, on est tombée dessus pendant une de nos balade en amoureuse avec Mazaa, il était abandonné près d'un port submergé."
           },
 		  {
            "Nom": "Eleanor",
@@ -364,8 +372,52 @@
 		"Charpentiere": {
       "Dialogue1": [
 		  {
+           "Nom": "Mazaa",
+           "Text": "C'est encore moi qui ai nettoyé toute la cuisine."
+          },
+          {
            "Nom": "Suzanne",
-           "Text": "...."
+           "Text": "Ouais, Je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché, ils remarquent pas du tout quand c'est sale."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan, qui foutent vraiment pas grand chose niveau taches ménagères."
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "C'est délicat parce qu'on a tou.te.s du mal à les faire comme on est fols, mais bon, c'est quand même toujours les mêmes qui font tout."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Et toujours les cis mecs qui font rien ! Nous aussi on est folles et on a du mal."
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "On veut pas les culpabiliser, chacun.e fait ce qu'iel peut."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "C'est difficile de savoir à quel point ils sont mal et peuvent vraiment pas faire plus et à quel point c’est du sexisme."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Moi je veux bien les culpabiliser !"
+          },
+		  {
+           "Nom": "Mazaa",
+           "Text": "C’est toujours les meufs et non binaires qui font tout, même au fond de la crise y’a toujours l’éducation à faire passer certaines choses avant son bien être, à plus se forcer pour les autres."
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Faut vraiment qu'on leur en parle, ça sert à rien de râler dans notre coin."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Ouais..."
+          },
+		  {
+           "Nom": "Mazaa",
+           "Text": "Bon je vous laisse, c'est l'heure de ma sieste."
           }
           ],
       "Dialogue2": [
@@ -374,7 +426,7 @@
            "Text": "Mais donc vous avez tou.te.s des maladies psy ?"
           },
           {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "Oui, Anna t'avait pas dit ? Enfin Ismaël est autiste et c’est pas une maladie, mais ça change pas grand-chose, on est tou.te.s fols quoi."
           },
 		  {
@@ -386,7 +438,7 @@
            "Text": "Mes parents m’auraient sûrement pas laissé venir s'ils avaient su."
           },
           {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "Iels ont l'air particuliers tes parents."
           },
 		  {
@@ -419,7 +471,7 @@
            "Text": "C'est encore moi qui ai nettoyé toute la cuisine."
           },
           {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "Ouais, Je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché, ils remarquent pas du tout quand c'est sale."
            },
 		   {
@@ -427,7 +479,7 @@
            "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan, qui foutent vraiment pas grand chose niveau taches ménagères."
           },
           {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "C'est délicat parce qu'on a tou.te.s du mal à les faire comme on est fols, mais bon, c'est quand même toujours les mêmes qui font tout."
            },
 		   {
@@ -435,11 +487,11 @@
            "Text": "Et toujours les cis mecs qui font rien ! Nous aussi on est folles et on a du mal."
           },
           {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "On veut pas les culpabiliser, chacun.e fait ce qu'iel peut."
            },
 		   {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "C'est difficile de savoir à quel point ils sont mal et peuvent vraiment pas faire plus et à quel point c’est du sexisme."
            },
 		   {
@@ -451,7 +503,7 @@
            "Text": "C’est toujours les meufs et non binaires qui font tout, même au fond de la crise y’a toujours l’éducation à faire passer certaines choses avant son bien être, à plus se forcer pour les autres."
           },
           {
-           "Nom": "Suzane",
+           "Nom": "Suzanne",
            "Text": "Faut vraiment qu'on leur en parle, ça sert à rien de râler dans notre coin."
            },
 		   {
@@ -476,7 +528,7 @@
       "Dialogue1": [
 		  {
            "Nom": "Eleanor",
-           "Text": "...."
+           "Text": "Rien de plus revigorant que l'air marin."
 		   }
           ],
       "Dialogue2": [
@@ -708,15 +760,7 @@
           {
            "Nom": "Kaneza",
            "Text": "...."
-          },
-          {
-           "Nom": "Minh Tâm",
-           "Text": "T'inquiète c'est pas contre toi ! Kaneza a toujours du mal avec les nouvelles personnes, ça va prendre un peu de temps avant qu'elle arrive à te parler."
-           },
-		   {
-           "Nom": "Minh Tâm",
-           "Text": "Mais tu verras à partir de là elle pourra plus s'arrêter, et elle est passionnante."
-           }
+          }
           ],
       "Dialogue2": [
           {
@@ -730,14 +774,18 @@
       "Dialogue1": [
           {
            "Nom": "Minh Tâm",
-           "Text": "...."
+           "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
           }
           ],
       "Dialogue2": [
           {
            "Nom": "Minh Tâm",
-           "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
-          }
+           "Text": "T'inquiète c'est pas contre toi ! Kaneza a toujours du mal avec les nouvelles personnes, ça va prendre un peu de temps avant qu'elle arrive à te parler."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Mais tu verras à partir de là elle pourra plus s'arrêter, et elle est passionnante."
+           }
         ]
       }
 	},
@@ -909,10 +957,10 @@
       "Dialogue1": [
           {
            "Nom": "Minh Tâm",
-           "Text": "...."
+           "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
           }
           ],
-      "Dialogue2": [
+	  "Dialogue2": [
           {
            "Nom": "Minh Tâm",
            "Text": "Kana me déteste !"
@@ -951,9 +999,53 @@
 		"Vigie": {
       "Dialogue1": [
           {
+           "Nom": "Suzanne",
+           "Text": "Je sais qu'avec tes problèmes de fonctionnement exécutif c'est compliqué mais pour nous non plus c'est pas facile."
+          },
+          {
            "Nom": "Ismael",
-           "Text": "...."
-          }
+           "Text": "Oui mais en ce moment ça ne va vraiment pas, je suis complètement perdu, la moindre tâche me paraît insurmontable."
+           },
+		   {
+           "Nom": "Ismael",
+           "Text": "On dirait que vous oubliez ce que cela fait d'être autiste."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Mais tu sais on est toustes concerné-es par des moments où ça va pas. Pourtant tout le monde participe aux tâches ménagères. Tout le monde sauf les mecs cis !"
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Ne me joue pas cette carte ! On fait très attention tu le sais !"
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Ah oui ? À quand remonte la dernière fois que t'as fait la vaisselle, ne serait-ce que sur ton tour de corvées ?"
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "..."
+           },
+		   {
+           "Nom": "Ismael",
+           "Text": "Je t'ai dis, ça va pas trop."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Me pousse pas à faire des comparaisons avec les autres, s'il te plait Ismael."
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Je n'arrive pas à y croire. Écoute, je vais retourner à la radio là. Nous en reparlerons plus tard si tu veux."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Ismael."
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Oui, je vais faire attention à tout ça."
+           }
           ],
       "Dialogue2": [
           {
@@ -996,11 +1088,11 @@
            },
 		   {
            "Nom": "Eleanor",
-           "Text": "Mais tu fais déjà très bien ! Regarde moi le pont de notre magnifique B&R ! ça fait plaisir à voir !"
+           "Text": "Mais tu fais déjà très bien ! Regarde moi le pont de notre magnifique Bonny & Read ! Ça fait plaisir à voir !"
           },
           {
            "Nom": "Jade",
-           "Text": "C'est vrai... Au fait ! Pourquoi le Bonny & Read ? ça à un rapport avec la lecture ?"
+           "Text": "C'est vrai... Au fait ! Pourquoi le Bonny & Read ? Ça à un rapport avec la lecture ?"
            },
 		   {
            "Nom": "Eleanor",
@@ -1022,9 +1114,49 @@
 		"Charpentiere": {
       "Dialogue1": [
           {
+           "Nom": "Minh Tâm",
+           "Text": "Alors, comment se porte notre marin préféré ?"
+          },
+          {
            "Nom": "Suzanne",
-           "Text": "...."
-          }
+           "Text": "Et bien écoute je vais mieux, tout le monde participe à m'aider à bord donc ça me laisse du temps pour bosser sur le bateau."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Je parlais du bateau mais je suis content-e que tu ailles mieux !"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Ahah je me demandais bien pourquoi tu me genrais au masculin d'un coup comme ça. Mais j'ai l'impression que toi aussi ça va mieux !"
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Pas complétement mais je suis quand même bien content-e ! J'ai enfin pu me faire prescrire du Depakote."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Depuis le temps, j'ai enfin trouvé une médecin qui me saoule pas avec les risques si je tombe enceint.e."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Je le commence aujourd'hui, je stresse un peu. Mais l'ancien avait pas beaucoup d'effet. On va bien voir."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Pourquoi tu stresses si t'es content.e de le commencer ?"
+           },
+		    {
+           "Nom": "Minh Tâm",
+           "Text": "Parce qu'à chaque changement de médoc au début on peut pas du tout prévoir dans quel état on sera, on a parfois des effets secondaires fort et qui changent pas mal d'un jour à l'autre."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Comme avec tous ces médocs, la liste d'effets secondaires possibles est super longue. Et le plus fun c'est que c'est même pas dit qu'il marche mieux que l'ancien."
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Si jamais ça va trop mal tu sais qu'on est là."
+           }
           ],
       "Dialogue2": [
           {
@@ -1289,9 +1421,45 @@
 
       "Dialogue1": [
           {
+           "Nom": "Jade",
+           "Text": "Hé ! ça va mieux vous deux ?"
+           },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Euh salut, oui oui ça va, il y avait pas de problème en fait."
+          },
+          {
            "Nom": "Kaneza",
-           "Text": "...."
-          }
+           "Text": "Coucou ! Moi c'est Kaneza. Minh Tâm m'a beaucoup parlé de toi."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "... Mais... Tu la connais non ?"
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "On s'est jamais vraiment présentées en fait."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "C'est vrai que notre dernière rencontre à été un peu expéditive. En tout cas je suis contente de voir que ça va mieux. Vous avez l'air d'être très proche."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Ahahahahahahahahah pas tant que ça ! Enfin je trouve pas ! Tu trouves ?"
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Non non non non c'est une relation tout à fait amicale oulah oui peut être non on s'apprécie juste bien !"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Mmmmh..."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Ok."
+           }
           ],
       "Dialogue2": [
           {
@@ -1312,7 +1480,7 @@
            "Text": "Euh salut, oui oui ça va, il y avait pas de problème en fait."
           },
           {
-           "Nom": "Kaneza ",
+           "Nom": "Kaneza",
            "Text": "Coucou ! Moi c'est Kaneza. Minh Tâm m'a beaucoup parlé de toi."
            },
 		   {
@@ -1320,7 +1488,7 @@
            "Text": "... Mais... Tu la connais non ?"
           },
 		  {
-           "Nom": "Kaneza ",
+           "Nom": "Kaneza",
            "Text": "On s'est jamais vraiment présentées en fait."
            },
 		   {
@@ -1332,7 +1500,7 @@
            "Text": "Ahahahahahahahahah pas tant que ça ! Enfin je trouve pas ! Tu trouves ?"
           },
 		  {
-           "Nom": "Kaneza ",
+           "Nom": "Kaneza",
            "Text": "Non non non non c'est une relation tout à fait amicale oulah oui peut être non on s'apprécie juste bien !"
            },
 		   {
@@ -1355,9 +1523,61 @@
 		"Matelot": {
       "Dialogue1": [
           {
+           "Nom": "Eleanor",
+           "Text": "Ha ! Jade contente de te voir ! On parlait de nos traitements et de ce que ça nous fait."
+          },
+          {
            "Nom": "Nathan",
-           "Text": "...."
-          }
+           "Text": "Je disais que mon psy est plus compétent que la moyenne, ça fait plaisir. Il comprend que les médicaments font pas tout et m'encourage à chercher les causes."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Ça change de celle et ceux qui font comme si tout était juste une question de chimie du cerveau et qui dépolitisent nos problèmes."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "'Dépolitiser' ? En quoi c'est politique ?"
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "On est pas dépressif-ve pour rien, et les causes sont souvent liées aux souffrances que créent le capitalisme et les oppressions systémiques."
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Pas tout le temps bien sur, mais même, faire comme si on était juste des machines qui se sont déréglées sans raison et à qui faut donner des médicaments pour les remettre en marche, c'est passer à coté du problème."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Haha ! On est pas des machines ! Bip Boop."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Toi aussi tu as des traitements Jade ?"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Oui j'en prends. Personnellement j'ai bien vu que ça m'a aidé à aller mieux."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Après mes parents ont jamais voulu parler de ça à qui que soit. Ils utilisaient même pas le mot 'traitement'. D'après eux, la volonté c'est le plus important."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "C'est le genre à sortir des 'si tu veux, tu peux y arriver', 'Personne viendra t'aider, c'est à toi de t'en sortir'."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Les médicaments c'est un aveux de faiblesse pour eux."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Ouais non la volonté... C'est bien une idée de valide ça."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "On dit pas que les médicaments sont inutiles, au contraire c'est indispensable pour plein de gens, mais juste c'est pas magique et souvent pas suffisant pour aller vraiment mieux."
+           }		   
           ],
       "Dialogue2": [
           {
