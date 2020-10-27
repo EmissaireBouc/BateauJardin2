@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Personnage/PNJ/vigie/dialogue vigie.png" type="Texture" id=2]
@@ -103,10 +103,25 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=19]
+resource_name = "disparition"
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Vigie" type="AnimatedSprite"]
 frames = SubResource( 18 )
 animation = "IDLE"
-frame = 1
+frame = 4
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -115,6 +130,9 @@ NomPersonnage = "Vigie"
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+anims/disparition = SubResource( 19 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 visible = false
@@ -134,3 +152,4 @@ position = Vector2( 10.1041, 39.5606 )
 scale = Vector2( 1.05879, 1.21685 )
 texture = ExtResource( 4 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="animation_finished" from="Area2D/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

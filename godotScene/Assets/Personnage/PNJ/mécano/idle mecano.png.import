@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/idle mécano.png-28ee3ed7d657e4fb9e61d090cd92ca3e.stex"
+path="res://.import/idle mecano.png-8beacccaa5abe4caedd8f9486c11f8a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personnage/PNJ/mécano/idle mécano.png"
-dest_files=[ "res://.import/idle mécano.png-28ee3ed7d657e4fb9e61d090cd92ca3e.stex" ]
+source_file="res://Assets/Personnage/PNJ/mécano/idle mecano.png"
+dest_files=[ "res://.import/idle mecano.png-8beacccaa5abe4caedd8f9486c11f8a7.stex" ]
 
 [params]
 

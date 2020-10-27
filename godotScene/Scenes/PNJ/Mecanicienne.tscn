@@ -1,8 +1,8 @@
 [gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/PNJ/PNJ.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Personnage/PNJ/mécano/idle mécano.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Personnage/PNJ/mécano/dialogue mécano.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Personnage/PNJ/mécano/idle mecano.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Personnage/PNJ/mécano/dialogue mecano.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Personnage/testombre2.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -126,7 +126,7 @@ tracks/0/keys = {
 [node name="Mecanicienne" type="AnimatedSprite"]
 frames = SubResource( 19 )
 animation = "IDLE"
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )

@@ -5,6 +5,8 @@ var index_dialogueArray = 0
 var NumDial = 0
 var talking = false
 var DisPNG = 0
+var DialGroupe = 0
+var DialGroupe2 = 0
 
 
 """
@@ -71,7 +73,8 @@ func PNJ_Setup():
 
 	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
 	ImportData.nbrPNJ = nbPNJ.size()
-	print(ImportData.nbrPNJ)
+	DialGroupe = 0
+	print( ImportData.nbrPNJ)
 
 	for i in range(nbPNJ.size()):
 
@@ -106,8 +109,6 @@ func PNJ_Setup():
 		emit_signal("Nav2D_Update",Nav2DCol.get_global_transform(), Nav2DCol.get_polygon())
 		
 
-
-
 """
 Gestion des dialogues
 """
@@ -119,19 +120,63 @@ func on_Character_input(n, d, c):
 		DisPNG = c
 		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
-		print(NumDial)
+		print("Numero du Dialogue: ", NumDial)
+		print("Verification des Dialolgues en groupe: ",DialGroupe)
+
+#Conversation de groupe
+
+	if ImportData.jour == 0 && ImportData.PosPNJ[NomPersonnage]['0'] == "F2" && DialGroupe <= 1:
+		DialGroupe += 1
+	if ImportData.jour == 3 && ImportData.PosPNJ[NomPersonnage]['3'] == "D1" && DialGroupe <= 1:
+		DialGroupe += 1
+	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
+		DialGroupe += 1
+	if ImportData.jour == 7 && ImportData.PosPNJ[NomPersonnage]['7'] == "C3" && DialGroupe <= 1:
+		DialGroupe += 1
+	if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
+		DialGroupe += 1
+	if ImportData.jour == 8 && ImportData.PosPNJ[NomPersonnage]['8'] == "C3" && DialGroupe <= 1:
+		DialGroupe += 1
+	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe <= 1:
+		DialGroupe += 1
+	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "C3" && DialGroupe2 <= 1:
+		DialGroupe2 += 1
+	
 
 func lancer_dialogue():
-	if ImportData.ChangDial == 1 && NomPersonnage == 'Charpentiere' && NumDial == 0:
+	if ImportData.jour == 0 && ImportData.PosPNJ[NomPersonnage]['0'] == "F2" && DialGroupe == 2:
 		NumDial = 1
-		ImportData.DialJour += 1
-	
+	if ImportData.jour == 3 && ImportData.PosPNJ[NomPersonnage]['3'] == "D1" && DialGroupe == 2:
+		NumDial = 1
+	if ImportData.jour == 5 && NomPersonnage == 'Gabiere' && DialGroupe == 0:
+		NumDial = 0
+	if ImportData.jour == 5 && NomPersonnage == 'Gabiere' && DialGroupe == 1:
+		NumDial = 1
+		DialGroupe = 0
+	if ImportData.jour == 7 && ImportData.PosPNJ[NomPersonnage]['7'] == "C3" && DialGroupe == 2:
+		NumDial = 1
+#	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && DialGroupe == 0:
+#		NumDial = 0
+	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && DialGroupe == 1:
+		NumDial = 1
+#		DialGroupe = 0
+	if ImportData.jour == 8 && ImportData.PosPNJ[NomPersonnage]['8'] == "C3" && DialGroupe == 2:
+		NumDial = 1
+	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe == 2:
+		NumDial = 1
+	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "C3" && DialGroupe2 == 2:
+		NumDial = 1
+		
 	if NumDial == 0:
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1
 	else:
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2
-	get_node_character(NomPersonnage).play("TALK")
 		
+#	if ImportData.jour == 5 && NomPersonnage == 'Gabiere' && NumDial == 2:
+#		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue3
+	
+	get_node_character(NomPersonnage).play("TALK")
+	
 	parle()
 	print(NomPersonnage)
 
@@ -149,6 +194,7 @@ func parle():
 
 		Dialogues.visible = true
 		BoiteDialogue.chargement_dialog()
+		
 
 	else: # Ferme la scène Dialogue, réinitialise l'index, incrémente NumDial
 		fin_dialogue()
@@ -163,30 +209,28 @@ func fin_dialogue():
 	talking = false
 	Dialogues.visible = false
 	index_dialogueArray = 0
-#	ChangDial += 1
 	emit_signal("Fin_Conversation")
-	
-	if ImportData.jour == 0 && NomPersonnage == 'Navigatrice' && NumDial == 0:
-		ImportData.ChangDial += 1
 		
 	if NumDial == 0:
 		ImportData.DialJour += 1
-#		NumDial += 1
 	disparitionPNG()
-	print(ImportData.DialJour)
-	print("var pour changement: ", ImportData.ChangDial)
 
 func disparitionPNG():
 	if ImportData.jour == 3 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
 		get_node("Mecanicienne/Area2D/AnimationPlayer").play('disparition')
-	if ImportData.jour == 3 && NomPersonnage == 'Cartographe' && get_node_character(NomPersonnage).Disparition == 1:
+	if ImportData.jour == 3 && NomPersonnage == 'Cartographe' && get_node_character(NomPersonnage).Disparition >= 1:
 		get_node_character(NomPersonnage).queue_free()
+#		get_node("Cartographe/Area2D/AnimationPlayer").play('disparition3')
 	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
-		get_node_character(NomPersonnage).queue_free()
+		get_node("Mecanicienne/Area2D/AnimationPlayer").play('disparition')
 	if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
-		get_node_character(NomPersonnage).queue_free()
+		get_node("Mecanicienne/Area2D/AnimationPlayer").play('disparition')
 	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && get_node_character(NomPersonnage).Disparition == 2:
 		get_node_character(NomPersonnage).queue_free()
+#		get_node("Gabiere/Area2D/AnimationPlayer").play('disparition')
+	if ImportData.jour == 7 && NomPersonnage == 'Vigie' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).queue_free()
+#		get_node("Vigie/Area2D/AnimationPlayer").play('disparition')
 
 func get_node_character(n):
 	for i in range(get_child_count()):
