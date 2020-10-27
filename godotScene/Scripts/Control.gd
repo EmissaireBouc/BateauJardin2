@@ -336,8 +336,7 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 			var t = 0
 			for i in range ($Bateau/YSort/PNJ.get_child_count()):
 				t += $Bateau/YSort/PNJ.get_child(i).Dialogue
-#			if t != 6:
-			if ImportData.DialJour != 6:
+			if t != $Bateau/YSort/PNJ.get_child_count():
 				_encart("Jade", "Je n'ai pas encore parlé à tout le monde.")
 			else:
 				change_action(DORMIR)
@@ -369,6 +368,7 @@ func _on_Porte_mouse_exited():
 
 func a_day_pass():
 	day += 1
+		
 	if ImportData.DialJour == ImportData.nbrPNJ:
 		ImportData.jour += 1
 		ImportData.DialJour = 0

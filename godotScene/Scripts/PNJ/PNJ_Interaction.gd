@@ -74,7 +74,7 @@ func PNJ_Setup():
 	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
 	ImportData.nbrPNJ = nbPNJ.size()
 	DialGroupe = 0
-	print( ImportData.nbrPNJ)
+	
 
 	for i in range(nbPNJ.size()):
 
@@ -204,7 +204,8 @@ func Texte_Suivant():
 
 func fin_dialogue():
 	get_node_character(NomPersonnage).play("IDLE")
-	get_node_character(NomPersonnage).Dialogue += 1
+	check_group(NomPersonnage)
+	get_node_character(NomPersonnage).Dialogue = 1
 	get_node_character(NomPersonnage).Disparition += 1
 	talking = false
 	Dialogues.visible = false
@@ -215,22 +216,32 @@ func fin_dialogue():
 		ImportData.DialJour += 1
 	disparitionPNG()
 
+func check_group(n):
+	
+	for i in range (get_child_count()):
+		
+		
+		if get_child(i).emplacement == get_node_character(n).emplacement:
+			get_child(i).Dialogue = 1
+
 func disparitionPNG():
 	if ImportData.jour == 3 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
-		get_node("Mecanicienne/Area2D/AnimationPlayer").play('disparition')
+		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
+	
 	if ImportData.jour == 3 && NomPersonnage == 'Cartographe' && get_node_character(NomPersonnage).Disparition >= 1:
-		get_node_character(NomPersonnage).queue_free()
-#		get_node("Cartographe/Area2D/AnimationPlayer").play('disparition3')
+		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition3')
+	
 	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
-		get_node("Mecanicienne/Area2D/AnimationPlayer").play('disparition')
+		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
+	
 	if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
-		get_node("Mecanicienne/Area2D/AnimationPlayer").play('disparition')
+		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
+	
 	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && get_node_character(NomPersonnage).Disparition == 2:
-		get_node_character(NomPersonnage).queue_free()
-#		get_node("Gabiere/Area2D/AnimationPlayer").play('disparition')
+		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
+	
 	if ImportData.jour == 7 && NomPersonnage == 'Vigie' && get_node_character(NomPersonnage).Disparition == 1:
-		get_node_character(NomPersonnage).queue_free()
-#		get_node("Vigie/Area2D/AnimationPlayer").play('disparition')
+		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
 
 func get_node_character(n):
 	for i in range(get_child_count()):
