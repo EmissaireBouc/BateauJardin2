@@ -74,6 +74,7 @@ func PNJ_Setup():
 	var nbPNJ = ImportData.dialogue_data[str(ImportData.jour)].keys()
 	ImportData.nbrPNJ = nbPNJ.size()
 	DialGroupe = 0
+	DialGroupe2 = 0
 	
 
 	for i in range(nbPNJ.size()):
@@ -131,8 +132,8 @@ func on_Character_input(n, d, c):
 		DialGroupe += 1
 	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
 		DialGroupe += 1
-	if ImportData.jour == 7 && ImportData.PosPNJ[NomPersonnage]['7'] == "C3" && DialGroupe <= 1:
-		DialGroupe += 1
+	if ImportData.jour == 7 && ImportData.PosPNJ[NomPersonnage]['7'] == "C3" && DialGroupe2 <= 1:
+		DialGroupe2 += 1
 	if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
 		DialGroupe += 1
 	if ImportData.jour == 8 && ImportData.PosPNJ[NomPersonnage]['8'] == "C3" && DialGroupe <= 1:
@@ -153,13 +154,10 @@ func lancer_dialogue():
 	if ImportData.jour == 5 && NomPersonnage == 'Gabiere' && DialGroupe == 1:
 		NumDial = 1
 		DialGroupe = 0
-	if ImportData.jour == 7 && ImportData.PosPNJ[NomPersonnage]['7'] == "C3" && DialGroupe == 2:
+	if ImportData.jour == 7 && ImportData.PosPNJ[NomPersonnage]['7'] == "C3" && DialGroupe2 == 2:
 		NumDial = 1
-#	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && DialGroupe == 0:
-#		NumDial = 0
 	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && DialGroupe == 1:
 		NumDial = 1
-#		DialGroupe = 0
 	if ImportData.jour == 8 && ImportData.PosPNJ[NomPersonnage]['8'] == "C3" && DialGroupe == 2:
 		NumDial = 1
 	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe == 2:
@@ -225,17 +223,17 @@ func check_group(n):
 func disparitionPNG():
 	if ImportData.jour == 3 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
 		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
-	
-	if ImportData.jour == 3 && NomPersonnage == 'Cartographe' && get_node_character(NomPersonnage).Disparition >= 1:
-		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition3')
-	
+		
+	if ImportData.jour == 3 && NomPersonnage == 'Cartographe' && get_node_character(NomPersonnage).Disparition == 1:
+		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
+		
 	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
 		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
 	
 	if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && get_node_character(NomPersonnage).Disparition == 1:
 		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
 	
-	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && get_node_character(NomPersonnage).Disparition == 2:
+	if ImportData.jour == 7 && NomPersonnage == 'Gabiere' && DialGroupe == 1 && get_node_character(NomPersonnage).Disparition >= 1:
 		get_node_character(NomPersonnage).get_node("Area2D/AnimationPlayer").play('disparition')
 	
 	if ImportData.jour == 7 && NomPersonnage == 'Vigie' && get_node_character(NomPersonnage).Disparition == 1:
