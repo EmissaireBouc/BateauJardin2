@@ -2,8 +2,9 @@ extends Control
 
 func _ready():
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HSlider.value = ImportData.volume
-	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/PleinEcran.toggle_mode = OS.window_fullscreen
-
+	
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/PleinEcran.pressed = OS.window_fullscreen
+	
 
 func _on_Retour_pressed():
 	queue_free()
@@ -11,7 +12,7 @@ func _on_Retour_pressed():
 
 func _on_PleinEcran_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
-
+	OS.center_window()
 
 func _on_OptionButton_item_selected(id):
 	if id == 0 :
