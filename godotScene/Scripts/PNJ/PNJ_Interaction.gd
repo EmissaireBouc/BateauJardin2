@@ -219,8 +219,6 @@ func fin_dialogue():
 func check_group(n):
 	
 	for i in range (get_child_count()):
-		
-		
 		if get_child(i).emplacement == get_node_character(n).emplacement:
 			get_child(i).Dialogue = 1
 
@@ -250,3 +248,9 @@ func get_node_character(n):
 
 func Change_Cursor(newCursor):
 	emit_signal("Change_Cursor",newCursor)
+
+func get_dialogue_done():
+	var nb = 0
+	for i in range(get_child_count()):
+		nb += get_child(i).Dialogue
+	return(nb)

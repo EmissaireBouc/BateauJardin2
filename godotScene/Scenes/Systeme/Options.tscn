@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_Titre_Livre.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/UI/Carnet/Journal/texture_feuille.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Options.gd" type="Script" id=3]
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre2_Livre.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Son/Mer+VentV1.ogg" type="AudioStream" id=5]
 
 [sub_resource type="StyleBoxLine" id=1]
 color = Color( 1, 1, 1, 1 )
@@ -155,6 +156,10 @@ custom_fonts/font = ExtResource( 4 )
 custom_constants/hseparation = 150
 text = "Fermer"
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 [connection signal="toggled" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/PleinEcran" to="." method="_on_PleinEcran_toggled"]
 [connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="MarginContainer2/MarginContainer/VBoxContainer/Retour" to="." method="_on_Retour_pressed"]

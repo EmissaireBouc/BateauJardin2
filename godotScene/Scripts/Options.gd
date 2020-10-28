@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-#	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HSlider.value = ImportData.volume
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HSlider.value = ImportData.volume
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/PleinEcran.toggle_mode = OS.window_fullscreen
 
 
@@ -25,5 +25,5 @@ func _on_OptionButton_item_selected(id):
 
 
 func _on_HSlider_value_changed(value):
-	ImportData.volume = log(value) * 20
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), ImportData.volume)
+	ImportData.volume = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), log(ImportData.volume)*20)

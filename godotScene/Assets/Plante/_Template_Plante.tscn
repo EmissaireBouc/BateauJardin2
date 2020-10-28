@@ -58,19 +58,19 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -78,9 +78,9 @@ animations = [ {
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "fanelvl1",
 "speed": 5.0
 } ]
 
@@ -160,7 +160,7 @@ scale = Vector2( 3.06715, 1 )
 polygon = PoolVector2Array( -18.3475, -21.4341, -18.3475, 66.5659, 36.2897, 63.2224, 36.4265, -21.4341 )
 
 [node name="Goutte" type="Sprite" parent="."]
-self_modulate = Color( 0.909804, 0.168627, 0.168627, 1 )
+self_modulate = Color( 0.45098, 1, 1, 1 )
 show_behind_parent = true
 position = Vector2( 0, 16 )
 texture = ExtResource( 8 )

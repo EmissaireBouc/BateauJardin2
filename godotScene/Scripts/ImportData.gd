@@ -11,7 +11,7 @@ var jour = 0
 var DialJour = 0
 var nbrPNJ = 0
 var ChangDial = 0
-var volume
+var volume = 1
 
 func _ready():
 	var plantdata_file = File.new()

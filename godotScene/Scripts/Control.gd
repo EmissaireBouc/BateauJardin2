@@ -334,11 +334,10 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
 
 		if ImportData.jour == 0 :
-			var t = 0
-			for i in range ($Bateau/YSort/PNJ.get_child_count()):
-				t += $Bateau/YSort/PNJ.get_child(i).Dialogue
-			if t != $Bateau/YSort/PNJ.get_child_count():
+
+			if PNJsort.get_dialogue_done() != PNJsort.get_child_count():
 				_encart("Jade", "Je n'ai pas encore parlé à tout le monde.")
+
 			else:
 				change_action(DORMIR)
 
@@ -370,7 +369,7 @@ func _on_Porte_mouse_exited():
 func a_day_pass():
 	day += 1
 		
-	if ImportData.DialJour == ImportData.nbrPNJ:
+	if PNJsort.get_dialogue_done() == ImportData.nbrPNJ:
 		ImportData.jour += 1
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
@@ -455,10 +454,12 @@ func start_new_day():
 
 	var nbText = 0
 	var dicTexture = {}
+
 	for key in ImportData.plant_data:
 		if ImportData.plant_data[key].Available == ImportData.jour :
 			nbText += 1
 			dicTexture["key"+ str(nbText)] = "res://Assets/Plante/Icone/icon_%s.png" %key
+
 	if !dicTexture.empty():
 		_encart("", "De nouvelles graines sont à votre disposition :", dicTexture)
 
