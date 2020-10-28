@@ -332,6 +332,7 @@ Gestion de l'action Dormir :
 
 func _on_Porte_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
+
 		if ImportData.jour == 0 :
 			var t = 0
 			for i in range ($Bateau/YSort/PNJ.get_child_count()):

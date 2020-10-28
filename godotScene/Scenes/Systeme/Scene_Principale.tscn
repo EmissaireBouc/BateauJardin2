@@ -101,19 +101,14 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
 "name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ) ],
@@ -121,9 +116,14 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 29 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 } ]
 
@@ -176,19 +176,14 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 28 ) ],
 "loop": true,
 "name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 32 ) ],
@@ -196,9 +191,14 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 } ]
 
@@ -251,19 +251,14 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 50 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 45 ) ],
 "loop": true,
 "name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 46 ) ],
-"loop": true,
-"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 44 ) ],
@@ -271,9 +266,14 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 46 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 } ]
 
@@ -326,19 +326,14 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "lvl2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 42 ) ],
 "loop": true,
 "name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 40 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 41 ) ],
-"loop": true,
-"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 39 ) ],
@@ -346,9 +341,14 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 48 ) ],
+"frames": [ ExtResource( 41 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 40 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 } ]
 

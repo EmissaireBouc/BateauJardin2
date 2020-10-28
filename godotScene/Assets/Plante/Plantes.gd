@@ -67,7 +67,10 @@ func hydrat():
 
 
 func deshydrat():
-	$Goutte/AnimationPlayer.play("Modulate_sec")
+	if pv > 1 && pv <= 3 :
+		$Goutte/AnimationPlayer.play("Modulate_sec")
+	if pv == 1 :
+		$Goutte.self_modulate = Color(0.90,0.16,0.16,1)
 
 
 
