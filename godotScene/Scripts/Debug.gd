@@ -28,7 +28,7 @@ func _on_LineEdit_text_entered(new_text):
 	if int(new_text) <= last_day :
 		ImportData.jour = int(new_text)-1
 		get_parent().get_parent().get_parent().fondu("transition_in")
-	
+
 
 
 func _on_HSlider_value_changed(value):

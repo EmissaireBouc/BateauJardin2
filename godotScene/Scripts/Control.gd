@@ -291,6 +291,10 @@ func _on_Button_Spray_pressed():
 		menuEntretenir.close()
 
 func _on_PNJ_Fin_Conversation():
+
+	if ImportData.jour >= ImportData.get_last_day() && PNJsort.get_dialogue_done() == PNJsort.get_child_count():
+		_encart("", "Ce message marque la fin du prototype de Bateau fol ! Merci d'avoir joué ! Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez !")
+
 	change_action(DEFAULT)
 
 
@@ -369,7 +373,7 @@ func _on_Porte_mouse_exited():
 func a_day_pass():
 	day += 1
 		
-	if PNJsort.get_dialogue_done() == ImportData.nbrPNJ:
+	if PNJsort.get_dialogue_done() >= ImportData.nbrPNJ && ImportData.jour < ImportData.get_last_day():
 		ImportData.jour += 1
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
@@ -462,15 +466,6 @@ func start_new_day():
 
 	if !dicTexture.empty():
 		_encart("", "De nouvelles graines sont à votre disposition :", dicTexture)
-
-	var last_day = 0
-
-	for key in ImportData.dialogue_data:
-		if int(key) > last_day:
-			last_day = int(key)
-	
-	if ImportData.jour >= last_day:
-		_encart("", "Ce message marque la fin du prototype de Bateau fol ! Merci d'avoir joué ! Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez !")
 
 
 """

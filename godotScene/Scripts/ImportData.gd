@@ -47,3 +47,11 @@ func _ready():
 func All_Plant_Available():
 	for key in plant_data:
 			plant_data[key].Available = 0
+
+func get_last_day():
+	var last_day = 0
+
+	for key in ImportData.dialogue_data:
+		if int(key) > last_day:
+			last_day = int(key)
+	return last_day

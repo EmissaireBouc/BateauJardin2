@@ -24,6 +24,7 @@ func _on_Quitter_pressed():
 	queue_free()
 
 func update():
+	$AudioStreamPlayer.play()
 	$MarginContainer/NumeroPage.text = str(page) + "/3"
 
 	if page == 3:
