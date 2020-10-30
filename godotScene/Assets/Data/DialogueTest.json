@@ -8,12 +8,12 @@
 				"Text": "Salut, bienvenue à bord !"
 			  },
 			{
-			   "Nom": "...",
-			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée ! Tout le monde, voici Jade, la filleule d'Anna. Tu devrais te plaire parmi nous."
-			 },
-			 {
-			   "Nom": "...",
+			   "Nom": "Eleanor",
 			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charibe."
+			 },
+			{
+			   "Nom": "Suzanne",
+			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée ! Tout le monde, voici Jade, la filleule d'Anna. Tu devrais te plaire parmi nous."
 			 },
 			 {
 			   "Nom": "Suzanne",
@@ -37,7 +37,7 @@
       
 			"Dialogue1": [
 			 {
-			   "Nom": "...",
+			   "Nom": "Suzanne",
 			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée ! Tout le monde, voici Jade, la filleule d'Anna. Tu devrais te plaire parmi nous."
 			 },
 			 {
@@ -45,7 +45,7 @@
 				"Text": "Salut, bienvenue à bord !"
 			  },
 			  {
-			   "Nom": "...",
+			   "Nom": "Eleanor",
 			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charibe."
 			 },
 			 {
@@ -94,7 +94,7 @@
       "Dialogue1": [
           {
            "Nom": "...",
-           "Text": "Hello, je m’appelle nathan, je suis un peu homme à tout faire, j’aide là où il y a besoin."
+           "Text": "Hello, je m’appelle Nathan, je suis un peu homme à tout faire, j’aide là où il y a besoin."
           }
           ],
       "Dialogue2": [
@@ -1299,7 +1299,7 @@
            },
 		   {
            "Nom": "Suzanne",
-           "Text": ".Et si jamais tu as besoin d'un coup de main ou d'une pause, on prendra le temps de se réorganiser."
+           "Text": "Et si jamais tu as besoin d'un coup de main ou d'une pause, on prendra le temps de se réorganiser."
            }
           ],
       "Dialogue2": [
