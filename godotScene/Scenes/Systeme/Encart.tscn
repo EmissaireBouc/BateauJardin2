@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/Encart.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/UI/Carnet/fleche_bas.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/Carnet/Journal/texture_feuille.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/Carnet/fleche_bas_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Menu/BtnMenu.tres" type="Theme" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -40,6 +41,7 @@ margin_left = 267.0
 margin_top = 27.0
 margin_right = -266.0
 margin_bottom = -48.0
+mouse_filter = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -107,5 +109,45 @@ __meta__ = {
 anims/Idle = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="Zone"]
+
+[node name="MarginContainer" type="MarginContainer" parent="Zone"]
+margin_right = 1383.0
+margin_bottom = 294.0
+mouse_filter = 2
+custom_constants/margin_bottom = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Zone/MarginContainer"]
+margin_right = 1383.0
+margin_bottom = 254.0
+mouse_filter = 2
+custom_constants/separation = 30
+
+[node name="Choix1" type="Button" parent="Zone/MarginContainer/HBoxContainer"]
+visible = false
+margin_left = 570.0
+margin_top = 182.0
+margin_right = 676.0
+margin_bottom = 254.0
+mouse_filter = 1
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme = ExtResource( 7 )
+text = "Oui"
+
+[node name="Choix2" type="Button" parent="Zone/MarginContainer/HBoxContainer"]
+visible = false
+margin_top = 182.0
+margin_right = 119.0
+margin_bottom = 254.0
+mouse_filter = 1
+size_flags_horizontal = 2
+size_flags_vertical = 10
+theme = ExtResource( 7 )
+text = "Non"
 [connection signal="pressed" from="Zone/indicateur" to="." method="_on_indicateur_pressed"]
 [connection signal="tween_completed" from="Zone/Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="Zone/MarginContainer/HBoxContainer/Choix1" to="." method="_on_Choix1_pressed"]
+[connection signal="pressed" from="Zone/MarginContainer/HBoxContainer/Choix2" to="." method="_on_Choix2_pressed"]

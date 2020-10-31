@@ -18,6 +18,8 @@ func create_item(plante):
 	var texture = load("res://Assets/Plante/Icone/%s" %"icon_"+ plante +".png")
 	add_item(ImportData.plant_data[plante].Alias, texture)
 
+
+
 func modulate_icon():
 	for i in range(get_item_count()):
 			if get_item_icon_modulate(i) != iconModulate:

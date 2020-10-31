@@ -219,24 +219,24 @@ theme = ExtResource( 2 )
 text = "Jouer"
 script = ExtResource( 1 )
 
-[node name="Quitter" type="Button" parent="MarginContainer/VBoxContainer/Menu"]
-margin_left = 348.0
-margin_right = 521.0
-margin_bottom = 72.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource( 2 )
-text = "Quitter"
-script = ExtResource( 1 )
-
 [node name="Option" type="Button" parent="MarginContainer/VBoxContainer/Menu"]
-margin_left = 721.0
-margin_right = 912.0
+margin_left = 348.0
+margin_right = 539.0
 margin_bottom = 72.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
 text = "Options"
+script = ExtResource( 1 )
+
+[node name="Quitter" type="Button" parent="MarginContainer/VBoxContainer/Menu"]
+margin_left = 739.0
+margin_right = 912.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Quitter"
 script = ExtResource( 1 )
 
 [node name="Vague3" type="NinePatchRect" parent="."]
@@ -310,5 +310,5 @@ __meta__ = {
 autoplay = "Boucle"
 anims/Boucle = SubResource( 7 )
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Jouer" to="MarginContainer/VBoxContainer/Menu/Jouer" method="_on_Jouer_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Quitter" to="MarginContainer/VBoxContainer/Menu/Quitter" method="_on_Quitter_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Option" to="MarginContainer/VBoxContainer/Menu/Option" method="_on_Option_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Quitter" to="MarginContainer/VBoxContainer/Menu/Quitter" method="_on_Quitter_pressed"]

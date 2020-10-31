@@ -61,16 +61,24 @@ func initialize_shader():
 
 func hydrat():
 	if pv > 0:
+
+		if pv == 1 :
+			$Goutte.self_modulate = Color(1,1,1,1)
+
 		pv += ImportData.plant_data[Plante].PV
+
 		if pv > 3 && $Goutte/AnimationPlayer.get_assigned_animation() == "Modulate_sec":
 			$Goutte/AnimationPlayer.play("Modulate_humide")
 
 
 func deshydrat():
-	if pv > 1 && pv <= 3 :
-		$Goutte/AnimationPlayer.play("Modulate_sec")
 	if pv == 1 :
 		$Goutte.self_modulate = Color(0.90,0.16,0.16,1)
+	else :
+		$Goutte.self_modulate = Color(1,1,1,1)
+	if pv > 1 && pv <= 3 :
+		$Goutte/AnimationPlayer.play("Modulate_sec")
+
 
 
 

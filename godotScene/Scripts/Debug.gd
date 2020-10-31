@@ -17,15 +17,13 @@ func _on_CB_Camera_toggled(button_pressed):
 	get_parent().get_parent().get_parent().get_node("Bateau/YSort/Player/Camera2D").SquareX_Camera = button_pressed
 
 func _on_LineEdit_text_entered(new_text):
-	var last_day = 0
 
-	for key in ImportData.dialogue_data:
-		if int(key) > last_day:
-			last_day = int(key)
+	var PNJSort = get_parent().get_parent().get_parent().get_node("Bateau/YSort/PNJ")
+	for i in range(PNJSort.get_child_count()):
+		PNJSort.get_child(i).Dialogue = 1
+		
 
-	ImportData.DialJour = get_parent().get_parent().get_parent().get_node("Bateau/YSort/PNJ").get_child_count()
-
-	if int(new_text) <= last_day :
+	if int(new_text) <= ImportData.get_last_day() :
 		ImportData.jour = int(new_text)-1
 		get_parent().get_parent().get_parent().fondu("transition_in")
 

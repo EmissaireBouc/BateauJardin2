@@ -33,6 +33,8 @@ func _ready():
 
 
 func init_game():
+	$CanvasLayer/Commande.disconnect("fin_tuto",self,"init_game")
+	$CanvasLayer/Commande.queue_free()
 	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
 	change_action(DEFAULT)
 	fondu("transition_out")
@@ -293,7 +295,7 @@ func _on_Button_Spray_pressed():
 func _on_PNJ_Fin_Conversation():
 
 	if ImportData.jour >= ImportData.get_last_day() && PNJsort.get_dialogue_done() == PNJsort.get_child_count():
-		_encart("", "Ce message marque la fin du prototype de Bateau fol ! Merci d'avoir joué ! Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez !")
+		_encart("fin", "Ce message marque la fin du prototype de Bateau fol ! Merci d'avoir joué ! Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez !")
 
 	change_action(DEFAULT)
 
@@ -360,9 +362,16 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				if ImportData.jour == 9:
 					_encart("Jade", "En ce moment je suis pas efficace, je peux pas finir ma journée comme ça.")
 				change_action(DEFAULT)
-
 		else : 
-			change_action(DORMIR)
+			
+			if PA.get_PA() > 0 && PNJsort.get_dialogue_done() != PNJsort.get_child_count():
+				_encart("info", "La journée n'est pas terminée et je n'ai pas parlé à tout le monde. Se coucher ?")
+			elif PA.get_PA() > 0 :
+				_encart("info", "La journée n'est pas terminée. Se coucher ?")
+			elif PNJsort.get_dialogue_done() != PNJsort.get_child_count() :
+				_encart("info", "Je n'ai pas parlé à tout le monde. Se coucher ?")
+			else :
+				_encart("info", "Le jour est en train de tomber. Se coucher ?")
 
 func _on_Porte_mouse_entered():
 	cursor_mode("dormir")
@@ -373,7 +382,7 @@ func _on_Porte_mouse_exited():
 func a_day_pass():
 	day += 1
 		
-	if PNJsort.get_dialogue_done() >= ImportData.nbrPNJ && ImportData.jour < ImportData.get_last_day():
+	if PNJsort.get_dialogue_done() >= PNJsort.get_child_count() && ImportData.jour < ImportData.get_last_day():
 		ImportData.jour += 1
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
@@ -381,9 +390,10 @@ func a_day_pass():
 		ImportData.jour = ImportData.jour
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
+
+	PNJsort.new_day()
 #	ImportData.jour += 1
 	$Bateau/WalkArea.reboot()
-	PNJsort.new_day()
 	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
 	#$CanvasLayer/Transition/Jour.text = "Jour "+str(day)
 	#$CanvasLayer/Transition/Jour.visible = true
@@ -465,7 +475,7 @@ func start_new_day():
 			dicTexture["key"+ str(nbText)] = "res://Assets/Plante/Icone/icon_%s.png" %key
 
 	if !dicTexture.empty():
-		_encart("", "De nouvelles graines sont à votre disposition :", dicTexture)
+		_encart("info", "De nouvelles graines sont à votre disposition :", dicTexture)
 
 
 """
@@ -499,8 +509,22 @@ gestion des encarts
 func _encart(nom, sentence, dicTxt = {}):
 	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
 	$CanvasLayer.add_child(encart)
-	$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
 
+	if nom == "Jade" || nom == "fin":
+		$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
+
+	elif nom == "info":
+		if !dicTxt.empty():
+			$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
+		else:
+			$CanvasLayer/Encart.chargement_dialog_choix("Jade", sentence, "Oui", "Non")
+			$CanvasLayer/Encart.connect("choix_done", self, "choix_done")
+
+func choix_done(c):
+	if c == "Oui" :
+		change_action(DORMIR)
+	if c == "Non" :
+		change_action(DEFAULT)
 
 """
 Gestion des fonctions Debug

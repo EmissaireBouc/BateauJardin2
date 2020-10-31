@@ -21,7 +21,8 @@ func _on_PageSuivante_button_down():
 func _on_Quitter_pressed():
 	if ImportData.jour == 0:
 		emit_signal("fin_tuto")
-	queue_free()
+	else :
+		queue_free()
 
 func update():
 	$AudioStreamPlayer.play()

@@ -28,10 +28,11 @@ func chargement_dialog():
 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 			)
 		# transformation de NomPerso pour qu'il corresponde au nom de fichier
-		var textName = NomPerso.to_upper().dedent()
-		textName = textName.replace("Â", "A")
-		# Chargement de la texture dans le Sprite
-		$portrait.texture = load("res://Assets/Personnage/PNJ/portraitsDial/%s" %textName + ".png")
+		if NomPerso != "Nom_Par_Defaut":
+			var textName = NomPerso.to_upper().dedent()
+			textName = textName.replace("Â", "A")
+			# Chargement de la texture dans le Sprite
+			$portrait.texture = load("res://Assets/Personnage/PNJ/portraitsDial/%s" %textName + ".png")
 		
 		$Tween.start()
 

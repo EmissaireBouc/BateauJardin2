@@ -34,9 +34,17 @@ func setup_button_herbe(m,t, p):
 	button.PageToLoad = p
 	var texture = Texture
 	texture = load("res://Assets/Plante/Icone/icon_" + t + ".png")
-	button.set_button_icon(texture)
+	button.set_button_icon(get_resized_texture(texture,32,32))
 	button.connect("pressed", self, "_on_button_pressed", [button.text, button.PageToLoad])
 	return button
+
+func get_resized_texture(t: Texture, width: int = 0, height: int = 0):
+	var image = t.get_data()
+	if width > 0 && height > 0:
+		image.resize(width, height)
+	var itex = ImageTexture.new()
+	itex.create_from_image(image)
+	return itex
 
 func setup_button_equipage(m, n, p):
 	var button = load ("res://Assets/UI/Carnet/Scene_Carnet/ScButtonMenuEquipage.tscn").instance()

@@ -121,8 +121,8 @@ func on_Character_input(n, d, c):
 		DisPNG = c
 		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
-		print("Numero du Dialogue: ", NumDial)
-		print("Verification des Dialolgues en groupe: ",DialGroupe)
+#		print("Numero du Dialogue: ", NumDial)
+#		print("Verification des Dialolgues en groupe: ",DialGroupe)
 
 #Conversation de groupe
 
@@ -176,7 +176,7 @@ func lancer_dialogue():
 	get_node_character(NomPersonnage).play("TALK")
 	
 	parle()
-	print(NomPersonnage)
+#	print(NomPersonnage)
 
 func parle():
 		
