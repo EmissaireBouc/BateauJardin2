@@ -386,12 +386,12 @@ func a_day_pass():
 		ImportData.jour += 1
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
+		PNJsort.new_day()
 	else:
 		ImportData.jour = ImportData.jour
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
 
-	PNJsort.new_day()
 #	ImportData.jour += 1
 	$Bateau/WalkArea.reboot()
 	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
