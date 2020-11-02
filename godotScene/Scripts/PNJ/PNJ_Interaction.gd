@@ -121,14 +121,18 @@ func on_Character_input(n, d, c):
 		DisPNG = c
 		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
-#		print("Numero du Dialogue: ", NumDial)
-#		print("Verification des Dialolgues en groupe: ",DialGroupe)
+		print("Numero du Dialogue: ", NumDial)
+		print("Verification des Dialolgues en groupe: ",DialGroupe)
 
 #Conversation de groupe
 
 	if ImportData.jour == 0 && ImportData.PosPNJ[NomPersonnage]['0'] == "F2" && DialGroupe <= 1:
 		DialGroupe += 1
 	if ImportData.jour == 3 && ImportData.PosPNJ[NomPersonnage]['3'] == "D1" && DialGroupe <= 1:
+		DialGroupe += 1
+	if ImportData.jour == 4 && NomPersonnage == 'Navigatrice' && DialGroupe == 0:
+		DialGroupe = 0
+	if ImportData.jour == 4 && NomPersonnage == 'Charpentiere' && DialGroupe <= 1:
 		DialGroupe += 1
 	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
 		DialGroupe += 1
@@ -149,6 +153,8 @@ func lancer_dialogue():
 		NumDial = 1
 	if ImportData.jour == 3 && ImportData.PosPNJ[NomPersonnage]['3'] == "D1" && DialGroupe == 2:
 		NumDial = 1
+	if ImportData.jour == 4 && NomPersonnage == 'Charpentiere' && DialGroupe <= 1:
+		NumDial = 0
 	if ImportData.jour == 5 && NomPersonnage == 'Gabiere' && DialGroupe == 0:
 		NumDial = 0
 	if ImportData.jour == 5 && NomPersonnage == 'Gabiere' && DialGroupe == 1:
