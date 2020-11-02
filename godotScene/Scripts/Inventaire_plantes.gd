@@ -13,7 +13,7 @@ signal plant_abort
 
 func _ready():
 	itemlist.setup_ItemList()
-
+	
 
 func open():
 	if !visible:

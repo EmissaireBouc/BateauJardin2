@@ -363,7 +363,7 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 					_encart("Jade", "En ce moment je suis pas efficace, je peux pas finir ma journée comme ça.")
 				change_action(DEFAULT)
 		else : 
-			
+
 			if PA.get_PA() > 0 && PNJsort.get_dialogue_done() != PNJsort.get_child_count():
 				_encart("info", "La journée n'est pas terminée et je n'ai pas parlé à tout le monde. Se coucher ?")
 			elif PA.get_PA() > 0 :
@@ -477,11 +477,13 @@ func start_new_day():
 	if !dicTexture.empty():
 		_encart("info", "De nouvelles graines sont à votre disposition :", dicTexture)
 
+#	if ImportData.jour == 5 :
+#		_encart("Jade", "J'ai manqué le début de la journée...")
+
 
 """
 Gestion du Carnet
 """
-
 
 
 
@@ -506,6 +508,7 @@ gestion des encarts
 """
 
 
+
 func _encart(nom, sentence, dicTxt = {}):
 	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
 	$CanvasLayer.add_child(encart)
@@ -526,9 +529,13 @@ func choix_done(c):
 	if c == "Non" :
 		change_action(DEFAULT)
 
+
+
+
 """
 Gestion des fonctions Debug
 """
+
 
 
 func print_garden():

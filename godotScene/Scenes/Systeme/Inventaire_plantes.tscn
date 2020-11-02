@@ -92,10 +92,10 @@ anchor_left = -2.0
 anchor_top = -5.45
 anchor_right = -2.0
 anchor_bottom = -5.45
-margin_left = 1889.38
-margin_top = 5532.35
-margin_right = 2409.38
-margin_bottom = 6217.35
+margin_left = 1894.65
+margin_top = 5534.11
+margin_right = 2414.65
+margin_bottom = 6219.11
 theme = ExtResource( 6 )
 custom_styles/bg = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -104,10 +104,9 @@ max_columns = 5
 same_column_width = true
 fixed_column_width = 96
 icon_mode = 0
-fixed_icon_size = Vector2( 64, 64 )
+fixed_icon_size = Vector2( 74, 74 )
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
