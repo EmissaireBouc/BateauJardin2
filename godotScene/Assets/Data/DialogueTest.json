@@ -4,7 +4,7 @@
 	
 		"Dialogue1": [
 			{
-				"Nom": "...",
+				"Nom": "Eleanor",
 				"Text": "Salut, bienvenue à bord !"
 			  },
 			{
@@ -65,7 +65,7 @@
 			   "Text": "Tu devrais te plaire parmi nous."
 			 },
 			 {
-				"Nom": "...",
+				"Nom": "Eleanor",
 				"Text": "Salut, bienvenue à bord !"
 			 },
 			 {
@@ -106,17 +106,17 @@
 		"Gabiere": {
       "Dialogue1": [
           {
-           "Nom": "...",
+           "Nom": "Minh Tâm",
            "Text": "Hey, moi je m'occupe des voiles. Je les prends aussi parfois haha."
           },
           {
-           "Nom": "...",
+           "Nom": "Minh Tâm",
            "Text": "Kaneza, notre mécano est occupée là. Elle passe beaucoup de temps dans la cale, tu la rencontreras un autre jour."
            }
           ],
       "Dialogue2": [
           {
-           "Nom": "...",
+           "Nom": "Minh Tâm",
            "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
           }
         ]
@@ -125,7 +125,7 @@
 		"Matelot": {
       "Dialogue1": [
           {
-           "Nom": "...",
+           "Nom": "Nathan",
            "Text": "Hello, je m’appelle Nathan. Je suis un peu homme à tout faire, j’aide là où il y a besoin."
           }
           ],
@@ -140,7 +140,7 @@
 		"Vigie": {
       "Dialogue1": [
           {
-           "Nom": "...",
+           "Nom": "Ismael",
            "Text": "Je suis Ismael, vigie et amateur de plante. Je pourrais t’aider à l'occasion pour le jardin si tu veux."
           }
           ],
@@ -156,7 +156,7 @@
       "Dialogue1":
           [
           {
-           "Nom": "...",
+           "Nom": "Mazaa",
            "Text": "Salut, je suis Mazaa. Je relève les courants, note nos positions ...Enfin bref je suis cartographe."
           },
           {
@@ -208,7 +208,7 @@
 		"Gabiere": {
       "Dialogue1": [
           {
-           "Nom": "...",
+           "Nom": "Minh Tâm",
            "Text": "Salut... Jeanne c'est ça ?"
           },
           {
@@ -216,7 +216,7 @@
            "Text": "Jade..."
            },
 		   {
-           "Nom": "...",
+           "Nom": "Minh Tâm",
            "Text": "Ah oui ! Désolé-e, je suis complétement nul-le en prénom... Eh mais... je t'ai jamais dis le mien en fait ?"
           },
           {
@@ -224,7 +224,7 @@
            "Text": "Non, du tout."
            },
 		   {
-           "Nom": "...",
+           "Nom": "Minh Tâm",
            "Text": "Merde ! Désolé-e ! Je m'appelle Minh Tâm ! Je suis non-binaire et mon pronom c'est iel. Et je suis lae gabièr-e. La personne qui s'occupe des voiles..."
           },
 		  {

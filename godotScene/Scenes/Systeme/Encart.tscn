@@ -93,10 +93,11 @@ __meta__ = {
 }
 
 [node name="indicateur" type="TextureButton" parent="Zone"]
-margin_left = 1299.0
-margin_top = 200.0
-margin_right = 1363.0
-margin_bottom = 264.0
+margin_left = 1224.0
+margin_top = 276.0
+margin_right = 1352.0
+margin_bottom = 404.0
+rect_rotation = -90.0
 action_mode = 0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )

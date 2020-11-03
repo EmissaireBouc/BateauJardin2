@@ -352,11 +352,11 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				change_action(DORMIR)
 			else:
 				if ImportData.jour == 5:
-					_encart("Jade", "J'ai presque rien fait aujourd’hui, je vais travailler encore un peu")
+					_encart("Jade", "J'ai presque rien fait aujourd’hui, je vais travailler encore un peu.")
 				if ImportData.jour == 6:
-					_encart("Jade", "Je vais continuer un peu, j'ai pas fait grand chose aujourd'hui")
+					_encart("Jade", "Je vais continuer un peu, j'ai pas fait grand chose aujourd'hui.")
 				if ImportData.jour == 7:
-					_encart("Jade", "J'ai déjà raté une demi journée, je vais travailler encore un peu avant de me coucher")
+					_encart("Jade", "J'ai déjà raté une demi journée, je vais travailler encore un peu avant de me coucher.")
 				if ImportData.jour == 8:
 					_encart("Jade", "J'ai pas fait grand chose aujourd'hui, je vais continuer encore un peu.")
 				if ImportData.jour == 9:
@@ -365,13 +365,13 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 		else : 
 
 			if PA.get_PA() > 0 && PNJsort.get_dialogue_done() != PNJsort.get_child_count():
-				_encart("info", "La journée n'est pas terminée et je n'ai pas parlé à tout le monde. Se coucher ?")
+				_encart("Info", "La journée n'est pas terminée et je n'ai pas parlé à tout le monde. Se coucher ?")
 			elif PA.get_PA() > 0 :
-				_encart("info", "La journée n'est pas terminée. Se coucher ?")
+				_encart("Info", "La journée n'est pas terminée. Se coucher ?")
 			elif PNJsort.get_dialogue_done() != PNJsort.get_child_count() :
 				_encart("info", "Je n'ai pas parlé à tout le monde. Se coucher ?")
 			else :
-				_encart("info", "Le jour est en train de tomber. Se coucher ?")
+				_encart("Info", "Le jour est en train de tomber. Se coucher ?")
 
 func _on_Porte_mouse_entered():
 	cursor_mode("dormir")
@@ -475,7 +475,7 @@ func start_new_day():
 			dicTexture["key"+ str(nbText)] = "res://Assets/Plante/Icone/icon_%s.png" %key
 
 	if !dicTexture.empty():
-		_encart("info", "De nouvelles graines sont à votre disposition :", dicTexture)
+		_encart("Info", "De nouvelles graines sont à votre disposition :", dicTexture)
 
 #	if ImportData.jour == 5 :
 #		_encart("Jade", "J'ai manqué le début de la journée...")
