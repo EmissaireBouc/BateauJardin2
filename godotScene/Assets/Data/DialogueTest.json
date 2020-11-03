@@ -9,15 +9,31 @@
 			  },
 			{
 			   "Nom": "Eleanor",
-			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charibe."
+			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charybde."
 			 },
 			{
 			   "Nom": "Suzanne",
-			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée ! Tout le monde, voici Jade, la filleule d'Anna. Tu devrais te plaire parmi nous."
+			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée !"
+			 },
+			 {
+			   "Nom": "Suzanne",
+			   "Text": "Tout le monde, voici Jade, la filleule d'Anna."
+			 },
+			  {
+			   "Nom": "Suzanne",
+			   "Text": "Tu devrais te plaire parmi nous."
 			 },
 			 {
 			   "Nom": "Suzanne",
 			   "Text": "Tout l’équipage est là pour t’accueillir, sauf notre mécanicienne qui travaille dans la cale, et Maël qui est pas là en ce moment."
+			 },
+			 {
+			   "Nom": "Eleanor",
+			   "Text": "Ça va te changer de faire du jardinage."
+			 },
+			 {
+			   "Nom": "Eleanor",
+			   "Text": "Je bossais en ville comme toi avant, ça me convenait pas du tout non plus. Je comprend que t’aies pas tenu et que t’aies dû arrêter."
 			 }
 			],
 
@@ -28,7 +44,7 @@
 			  },
 			  {
 			   "Nom": "Eleanor",
-			   "Text": "Je bossais en ville comme toi avant, ça me convenait pas du tout non plus. Je comprend que t’ai pas tenu et que t’ai dû arrêter."
+			   "Text": "Je bossais en ville comme toi avant, ça me convenait pas du tout non plus. Je comprend que t’aies pas tenu et que t’aies dû arrêter."
 			  }
 			]
       },
@@ -38,21 +54,37 @@
 			"Dialogue1": [
 			 {
 			   "Nom": "Suzanne",
-			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée ! Tout le monde, voici Jade, la filleule d'Anna. Tu devrais te plaire parmi nous."
+			   "Text": "Bienvenue ! C’est moi que tu as eu par radio, je suis Suzanne, enchantée !"
+			 },
+			 {
+			   "Nom": "Suzanne",
+			   "Text": "Tout le monde, voici Jade, la filleule d'Anna."
+			 },
+			  {
+			   "Nom": "Suzanne",
+			   "Text": "Tu devrais te plaire parmi nous."
 			 },
 			 {
 				"Nom": "...",
 				"Text": "Salut, bienvenue à bord !"
-			  },
-			  {
+			 },
+			 {
 			   "Nom": "Eleanor",
-			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charibe."
+			   "Text": "Moi c’est Eleanor, mais tout le monde m’appelle Charybde."
 			 },
 			 {
 			   "Nom": "Suzanne",
 			   "Text": "Tout l’équipage est là pour t’accueillir, sauf notre mécanicienne qui travaille dans la cale, et Maël qui est pas là en ce moment."
+			 },
+			 {
+			  "Nom": "Suzanne",
+			  "Text": "Je suis charpentière et ferronnière, j'aide aussi souvent les autres en fonctions des besoins, comme la coque n'a pas à être rebouchée tout les jours."
+			 },
+			 {
+			 "Nom": "Suzanne",
+		     "Text": "Et sinon, ta marraine m’a dit que tu avais fait un burn out. Ici tu va pouvoir reprendre tranquillement, à ton rythme."
 			 }
-          ],
+        ],
 		"Dialogue2": [
           {
            "Nom": "Suzanne",
@@ -66,7 +98,7 @@
 		"Dialogue3": [
           {
            "Nom": "Suzanne",
-           "Text": "Tu peux aller t’installer dans ta cabine si tu veux, c’est par la porte au bout du pont."
+           "Text": "Tu peux aller t’installer dans ta cabine si tu veux, quand que tu auras parlé à tout le monde. c’est par la porte au bout du pont."
           }
         ]
       },
@@ -75,11 +107,11 @@
       "Dialogue1": [
           {
            "Nom": "...",
-           "Text": "Hey, moi je m'occupe des voiles, je les prends aussi parfois haha."
+           "Text": "Hey, moi je m'occupe des voiles. Je les prends aussi parfois haha."
           },
           {
            "Nom": "...",
-           "Text": "Kaneza, notre mécano est occupée là, elle passe beaucoup de temps dans la cale, tu la rencontreras un autre jour."
+           "Text": "Kaneza, notre mécano est occupée là. Elle passe beaucoup de temps dans la cale, tu la rencontreras un autre jour."
            }
           ],
       "Dialogue2": [
@@ -94,7 +126,7 @@
       "Dialogue1": [
           {
            "Nom": "...",
-           "Text": "Hello, je m’appelle Nathan, je suis un peu homme à tout faire, j’aide là où il y a besoin."
+           "Text": "Hello, je m’appelle Nathan. Je suis un peu homme à tout faire, j’aide là où il y a besoin."
           }
           ],
       "Dialogue2": [
@@ -109,7 +141,7 @@
       "Dialogue1": [
           {
            "Nom": "...",
-           "Text": "Je suis Ismael, vigie et amateur de plante, je pourrais t’aider à l'occasion pour le jardin si tu veux."
+           "Text": "Je suis Ismael, vigie et amateur de plante. Je pourrais t’aider à l'occasion pour le jardin si tu veux."
           }
           ],
       "Dialogue2": [
@@ -125,7 +157,7 @@
           [
           {
            "Nom": "...",
-           "Text": "Salut, je suis Mazaa, je relève les courants, note nos positions, ...Enfin bref je suis cartographe."
+           "Text": "Salut, je suis Mazaa. Je relève les courants, note nos positions ...Enfin bref je suis cartographe."
           },
           {
            "Nom": "Mazaa",
@@ -185,7 +217,7 @@
            },
 		   {
            "Nom": "...",
-           "Text": "Ah oui ! Désolé, je suis complétement nul-le en prénom... Eh mais... je t'ai jamais dis le mien en fait ?"
+           "Text": "Ah oui ! Désolé-e, je suis complétement nul-le en prénom... Eh mais... je t'ai jamais dis le mien en fait ?"
           },
           {
            "Nom": "Jade",
@@ -193,11 +225,7 @@
            },
 		   {
            "Nom": "...",
-           "Text": "Merde ! Désolé ! Je m'appelle Minh Tâm ! Je suis non-binaire et mon pronom c'est iel. Et je suis lae gabièr-e. La personne qui s'occupe des voiles..."
-          },
-		  {
-           "Nom": "Minh Tâm",
-           "Text": "La personne qui s'occupe des voiles..."
+           "Text": "Merde ! Désolé-e ! Je m'appelle Minh Tâm ! Je suis non-binaire et mon pronom c'est iel. Et je suis lae gabièr-e. La personne qui s'occupe des voiles..."
           },
 		  {
            "Nom": "Minh Tâm",
@@ -213,7 +241,7 @@
            },
 		   {
            "Nom": "Minh Tâm",
-           "Text": "Ahahah désolé, je vais y arriver ! En plus c'est un beau prénom Jade."
+           "Text": "Ahahah désolé-e, je vais y arriver ! En plus c'est un beau prénom Jade."
            },
 		   {
            "Nom": "Jade",
@@ -232,11 +260,11 @@
       "Dialogue1": [
           {
            "Nom": "Ismael",
-           "Text": "Ha ! Te voilà Jade. Je t'attendais. Je t'ai déjà dis hier que j'étais passionné par les plantes, je voulais donc te remettre ma collection de graines que l'on avait entamé avec Maël, mais que nous avions du mettre en pause lors de son départ."
+           "Text": "Ha ! Te voilà Jade. Je t'attendais. Je t'ai déjà dis hier que j'étais passionné par les plantes. Je voulais donc te remettre ma collection de graines que l'on avait entamé avec Maël, mais que nous avions du mettre en pause lors de son départ."
           },
           {
            "Nom": "Ismael",
-           "Text": "J'espère que nous pourrons l'étoffer encore plus avec ton arrivé."
+           "Text": "J'espère que nous pourrons l'étoffer encore plus avec ton arrivée."
            },
 		   {
            "Nom": "Ismael",
@@ -257,7 +285,7 @@
       "Dialogue1": [
           {
            "Nom": "Eleanor",
-           "Text": "J’espère que tu te plaira avec nous. Hésites pas si t’as des questions sur notre fonctionnement."
+           "Text": "J’espère que tu te plairas avec nous. Hésite pas si t’as des questions sur notre fonctionnement."
           },
           {
            "Nom": "Jade",
@@ -265,7 +293,7 @@
            },
 		   {
            "Nom": "Eleanor",
-           "Text": "Ouais ça fait bien quelques années maintenant ! Après, Anna est restée avec nous quelques fois, mais jamais pendant très longtemps. Ça fait presque 10 ans que Mazaa et moi on a récupérée le bateau, les autres sont venu.e.s petit à petit."
+           "Text": "Ouais ça fait bien quelques années maintenant ! Après, Anna est restée avec nous quelques fois, mais jamais pendant très longtemps. Ça fait presque 10 ans que Mazaa et moi on a récupéré le bateau, les autres sont venu-e-s petit à petit."
           },
 		  {
            "Nom": "Eleanor",
@@ -277,7 +305,7 @@
            },
 		   {
            "Nom": "Eleanor",
-           "Text": "On a trouvé le Bonny & Read il y a de ça quelques années déjà. Comme je te disais, on est tombée dessus pendant une de nos balade en amoureuse avec Mazaa, il était abandonné près d'un port submergé."
+           "Text": "On a trouvé le Bonny & Read il y a de ça quelques années déjà. Comme je te disais, on est tombées dessus pendant une de nos balades en amoureuse avec Mazaa, il était abandonné près d'un port submergé."
           },
 		  {
            "Nom": "Eleanor",
@@ -285,7 +313,7 @@
           },
 		  {
            "Nom": "Eleanor",
-           "Text": "Le 'bonzai' est d'origine !  Mais tout le reste c'est nous ! "
+           "Text": "Le 'bonzai' est d'origine !  Mais tout le reste c'est de nous ! "
           },
           {
            "Nom": "Jade",
@@ -301,11 +329,11 @@
            },
 		   {
            "Nom": "Eleanor",
-           "Text": "Ça fait longtemps qu'on avait envie d’en avoir un, on avait commencé, mais avec le départ de Maël on s'en sortait plus."
+           "Text": "Ça fait longtemps qu'on avait envie d’en avoir un. On avait commencé mais avec le départ de Maël on s'en sortait plus."
           },
 		  {
            "Nom": "Eleanor",
-           "Text": "On s'est dit que c'était mieux de prendre une nouvelle personne dédiée au jardinage, comme on est touste déjà bien occupé.e.s."
+           "Text": "On s'est dit que c'était mieux de prendre une nouvelle personne dédiée au jardinage, comme on est tous-te déjà bien occupé-e-s."
           },
 		  {
            "Nom": "Eleanor",
@@ -327,11 +355,11 @@
           },
           {
            "Nom": "Jade",
-           "Text": "Oui oui, je prends mes marques petits à petits."
+           "Text": "Oui oui, je prends mes marques petit à petit."
            },
 		   {
            "Nom": "Nathan",
-           "Text": "T'inquiètes faut aller à son rythme, ici tu peux chill sans soucis..."
+           "Text": "T'inquiète faut aller à son rythme, ici tu peux chill sans soucis..."
           },
           {
            "Nom": "Jade",
@@ -377,15 +405,15 @@
           },
           {
            "Nom": "Suzanne",
-           "Text": "Ouais, Je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché, ils remarquent pas du tout quand c'est sale."
+           "Text": "Ouais, je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché. Ils remarquent pas du tout quand c'est sale."
            },
 		   {
            "Nom": "Mazaa",
-           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan, qui foutent vraiment pas grand chose niveau taches ménagères."
+           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan qui foutent vraiment pas grand chose niveau tâches ménagères."
           },
           {
            "Nom": "Suzanne",
-           "Text": "C'est délicat parce qu'on a tou.te.s du mal à les faire comme on est fols, mais bon, c'est quand même toujours les mêmes qui font tout."
+           "Text": "C'est délicat parce qu'on a tou-te-s du mal à les faire comme on est fols, mais bon, c'est quand même toujours les mêmes qui font tout."
            },
 		   {
            "Nom": "Mazaa",
@@ -393,7 +421,7 @@
           },
           {
            "Nom": "Suzanne",
-           "Text": "On veut pas les culpabiliser, chacun.e fait ce qu'iel peut."
+           "Text": "On veut pas les culpabiliser, chacun-e fait ce qu'iel peut."
            },
 		   {
            "Nom": "Suzanne",
@@ -405,7 +433,7 @@
           },
 		  {
            "Nom": "Mazaa",
-           "Text": "C’est toujours les meufs et non binaires qui font tout, même au fond de la crise y’a toujours l’éducation à faire passer certaines choses avant son bien être, à plus se forcer pour les autres."
+           "Text": "C’est toujours les meufs et non binaires qui font tout. Même au fond de la crise y’a toujours l’éducation à faire passer certaines choses avant son bien être, à plus se forcer pour les autres."
           },
           {
            "Nom": "Suzanne",
@@ -427,7 +455,7 @@
           },
           {
            "Nom": "Suzanne",
-           "Text": "Oui, Anna t'avait pas dit ? Enfin Ismaël est autiste et c’est pas une maladie, mais ça change pas grand-chose, on est tou.te.s fols quoi."
+           "Text": "Oui, Anna t'avait pas dit ? Enfin Ismaël est autiste et c’est pas une maladie, mais ça change pas grand-chose, on est tou-te-s fols quoi."
           },
 		  {
            "Nom": "Jade",
@@ -472,15 +500,15 @@
           },
           {
            "Nom": "Suzanne",
-           "Text": "Ouais, Je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché, ils remarquent pas du tout quand c'est sale."
+           "Text": "Ouais, Je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché. Ils remarquent pas du tout quand c'est sale."
            },
 		   {
            "Nom": "Mazaa",
-           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan, qui foutent vraiment pas grand chose niveau taches ménagères."
+           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan, qui foutent vraiment pas grand chose niveau tâches ménagères."
           },
           {
            "Nom": "Suzanne",
-           "Text": "C'est délicat parce qu'on a tou.te.s du mal à les faire comme on est fols, mais bon, c'est quand même toujours les mêmes qui font tout."
+           "Text": "C'est délicat parce qu'on a tou-te-s du mal à les faire comme on est fols, mais bon, c'est quand même toujours les mêmes qui font tout."
            },
 		   {
            "Nom": "Mazaa",
@@ -500,7 +528,7 @@
           },
 		  {
            "Nom": "Mazaa",
-           "Text": "C’est toujours les meufs et non binaires qui font tout, même au fond de la crise y’a toujours l’éducation à faire passer certaines choses avant son bien être, à plus se forcer pour les autres."
+           "Text": "C’est toujours les meufs et non binaires qui font tout. Même au fond de la crise y’a toujours l’éducation à faire passer certaines choses avant son bien être, à plus se forcer pour les autres."
           },
           {
            "Nom": "Suzanne",
@@ -559,7 +587,7 @@
           },
           {
            "Nom": "Eleanor",
-           "Text": "Ah non t'inquiètes ! On est plus que nécessaire pour contrôler notre bateau, comme ça on peut chacun et chacune bosser à notre rythme, même si c'est lent, et se relayer, se remplacer quand ça va trop mal."
+           "Text": "Ah non t'inquiète ! On est plus que nécessaire pour contrôler notre bateau. Comme ça on peut chacun et chacune bosser à notre rythme, même si c'est lent et se relayer, se remplacer quand ça va trop mal."
            },
 		   {
            "Nom": "Suzanne",
@@ -571,7 +599,7 @@
           },
 		  {
            "Nom": "Eleanor",
-           "Text": "On croise les doigts pour ne jamais être tous et toutes mal en même temps, pour l’instant c’est jamais arrivé ahah !"
+           "Text": "On croise les doigts pour ne jamais être tous et toutes mal en même temps. Pour l’instant c’est jamais arrivé ahah !"
 		   }
           ],
       "Dialogue2": [
@@ -613,7 +641,7 @@
       "Dialogue1": [
           {
            "Nom": "Nathan",
-           "Text": "Hey Jade, On charge certain jour on décharge d'autre. Une cargaison qui nous a accompagné longtemps celle-la."
+           "Text": "Hey Jade. On charge certain jour, on décharge d'autre. Une cargaison qui nous a accompagné longtemps celle-la."
           },
           {
            "Nom": "Nathan",
@@ -641,7 +669,7 @@
           },
           {
            "Nom": "Ismael",
-           "Text": "Voilà pour toi. Si jamais j'en obtiens de nouvelles, je les déposerais auprès de tes affaires de jardinages."
+           "Text": "Voilà pour toi. Si jamais j'en obtiens de nouvelles, je les déposerai auprès de tes affaires de jardinages."
            }
           ],
       "Dialogue2": [
@@ -669,7 +697,7 @@
           },
 		  {
            "Nom": "Jade",
-           "Text": "Ah, C'est déjà ça... Tu t'en es sortie toute seule ?"
+           "Text": "Ah, c'est déjà ça... Tu t'en es sortie toute seule ?"
           },
 		  {
            "Nom": "Eleanor",
@@ -677,7 +705,7 @@
           },
 		  {
            "Nom": "Eleanor",
-           "Text": " C'est grâce à tout ça que je vais mieux. T'inquiète pas, toi aussi ça finira par aller mieux;"
+           "Text": " C'est grâce à tout ça que je vais mieux. T'inquiète pas, toi aussi ça finira par aller mieux."
           },
 		  {
            "Nom": "Jade",
@@ -685,7 +713,7 @@
           },
 		  {
            "Nom": "Eleanor",
-           "Text": "D'ailleurs, t'es pas obligée de travailler autant tu sais, tu peux aller plus lentement et pas avoir autant de plantes."
+           "Text": "D'ailleurs, t'es pas obligée de travailler autant tu sais. Tu peux aller plus lentement et pas avoir autant de plantes."
           },
 		  {
            "Nom": "Jade",
@@ -724,7 +752,7 @@
            },
 		   {
            "Nom": "Mazaa",
-           "Text": "Oui, j'ai une maladie physique qui me prend pas mal d'énergie, et surtout je prend des médicaments qui fatiguent beaucoup."
+           "Text": "Oui, j'ai une maladie physique qui me pompe pas mal d'énergie, et surtout je prends des médicaments qui fatiguent beaucoup."
           },
           {
            "Nom": "Jade",
@@ -732,7 +760,7 @@
            },
 		   {
            "Nom": "Mazaa",
-           "Text": "Bof ça va, je sui schizophrène, et sans médicament je suis encore plus à l'ouest. Là en faisant des siestes et en buvant plein de café je vais bien."
+           "Text": "Bof ça va, je suis schizophrène et sans médicament je suis encore plus à l'ouest. Là en faisant des siestes et en buvant plein de café je vais bien."
           },
 		  {
            "Nom": "Mazaa",
@@ -784,7 +812,7 @@
            },
 		   {
            "Nom": "Minh Tâm",
-           "Text": "Mais tu verras à partir de là elle pourra plus s'arrêter, et elle est passionnante."
+           "Text": "Mais tu verras à partir de là elle pourra plus s'arrêter et elle est passionnante."
            }
         ]
       }
@@ -794,7 +822,7 @@
       "Dialogue1": [
           {
            "Nom": "Ismael",
-           "Text": "Salut ! tu as vu les nouvelles graines que je t'ai passées ? Je suis content j'ai pu avoir des roses trémières, ça devrait plaire à Suzy, Kaneza et Minh Tâm."
+           "Text": "Salut ! Tu as vu les nouvelles graines que je t'ai passées ? Je suis content j'ai pu avoir des roses trémières, ça devrait plaire à Suzy, Kaneza et Minh Tâm."
           },
           {
            "Nom": "Ismael",
@@ -806,7 +834,7 @@
            },
 		   {
            "Nom": "Ismael",
-           "Text": "Oui pendant 5 ans, iels se sont rencontré.e.s en hôpital psy, et iels se sont installé.e.s ensemble quand iels en sont sorti.e.s"
+           "Text": "Oui pendant 5 ans, iels se sont rencontré-e-s en hôpital psy, et iels se sont installé-e-s ensemble quand iels en sont sorti-e-s"
            }
           ],
       "Dialogue2": [
@@ -834,11 +862,11 @@
            },
 		   {
            "Nom": "Mazaa",
-           "Text": "C'est surtout qu'iels sont vachement psychophobes, iels me reprochent toujours de pas avoir un 'vrai' travail."
+           "Text": "C'est surtout qu'iels sont vachement psychophobes."
           },
 		  {
            "Nom": "Mazaa",
-           "Text": " d'avoir de mauvaises fréquentations ou de rien faire de mes journées."
+           "Text": "Iels me reprochent toujours de pas avoir un 'vrai' travail, d'avoir de mauvaises fréquentations ou de rien faire de mes journées."
           },
           {
            "Nom": "Jade",
@@ -942,7 +970,7 @@
            },
 		   {
            "Nom": "Kaneza",
-           "Text": "Euh ... le moteur se porte bien en ce moment du coup j'ai le temps de cultiver mes champignons dans la cale. C'est pas très intéressant peut être... Désolée."
+           "Text": "Euh ... le moteur se porte bien en ce moment du coup j'ai le temps de cultiver mes champignons dans la cale. C'est pas très intéressant peut-être... Désolée."
           }
           ],
       "Dialogue2": [
@@ -979,7 +1007,7 @@
           },
 		  {
            "Nom": "Minh Tâm",
-           "Text": "Non je suis sûr qu'il y a autre chose. j'ai du faire quelque chose de mal, elle va m'abandonner. Qu'est ce que je vais faire sans elle ? On était super proche."
+           "Text": "Non je suis sûr qu'il y a autre chose. J'ai du faire quelque chose de mal, elle va m'abandonner. Qu'est ce que je vais faire sans elle ? On était super proche."
           },
 		  {
            "Nom": "Minh Tâm",
@@ -1064,7 +1092,7 @@
           },
           {
            "Nom": "Mazaa",
-           "Text": "T'inquiètes pas. C'est pas grave que t'ai raté un bout de la journée, ça m'arrive tout le temps aussi."
+           "Text": "T'inquiète pas. C'est pas grave que t'ai raté un bout de la journée, ça m'arrive tout le temps aussi."
            }
           ],
       "Dialogue2": [
@@ -1096,7 +1124,7 @@
            },
 		   {
            "Nom": "Eleanor",
-           "Text": "Ahah non c'est un couple de supers nanas ces deux là ! Des pirates ! Un peu des modèles pour Scylla et moi."
+           "Text": "Ahah non c'est un couple de supers nanas ces deux là ! Des pirates ! Un peu des modèles pour Mazaa et moi."
           },
           {
            "Nom": "Jade",
@@ -1135,7 +1163,7 @@
           },
 		  {
            "Nom": "Minh Tâm",
-           "Text": "Depuis le temps, j'ai enfin trouvé une médecin qui me saoule pas avec les risques si je tombe enceint.e."
+           "Text": "Depuis le temps, j'ai enfin trouvé une médecin qui me saoule pas avec les risques si je tombe enceint-e."
           },
 		  {
            "Nom": "Minh Tâm",
@@ -1143,11 +1171,11 @@
           },
           {
            "Nom": "Jade",
-           "Text": "Pourquoi tu stresses si t'es content.e de le commencer ?"
+           "Text": "Pourquoi tu stresses si t'es content-e de le commencer ?"
            },
 		    {
            "Nom": "Minh Tâm",
-           "Text": "Parce qu'à chaque changement de médoc au début on peut pas du tout prévoir dans quel état on sera, on a parfois des effets secondaires fort et qui changent pas mal d'un jour à l'autre."
+           "Text": "Parce qu'à chaque changement de médoc au début on peut pas du tout prévoir dans quel état on sera. On a parfois des effets secondaires fort et qui changent pas mal d'un jour à l'autre."
           },
 		  {
            "Nom": "Minh Tâm",
@@ -1190,7 +1218,7 @@
           },
 		  {
            "Nom": "Minh Tâm",
-           "Text": "Depuis le temps, j'ai enfin trouvé une médecin qui me saoule pas avec les risques si je tombe enceint.e."
+           "Text": "Depuis le temps, j'ai enfin trouvé une médecin qui me saoule pas avec les risques si je tombe enceint-e."
           },
 		  {
            "Nom": "Minh Tâm",
@@ -1198,11 +1226,11 @@
           },
           {
            "Nom": "Jade",
-           "Text": "Pourquoi tu stresses si t'es content.e de le commencer ?"
+           "Text": "Pourquoi tu stresses si t'es content-e de le commencer ?"
            },
 		    {
            "Nom": "Minh Tâm",
-           "Text": "Parce qu'à chaque changement de médoc au début on peut pas du tout prévoir dans quel état on sera, on a parfois des effets secondaires fort et qui changent pas mal d'un jour à l'autre."
+           "Text": "Parce qu'à chaque changement de médoc au début on peut pas du tout prévoir dans quel état on sera. On a parfois des effets secondaires fort et qui changent pas mal d'un jour à l'autre."
           },
 		  {
            "Nom": "Minh Tâm",
@@ -1232,7 +1260,7 @@
           },
           {
            "Nom": "Jade",
-           "Text": "Je suis désolé, ça va un peu mieux oui, je vais me remettre à travailler."
+           "Text": "Je suis désolée, ça va un peu mieux oui, je vais me remettre à travailler."
            },
 		   {
            "Nom": "Eleanor",
@@ -1326,7 +1354,7 @@
           },
 		  {
            "Nom": "Ismael",
-           "Text": "J'ai eu la possibilité d'en arroser la plupart mais il y en a quand même quelques unes qui sont mortes."
+           "Text": "J'ai eu la possibilité d'en arroser la plupart mais il y en a quand même quelques-unes qui sont mortes."
           },
 		  {
            "Nom": "Jade",
@@ -1362,22 +1390,22 @@
            },
 		   {
            "Nom": "Nathan",
-           "Text": "Ça change de celle et ceux qui font comme si tout était juste une question de chimie du cerveau et qui dépolitisent nos problèmes."
+           "Text": "Ça change de celles et ceux qui font comme si tout était juste une question de chimie du cerveau et qui dépolitisent nos problèmes."
           },
 		  {
            "Nom": "Jade",
            "Text": "'Dépolitiser' ? En quoi c'est politique ?"
           },
           {
-           "Nom": "Eleanor",
-           "Text": "On est pas dépressif-ve pour rien, et les causes sont souvent liées aux souffrances que créent le capitalisme et les oppressions systémiques."
-           },
-		   {
-           "Nom": "Eleanor",
-           "Text": "Pas tout le temps bien sur, mais même, faire comme si on était juste des machines qui se sont déréglées sans raison et à qui faut donner des médicaments pour les remettre en marche, c'est passer à coté du problème."
+           "Nom": "Nathan",
+           "Text": "On est pas dépressif-ve pour rien et les causes sont souvent liées aux souffrances que créent le capitalisme et les oppressions systémiques."
            },
 		   {
            "Nom": "Nathan",
+           "Text": "Pas tout le temps bien sûr, mais même, faire comme si on était juste des machines qui se sont déréglées sans raison et à qui faut donner des médicaments pour les remettre en marche, c'est passer à coté du problème."
+           },
+		   {
+           "Nom": "Eleanor",
            "Text": "Haha ! On est pas des machines ! Bip Boop."
            },
 		   {
@@ -1422,7 +1450,7 @@
       "Dialogue1": [
           {
            "Nom": "Jade",
-           "Text": "Hé ! ça va mieux vous deux ?"
+           "Text": "Hé ! Ça va mieux vous deux ?"
            },
 		  {
            "Nom": "Minh Tâm",
@@ -1438,7 +1466,7 @@
           },
 		  {
            "Nom": "Kaneza",
-           "Text": "On s'est jamais vraiment présentées en fait."
+           "Text": "On... On s'est jamais vraiment présentées en fait."
            },
 		   {
            "Nom": "Jade",
@@ -1450,7 +1478,7 @@
           },
 		  {
            "Nom": "Kaneza",
-           "Text": "Non non non non c'est une relation tout à fait amicale oulah oui peut être non on s'apprécie juste bien !"
+           "Text": "Non non non non c'est une relation tout à fait amicale oulah oui peut être non. On s'apprécie juste bien !"
            },
 		   {
            "Nom": "Jade",
@@ -1471,9 +1499,9 @@
 	  
 		"Gabiere": {
       "Dialogue1": [
-          {
+         {
            "Nom": "Jade",
-           "Text": "Hé ! ça va mieux vous deux ?"
+           "Text": "Hé ! Ça va mieux vous deux ?"
            },
 		  {
            "Nom": "Minh Tâm",
@@ -1489,7 +1517,7 @@
           },
 		  {
            "Nom": "Kaneza",
-           "Text": "On s'est jamais vraiment présentées en fait."
+           "Text": "On... On s'est jamais vraiment présentées en fait."
            },
 		   {
            "Nom": "Jade",
@@ -1501,7 +1529,7 @@
           },
 		  {
            "Nom": "Kaneza",
-           "Text": "Non non non non c'est une relation tout à fait amicale oulah oui peut être non on s'apprécie juste bien !"
+           "Text": "Non non non non c'est une relation tout à fait amicale oulah oui peut être non. On s'apprécie juste bien !"
            },
 		   {
            "Nom": "Jade",
@@ -1532,22 +1560,22 @@
            },
 		   {
            "Nom": "Nathan",
-           "Text": "Ça change de celle et ceux qui font comme si tout était juste une question de chimie du cerveau et qui dépolitisent nos problèmes."
+           "Text": "Ça change de celles et ceux qui font comme si tout était juste une question de chimie du cerveau et qui dépolitisent nos problèmes."
           },
 		  {
            "Nom": "Jade",
            "Text": "'Dépolitiser' ? En quoi c'est politique ?"
           },
           {
-           "Nom": "Eleanor",
-           "Text": "On est pas dépressif-ve pour rien, et les causes sont souvent liées aux souffrances que créent le capitalisme et les oppressions systémiques."
-           },
-		   {
-           "Nom": "Eleanor",
-           "Text": "Pas tout le temps bien sur, mais même, faire comme si on était juste des machines qui se sont déréglées sans raison et à qui faut donner des médicaments pour les remettre en marche, c'est passer à coté du problème."
+           "Nom": "Nathan",
+           "Text": "On est pas dépressif-ve pour rien et les causes sont souvent liées aux souffrances que créent le capitalisme et les oppressions systémiques."
            },
 		   {
            "Nom": "Nathan",
+           "Text": "Pas tout le temps bien sûr, mais même, faire comme si on était juste des machines qui se sont déréglées sans raison et à qui faut donner des médicaments pour les remettre en marche, c'est passer à coté du problème."
+           },
+		   {
+           "Nom": "Eleanor",
            "Text": "Haha ! On est pas des machines ! Bip Boop."
            },
 		   {
@@ -1577,7 +1605,7 @@
 		   {
            "Nom": "Nathan",
            "Text": "On dit pas que les médicaments sont inutiles, au contraire c'est indispensable pour plein de gens, mais juste c'est pas magique et souvent pas suffisant pour aller vraiment mieux."
-           }		   
+           }		   		   
           ],
       "Dialogue2": [
           {
