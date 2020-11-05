@@ -19,6 +19,8 @@ onready var PA : Label = get_node("CanvasLayer/PA")
 onready var PNJsort : YSort = get_node("Bateau/YSort/PNJ")
 onready var transitionJours = get_node("CanvasLayer/ciel transition/ciel")
 var inventaire
+var Encart 
+
 
 """
 Initialisation du jeu
@@ -30,12 +32,15 @@ func _ready():
 	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 	$CanvasLayer.add_child(tuto)
 	$CanvasLayer/Commande.connect("fin_tuto",self,"init_game")
+	for i in range ($Bateau/YSort/Plante.get_child_count()) :
+		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
+		$Bateau/YSort/Plante.get_child(i).update_status()
+
 
 
 func init_game():
 	$CanvasLayer/Commande.disconnect("fin_tuto",self,"init_game")
 	$CanvasLayer/Commande.queue_free()
-	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
 	change_action(DEFAULT)
 	fondu("transition_out")
 	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
@@ -46,13 +51,20 @@ func init_game():
 	$CanvasLayer.add_child(inv)
 	inventaire = get_node("CanvasLayer/Inventory")
 	
+#	Creation de l'encart
+
+	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
+	$CanvasLayer.add_child(encart)
+	Encart = get_node("CanvasLayer/Encart")
+	Encart.hide()
+	
+	
 	$CanvasLayer/Transition.visible = true
 	$Musique.play()
 
 	connectique()
 
-	for i in range (0, $Bateau/YSort/Plante.get_child_count()) :
-		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
+	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
 
 #	Debug
 
@@ -65,6 +77,8 @@ func connectique():
 	PNJsort.connect("Change_Cursor", self, "cursor_mode")
 	inventaire.connect("item_selected", self, "_on_Inventory_item_selected")
 	inventaire.connect("plant_abort", self, "_on_Inventory_plant_abort")
+	Encart.connect("encart_done", self, "encart_done")
+	Encart.connect("choix_done", self, "choix_done")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Debug"):
@@ -286,7 +300,7 @@ func _on_Button_Spray_pressed():
 			if MouseA.return_select_plant().pv > 0:
 				change_action(ARROSER)
 			else:
-				_encart("Jade", "Cette plante est fânée, il n'y a rien à faire sinon l'arracher...")
+				_encart("Jade", "Cette plante est fanée, il n'y a rien à faire sinon l'arracher...")
 				menuEntretenir.close()
 				MouseA.clear_aCollisionNode()
 	else:
@@ -364,14 +378,10 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				change_action(DEFAULT)
 		else : 
 
-			if PA.get_PA() > 0 && PNJsort.get_dialogue_done() != PNJsort.get_child_count():
-				_encart("info", "La journée n'est pas terminée et je n'ai pas parlé à tout le monde. Se coucher ?")
-			elif PA.get_PA() > 0 :
-				_encart("info", "La journée n'est pas terminée. Se coucher ?")
-			elif PNJsort.get_dialogue_done() != PNJsort.get_child_count() :
-				_encart("info", "Je n'ai pas parlé à tout le monde. Se coucher ?")
+			if PNJsort.get_dialogue_done() != PNJsort.get_child_count() :
+				_info_systeme("info", "Je n'ai pas parlé à tout le monde. Se coucher ?", "Oui", "Non")
 			else :
-				_encart("info", "Le jour est en train de tomber. Se coucher ?")
+				_info_systeme("info", "Le jour est en train de tomber. Se coucher ?", "Oui", "Non")
 
 func _on_Porte_mouse_entered():
 	cursor_mode("dormir")
@@ -384,6 +394,7 @@ func a_day_pass():
 		
 	if PNJsort.get_dialogue_done() >= PNJsort.get_child_count() && ImportData.jour < ImportData.get_last_day():
 		ImportData.jour += 1
+		$CanvasLayer/Debug/DebugLabel4.text = "JOUR : " + str(ImportData.jour)
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
 		PNJsort.new_day()
@@ -401,8 +412,10 @@ func a_day_pass():
 	plante_XP_up()
 	plante_PV_down()
 	
-	
-	if ImportData.jour >= 10:
+	if ImportData.jour == 10:
+		kill_some_plants()
+
+	if ImportData.jour > 10:
 		arrose_plrs_plantes(10)
 
 func arrose_plrs_plantes(n = 0):
@@ -410,6 +423,14 @@ func arrose_plrs_plantes(n = 0):
 	for i in range(aGarden.size()):
 		if aGarden[i].pv > 0 && n > 0:
 			aGarden[i].hydrat()
+			n -= 1
+
+func kill_some_plants(n = 5):
+	aGarden.sort_custom(MyCustomSorter, "sort_ascending")
+	for i in range(aGarden.size()):
+		if aGarden[i].pv > 0 && n > 0:
+			aGarden[i].pv = 0
+			aGarden[i].update_status()
 			n -= 1
 
 func plante_PV_down():
@@ -456,10 +477,10 @@ func _on_Transition_transition_over(t):
 		transitionJours.stop()
 		$CanvasLayer/Transition.transitionCiel = false
 		fondu("transition_out")
-		
+
 	if t == "transition_out":
 		start_new_day()
-		
+
 	if t == "transition_out_fin":
 		$CanvasLayer/Transition.transitionCiel = false
 		fondu("transition_in")
@@ -467,18 +488,16 @@ func _on_Transition_transition_over(t):
 func start_new_day():
 
 	var nbText = 0
-	var dicTexture = {}
-
+	var phrase = "[center]De nouvelles graines sont à votre disposition :[/center]\n\n[center]"
 	for key in ImportData.plant_data:
 		if ImportData.plant_data[key].Available == ImportData.jour :
 			nbText += 1
-			dicTexture["key"+ str(nbText)] = "res://Assets/Plante/Icone/icon_%s.png" %key
+			var newPath = "[img=<48>]res://Assets/Plante/Icone/icon_%s.png[/img]" %key
+			phrase +=  newPath
+	if nbText != 0:
+		_info_systeme("graine", phrase + "[/center]", "ok")
 
-	if !dicTexture.empty():
-		_encart("info", "De nouvelles graines sont à votre disposition :", dicTexture)
 
-#	if ImportData.jour == 5 :
-#		_encart("Jade", "J'ai manqué le début de la journée...")
 
 
 """
@@ -509,27 +528,32 @@ gestion des encarts
 
 
 
-func _encart(nom, sentence, dicTxt = {}):
-	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
-	$CanvasLayer.add_child(encart)
+func _encart(nom, sentence):
 
-	if nom == "Jade" || nom == "fin":
-		$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
+	$CanvasLayer/Encart.chargement_dialog(nom, sentence)
 
-	elif nom == "info":
-		if !dicTxt.empty():
-			$CanvasLayer/Encart.chargement_dialog(nom, sentence, dicTxt)
-		else:
-			$CanvasLayer/Encart.chargement_dialog_choix("Jade", sentence, "Oui", "Non")
-			$CanvasLayer/Encart.connect("choix_done", self, "choix_done")
+
+func _info_systeme(titre, phrase, btn1 = "", btn2 = ""):
+
+	$CanvasLayer/Encart.chargement_syst_info(titre, phrase, btn1, btn2)
+
+
 
 func choix_done(c):
+	$CanvasLayer/Encart.hide()
+
+	if c == "ok":
+		if ImportData.jour == 5 :
+			_encart("Jade", "J'ai manqué le début de la journée...")
 	if c == "Oui" :
 		change_action(DORMIR)
 	if c == "Non" :
 		change_action(DEFAULT)
 
 
+func encart_done():
+	print("signal_reçus")
+	$CanvasLayer/Encart.hide()
 
 
 """

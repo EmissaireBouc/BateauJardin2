@@ -1,0 +1,242 @@
+{
+  "Cosmos": {
+    "Alias": "Impatience",
+    "Name": "Impatiences lissées",
+    "ID": 0,
+    "PV": 3,
+    "XP": 2,
+    "LVL": 1,
+    "Available": 1,
+    "Description": "Des jolies fleurs de toutes les couleurs."
+  },
+  "Myosotis": {
+    "Alias": "Lison",
+    "Name": "Lison gargantus",
+    "ID": 1,
+    "PV": 4,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 1,
+    "Description": "Petite plante à grande fleur qui suscite la convoitise des papillons."
+  },
+  "Cactus": {
+    "Alias": "Cactus P.",
+    "Name": "Cactus Parodia",
+    "ID": 2,
+    "PV": 7,
+    "XP": 5,
+    "LVL": 1,
+    "Available": 1,
+    "Description": "Une plante qui résiste à l'embrun, au soleil et à tous ceux et celles qui lui barrent la route."
+  },
+  "Pleureur": {
+    "Alias": "Saule",
+    "Name": "Saule triste",
+    "ID": 3,
+    "PV": 6,
+    "XP": 5,
+    "LVL": 1,
+    "Available": 1,
+    "Description": "Un arbre larmoyant qui se sent saule."
+  },
+  "Arbuste": {
+    "Alias": "Dracaena",
+    "Name": "Dracaena Aurantiaca",
+    "ID": 4,
+    "PV": 5,
+    "XP": 5,
+    "LVL": 1,
+    "Available": 4,
+    "Description": "Réputé pour son beau feuillage lancéolé et arqué, souvent panaché, c'est un arbuste érigé."
+  },
+  "HautArbuste": {
+    "Alias": "Mahonia",
+    "Name": "Mahonia clairsemé",
+    "ID": 5,
+    "PV": 3,
+    "XP": 4,
+    "LVL": 1,
+    "Available": 5,
+    "Description": "Il aurait pu être qualifié d'arbre mais la stature de Haut Arbuste lui sied mieux."
+  },
+  "BuissonBlanc": {
+    "Alias": "Pétunia",
+    "Name": "Pétunia pied-marin",
+    "ID": 6,
+    "PV": 3,
+    "XP": 2,
+    "LVL": 1,
+    "Available": 5,
+    "Description": "On raconte que ces fleurs apportent bonne fortune et temps clément à tout bateau qui en possède"
+  },
+  "BuissonBlanc2": {
+    "Alias": "Marguerites",
+    "Name": "Marguerites buissonières",
+    "ID": 7,
+    "PV": 3,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 7,
+    "Description": "La fleur préférée des écolier-ères."
+  },
+  "BuissonBleu": {
+    "Alias": "Digitale",
+    "Name": "Digitale diégetique",
+    "ID": 8,
+    "PV": 4,
+    "XP": 2,
+    "LVL": 1,
+    "Available": 8,
+    "Description": "Un buisson aux fleurs bleues qui s'ancre bien dans son milieu naturel."
+  },
+  "BuissonRose": {
+    "Alias": "Fusain Ailé",
+    "Name": "Fusain Ailé des amoureux",
+    "ID": 9,
+    "PV": 4,
+    "XP": 2,
+    "LVL": 1,
+    "Available": 9,
+    "Description": "Rouge des feuilles et roses des fruits, ce buisson pas comme les autres parle aux amoureux."
+  },
+  "CactusOrange": {
+    "Alias": "Cactus S.",
+    "Name": "Cactus sorbetus",
+    "ID": 10,
+    "PV": 7,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 1,
+    "Description": "De sorbet il n'a que le nom; il reste un cactus bien vaillant; et malgré son aspect si mignon; il ne manque pas de piquant."
+  },
+  "CactusRouge": {
+    "Alias": "Cactus A.",
+    "Name": "Cactus archeri",
+    "ID": 11,
+    "PV": 7,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 8,
+    "Description": "Intrigant, ce cactus aux formes tentaculaires semble parfois se mouvoir de manière étrange."
+  },
+  "FeuillesVertRouge": {
+    "Alias": "Philodendron",
+    "Name": "Philodendron Moucheté",
+    "ID": 12,
+    "PV": 5,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 6,
+    "Description": "Plante à large feuille mouchetée de nuance de rose. Ces tâches colorées évoquent parfois les yeux d'animaux la nuit."
+  },
+  "Flocons": {
+    "Alias": "Didiscus",
+    "Name": "Didiscus plumbago",
+    "ID": 13,
+    "PV": 2,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 9,
+    "Description": "Comme de petite explosion d'étoiles, ces fleurs sont de doux feux d'artifice pour les yeux."
+  },
+  "Glycines": {
+    "Alias": "Glycines",
+    "Name": "Glycines naines",
+    "ID": 14,
+    "PV": 3,
+    "XP": 4,
+    "LVL": 1,
+    "Available": 4,
+    "Description": "Glycines de tailles plus petites que la moyenne mais dont les fleurs restent resplendissantes."
+  },
+  "JaunesHautes": {
+    "Alias": "Lupin",
+    "Name": "Lupin solitaire",
+    "ID": 15,
+    "PV": 3,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 5,
+    "Description": "\"Votre vie ou vos lupins mes seigneurs\" Dennis Moore, grand voleur de lupin."
+  },
+  "OrangeFines": {
+    "Alias": "Pavot",
+    "Name": "Pavot lointain",
+    "ID": 16,
+    "PV": 3,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 7,
+    "Description": "Cette jolie fleur, pas d’ici mais pavot, fera voguer vers des horizons nouveaux !"
+  },
+  "OreillesDeLapin": {
+    "Alias": "O. Lapin",
+    "Name": "Oreilles de lapin duveteux",
+    "ID": 17,
+    "PV": 5,
+    "XP": 2,
+    "LVL": 1,
+    "Available": 6,
+    "Description": "Si les pattes de lapin sont bien connues pour porter chance, cette plante, quant à elle, vous offre douceur en abondance."
+  },
+  "Pompom": {
+    "Alias": "O. perdues",
+    "Name": "Oeillet des terres perdues",
+    "ID": 18,
+    "PV": 4,
+    "XP": 2,
+    "LVL": 1,
+    "Available": 7,
+    "Description": "Ce pompeux pompon par son parfum rend pompette aussi bien les petits poupons que les pimpants pompiers."
+  },
+  "RoseTremiere": {
+    "Alias": "Rose trémiere",
+    "Name": "Rose trémiere mémorable",
+    "ID": 19,
+    "PV": 5,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 6,
+    "Description": "Prestigieuse, majestueuse, chatouilleuse, rien chez cette précieuse ne pourra effacer son image plantureuse de votre mémoire chanceuse."
+  },
+  "RosesPlates": {
+    "Alias": "Carottes",
+    "Name": "Carottes sensibles",
+    "ID": 20,
+    "PV": 4,
+    "XP": 4,
+    "LVL": 1,
+    "Available": 8,
+    "Description": "Il sera difficile de lui cacher vos émotions, à quoi bon ! Parlez lui donc de vos soucis, elle ne connait pas le mépris."
+  },
+  "Rouge": {
+    "Alias": "Canna",
+    "Name": "Canna coin coin",
+    "ID": 21,
+    "PV": 2,
+    "XP": 2,
+    "LVL": 1,
+    "Available": 9,
+    "Description": "Point marrante, elle tient à ce que tout file droit. Mais ne vous y fiez pas, elle aime bien être ici bas."
+  },
+  "Fougere": {
+    "Alias": "Fougère",
+    "Name": "Fougère primaire",
+    "ID": 22,
+    "PV": 6,
+    "XP": 3,
+    "LVL": 1,
+    "Available": 4,
+    "Description": "Cette fameuse plante peu amoureuse des rayons de soleil, vous apporte avec plaisir fraîcheur et ombre sur les orteils."
+  },
+  "Bleuet": {
+    "Alias": "Catananche",
+    "Name": "Catananche étoilée",
+    "ID": 23,
+    "PV": 3,
+    "XP": 2,
+    "LVL": 1,
+    "Available": 5,
+    "Description": "La catananche bleu pervenche jamais ne s’effeuille bien qu’on le veuille. Contrairement à la paquerette, elle ne prédit pas les amourettes."
+  }
+}

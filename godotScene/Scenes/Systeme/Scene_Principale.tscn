@@ -96,11 +96,6 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=4]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "lvl3",
@@ -124,6 +119,11 @@ animations = [ {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -171,11 +171,6 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=7]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 31 ) ],
 "loop": true,
 "name": "lvl3",
@@ -199,6 +194,11 @@ animations = [ {
 "frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -246,11 +246,6 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=10]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 50 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 49 ) ],
 "loop": true,
 "name": "lvl3",
@@ -274,6 +269,11 @@ animations = [ {
 "frames": [ ExtResource( 46 ) ],
 "loop": true,
 "name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -321,11 +321,6 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=13]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 48 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 43 ) ],
 "loop": true,
 "name": "lvl3",
@@ -349,6 +344,11 @@ animations = [ {
 "frames": [ ExtResource( 41 ) ],
 "loop": true,
 "name": "lvl1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 } ]
 
@@ -459,8 +459,9 @@ lvl = 2
 
 [node name="Myosotis" parent="Bateau/YSort/Plante" instance=ExtResource( 33 )]
 material = SubResource( 6 )
-position = Vector2( -2148.61, -155.574 )
+position = Vector2( -2112, -192 )
 frames = SubResource( 7 )
+animation = "fanelvl2"
 Plante = "Myosotis"
 xp = 1
 lvl = 2
@@ -527,11 +528,10 @@ margin_right = 320.0
 margin_bottom = 213.0
 
 [node name="DebugLabel" type="Label" parent="CanvasLayer/Debug"]
-visible = false
-margin_left = 1568.0
-margin_top = 144.0
-margin_right = 1896.0
-margin_bottom = 240.0
+margin_left = 1600.0
+margin_top = 128.0
+margin_right = 1928.0
+margin_bottom = 224.0
 grow_horizontal = 0
 custom_styles/normal = SubResource( 15 )
 custom_fonts/font = SubResource( 16 )
@@ -541,12 +541,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="DebugLabel4" type="Label" parent="CanvasLayer/Debug"]
+margin_left = 1216.0
+margin_right = 1544.0
+margin_bottom = 96.0
+grow_horizontal = 0
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
+text = "JOUR : "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DebugLabel2" type="Label" parent="CanvasLayer/Debug"]
-visible = false
-margin_left = 1568.0
-margin_top = 24.0
-margin_right = 1896.0
-margin_bottom = 128.0
+margin_left = 1600.0
+margin_right = 1928.0
+margin_bottom = 104.0
 custom_styles/normal = SubResource( 17 )
 custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0.105882, 1, 0, 1 )
@@ -557,11 +568,9 @@ __meta__ = {
 }
 
 [node name="DebugLabel3" type="Label" parent="CanvasLayer/Debug"]
-visible = false
-margin_left = 1656.0
-margin_top = 792.0
-margin_right = 1904.0
-margin_bottom = 1064.0
+margin_top = 704.0
+margin_right = 248.0
+margin_bottom = 976.0
 custom_styles/normal = SubResource( 19 )
 custom_fonts/font = SubResource( 20 )
 custom_colors/font_color = Color( 0, 1, 0.156863, 1 )

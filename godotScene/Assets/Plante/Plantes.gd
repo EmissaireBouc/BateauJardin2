@@ -28,6 +28,7 @@ func update_status():
 
 func fane():
 	play("fanelvl"+str(lvl))
+	$Goutte.self_modulate = Color(0.90,0.16,0.16,1)
 
 func setup(plantName):
 	Plante = plantName

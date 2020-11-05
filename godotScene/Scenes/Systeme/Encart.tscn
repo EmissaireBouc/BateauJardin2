@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/Encart.gd" type="Script" id=2]
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre2_Livre.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/UI/Carnet/fleche_bas.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Carnet/fleche_droite.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/Carnet/Journal/texture_feuille.png" type="Texture" id=5]
-[ext_resource path="res://Assets/UI/Carnet/fleche_bas_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Carnet/fleche_droite_survoled.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Menu/BtnMenu.tres" type="Theme" id=7]
+[ext_resource path="res://Assets/UI/Carnet/fleche_droite_pressed.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Personnage/PNJ/portraitsDial/JADE.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -25,33 +27,30 @@ tracks/0/keys = {
 }
 
 [node name="Encart" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 384.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Zone" type="Control" parent="."]
-light_mask = 16
-anchor_top = 0.672
+[node name="Marge1" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 267.0
-margin_top = 27.0
-margin_right = -266.0
-margin_bottom = -48.0
-mouse_filter = 1
+size_flags_horizontal = 3
+custom_constants/margin_right = 200
+custom_constants/margin_top = 25
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 25
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fond" type="NinePatchRect" parent="Zone"]
-anchor_right = 1.0
-anchor_bottom = 1.051
-margin_bottom = -0.0339966
-size_flags_horizontal = 0
-size_flags_vertical = 0
+[node name="fond" type="NinePatchRect" parent="Marge1"]
+margin_left = 200.0
+margin_top = 25.0
+margin_right = 1720.0
+margin_bottom = 359.0
 texture = ExtResource( 5 )
 patch_margin_left = 10
 patch_margin_top = 10
@@ -63,91 +62,127 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="nom" type="RichTextLabel" parent="Zone"]
-margin_left = 38.0
-margin_top = 35.0
-margin_right = 412.0
-margin_bottom = 84.0
+[node name="Marge2" type="MarginContainer" parent="Marge1"]
+margin_left = 200.0
+margin_top = 25.0
+margin_right = 1720.0
+margin_bottom = 359.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="MargeH1" type="HBoxContainer" parent="Marge1/Marge2"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 1495.0
+margin_bottom = 309.0
+custom_constants/separation = 22
+
+[node name="Portrait" type="TextureRect" parent="Marge1/Marge2/MargeH1"]
+margin_right = 128.0
+margin_bottom = 284.0
+texture = ExtResource( 9 )
+
+[node name="MargeV1" type="VBoxContainer" parent="Marge1/Marge2/MargeH1"]
+margin_left = 150.0
+margin_right = 1470.0
+margin_bottom = 284.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+
+[node name="nom" type="RichTextLabel" parent="Marge1/Marge2/MargeH1/MargeV1"]
+margin_right = 1320.0
+margin_bottom = 44.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
 custom_fonts/mono_font = ExtResource( 1 )
 custom_fonts/bold_italics_font = ExtResource( 1 )
 custom_fonts/italics_font = ExtResource( 1 )
 custom_fonts/bold_font = ExtResource( 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_text = "Nom du personnage"
-text = "Nom du personnage"
+bbcode_enabled = true
+bbcode_text = "Nom_Par_Defaut"
+text = "Nom_Par_Defaut"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="texte" type="RichTextLabel" parent="Zone"]
-margin_left = 38.0
-margin_top = 97.0
-margin_right = 1258.0
-margin_bottom = 235.0
+[node name="texte" type="RichTextLabel" parent="Marge1/Marge2/MargeH1/MargeV1"]
+margin_top = 60.0
+margin_right = 1320.0
+margin_bottom = 284.0
+size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
+bbcode_text = "texte_par_défaut"
+text = "texte_par_défaut"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="indicateur" type="TextureButton" parent="Zone"]
-margin_left = 1299.0
-margin_top = 200.0
-margin_right = 1363.0
-margin_bottom = 264.0
+[node name="indicateur" type="TextureButton" parent="Marge1/Marge2"]
+margin_left = 1367.0
+margin_top = 181.0
+margin_right = 1495.0
+margin_bottom = 309.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
 action_mode = 0
 texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 4 )
+texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Zone/indicateur"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Marge1/Marge2/indicateur"]
 anims/Idle = SubResource( 1 )
 
-[node name="Tween" type="Tween" parent="Zone"]
+[node name="Tween" type="Tween" parent="Marge1/Marge2"]
 
-[node name="MarginContainer" type="MarginContainer" parent="Zone"]
-margin_right = 1383.0
-margin_bottom = 294.0
+[node name="Marge3" type="MarginContainer" parent="Marge1/Marge2"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 1495.0
+margin_bottom = 309.0
 mouse_filter = 2
 custom_constants/margin_bottom = 40
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Zone/MarginContainer"]
-margin_right = 1383.0
-margin_bottom = 254.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Marge1/Marge2/Marge3"]
+margin_right = 1470.0
+margin_bottom = 244.0
 mouse_filter = 2
 custom_constants/separation = 30
 
-[node name="Choix1" type="Button" parent="Zone/MarginContainer/HBoxContainer"]
-visible = false
-margin_left = 570.0
-margin_top = 182.0
-margin_right = 676.0
-margin_bottom = 254.0
+[node name="Choix1" type="Button" parent="Marge1/Marge2/Marge3/HBoxContainer"]
+margin_left = 614.0
+margin_top = 172.0
+margin_right = 720.0
+margin_bottom = 244.0
 mouse_filter = 1
-size_flags_horizontal = 10
+size_flags_horizontal = 14
 size_flags_vertical = 10
 theme = ExtResource( 7 )
 text = "Oui"
 
-[node name="Choix2" type="Button" parent="Zone/MarginContainer/HBoxContainer"]
-visible = false
-margin_top = 182.0
-margin_right = 119.0
-margin_bottom = 254.0
+[node name="Choix2" type="Button" parent="Marge1/Marge2/Marge3/HBoxContainer"]
+margin_left = 750.0
+margin_top = 172.0
+margin_right = 869.0
+margin_bottom = 244.0
 mouse_filter = 1
 size_flags_horizontal = 2
 size_flags_vertical = 10
 theme = ExtResource( 7 )
 text = "Non"
-[connection signal="pressed" from="Zone/indicateur" to="." method="_on_indicateur_pressed"]
-[connection signal="tween_completed" from="Zone/Tween" to="." method="_on_Tween_tween_completed"]
-[connection signal="pressed" from="Zone/MarginContainer/HBoxContainer/Choix1" to="." method="_on_Choix1_pressed"]
-[connection signal="pressed" from="Zone/MarginContainer/HBoxContainer/Choix2" to="." method="_on_Choix2_pressed"]
+[connection signal="pressed" from="Marge1/Marge2/indicateur" to="." method="_on_indicateur_pressed"]
+[connection signal="tween_completed" from="Marge1/Marge2/Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="Marge1/Marge2/Marge3/HBoxContainer/Choix1" to="." method="_on_Choix1_pressed"]
+[connection signal="pressed" from="Marge1/Marge2/Marge3/HBoxContainer/Choix2" to="." method="_on_Choix2_pressed"]

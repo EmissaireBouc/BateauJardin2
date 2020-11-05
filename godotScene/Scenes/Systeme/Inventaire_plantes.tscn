@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/ItemList.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Inventaire_plantes.gd" type="Script" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Assets/UI/Font/Gravity-Regular.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/UI/Inv/Button_theme.tres" type="Theme" id=5]
 [ext_resource path="res://Assets/UI/Inv/UI_theme.tres" type="Theme" id=6]
-[ext_resource path="res://Assets/UI/Inv/boiteagraineV2postit.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Inv/boiteagraineV3.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Son/OuvertureBoiteGraine.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/UI/icon.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/Inv/POSTIT.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apparition"
@@ -92,10 +93,10 @@ anchor_left = -2.0
 anchor_top = -5.45
 anchor_right = -2.0
 anchor_bottom = -5.45
-margin_left = 1894.65
-margin_top = 5534.11
-margin_right = 2414.65
-margin_bottom = 6219.11
+margin_left = 1835.0
+margin_top = 5444.8
+margin_right = 2355.0
+margin_bottom = 6129.8
 theme = ExtResource( 6 )
 custom_styles/bg = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -111,10 +112,10 @@ __meta__ = {
 }
 
 [node name="B_Valider" type="Button" parent="AnimationPlayer/TextureRect"]
-margin_left = 496.457
-margin_top = 750.603
-margin_right = 600.457
-margin_bottom = 831.603
+margin_left = 307.0
+margin_top = 658.0
+margin_right = 507.0
+margin_bottom = 732.0
 theme = ExtResource( 5 )
 text = "Valider"
 __meta__ = {
@@ -122,20 +123,25 @@ __meta__ = {
 }
 
 [node name="B_Annuler" type="Button" parent="AnimationPlayer/TextureRect"]
-margin_left = 391.517
-margin_top = 751.681
-margin_right = 495.517
-margin_bottom = 832.681
+margin_left = 91.0
+margin_top = 658.0
+margin_right = 291.0
+margin_bottom = 732.0
 theme = ExtResource( 5 )
 text = "Annuler"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="POSTIT" type="Sprite" parent="AnimationPlayer/TextureRect"]
+position = Vector2( 667, 122 )
+rotation = -2.88328
+texture = ExtResource( 10 )
+
 [node name="Illustration" type="Sprite" parent="AnimationPlayer/TextureRect"]
 visible = false
-position = Vector2( 720.961, 192.546 )
-rotation = 0.279253
+position = Vector2( 659, 138 )
+rotation = -0.0296706
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 9 )
 

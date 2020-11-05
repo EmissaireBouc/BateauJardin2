@@ -1,6 +1,6 @@
 extends ItemList
 
-export var iconModulate = Color(0.6,0.6,0.6,0.6)
+export var iconModulate = Color(0.9,0.9,0.9,0.9)
 """
 A l'ouverture de l'inventaire, itération dans le dictionnaire plant_data (importData.gd). Si une plante
 est disponible (available), le bouton associé devient visible

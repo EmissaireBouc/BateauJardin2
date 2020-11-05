@@ -149,6 +149,7 @@ __meta__ = {
 }
 
 [node name="PagePrecedente" type="TextureButton" parent="Container/VBoxContainer/HBoxContainer2/MarginContainer"]
+self_modulate = Color( 0.729412, 0.678431, 0.678431, 1 )
 show_behind_parent = true
 margin_left = 10.0
 margin_top = 10.0
@@ -175,6 +176,7 @@ __meta__ = {
 }
 
 [node name="PageSuivante" type="TextureButton" parent="Container/VBoxContainer/HBoxContainer2/MarginContainer2"]
+self_modulate = Color( 0.729412, 0.678431, 0.678431, 1 )
 margin_top = 10.0
 margin_right = 175.0
 margin_bottom = 157.0

@@ -281,16 +281,13 @@ scale = Vector2( 0.402136, 0.402137 )
 texture = ExtResource( 3 )
 
 [node name="Node2D" type="AnimationPlayer" parent="Node2D/Bateau"]
-autoplay = "Apparition"
 anims/Apparition = SubResource( 3 )
 anims/Depart = SubResource( 4 )
 
 [node name="BateauRotation" type="AnimationPlayer" parent="Node2D/Bateau"]
-autoplay = "Boucle"
 anims/Boucle = SubResource( 5 )
 
 [node name="BateauY" type="AnimationPlayer" parent="Node2D/Bateau"]
-autoplay = "Boucle"
 anims/Boucle = SubResource( 6 )
 
 [node name="Vague1" type="NinePatchRect" parent="."]
