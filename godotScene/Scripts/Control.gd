@@ -366,11 +366,11 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				change_action(DORMIR)
 			else:
 				if ImportData.jour == 5:
-					_encart("Jade", "J'ai presque rien fait aujourd’hui, je vais travailler encore un peu")
+					_encart("Jade", "J'ai presque rien fait aujourd’hui, je vais travailler encore un peu.")
 				if ImportData.jour == 6:
-					_encart("Jade", "Je vais continuer un peu, j'ai pas fait grand chose aujourd'hui")
+					_encart("Jade", "Je vais continuer un peu, j'ai pas fait grand chose aujourd'hui.")
 				if ImportData.jour == 7:
-					_encart("Jade", "J'ai déjà raté une demi journée, je vais travailler encore un peu avant de me coucher")
+					_encart("Jade", "J'ai déjà raté une demi journée, je vais travailler encore un peu avant de me coucher.")
 				if ImportData.jour == 8:
 					_encart("Jade", "J'ai pas fait grand chose aujourd'hui, je vais continuer encore un peu.")
 				if ImportData.jour == 9:
@@ -496,7 +496,6 @@ func start_new_day():
 			phrase +=  newPath
 	if nbText != 0:
 		_info_systeme("graine", phrase + "[/center]", "ok")
-
 
 
 

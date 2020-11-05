@@ -25,9 +25,15 @@ tracks/0/keys = {
 }
 
 [node name="Control" type="Control"]
-anchor_right = 1.0
+anchor_left = 0.00110359
+anchor_right = 1.0011
 anchor_bottom = 1.0
+margin_left = -0.0361328
+margin_top = 1.75104
+margin_right = -0.0361328
+margin_bottom = 1.75098
 __meta__ = {
+"_edit_horizontal_guides_": [ 887.325, -150.949, 900.038 ],
 "_edit_use_anchors_": false,
 "_edit_vertical_guides_": [ 996.739, 960.717 ]
 }
@@ -49,8 +55,10 @@ __meta__ = {
 [node name="fond" type="NinePatchRect" parent="BoiteDialogue"]
 anchor_right = 1.0
 anchor_bottom = 1.051
-margin_top = -2.1189
-margin_bottom = -2.15289
+margin_left = -2.90283
+margin_top = -1.36182
+margin_right = -2.90283
+margin_bottom = -1.39581
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource( 5 )
@@ -65,10 +73,10 @@ __meta__ = {
 }
 
 [node name="nom" type="RichTextLabel" parent="BoiteDialogue"]
-margin_left = 38.0
-margin_top = 35.1189
-margin_right = 412.0
-margin_bottom = 84.1189
+margin_left = 220.185
+margin_top = 48.7795
+margin_right = 594.185
+margin_bottom = 97.7795
 custom_fonts/mono_font = ExtResource( 1 )
 custom_fonts/bold_italics_font = ExtResource( 1 )
 custom_fonts/italics_font = ExtResource( 1 )
@@ -83,10 +91,10 @@ __meta__ = {
 }
 
 [node name="texte" type="RichTextLabel" parent="BoiteDialogue"]
-margin_left = 38.0
-margin_top = 97.0
-margin_right = 1258.0
-margin_bottom = 235.0
+margin_left = 220.0
+margin_top = 115.0
+margin_right = 1192.0
+margin_bottom = 266.0
 custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
@@ -95,10 +103,11 @@ __meta__ = {
 }
 
 [node name="indicateur" type="TextureButton" parent="BoiteDialogue"]
-margin_left = 1299.95
-margin_top = 200.785
-margin_right = 1363.95
-margin_bottom = 264.785
+margin_left = 1224.72
+margin_top = 276.0
+margin_right = 1352.72
+margin_bottom = 404.0
+rect_rotation = -90.0
 action_mode = 0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
@@ -113,7 +122,8 @@ anims/Idle = SubResource( 1 )
 [node name="Tween" type="Tween" parent="BoiteDialogue"]
 
 [node name="portrait" type="Sprite" parent="BoiteDialogue"]
-position = Vector2( 1174.1, -0.933121 )
+position = Vector2( 69.4954, 146.093 )
+scale = Vector2( 1.5709, 1.5709 )
 texture = ExtResource( 7 )
 [connection signal="pressed" from="BoiteDialogue/indicateur" to="BoiteDialogue" method="_on_indicateur_pressed"]
 [connection signal="tween_completed" from="BoiteDialogue/Tween" to="BoiteDialogue" method="_on_Tween_tween_completed"]
