@@ -128,6 +128,8 @@ func on_Character_input(n, d, c):
 
 	if ImportData.jour == 0 && ImportData.PosPNJ[NomPersonnage]['0'] == "F2" && DialGroupe <= 1:
 		DialGroupe += 1
+	if ImportData.jour == 0 && NomPersonnage == 'Cartographe' && DialGroupe == 0:
+		DialGroupe = 0
 	if ImportData.jour == 3 && ImportData.PosPNJ[NomPersonnage]['3'] == "D1" && DialGroupe <= 1:
 		DialGroupe += 1
 	if ImportData.jour == 4 && NomPersonnage == 'Navigatrice' && DialGroupe == 0:
