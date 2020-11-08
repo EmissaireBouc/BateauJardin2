@@ -171,7 +171,7 @@
 [ext_resource path="res://Assets/Plante/Image/glycines 1.png" type="Texture" id=169]
 [ext_resource path="res://Assets/Plante/Image/buisson rouge 1 s.png" type="Texture" id=170]
 
-[sub_resource type="Shader" id=73]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -200,9 +200,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=74]
+[sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 73 )
+shader = SubResource( 1 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -212,12 +212,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=75]
+[sub_resource type="SpriteFrames" id=3]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ) ],
@@ -225,28 +235,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=76]
+[sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -275,9 +275,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=77]
+[sub_resource type="ShaderMaterial" id=5]
 resource_local_to_scene = true
-shader = SubResource( 76 )
+shader = SubResource( 4 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.0
 shader_param/maxStrength = 0.3
@@ -287,12 +287,22 @@ shader_param/detail = 1.0
 shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=78]
+[sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 46 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 41 ) ],
@@ -300,28 +310,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 45 ) ],
+"frames": [ ExtResource( 47 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 42 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=79]
+[sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -350,9 +350,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=80]
+[sub_resource type="ShaderMaterial" id=8]
 resource_local_to_scene = true
-shader = SubResource( 79 )
+shader = SubResource( 7 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -362,12 +362,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=81]
+[sub_resource type="SpriteFrames" id=9]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 28 ) ],
@@ -375,28 +385,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 31 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=82]
+[sub_resource type="Shader" id=10]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -425,9 +425,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=83]
+[sub_resource type="ShaderMaterial" id=11]
 resource_local_to_scene = true
-shader = SubResource( 82 )
+shader = SubResource( 10 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -437,12 +437,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=84]
+[sub_resource type="SpriteFrames" id=12]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 18 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -450,28 +460,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 34 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=85]
+[sub_resource type="Shader" id=13]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -500,9 +500,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=86]
+[sub_resource type="ShaderMaterial" id=14]
 resource_local_to_scene = true
-shader = SubResource( 85 )
+shader = SubResource( 13 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -512,12 +512,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=87]
+[sub_resource type="SpriteFrames" id=15]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 35 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 52 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 37 ) ],
@@ -525,28 +535,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ) ],
+"frames": [ ExtResource( 36 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 49 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 36 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 52 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=88]
+[sub_resource type="Shader" id=16]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -575,9 +575,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=89]
+[sub_resource type="ShaderMaterial" id=17]
 resource_local_to_scene = true
-shader = SubResource( 88 )
+shader = SubResource( 16 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.0
 shader_param/maxStrength = 0.0
@@ -587,12 +587,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=90]
+[sub_resource type="SpriteFrames" id=18]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 61 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 57 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 66 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 58 ) ],
@@ -600,28 +610,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 61 ) ],
+"frames": [ ExtResource( 62 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 62 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 66 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=91]
+[sub_resource type="Shader" id=19]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -650,9 +650,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=92]
+[sub_resource type="ShaderMaterial" id=20]
 resource_local_to_scene = true
-shader = SubResource( 91 )
+shader = SubResource( 19 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.0
 shader_param/maxStrength = 0.0
@@ -662,12 +662,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=93]
+[sub_resource type="SpriteFrames" id=21]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -675,28 +685,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=94]
+[sub_resource type="Shader" id=22]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -725,9 +725,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=95]
+[sub_resource type="ShaderMaterial" id=23]
 resource_local_to_scene = true
-shader = SubResource( 94 )
+shader = SubResource( 22 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -737,12 +737,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=96]
+[sub_resource type="SpriteFrames" id=24]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 68 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -750,28 +760,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 68 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=97]
+[sub_resource type="Shader" id=25]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -800,9 +800,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=98]
+[sub_resource type="ShaderMaterial" id=26]
 resource_local_to_scene = true
-shader = SubResource( 97 )
+shader = SubResource( 25 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -812,12 +812,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=99]
+[sub_resource type="SpriteFrames" id=27]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 117 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 119 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 94 ) ],
@@ -825,28 +835,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 113 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 69 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 113 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 119 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=100]
+[sub_resource type="Shader" id=28]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -875,9 +875,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=101]
+[sub_resource type="ShaderMaterial" id=29]
 resource_local_to_scene = true
-shader = SubResource( 100 )
+shader = SubResource( 28 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -887,12 +887,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=102]
+[sub_resource type="SpriteFrames" id=30]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 98 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 115 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 118 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 103 ) ],
@@ -900,28 +910,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 98 ) ],
+"frames": [ ExtResource( 99 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 109 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 99 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 118 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=103]
+[sub_resource type="Shader" id=31]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -950,9 +950,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=104]
+[sub_resource type="ShaderMaterial" id=32]
 resource_local_to_scene = true
-shader = SubResource( 103 )
+shader = SubResource( 31 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -962,12 +962,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=105]
+[sub_resource type="SpriteFrames" id=33]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 97 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 112 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 96 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 114 ) ],
@@ -975,28 +985,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 97 ) ],
+"frames": [ ExtResource( 95 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 107 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 95 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 96 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=106]
+[sub_resource type="Shader" id=34]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1025,9 +1025,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=107]
+[sub_resource type="ShaderMaterial" id=35]
 resource_local_to_scene = true
-shader = SubResource( 106 )
+shader = SubResource( 34 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.0
 shader_param/maxStrength = 0.3
@@ -1037,12 +1037,22 @@ shader_param/detail = 1.0
 shader_param/distortion = 0.0
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=108]
+[sub_resource type="SpriteFrames" id=36]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 65 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 54 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 63 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 51 ) ],
@@ -1050,28 +1060,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 65 ) ],
+"frames": [ ExtResource( 39 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 43 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 63 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=109]
+[sub_resource type="Shader" id=37]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1100,9 +1100,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=110]
+[sub_resource type="ShaderMaterial" id=38]
 resource_local_to_scene = true
-shader = SubResource( 109 )
+shader = SubResource( 37 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1112,12 +1112,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=111]
+[sub_resource type="SpriteFrames" id=39]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 168 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 165 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 166 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 167 ) ],
@@ -1125,28 +1135,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 168 ) ],
+"frames": [ ExtResource( 169 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 164 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 169 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 166 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=112]
+[sub_resource type="Shader" id=40]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1175,9 +1175,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=113]
+[sub_resource type="ShaderMaterial" id=41]
 resource_local_to_scene = true
-shader = SubResource( 112 )
+shader = SubResource( 40 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1187,12 +1187,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=114]
+[sub_resource type="SpriteFrames" id=42]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 110 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 121 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 120 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 104 ) ],
@@ -1200,28 +1210,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 110 ) ],
+"frames": [ ExtResource( 102 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 100 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 102 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 120 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=115]
+[sub_resource type="Shader" id=43]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1250,9 +1250,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=116]
+[sub_resource type="ShaderMaterial" id=44]
 resource_local_to_scene = true
-shader = SubResource( 115 )
+shader = SubResource( 43 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1262,12 +1262,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=117]
+[sub_resource type="SpriteFrames" id=45]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 122 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 124 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 105 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 111 ) ],
@@ -1275,28 +1285,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 122 ) ],
+"frames": [ ExtResource( 123 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 93 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 123 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 105 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=118]
+[sub_resource type="Shader" id=46]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1325,9 +1325,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=119]
+[sub_resource type="ShaderMaterial" id=47]
 resource_local_to_scene = true
-shader = SubResource( 118 )
+shader = SubResource( 46 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1337,12 +1337,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=120]
+[sub_resource type="SpriteFrames" id=48]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 108 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 132 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 145 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 116 ) ],
@@ -1350,28 +1360,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 108 ) ],
+"frames": [ ExtResource( 101 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 106 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 101 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 145 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=121]
+[sub_resource type="Shader" id=49]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1400,9 +1400,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=122]
+[sub_resource type="ShaderMaterial" id=50]
 resource_local_to_scene = true
-shader = SubResource( 121 )
+shader = SubResource( 49 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1412,12 +1412,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=123]
+[sub_resource type="SpriteFrames" id=51]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 125 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 148 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 143 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 137 ) ],
@@ -1425,28 +1435,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 125 ) ],
+"frames": [ ExtResource( 128 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 141 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 128 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 143 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=124]
+[sub_resource type="Shader" id=52]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1475,9 +1475,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=125]
+[sub_resource type="ShaderMaterial" id=53]
 resource_local_to_scene = true
-shader = SubResource( 124 )
+shader = SubResource( 52 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1487,12 +1487,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=126]
+[sub_resource type="SpriteFrames" id=54]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 40 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 67 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 44 ) ],
@@ -1500,28 +1510,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 40 ) ],
+"frames": [ ExtResource( 53 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 48 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 53 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 38 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=127]
+[sub_resource type="ShaderMaterial" id=55]
 resource_local_to_scene = true
 shader = ExtResource( 15 )
 shader_param/speed = 2.0
@@ -1533,12 +1533,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=128]
+[sub_resource type="SpriteFrames" id=56]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 146 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 142 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 147 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 144 ) ],
@@ -1546,28 +1556,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 146 ) ],
+"frames": [ ExtResource( 134 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 153 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 134 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 147 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=129]
+[sub_resource type="Shader" id=57]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1596,9 +1596,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=130]
+[sub_resource type="ShaderMaterial" id=58]
 resource_local_to_scene = true
-shader = SubResource( 129 )
+shader = SubResource( 57 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1608,12 +1608,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=131]
+[sub_resource type="SpriteFrames" id=59]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 149 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 156 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 150 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 126 ) ],
@@ -1621,28 +1631,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 149 ) ],
+"frames": [ ExtResource( 130 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 155 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 130 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 150 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=132]
+[sub_resource type="Shader" id=60]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1671,9 +1671,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=133]
+[sub_resource type="ShaderMaterial" id=61]
 resource_local_to_scene = true
-shader = SubResource( 132 )
+shader = SubResource( 60 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1683,12 +1683,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=134]
+[sub_resource type="SpriteFrames" id=62]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 129 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 135 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 136 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 127 ) ],
@@ -1696,28 +1706,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 129 ) ],
+"frames": [ ExtResource( 152 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 138 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 152 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 136 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=135]
+[sub_resource type="Shader" id=63]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1746,9 +1746,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=136]
+[sub_resource type="ShaderMaterial" id=64]
 resource_local_to_scene = true
-shader = SubResource( 135 )
+shader = SubResource( 63 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1758,12 +1758,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=137]
+[sub_resource type="SpriteFrames" id=65]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 131 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 139 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 133 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 140 ) ],
@@ -1771,28 +1781,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 131 ) ],
+"frames": [ ExtResource( 151 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 154 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 151 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 133 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=138]
+[sub_resource type="Shader" id=66]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1821,9 +1821,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=139]
+[sub_resource type="ShaderMaterial" id=67]
 resource_local_to_scene = true
-shader = SubResource( 138 )
+shader = SubResource( 66 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1833,12 +1833,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=140]
+[sub_resource type="SpriteFrames" id=68]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 158 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 162 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 159 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 157 ) ],
@@ -1846,28 +1856,18 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 158 ) ],
+"frames": [ ExtResource( 161 ) ],
 "loop": true,
-"name": "fanelvl1",
+"name": "lvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 160 ) ],
 "loop": true,
 "name": "fanelvl3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 161 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 159 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=72]
+[sub_resource type="Shader" id=69]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -1896,9 +1896,9 @@ void vertex() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=141]
+[sub_resource type="ShaderMaterial" id=70]
 resource_local_to_scene = true
-shader = SubResource( 72 )
+shader = SubResource( 69 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.092
 shader_param/maxStrength = 0.333
@@ -1908,12 +1908,22 @@ shader_param/detail = 1.0
 shader_param/distortion = null
 shader_param/heightOffset = 0.0
 
-[sub_resource type="SpriteFrames" id=142]
+[sub_resource type="SpriteFrames" id=71]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 170 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 60 ) ],
 "loop": true,
 "name": "lvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 55 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 59 ) ],
@@ -1921,24 +1931,14 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 170 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 56 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 64 ) ],
 "loop": true,
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 55 ) ],
+"frames": [ ExtResource( 56 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "fanelvl3",
 "speed": 5.0
 } ]
 
@@ -1952,145 +1952,145 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="Bleuet" parent="." instance=ExtResource( 72 )]
-material = SubResource( 74 )
+material = SubResource( 2 )
 position = Vector2( -792, -307.6 )
-frames = SubResource( 75 )
+frames = SubResource( 3 )
 pv = 3
 
 [node name="Arbuste" parent="." instance=ExtResource( 81 )]
-material = SubResource( 77 )
+material = SubResource( 5 )
 position = Vector2( -1336, 965.6 )
-frames = SubResource( 78 )
+frames = SubResource( 6 )
 pv = 3
 
 [node name="BuissonBlanc2" parent="." instance=ExtResource( 83 )]
-material = SubResource( 80 )
+material = SubResource( 8 )
 position = Vector2( 824, 1002 )
-frames = SubResource( 81 )
+frames = SubResource( 9 )
 pv = 3
 
 [node name="BuissonBlanc" parent="." instance=ExtResource( 76 )]
-material = SubResource( 83 )
+material = SubResource( 11 )
 position = Vector2( -248, 984 )
-frames = SubResource( 84 )
+frames = SubResource( 12 )
 pv = 3
 
 [node name="BuissonBleu" parent="." instance=ExtResource( 87 )]
-material = SubResource( 86 )
+material = SubResource( 14 )
 position = Vector2( 328, 968 )
-frames = SubResource( 87 )
+frames = SubResource( 15 )
 pv = 3
 
 [node name="Cactus" parent="." instance=ExtResource( 71 )]
-material = SubResource( 89 )
+material = SubResource( 17 )
 position = Vector2( 336, 16 )
-frames = SubResource( 90 )
+frames = SubResource( 18 )
 pv = 3
 
 [node name="CactusOrange" parent="." instance=ExtResource( 91 )]
-material = SubResource( 92 )
+material = SubResource( 20 )
 position = Vector2( 904, -304 )
-frames = SubResource( 93 )
+frames = SubResource( 21 )
 pv = 3
 
 [node name="CactusRouge" parent="." instance=ExtResource( 70 )]
-material = SubResource( 95 )
+material = SubResource( 23 )
 position = Vector2( 184, 520 )
-frames = SubResource( 96 )
+frames = SubResource( 24 )
 pv = 3
 
 [node name="Cosmos" parent="." instance=ExtResource( 90 )]
-material = SubResource( 98 )
+material = SubResource( 26 )
 position = Vector2( 928, 48 )
-frames = SubResource( 99 )
+frames = SubResource( 27 )
 pv = 3
 
 [node name="FeuillesVertRouge" parent="." instance=ExtResource( 92 )]
-material = SubResource( 101 )
+material = SubResource( 29 )
 position = Vector2( -251, 554.4 )
-frames = SubResource( 102 )
+frames = SubResource( 30 )
 pv = 3
 
 [node name="Flocons" parent="." instance=ExtResource( 85 )]
-material = SubResource( 104 )
+material = SubResource( 32 )
 position = Vector2( -768, 528 )
-frames = SubResource( 105 )
+frames = SubResource( 33 )
 pv = 3
 
 [node name="Fougere" parent="." instance=ExtResource( 86 )]
-material = SubResource( 107 )
+material = SubResource( 35 )
 position = Vector2( 69.5, -344 )
-frames = SubResource( 108 )
+frames = SubResource( 36 )
 pv = 3
 
 [node name="Glycines" parent="." instance=ExtResource( 88 )]
-material = SubResource( 110 )
+material = SubResource( 38 )
 position = Vector2( 605.6, 42.5 )
-frames = SubResource( 111 )
+frames = SubResource( 39 )
 pv = 3
 
 [node name="HautArbuste" parent="." instance=ExtResource( 73 )]
-material = SubResource( 113 )
+material = SubResource( 41 )
 position = Vector2( -1200, 8 )
-frames = SubResource( 114 )
+frames = SubResource( 42 )
 pv = 3
 
 [node name="JaunesHautes" parent="." instance=ExtResource( 80 )]
-material = SubResource( 116 )
+material = SubResource( 44 )
 position = Vector2( 928, 552 )
-frames = SubResource( 117 )
+frames = SubResource( 45 )
 pv = 3
 
 [node name="Myosotis" parent="." instance=ExtResource( 79 )]
-material = SubResource( 119 )
+material = SubResource( 47 )
 position = Vector2( 608, 560 )
-frames = SubResource( 120 )
+frames = SubResource( 48 )
 pv = 3
 
 [node name="OrangeFines" parent="." instance=ExtResource( 74 )]
-material = SubResource( 122 )
+material = SubResource( 50 )
 position = Vector2( -224, 16 )
-frames = SubResource( 123 )
+frames = SubResource( 51 )
 pv = 3
 
 [node name="OreillesDeLapin" parent="." instance=ExtResource( 1 )]
-material = SubResource( 125 )
+material = SubResource( 53 )
 position = Vector2( 592, -329.6 )
-frames = SubResource( 126 )
+frames = SubResource( 54 )
 pv = 3
 
 [node name="Pleureur" parent="." instance=ExtResource( 82 )]
-material = SubResource( 127 )
+material = SubResource( 55 )
 position = Vector2( 1434.5, 965.6 )
-frames = SubResource( 128 )
+frames = SubResource( 56 )
 pv = 3
 
 [node name="Pompom" parent="." instance=ExtResource( 75 )]
-material = SubResource( 130 )
+material = SubResource( 58 )
 position = Vector2( 56, 48 )
 scale = Vector2( 1.02792, 1.00276 )
-frames = SubResource( 131 )
+frames = SubResource( 59 )
 pv = 3
 
 [node name="RosesPlates" parent="." instance=ExtResource( 89 )]
-material = SubResource( 133 )
+material = SubResource( 61 )
 position = Vector2( -504, 16 )
-frames = SubResource( 134 )
+frames = SubResource( 62 )
 pv = 3
 
 [node name="RoseTremiere" parent="." instance=ExtResource( 77 )]
-material = SubResource( 136 )
+material = SubResource( 64 )
 position = Vector2( -461, -303.6 )
-frames = SubResource( 137 )
+frames = SubResource( 65 )
 pv = 3
 
 [node name="Rouge" parent="." instance=ExtResource( 78 )]
-material = SubResource( 139 )
+material = SubResource( 67 )
 position = Vector2( -808, 24 )
-frames = SubResource( 140 )
+frames = SubResource( 68 )
 pv = 3
 
 [node name="BuissonRose" parent="." instance=ExtResource( 84 )]
-material = SubResource( 141 )
+material = SubResource( 70 )
 position = Vector2( -784, 1014.6 )
-frames = SubResource( 142 )
+frames = SubResource( 71 )

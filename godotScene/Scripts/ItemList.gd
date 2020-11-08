@@ -17,7 +17,7 @@ func add_graine(plante):
 func create_item(plante):
 	var texture = load("res://Assets/Plante/Icone/%s" %"icon_"+ plante +".png")
 	add_item(ImportData.plant_data[plante].Alias, texture)
-
+	set_item_tooltip_enabled(get_item_count()-1,false)
 
 
 func modulate_icon():

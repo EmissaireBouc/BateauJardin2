@@ -29,7 +29,7 @@ func _on_gMouseCollider_area_shape_entered(_area_id, area, _area_shape, _self_sh
 	var action = get_parent().get_parent().get_parent().action
 	if item_selected == false:
 		match action:
-			DEFAULT :
+			DEFAULT, DEPLACER, ARROSER, COUPER:
 				aCollisionNode.push_back(area)
 				if aCollisionNode.size() == 1:
 						select_plant(area)

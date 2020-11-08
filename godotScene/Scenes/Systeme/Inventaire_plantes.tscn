@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/ItemList.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Inventaire_plantes.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Son/OuvertureBoiteGraine.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/UI/icon.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/Inv/POSTIT.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/Carnet/Font/Font_Entete_Livre.tres" type="DynamicFont" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Apparition"
@@ -94,9 +95,9 @@ anchor_top = -5.45
 anchor_right = -2.0
 anchor_bottom = -5.45
 margin_left = 1835.0
-margin_top = 5444.8
+margin_top = 5436.8
 margin_right = 2355.0
-margin_bottom = 6129.8
+margin_bottom = 6121.8
 theme = ExtResource( 6 )
 custom_styles/bg = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -140,10 +141,28 @@ texture = ExtResource( 10 )
 
 [node name="Illustration" type="Sprite" parent="AnimationPlayer/TextureRect"]
 visible = false
-position = Vector2( 659, 138 )
-rotation = -0.0296706
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 667, 122 )
+scale = Vector2( 1.125, 1.05469 )
 texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="AnimationPlayer/TextureRect"]
+visible = false
+anchor_left = 0.617
+anchor_top = 0.189
+anchor_right = 0.617
+anchor_bottom = 0.189
+margin_left = -12.3
+margin_top = 0.0239868
+margin_right = 231.7
+margin_bottom = 40.024
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.129412, 0.145098, 0.129412, 1 )
+text = "Nom_Plante_Defaut"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OuvreBoite" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource( 8 )

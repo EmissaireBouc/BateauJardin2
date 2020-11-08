@@ -57,9 +57,9 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "lvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -72,14 +72,14 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -88,8 +88,9 @@ material = SubResource( 2 )
 frames = SubResource( 3 )
 offset = Vector2( 0, -50 )
 
-[node name="Area2D" parent="." index="0"]
-visible = true
-
 [node name="CollisionPolygon2D" parent="Area2D" index="0"]
 polygon = PoolVector2Array( -10.5227, -13.4341, -10.5227, 50.5659, 28.6016, 50.5659, 28.6016, -13.4341 )
+
+[node name="Goutte" parent="." index="1"]
+position = Vector2( -2.71051e-20, 16 )
+scale = Vector2( 1.63182, 1.63182 )

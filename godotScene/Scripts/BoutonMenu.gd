@@ -15,3 +15,8 @@ func _on_Quitter_pressed():
 func _on_Option_pressed():
 		var Option_scene = load("res://Scenes/Systeme/Options.tscn").instance()
 		get_parent().get_parent().get_parent().get_parent().add_child(Option_scene)
+
+
+func _on_Credits_pressed():
+	var Credits_scene = load("res://Scenes/Systeme/Credits.tscn").instance()
+	get_parent().get_parent().get_parent().get_parent().add_child(Credits_scene)

@@ -4,11 +4,11 @@ extends Node2D
 func _ready():
 	
 	for key in ImportData.plant_data:
-		get_node(ImportData.plant_data[key].Name).lvl = ImportData.plant_data[key].LVL
-		get_node(ImportData.plant_data[key].Name).pv = ImportData.plant_data[key].PV
-		get_node(ImportData.plant_data[key].Name).xp = ImportData.plant_data[key].XP
-		print(key + str(get_node(ImportData.plant_data[key].Name).lvl))
-		get_node(ImportData.plant_data[key].Name).update_status()
+		get_node(key).lvl = ImportData.plant_data[key].LVL
+		get_node(key).pv = ImportData.plant_data[key].PV
+		get_node(key).xp = ImportData.plant_data[key].XP
+#		print(key + str(get_node(key).lvl))
+		get_node(key).update_status()
 
 
 func _process(delta):

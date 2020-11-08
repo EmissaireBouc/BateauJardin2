@@ -57,8 +57,8 @@ func initiate():
 func connect_child_node():
 	for i in range (get_child_count()):
 		get_child(i).connect("character_input",self, "on_Character_input")
-		get_child(i).get_node("Area2D").connect("mouse_entered", self, "Change_Cursor", ["parler"])
-		get_child(i).get_node("Area2D").connect("mouse_exited", self, "Change_Cursor", ["default"])
+		get_child(i).get_node("Area2D").connect("mouse_entered", self, "Change_Cursor",["add","parler"])
+		get_child(i).get_node("Area2D").connect("mouse_exited", self, "Change_Cursor",["remove","parler"])
 
 func disconnect_child_node():
 	for i in range (get_child_count()):
@@ -115,37 +115,39 @@ Gestion des dialogues
 """
 
 func on_Character_input(n, d, c):
+
 	if !talking:
 		NomPersonnage = n
 		NumDial = d
 		DisPNG = c
 		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
+
 		print("Numero du Dialogue: ", NumDial)
 		print("Verification des Dialolgues en groupe: ",DialGroupe)
 
 #Conversation de groupe
 
-	if ImportData.jour == 0 && ImportData.PosPNJ[NomPersonnage]['0'] == "F2" && DialGroupe <= 1:
-		DialGroupe += 1
-	if ImportData.jour == 3 && ImportData.PosPNJ[NomPersonnage]['3'] == "D1" && DialGroupe <= 1:
-		DialGroupe += 1
-	if ImportData.jour == 4 && NomPersonnage == 'Navigatrice' && DialGroupe == 0:
-		DialGroupe = 0
-	if ImportData.jour == 4 && NomPersonnage == 'Charpentiere' && DialGroupe <= 1:
-		DialGroupe += 1
-	if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
-		DialGroupe += 1
-	if ImportData.jour == 7 && ImportData.PosPNJ[NomPersonnage]['7'] == "C3" && DialGroupe2 <= 1:
-		DialGroupe2 += 1
-	if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
-		DialGroupe += 1
-	if ImportData.jour == 8 && ImportData.PosPNJ[NomPersonnage]['8'] == "C3" && DialGroupe <= 1:
-		DialGroupe += 1
-	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe <= 1:
-		DialGroupe += 1
-	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "C3" && DialGroupe2 <= 1:
-		DialGroupe2 += 1
+		if ImportData.jour == 0 && ImportData.PosPNJ[NomPersonnage]['0'] == "F2" && DialGroupe <= 1:
+			DialGroupe += 1
+		if ImportData.jour == 3 && ImportData.PosPNJ[NomPersonnage]['3'] == "D1" && DialGroupe <= 1:
+			DialGroupe += 1
+		if ImportData.jour == 4 && NomPersonnage == 'Navigatrice' && DialGroupe == 0:
+			DialGroupe = 0
+		if ImportData.jour == 4 && NomPersonnage == 'Charpentiere' && DialGroupe <= 1:
+			DialGroupe += 1
+		if ImportData.jour == 5 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
+			DialGroupe += 1
+		if ImportData.jour == 7 && ImportData.PosPNJ[NomPersonnage]['7'] == "C3" && DialGroupe2 <= 1:
+			DialGroupe2 += 1
+		if ImportData.jour == 7 && NomPersonnage == 'Mecanicienne' && DialGroupe <= 1:
+			DialGroupe += 1
+		if ImportData.jour == 8 && ImportData.PosPNJ[NomPersonnage]['8'] == "C3" && DialGroupe <= 1:
+			DialGroupe += 1
+		if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe <= 1:
+			DialGroupe += 1
+		if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "C3" && DialGroupe2 <= 1:
+			DialGroupe2 += 1
 	
 
 func lancer_dialogue():
@@ -250,8 +252,8 @@ func get_node_character(n):
 		if get_child(i).NomPersonnage == n :
 			return(get_child(i))
 
-func Change_Cursor(newCursor):
-	emit_signal("Change_Cursor",newCursor)
+func Change_Cursor(fonction, newCursor):
+	emit_signal("Change_Cursor",fonction, newCursor)
 
 func get_dialogue_done():
 	var nb = 0

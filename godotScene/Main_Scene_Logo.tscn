@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Opening.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Transition.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/UI/Logo/Logo_Gama.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/Logo/Godot.png" type="Texture" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Godot" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -399.5
+margin_top = -161.5
+margin_right = 399.5
+margin_bottom = 161.5
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gama" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.526
+anchor_right = 0.5
+anchor_bottom = 0.526
+margin_left = -250.0
+margin_top = -319.58
+margin_right = 250.0
+margin_bottom = 263.42
+texture = ExtResource( 3 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transition" parent="." instance=ExtResource( 2 )]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="transition_over" from="Transition" to="." method="_on_Transition_transition_over"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

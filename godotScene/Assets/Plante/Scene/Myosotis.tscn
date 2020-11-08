@@ -62,24 +62,24 @@ animations = [ {
 "name": "lvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 } ]
 
@@ -96,5 +96,5 @@ position = Vector2( -16, -40 )
 polygon = PoolVector2Array( -18.258, -48, -18.3475, 66.5659, 36.2897, 63.2224, 36.516, -48 )
 
 [node name="Goutte" parent="." index="1"]
-position = Vector2( 21.5341, -7.74351 )
-scale = Vector2( 1.58406, 1.58406 )
+position = Vector2( 24, -1.19209e-07 )
+scale = Vector2( 1.80555, 1.80555 )

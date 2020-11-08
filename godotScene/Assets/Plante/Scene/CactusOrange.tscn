@@ -57,9 +57,9 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "lvl1",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -72,14 +72,14 @@ animations = [ {
 "name": "lvl2",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "lvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "lvl3",
 "speed": 5.0
 } ]
 
@@ -95,5 +95,5 @@ visible = true
 position = Vector2( -24, -56 )
 
 [node name="Goutte" parent="." index="1"]
-position = Vector2( 0, -25.75 )
-scale = Vector2( 1, 1.22727 )
+position = Vector2( 3.8147e-06, -16 )
+scale = Vector2( 1.5926, 1.95454 )

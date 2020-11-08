@@ -52,11 +52,6 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=3]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "lvl3",
@@ -67,19 +62,24 @@ animations = [ {
 "name": "fanelvl3",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 } ]
 
@@ -96,4 +96,5 @@ position = Vector2( -16, -8 )
 polygon = PoolVector2Array( -13.131, -77.4341, -13.131, 42.5659, 23.385, 42.5659, 23.385, -77.4341 )
 
 [node name="Goutte" parent="." index="1"]
-position = Vector2( 0, 0 )
+position = Vector2( 4.58182, 2.25 )
+scale = Vector2( 1.08182, 1.08182 )

@@ -173,8 +173,8 @@ func _on_Area2D_input_event(_viewport, _event, _shape_idx):
 
 
 func _on_Area2D_mouse_entered():
-	emit_signal("Change_Cursor", "lire")
+	emit_signal("Change_Cursor","add", "lire")
 
 
 func _on_Area2D_mouse_exited():
-	emit_signal("Change_Cursor", "default")
+	emit_signal("Change_Cursor","remove", "lire")

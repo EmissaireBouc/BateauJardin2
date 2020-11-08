@@ -3,6 +3,7 @@ extends Node2D
 var cursor = "default"
 var posCursor
 var aGarden = []
+var cursorArray = []
 export (int) var day = 0
 var action
 
@@ -28,13 +29,13 @@ Initialisation du jeu
 
 
 func _ready():
-	cursor_mode("default")
+	cursor_mode("add","default")
 	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 	$CanvasLayer.add_child(tuto)
 	$CanvasLayer/Commande.connect("fin_tuto",self,"init_game")
 	for i in range ($Bateau/YSort/Plante.get_child_count()) :
 		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
-		$Bateau/YSort/Plante.get_child(i).update_status()
+
 
 
 
@@ -134,7 +135,7 @@ func _input(_event):
 
 	else:
 		match action:
-			DEFAULT:
+			DEFAULT, DEPLACER:
 				if MouseA.overlapPlant && !menuEntretenir.is_open():
 					if !MouseA.item_selected:
 						if PA.get_PA() > 0:
@@ -160,17 +161,23 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 Gestion du curseur :
 	Fonctionne avec les signaux des areas2D. 
 	Lorsque la souris sort ou entre de l'aire du PJ ou d'un PNJ, envoie un signal vers cursor_mode()
-	avec en argument le nouveau curseur à afficher
+	avec en arguments "remove" si la souris sort d'une aire ou "add" si elle entre dans une aire
+
 	
 	!! les signaux sont paramétrés depuis la fonction connectique()
 """
 
 
-func cursor_mode(newMode):
+func cursor_mode(fonction, newMode):
 
-	cursor = newMode
+	if fonction == "remove":
+		cursorArray.erase(newMode)
+	if fonction == "add":
+		cursorArray.push_front(newMode)
+
+	cursor = cursorArray[0]
 	var texture = Texture
-	texture = load("res://Assets/UI/Curseur/curseur_%s.png" %newMode)
+	texture = load("res://Assets/UI/Curseur/curseur_%s.png" %cursor)
 	Input.set_custom_mouse_cursor(texture)
 
 
@@ -247,7 +254,7 @@ func _on_Player_anim_over(state):
 					aGarden.push_front(plante)
 					plante.position = posCursor + Vector2(0,30)
 #					Nav_2D_Update(plante.get_node("Area2D/CollisionPolygon2D").get_global_transform(),plante.get_node("Area2D/CollisionPolygon2D").get_polygon())
-					cursor_mode("default")
+#					cursor_mode("default")
 					print_garden() #debug
 					change_action(DEFAULT)
 		ARROSER:
@@ -308,10 +315,9 @@ func _on_Button_Spray_pressed():
 
 func _on_PNJ_Fin_Conversation():
 
-	if ImportData.jour >= ImportData.get_last_day() && PNJsort.get_dialogue_done() == PNJsort.get_child_count():
-		_encart("fin", "Ce message marque la fin du prototype de Bateau fol ! Merci d'avoir joué ! Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez !")
-
 	change_action(DEFAULT)
+	if ImportData.jour >= ImportData.get_last_day() && PNJsort.get_dialogue_done() == PNJsort.get_child_count():
+		_info_systeme("fin", "[center]Ce message marque la fin du prototype de Bateau fol ! \n \n Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez. \n Merci d'avoir joué ![/center][right][img=<64>]res://Assets/UI/Logo/Logo_Gama_128x128.png[/img][/right]","Ok", "Quitter")
 
 
 
@@ -384,10 +390,10 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				_info_systeme("info", "Le jour est en train de tomber. Se coucher ?", "Oui", "Non")
 
 func _on_Porte_mouse_entered():
-	cursor_mode("dormir")
+	cursor_mode("add","dormir")
 	
 func _on_Porte_mouse_exited():
-	cursor_mode("default")
+	cursor_mode("remove","dormir")
 
 func a_day_pass():
 	day += 1
@@ -496,6 +502,9 @@ func start_new_day():
 			phrase +=  newPath
 	if nbText != 0:
 		_info_systeme("graine", phrase + "[/center]", "ok")
+	
+	if ImportData.jour == 10: 
+		_encart("Jade", "J'ai pas réussi à sortir de mon lit depuis deux jours... Il faut que j'aille m'excuser auprès de tout le monde.")
 
 
 
@@ -530,20 +539,24 @@ gestion des encarts
 func _encart(nom, sentence):
 
 	$CanvasLayer/Encart.chargement_dialog(nom, sentence)
+	change_action(CONVERS)
 
 
 func _info_systeme(titre, phrase, btn1 = "", btn2 = ""):
 
 	$CanvasLayer/Encart.chargement_syst_info(titre, phrase, btn1, btn2)
-
+	change_action(CONVERS)
 
 
 func choix_done(c):
 	$CanvasLayer/Encart.hide()
+	change_action(DEFAULT)
 
 	if c == "ok":
-		if ImportData.jour == 5 :
-			_encart("Jade", "J'ai manqué le début de la journée...")
+		if ImportData.jour == 7 :
+			_encart("Jade", "J'ai pas réussi à me lever ce matin... Va falloir que je rattrape le temps perdu. Ça devrait aller !")
+	if c == "Quitter":
+		get_tree().change_scene("res://Scenes/Systeme/Ecran_Titre.tscn")
 	if c == "Oui" :
 		change_action(DORMIR)
 	if c == "Non" :
@@ -551,8 +564,8 @@ func choix_done(c):
 
 
 func encart_done():
-	print("signal_reçus")
 	$CanvasLayer/Encart.hide()
+	change_action(DEFAULT)
 
 
 """

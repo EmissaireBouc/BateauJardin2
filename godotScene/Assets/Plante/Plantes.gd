@@ -1,7 +1,10 @@
 extends AnimatedSprite
 
-export (String) var Plante 
 
+const ETAT_CRITIQUE = Color(0.90,0.16,0.16,1)
+const ETAT_NORMAL = Color(1,1,1,1)
+
+export (String) var Plante 
 export (int) var pv
 export (int) var xp
 export (int) var lvl = 1
@@ -9,7 +12,6 @@ var rng = RandomNumberGenerator.new()
 var shader_vent
 
 func _ready():
-	$Goutte/AnimationPlayer.play("Modulate_humide") #set_self_modulate(Color(0.5,1,1,1))
 	update_status()
 	initialize_shader()
 
@@ -22,20 +24,19 @@ func update_status():
 
 	if pv <= 0 :
 		fane()
-
-	if pv > 0 && pv <= 3 :
+	elif pv > 0 && pv <= 3 :
 		deshydrat()
 
 func fane():
 	play("fanelvl"+str(lvl))
-	$Goutte.self_modulate = Color(0.90,0.16,0.16,1)
+	$Goutte.self_modulate = ETAT_CRITIQUE
 
 func setup(plantName):
 	Plante = plantName
 	pv = ImportData.plant_data[Plante].PV
 	xp = ImportData.plant_data[Plante].XP
 	lvl = ImportData.plant_data[Plante].LVL
-
+	$Goutte.self_modulate = ETAT_NORMAL
 	play("lvl1")
 	initialize_shader()
 
@@ -62,21 +63,18 @@ func initialize_shader():
 
 func hydrat():
 	if pv > 0:
-
-		if pv == 1 :
-			$Goutte.self_modulate = Color(1,1,1,1)
-
+		$Goutte.self_modulate = ETAT_NORMAL
 		pv += ImportData.plant_data[Plante].PV
-
 		if pv > 3 && $Goutte/AnimationPlayer.get_assigned_animation() == "Modulate_sec":
 			$Goutte/AnimationPlayer.play("Modulate_humide")
-
+	else: 
+		$Goutte.self_modulate = ETAT_CRITIQUE
 
 func deshydrat():
-	if pv == 1 :
-		$Goutte.self_modulate = Color(0.90,0.16,0.16,1)
+	if pv <= 1 :
+		$Goutte.self_modulate = ETAT_CRITIQUE
 	else :
-		$Goutte.self_modulate = Color(1,1,1,1)
+		$Goutte.self_modulate = ETAT_NORMAL
 	if pv > 1 && pv <= 3 :
 		$Goutte/AnimationPlayer.play("Modulate_sec")
 

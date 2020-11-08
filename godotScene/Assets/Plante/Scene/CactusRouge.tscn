@@ -52,6 +52,11 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=3]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "fanelvl1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "lvl3",
@@ -60,16 +65,6 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "fanelvl1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -81,6 +76,11 @@ animations = [ {
 "loop": true,
 "name": "lvl1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
 } ]
 
 [node name="CactusRouge" instance=ExtResource( 1 )]
@@ -89,4 +89,5 @@ frames = SubResource( 3 )
 offset = Vector2( 0, -90 )
 
 [node name="Goutte" parent="." index="1"]
-position = Vector2( 8, 24 )
+position = Vector2( 8, 32 )
+scale = Vector2( 1.56182, 1.56182 )
