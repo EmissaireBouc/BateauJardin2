@@ -22,6 +22,7 @@ func open():
 		visible = true
 		$AnimationPlayer.play("Apparition")
 		Add_Seeds(ImportData.jour)
+		$AnimationPlayer/TextureRect/B_Valider.set_modulate(Color(0.8,0.8,0.8,1))
 
 func Add_Seeds(jour):
 
@@ -74,6 +75,7 @@ func _on_ItemList_item_selected(index):
 	txtIllu.visible = true
 	itemID = index
 	itemlist.set_item_icon_modulate(index, Color(1.1,1.1,1.1,1.1))
+	$AnimationPlayer/TextureRect/B_Valider.set_modulate(Color(1,1,1,1))
 
 
 func get_resized_texture(t: Texture, width: int = 0, height: int = 0):

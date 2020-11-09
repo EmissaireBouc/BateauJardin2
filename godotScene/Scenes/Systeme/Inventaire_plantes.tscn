@@ -113,9 +113,9 @@ __meta__ = {
 }
 
 [node name="B_Valider" type="Button" parent="AnimationPlayer/TextureRect"]
-margin_left = 307.0
+margin_left = 99.0
 margin_top = 658.0
-margin_right = 507.0
+margin_right = 299.0
 margin_bottom = 732.0
 theme = ExtResource( 5 )
 text = "Valider"
@@ -124,9 +124,9 @@ __meta__ = {
 }
 
 [node name="B_Annuler" type="Button" parent="AnimationPlayer/TextureRect"]
-margin_left = 91.0
+margin_left = 307.0
 margin_top = 658.0
-margin_right = 291.0
+margin_right = 507.0
 margin_bottom = 732.0
 theme = ExtResource( 5 )
 text = "Annuler"

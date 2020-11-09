@@ -38,6 +38,9 @@ func setup(plantName):
 	lvl = ImportData.plant_data[Plante].LVL
 	$Goutte.self_modulate = ETAT_NORMAL
 	play("lvl1")
+	if pv > 3 : $Goutte/AnimationPlayer.play("Modulate_humide")
+	else : $Goutte/AnimationPlayer.play("Modulate_sec")
+	
 	initialize_shader()
 
 func LVL_up():
@@ -62,10 +65,10 @@ func initialize_shader():
 	shader_vent = get_material()
 
 func hydrat():
-	if pv > 0:
+	if pv >= 1:
 		$Goutte.self_modulate = ETAT_NORMAL
 		pv += ImportData.plant_data[Plante].PV
-		if pv > 3 && $Goutte/AnimationPlayer.get_assigned_animation() == "Modulate_sec":
+		if pv > 3 : #&& $Goutte/AnimationPlayer.get_assigned_animation() == "Modulate_sec":
 			$Goutte/AnimationPlayer.play("Modulate_humide")
 	else: 
 		$Goutte.self_modulate = ETAT_CRITIQUE
