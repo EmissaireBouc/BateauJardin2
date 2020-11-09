@@ -5,6 +5,7 @@ func _ready():
 	OS.center_window()
 	OS.window_maximized = true
 	$Transition.animation("transition_out")
+	$Gama.set_material(preload("res://Assets/Mask/InvertedColor.material"))
 
 func _on_Transition_transition_over(t):
 	if t == "transition_out" :

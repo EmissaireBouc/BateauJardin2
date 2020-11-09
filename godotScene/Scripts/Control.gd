@@ -317,7 +317,7 @@ func _on_PNJ_Fin_Conversation():
 
 	change_action(DEFAULT)
 	if ImportData.jour >= ImportData.get_last_day() && PNJsort.get_dialogue_done() == PNJsort.get_child_count():
-		_info_systeme("fin", "[center]Ce message marque la fin du prototype de Bateau fol ! \n \n Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez. \n Merci d'avoir joué ![/center][right][img=<64>]res://Assets/UI/Logo/Logo_Gama_128x128.png[/img][/right]","Ok", "Quitter")
+		_info_systeme("fin", "[center]Ce message marque la fin du prototype de Bateau fol ! \n \n Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez. \n Merci d'avoir joué ![/center][right][img=<64>]res://Assets/UI/Logo/Logo_Gama_128x128.png[/img][/right]","Continuer", "Quitter")
 
 
 

@@ -16,7 +16,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.941176, 0.898039, 0.898039, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -30,18 +30,18 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxEmpty" id=5]
+[sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="Theme" id=2]
+[sub_resource type="Theme" id=5]
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
 VScrollBar/styles/grabber = SubResource( 1 )
-VScrollBar/styles/grabber_highlight = SubResource( 6 )
+VScrollBar/styles/grabber_highlight = SubResource( 2 )
 VScrollBar/styles/grabber_pressed = SubResource( 3 )
 VScrollBar/styles/scroll = null
-VScrollBar/styles/scroll_focus = SubResource( 5 )
+VScrollBar/styles/scroll_focus = SubResource( 4 )
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -54,18 +54,18 @@ __meta__ = {
 [node name="Marge1" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 550
+custom_constants/margin_right = 400
 custom_constants/margin_top = 50
-custom_constants/margin_left = 550
+custom_constants/margin_left = 400
 custom_constants/margin_bottom = 50
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Marge1"]
-margin_left = 550.0
+margin_left = 400.0
 margin_top = 50.0
-margin_right = 1370.0
+margin_right = 1520.0
 margin_bottom = 1030.0
 texture = ExtResource( 1 )
 patch_margin_left = 20
@@ -76,9 +76,9 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 1
 
 [node name="Marge1-1" type="MarginContainer" parent="Marge1"]
-margin_left = 550.0
+margin_left = 400.0
 margin_top = 50.0
-margin_right = 1370.0
+margin_right = 1520.0
 margin_bottom = 1030.0
 custom_constants/margin_right = 75
 custom_constants/margin_top = 50
@@ -88,14 +88,14 @@ custom_constants/margin_bottom = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="Marge1/Marge1-1"]
 margin_left = 75.0
 margin_top = 50.0
-margin_right = 745.0
+margin_right = 1045.0
 margin_bottom = 930.0
 
 [node name="Logo" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer"]
-margin_right = 670.0
-margin_bottom = 254.0
+margin_right = 970.0
+margin_bottom = 289.0
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.41
+size_flags_stretch_ratio = 1.5
 custom_fonts/mono_font = ExtResource( 2 )
 custom_fonts/bold_italics_font = ExtResource( 2 )
 custom_fonts/italics_font = ExtResource( 2 )
@@ -105,13 +105,21 @@ custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][img=<224>]res://Assets/UI/Logo/Logo_Gama.png[/img] [/center]"
 text = " "
+scroll_active = false
 
-[node name="Logo2" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer"]
-margin_top = 258.0
-margin_right = 670.0
-margin_bottom = 880.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Marge1/Marge1-1/VBoxContainer"]
+margin_top = 293.0
+margin_right = 970.0
+margin_bottom = 485.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 2 )
+
+[node name="GD" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer"]
+margin_right = 320.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
 custom_fonts/mono_font = ExtResource( 4 )
 custom_fonts/bold_italics_font = ExtResource( 4 )
 custom_fonts/italics_font = ExtResource( 4 )
@@ -121,60 +129,231 @@ custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Game Design[/b]
-Ant0yne, Dr_Destruction
-
-[b]Narration[/b]
-Ant0yne, Axell, Dr_Destruction
-
-[b]Graphisme[/b]
-Axell, Dr_Destruction, Oloreon
-
-[b]Sound Design[/b]
 Ant0yne
-
-[b]Developpement[/b]
-Paulette, Rl
-
-[b]Playtest[/b]
-Lupcapyou, Erwan, Lilolalelo, Olivial
-
-[b]Outils utilisés[/b]
-Krita, Godot, etc...
-
-[b]Merci à[/b]
-Lupcapyou, Olivial, Khams
+Dr_Destruction
 [/center]"
 text = "
 Game Design
-Ant0yne, Dr_Destruction
+Ant0yne
+Dr_Destruction
+"
+scroll_active = false
 
+[node name="Narration" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer"]
+margin_left = 324.0
+margin_right = 644.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]Narration[/b]
+Ant0yne
+Axell
+Dr_Destruction
+
+[/center]"
+text = "
 Narration
-Ant0yne, Axell, Dr_Destruction
+Ant0yne
+Axell
+Dr_Destruction
 
+"
+scroll_active = false
+
+[node name="Graphisme" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer"]
+margin_left = 648.0
+margin_right = 970.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]Graphisme[/b]
+Axell
+Dr_Destruction
+Oloreon
+[/center]"
+text = "
 Graphisme
-Axell, Dr_Destruction, Oloreon
+Axell
+Dr_Destruction
+Oloreon
+"
+scroll_active = false
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="Marge1/Marge1-1/VBoxContainer"]
+margin_top = 489.0
+margin_right = 970.0
+margin_bottom = 681.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sound Design" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2"]
+margin_right = 320.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]Sound Design[/b]
+Ant0yne
+[/center]"
+text = "
 Sound Design
 Ant0yne
-
-Developpement
-Paulette, Rl
-
-Playtest
-Lupcapyou, Erwan, Lilolalelo, Olivial
-
-Outils utilisés
-Krita, Godot, etc...
-
-Merci à
-Lupcapyou, Olivial, Khams
 "
+scroll_active = false
+
+[node name="Developpement" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2"]
+margin_left = 324.0
+margin_right = 644.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]Developpement[/b]
+Emilie
+Rl
+
+[/center]"
+text = "
+Developpement
+Emilie
+Rl
+
+"
+scroll_active = false
+
+[node name="Playtest" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2"]
+margin_left = 648.0
+margin_right = 970.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]Playtest[/b]
+Lupcapyou
+Erwan
+Lilolalelo
+Olivial
+[/center]"
+text = "
+Playtest
+Lupcapyou
+Erwan
+Lilolalelo
+Olivial
+"
+scroll_active = false
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Marge1/Marge1-1/VBoxContainer"]
+margin_top = 685.0
+margin_right = 970.0
+margin_bottom = 880.0
+size_flags_vertical = 3
+custom_constants/separation = -150
+
+[node name="Outils" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer3"]
+margin_right = 560.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]Outils[/b]
+Krita
+Godot
+etc.
+[/center]"
+text = "
+Outils
+Krita
+Godot
+etc.
+"
+scroll_active = false
+
+[node name="Playtest" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer3"]
+margin_left = 410.0
+margin_right = 970.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]Merci à :[/b]
+Lupcapyou
+Erwan
+Lilolalelo
+Olivial
+[/center]"
+text = "
+Merci à :
+Lupcapyou
+Erwan
+Lilolalelo
+Olivial
+"
+scroll_active = false
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 1224.0
-margin_top = 64.0
-margin_right = 1352.0
-margin_bottom = 192.0
+margin_left = 1360.0
+margin_top = 72.0
+margin_right = 1488.0
+margin_bottom = 200.0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 7 )

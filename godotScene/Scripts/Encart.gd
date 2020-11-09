@@ -48,7 +48,7 @@ func chargement_dialog(n, p):
 	set_pos("Bottom")
 	animationTexte(n, p)
 
-func chargement_syst_info(n, p, c1 = "", c2 = ""):
+func chargement_syst_info(_n, p, c1 = "", c2 = ""):
 	
 	
 	choix1.visible = false
