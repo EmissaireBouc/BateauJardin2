@@ -35,6 +35,7 @@ func _ready():
 	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 	$CanvasLayer.add_child(tuto)
 	$CanvasLayer/Commande.connect("fin_tuto",self,"init_game")
+
 	if !ImportData.is_loading :
 		for i in range ($Bateau/YSort/Plante.get_child_count()) :
 			aGarden.push_front($Bateau/YSort/Plante.get_child(i))
