@@ -52,7 +52,7 @@ func _load():
 		if line_data.has("fichier vide"):
 			return
 		if line_data.has("jour") :
-			pass
+			ImportData.jour = line_data["jour"]
 		else :
 			var new_plante_scene = load("res://Assets/Plante/Scene/"+ line_data["name"] + ".tscn")
 			var new_plante = new_plante_scene.instance()
@@ -64,4 +64,13 @@ func _load():
 			new_plante.position = Vector2(float(line_data["positionX"]),float(line_data["positionY"]))
 			new_plante.update_status()
 			control.aGarden.push_front(new_plante)
-	#get_node("/root/ScenePrincipale/CanvasLayer/Debug/DebugPanel")._on_LineEdit_text_entered(ImportData.jour)
+		# charge le bon jour
+		control.get_node("CanvasLayer/Debug/DebugLabel4").text = "JOUR : " + str(ImportData.jour)
+		ImportData.DialJour = 0
+		ImportData.ChangDial = 0
+		control.get_node("Bateau/YSort/PNJ").new_day()
+		control.get_node("Bateau/WalkArea").reboot()
+		control.get_node("CanvasLayer/PA").set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
+		control.get_node("CanvasLayer/Transition").waitForClick = true
+		control.start_new_day()
+		
