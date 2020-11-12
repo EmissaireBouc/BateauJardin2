@@ -96,3 +96,18 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Disparition":
 		queue_free()
 	pass # Replace with function body.
+
+
+
+
+func save():
+	var save_data_plante = {
+	"name": Plante,
+	"PV": pv,
+	"XP": xp,
+	"LVL": lvl,
+	"positionX" : position.x,
+	"positionY" : position.y
+	}
+	return save_data_plante
+	

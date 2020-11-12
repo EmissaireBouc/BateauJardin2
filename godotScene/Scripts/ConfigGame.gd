@@ -22,3 +22,4 @@ func encart():
 
 func _on_Transition_transition_over(t):
 	encart()
+
