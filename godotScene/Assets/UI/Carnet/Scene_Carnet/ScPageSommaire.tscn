@@ -309,7 +309,7 @@ valign = 1
 [node name="MargeOptions" type="MarginContainer" parent="PageDroite/VBoxContainer"]
 margin_top = 290.0
 margin_right = 918.0
-margin_bottom = 356.0
+margin_bottom = 391.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 50
 custom_constants/margin_left = 50
@@ -317,9 +317,9 @@ custom_constants/margin_left = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="PageDroite/VBoxContainer/MargeOptions"]
 margin_left = 50.0
 margin_right = 868.0
-margin_bottom = 66.0
+margin_bottom = 101.0
 
-[node name="RetourMenu" type="Button" parent="PageDroite/VBoxContainer/MargeOptions/VBoxContainer"]
+[node name="Options" type="Button" parent="PageDroite/VBoxContainer/MargeOptions/VBoxContainer"]
 margin_right = 818.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
@@ -327,7 +327,7 @@ theme = ExtResource( 7 )
 custom_styles/pressed = SubResource( 1 )
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
-text = "Retour Au Menu Principal"
+text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -345,5 +345,20 @@ text = "Commande"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="PageDroite/VBoxContainer/MargeOptions/VBoxContainer/RetourMenu" to="." method="_on_RetourMenu_pressed"]
+
+[node name="RetourMenu" type="Button" parent="PageDroite/VBoxContainer/MargeOptions/VBoxContainer"]
+margin_top = 70.0
+margin_right = 818.0
+margin_bottom = 101.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+custom_styles/pressed = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+text = "Retour Au Menu Principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PageDroite/VBoxContainer/MargeOptions/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="PageDroite/VBoxContainer/MargeOptions/VBoxContainer/Tuto" to="." method="_on_Tuto_pressed"]
+[connection signal="pressed" from="PageDroite/VBoxContainer/MargeOptions/VBoxContainer/RetourMenu" to="." method="_on_RetourMenu_pressed"]

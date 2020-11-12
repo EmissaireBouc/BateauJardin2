@@ -11,6 +11,8 @@ export (int) var lvl = 1
 var rng = RandomNumberGenerator.new()
 var shader_vent
 
+signal mouseOverlapped
+
 func _ready():
 	update_status()
 	initialize_shader()
@@ -85,14 +87,25 @@ func deshydrat():
 
 
 
-func _on_Area2D_area_shape_entered(_area_id, _area, _area_shape, _self_shape):
+func _on_Area2D_area_shape_entered(_area_id, area, _area_shape, _self_shape):
+	
 	pass
 
-func _on_Area2D_area_shape_exited(_area_id, _area, _area_shape, _self_shape):
+func _on_Area2D_area_shape_exited(_area_id, area, _area_shape, _self_shape):
+	
 	pass
+
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Disparition":
 		queue_free()
 	pass # Replace with function body.
+
+
+func _on_Area2D_mouse_entered():
+	emit_signal("mouseOverlapped", "entered",get_name())
+
+
+func _on_Area2D_mouse_exited():
+	emit_signal("mouseOverlapped", "exited", get_name())

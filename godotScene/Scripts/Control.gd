@@ -19,6 +19,8 @@ onready var Cam : Camera2D = get_node("Bateau/YSort/Player/Camera2D")
 onready var PA : Label = get_node("CanvasLayer/PA")
 onready var PNJsort : YSort = get_node("Bateau/YSort/PNJ")
 onready var transitionJours = get_node("CanvasLayer/ciel transition/ciel")
+onready var Plantes = get_node("Bateau/YSort/Plante")
+
 var inventaire
 var Encart 
 
@@ -91,6 +93,7 @@ func _process(_delta):
 	debug()
 
 
+
 """
 Gestion du clic gauche :
 	_unhandled_input(event) récupère l'input souris DANS la scène active 
@@ -110,11 +113,12 @@ func _unhandled_input(_event):
 					if cursor == "default":
 						change_action(DEPLACER)
 						Player.change_state(MOVE)
-						create_ui_destination(get_global_mouse_position(),"DESTINATION")
+
 				else:
 					menuEntretenir.close()
-					MouseA.clear_aCollisionNode()
-					destroy_ui_destination()
+					Plantes.clear_Plant_Selected()
+#					MouseA.clear_aCollisionNode()
+					
 			DEPLACER :
 				_on_Player_anim_over(MOVE)
 
@@ -136,18 +140,18 @@ func _input(_event):
 	else:
 		match action:
 			DEFAULT, DEPLACER:
-				if MouseA.overlapPlant && !menuEntretenir.is_open():
-					if !MouseA.item_selected:
+				if Plantes.currentPlantOutlined != "" && !menuEntretenir.is_open():
+					if !Plantes.plantSelected:
 						if PA.get_PA() > 0:
-							MouseA.item_selected = true
-							posCursor = get_node("Bateau/YSort/Plante/%s" %MouseA.areaName).get_global_position()
+							Plantes.select_Plant()
+							posCursor = get_node("Bateau/YSort/Plante/%s" %Plantes.currentPlantOutlined).get_global_position()
 							menuEntretenir.open()
 						else:
 							_encart("Jade","La journée est finie, le soleil va se coucher. C'est le moment de rejoindre ma cabine.")
 
 
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
-	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && !MouseA.overlapPlant):
+	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && Plantes.currentPlantOutlined == ""):
 		if PA.get_PA() > 0: 
 			match action:
 				DEFAULT:
@@ -165,6 +169,7 @@ Gestion du curseur :
 
 	
 	!! les signaux sont paramétrés depuis la fonction connectique()
+	Les différents curseurs : "parler" "dormir" "lire" "default"
 """
 
 
@@ -196,8 +201,9 @@ Gestion des actions du joueur :
 func Engage_Conversation(pos):
 	match action :
 		DEFAULT :
-			posCursor = Vector2(pos.x-400,pos.y)
-			change_action(PARLER)
+			if cursor == "parler":
+				posCursor = Vector2(pos.x-400,pos.y)
+				change_action(PARLER)
 		_:
 			PNJsort.talking = false
 
@@ -233,13 +239,13 @@ func _on_Player_anim_over(state):
 				MOVE:
 					Player.change_state(IDLE)
 					change_action(DEFAULT)
-					destroy_ui_destination()
+
 		DEPLACER :
 			match state :
 				MOVE:
 					Player.change_state(IDLE)
 					change_action(DEFAULT)
-					destroy_ui_destination()
+
 		PLANTER:
 			match state:
 				MOVE : 
@@ -251,6 +257,7 @@ func _on_Player_anim_over(state):
 					var plante = load ("res://Assets/Plante/Scene/%s" %planteName + ".tscn").instance()
 					$Bateau/YSort/Plante.add_child(plante)
 					plante.setup(planteName)
+					$Bateau/YSort/Plante.connect_child(plante.get_name())
 					aGarden.push_front(plante)
 					plante.position = posCursor + Vector2(0,30)
 #					Nav_2D_Update(plante.get_node("Area2D/CollisionPolygon2D").get_global_transform(),plante.get_node("Area2D/CollisionPolygon2D").get_polygon())
@@ -263,7 +270,7 @@ func _on_Player_anim_over(state):
 					Player.change_state(SPRAY)
 				SPRAY:
 					PA.PA_down(1)
-					plante_PV_up(MouseA.areaName)
+					plante_PV_up(Plantes.currentPlantOutlined)
 					change_action(DEFAULT)
 		COUPER:
 			match state :
@@ -271,7 +278,7 @@ func _on_Player_anim_over(state):
 					Player.change_state(CUT)
 				CUT:
 					PA.PA_down(1)
-					plante_Remove(MouseA.areaName)
+					plante_Remove(Plantes.currentPlantOutlined)
 					change_action(DEFAULT)
 		DORMIR:
 			match state :
@@ -303,13 +310,13 @@ func _on_Button_Cut_pressed():
 
 func _on_Button_Spray_pressed():
 	if PA.get_PA() > 0 :
-		if MouseA.item_selected:
-			if MouseA.return_select_plant().pv > 0:
+		if Plantes.plantSelected:
+			if Plantes.return_select_plant().pv > 0:
 				change_action(ARROSER)
 			else:
 				_encart("Jade", "Cette plante est fanée, il n'y a rien à faire sinon l'arracher...")
 				menuEntretenir.close()
-				MouseA.clear_aCollisionNode()
+				Plantes.clear_Plant_Selected()
 	else:
 		menuEntretenir.close()
 
@@ -333,7 +340,7 @@ Gestion des actions Entretenir :
 
 func plante_PV_up(plant):
 	get_node("Bateau/YSort/Plante/%s" %plant).hydrat()
-	MouseA.clear_aCollisionNode()
+	Plantes.clear_Plant_Selected()
 
 func plante_Remove(plant):
 	for i in range(aGarden.size()):
@@ -342,7 +349,7 @@ func plante_Remove(plant):
 			get_node("Bateau/YSort/Plante/%s/AnimationPlayer" %plant).play("Disparition")
 			break
 	print_garden()
-	MouseA.clear_aCollisionNode()
+	Plantes.clear_Plant_Selected()
 
 
 
@@ -518,12 +525,12 @@ func Open_Carnet():
 	match action : 
 		DEFAULT :
 			if !menuEntretenir.is_open():
-				var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
-#				Carnet.set_scale(Vector2(0.9,0.9))
-				$CanvasLayer.add_child(Carnet)
-				
-				Carnet.connect("Close_Carnet", self, "Close_Carnet")
-				change_action(CARNET)
+				if cursor == "lire":
+					var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
+					$CanvasLayer.add_child(Carnet)
+					
+					Carnet.connect("Close_Carnet", self, "Close_Carnet")
+					change_action(CARNET)
 
 func Close_Carnet():
 	change_action(DEFAULT)

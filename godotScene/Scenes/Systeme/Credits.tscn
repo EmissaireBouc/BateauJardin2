@@ -51,7 +51,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.458824 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.34902, 0.321569, 0.321569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Marge1" type="MarginContainer" parent="."]
+self_modulate = Color( 1, 1, 1, 0.627451 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 400
@@ -243,13 +253,13 @@ custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Developpement[/b]
-Emilie
+Paulette
 Rl
 
 [/center]"
 text = "
 Developpement
-Emilie
+Paulette
 Rl
 
 "
@@ -271,16 +281,18 @@ custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Playtest[/b]
-Lupcapyou
+Dilz
 Erwan
 Lilolalelo
+Lupcapyou
 Olivial
 [/center]"
 text = "
 Playtest
-Lupcapyou
+Dilz
 Erwan
 Lilolalelo
+Lupcapyou
 Olivial
 "
 scroll_active = false
@@ -339,6 +351,7 @@ Lupcapyou
 Erwan
 Lilolalelo
 Olivial
+Dilz
 [/center]"
 text = "
 Merci à :
@@ -346,6 +359,7 @@ Lupcapyou
 Erwan
 Lilolalelo
 Olivial
+Dilz
 "
 scroll_active = false
 

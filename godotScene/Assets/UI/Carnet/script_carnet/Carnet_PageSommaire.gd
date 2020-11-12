@@ -68,3 +68,9 @@ func _on_Tuto_pressed():
 	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 	get_parent().get_parent().add_child(tuto)
 	tuto.raise()
+
+
+func _on_Options_pressed():
+	var option = load("res://Scenes/Systeme/Options.tscn").instance()
+	get_parent().get_parent().add_child(option)
+	option.raise()
