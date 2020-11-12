@@ -11,7 +11,7 @@
 [ext_resource path="res://Scripts/PA.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/WalkArea.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Personnage.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scripts/Plantes.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Systeme/saveEtLoad.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/UI/Font/Gravity-Regular.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://Scripts/gMouseCollider.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Son/Mer+VentV1.ogg" type="AudioStream" id=15]
@@ -49,6 +49,7 @@
 [ext_resource path="res://Assets/Plante/Image/arbuste haut 2.png" type="Texture" id=50]
 [ext_resource path="res://Assets/Plante/Scene/HautArbuste.tscn" type="PackedScene" id=51]
 [ext_resource path="res://Assets/Plante/Scene/Fougere.tscn" type="PackedScene" id=52]
+[ext_resource path="res://Scripts/Plantes.gd" type="Script" id=53]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 107.72
@@ -81,6 +82,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -112,14 +114,19 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 26 ) ],
 "loop": true,
 "name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ) ],
@@ -156,6 +163,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=6]
 resource_local_to_scene = true
@@ -187,14 +195,19 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 21 ) ],
@@ -231,6 +244,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=9]
 resource_local_to_scene = true
@@ -262,14 +276,19 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 47 ) ],
 "loop": true,
 "name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 46 ) ],
@@ -306,6 +325,7 @@ void vertex() {
 	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=12]
 resource_local_to_scene = true
@@ -337,14 +357,19 @@ animations = [ {
 "name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 48 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 40 ) ],
 "loop": true,
 "name": "fanelvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ) ],
+"loop": true,
+"name": "fanelvl3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "lvl2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 41 ) ],
@@ -648,6 +673,8 @@ __meta__ = {
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
+
+[node name="saveEtLoad" parent="." instance=ExtResource( 12 )]
 [connection signal="mouse_entered" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_exited"]
 [connection signal="input_event" from="Bateau/Jardin" to="." method="_on_Jardin_input_event"]

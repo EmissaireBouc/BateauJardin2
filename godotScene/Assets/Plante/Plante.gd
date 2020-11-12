@@ -109,3 +109,16 @@ func _on_Area2D_mouse_entered():
 
 func _on_Area2D_mouse_exited():
 	emit_signal("mouseOverlapped", "exited", get_name())
+
+
+func save():
+	var save_data_plante = {
+	"name": Plante,
+	"PV": pv,
+	"XP": xp,
+	"LVL": lvl,
+	"positionX" : position.x,
+	"positionY" : position.y
+	}
+	return save_data_plante
+	

@@ -13,6 +13,10 @@ var nbrPNJ = 0
 var ChangDial = 0
 var volume = 1
 
+# pour la sauvegarde
+var is_loading = false
+var fichier_sauvegarde = "1"
+
 func _ready():
 	var plantdata_file = File.new()
 	plantdata_file.open("res://Assets/Data/PlanteData.json",File.READ)

@@ -23,7 +23,7 @@ onready var Plantes = get_node("Bateau/YSort/Plante")
 
 var inventaire
 var Encart 
-
+onready var save_et_load = get_node("saveEtLoad")
 
 """
 Initialisation du jeu
@@ -35,8 +35,9 @@ func _ready():
 	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 	$CanvasLayer.add_child(tuto)
 	$CanvasLayer/Commande.connect("fin_tuto",self,"init_game")
-	for i in range ($Bateau/YSort/Plante.get_child_count()) :
-		aGarden.push_front($Bateau/YSort/Plante.get_child(i))
+	if !ImportData.is_loading :
+		for i in range ($Bateau/YSort/Plante.get_child_count()) :
+			aGarden.push_front($Bateau/YSort/Plante.get_child(i))
 
 
 
@@ -70,7 +71,6 @@ func init_game():
 	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
 
 #	Debug
-
 	print_garden() #Debug 
 
 func connectique():
@@ -430,6 +430,8 @@ func a_day_pass():
 
 	if ImportData.jour > 10:
 		arrose_plrs_plantes(10)
+		
+	save_et_load.save()
 
 func arrose_plrs_plantes(n = 0):
 	aGarden.sort_custom(MyCustomSorter, "sort_ascending")

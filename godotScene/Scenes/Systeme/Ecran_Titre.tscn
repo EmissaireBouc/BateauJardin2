@@ -250,6 +250,125 @@ theme = ExtResource( 2 )
 text = "Quitter"
 script = ExtResource( 1 )
 
+[node name="Menu2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 277.0
+margin_right = 1615.0
+margin_bottom = 349.0
+size_flags_vertical = 3
+custom_constants/separation = 150
+
+[node name="nouvellePartie1" type="Button" parent="MarginContainer/VBoxContainer/Menu2"]
+margin_right = 332.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource( 2 )
+text = "Nouvelle partie"
+script = ExtResource( 1 )
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Menu2"]
+visible = false
+margin_right = 191.0
+margin_bottom = 148.0
+
+[node name="Charger" type="Button" parent="MarginContainer/VBoxContainer/Menu2/VBoxContainer1"]
+margin_right = 191.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Charger partie"
+script = ExtResource( 1 )
+
+[node name="Effacer" type="Button" parent="MarginContainer/VBoxContainer/Menu2/VBoxContainer1"]
+margin_top = 76.0
+margin_right = 191.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Effacer"
+script = ExtResource( 1 )
+
+[node name="nouvellePartie2" type="Button" parent="MarginContainer/VBoxContainer/Menu2"]
+margin_left = 482.0
+margin_right = 814.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource( 2 )
+text = "Nouvelle partie"
+script = ExtResource( 1 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Menu2"]
+visible = false
+margin_right = 191.0
+margin_bottom = 148.0
+
+[node name="Charger" type="Button" parent="MarginContainer/VBoxContainer/Menu2/VBoxContainer2"]
+margin_right = 191.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Charger partie"
+script = ExtResource( 1 )
+
+[node name="Effacer" type="Button" parent="MarginContainer/VBoxContainer/Menu2/VBoxContainer2"]
+margin_top = 76.0
+margin_right = 191.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Effacer"
+script = ExtResource( 1 )
+
+[node name="nouvellePartie3" type="Button" parent="MarginContainer/VBoxContainer/Menu2"]
+margin_left = 964.0
+margin_right = 1296.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource( 2 )
+text = "Nouvelle partie"
+script = ExtResource( 1 )
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Menu2"]
+visible = false
+margin_right = 191.0
+margin_bottom = 148.0
+
+[node name="Charger" type="Button" parent="MarginContainer/VBoxContainer/Menu2/VBoxContainer3"]
+margin_right = 191.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Charger partie"
+script = ExtResource( 1 )
+
+[node name="Effacer" type="Button" parent="MarginContainer/VBoxContainer/Menu2/VBoxContainer3"]
+margin_top = 76.0
+margin_right = 191.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Effacer"
+script = ExtResource( 1 )
+
+[node name="retour" type="Button" parent="MarginContainer/VBoxContainer/Menu2"]
+margin_left = 1446.0
+margin_right = 1615.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource( 2 )
+text = "Retour"
+script = ExtResource( 1 )
+
 [node name="Vague3" type="NinePatchRect" parent="."]
 margin_left = -105.0
 margin_top = 639.987
@@ -323,4 +442,14 @@ anims/Boucle = SubResource( 7 )
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Option" to="MarginContainer/VBoxContainer/Menu/Option" method="_on_Option_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Credits" to="MarginContainer/VBoxContainer/Menu/Credits" method="_on_Credits_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/Quitter" to="MarginContainer/VBoxContainer/Menu/Quitter" method="_on_Quitter_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/nouvellePartie1" to="MarginContainer/VBoxContainer/Menu2/nouvellePartie1" method="_on_nouvellePartie_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/VBoxContainer1/Charger" to="MarginContainer/VBoxContainer/Menu2/VBoxContainer1/Charger" method="_on_charger_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/VBoxContainer1/Effacer" to="MarginContainer/VBoxContainer/Menu2/VBoxContainer1/Effacer" method="_on_Effacer_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/nouvellePartie2" to="MarginContainer/VBoxContainer/Menu2/nouvellePartie2" method="_on_nouvellePartie_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/VBoxContainer2/Charger" to="MarginContainer/VBoxContainer/Menu2/VBoxContainer2/Charger" method="_on_charger_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/VBoxContainer2/Effacer" to="MarginContainer/VBoxContainer/Menu2/VBoxContainer2/Effacer" method="_on_Effacer_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/nouvellePartie3" to="MarginContainer/VBoxContainer/Menu2/nouvellePartie3" method="_on_nouvellePartie_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/VBoxContainer3/Charger" to="MarginContainer/VBoxContainer/Menu2/VBoxContainer3/Charger" method="_on_charger_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/VBoxContainer3/Effacer" to="MarginContainer/VBoxContainer/Menu2/VBoxContainer3/Effacer" method="_on_Effacer_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu2/retour" to="MarginContainer/VBoxContainer/Menu2/retour" method="_on_retour_pressed"]
 [connection signal="transition_over" from="Transition" to="." method="_on_Transition_transition_over"]
