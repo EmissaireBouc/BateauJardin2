@@ -32,7 +32,6 @@ signal Fin_Conversation
 
 func _ready():
 	Save_Lieu_PNJ = Lieu_PNJ.duplicate(true)
-	initiate()
 	BoiteDialogue.connect("Texte_Suivant", self, "Texte_Suivant")
 
 
@@ -177,6 +176,7 @@ func lancer_dialogue():
 		NumDial = 1
 		
 	if NumDial == 0:
+
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue1
 	else:
 		BoiteDialogue.DialogueArray = ImportData.dialogue_data[str(ImportData.jour)][NomPersonnage].Dialogue2

@@ -10,6 +10,9 @@ var action
 enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} # State
 enum{DEFAULT, PLANTER, ENTRETENIR, ARROSER, COUPER, DORMIR, PARLER, CONVERS, CARNET, DEPLACER} # Action
 
+
+onready var save_et_load = get_node("saveEtLoad")
+
 onready var nav2D : Navigation2D = $Bateau/WalkArea # Navigation2D est un noeud qui permet le pathfinding depuis une aire de navigation (NavigationPolygon)
 onready var Line2D : Line2D = $Bateau/YSort/Line2D # Line2D trace une ligne
 onready var Player : AnimatedSprite = $Bateau/YSort/Player
@@ -23,7 +26,6 @@ onready var Plantes = get_node("Bateau/YSort/Plante")
 
 var inventaire
 var Encart 
-onready var save_et_load = get_node("saveEtLoad")
 
 """
 Initialisation du jeu
@@ -31,26 +33,20 @@ Initialisation du jeu
 
 
 func _ready():
-	cursor_mode("add","default")
-	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
-	$CanvasLayer.add_child(tuto)
-	$CanvasLayer/Commande.connect("fin_tuto",self,"init_game")
+	setup_game()
+	
+	if ImportData.is_loading :
+		$saveEtLoad._load()
 
-	if !ImportData.is_loading :
-		for i in range ($Bateau/YSort/Plante.get_child_count()) :
-			aGarden.push_front($Bateau/YSort/Plante.get_child(i))
+	chargement_jour()
 
-
-
-
-func init_game():
-	$CanvasLayer/Commande.disconnect("fin_tuto",self,"init_game")
-	$CanvasLayer/Commande.queue_free()
-	change_action(DEFAULT)
+func setup_game():
+	$CanvasLayer/Transition.visible = true
 	fondu("transition_out")
-	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
 
-#	Création de l'inventaire
+	cursor_mode("add","default")
+	
+	#	Création de l'inventaire
 
 	var inv = load("res://Scenes/Systeme/Inventaire_plantes.tscn").instance()
 	$CanvasLayer.add_child(inv)
@@ -62,17 +58,10 @@ func init_game():
 	$CanvasLayer.add_child(encart)
 	Encart = get_node("CanvasLayer/Encart")
 	Encart.hide()
-	
-	
-	$CanvasLayer/Transition.visible = true
+
 	$Musique.play()
 
 	connectique()
-
-	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
-
-#	Debug
-	print_garden() #Debug 
 
 func connectique():
 	PNJsort.connect("Engage_Conversation",self,"Engage_Conversation")
@@ -83,6 +72,8 @@ func connectique():
 	inventaire.connect("plant_abort", self, "_on_Inventory_plant_abort")
 	Encart.connect("encart_done", self, "encart_done")
 	Encart.connect("choix_done", self, "choix_done")
+
+
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Debug"):
@@ -254,16 +245,8 @@ func _on_Player_anim_over(state):
 					Player.change_state(OPEN_INV)
 				PLANT:
 					PA.PA_down(1)
-					var planteName = inventaire.get_selected_item()
-					var plante = load ("res://Assets/Plante/Scene/%s" %planteName + ".tscn").instance()
-					$Bateau/YSort/Plante.add_child(plante)
-					plante.setup(planteName)
-					$Bateau/YSort/Plante.connect_child(plante.get_name())
-					aGarden.push_front(plante)
-					plante.position = posCursor + Vector2(0,30)
-#					Nav_2D_Update(plante.get_node("Area2D/CollisionPolygon2D").get_global_transform(),plante.get_node("Area2D/CollisionPolygon2D").get_polygon())
-#					cursor_mode("default")
-					print_garden() #debug
+					var Plante = inventaire.get_selected_item()
+					Plantes.add_new_plant(Plante , posCursor + Vector2(0,30) , ImportData.plant_data[Plante].PV , ImportData.plant_data[Plante].XP , ImportData.plant_data[Plante].LVL)
 					change_action(DEFAULT)
 		ARROSER:
 			match state:
@@ -271,7 +254,7 @@ func _on_Player_anim_over(state):
 					Player.change_state(SPRAY)
 				SPRAY:
 					PA.PA_down(1)
-					plante_PV_up(Plantes.currentPlantOutlined)
+					Plantes.plante_PV_up(Plantes.currentPlantOutlined)
 					change_action(DEFAULT)
 		COUPER:
 			match state :
@@ -279,7 +262,7 @@ func _on_Player_anim_over(state):
 					Player.change_state(CUT)
 				CUT:
 					PA.PA_down(1)
-					plante_Remove(Plantes.currentPlantOutlined)
+					Plantes.plante_Remove(Plantes.currentPlantOutlined)
 					change_action(DEFAULT)
 		DORMIR:
 			match state :
@@ -329,32 +312,6 @@ func _on_PNJ_Fin_Conversation():
 
 
 
-
-"""
-Gestion des actions Entretenir :
-	plante_PV_up(plant) : Augmente les pv de 5 et coûte 1PA
-	plante_Remove(plant) : Retire une plante du tableau (Manque l'animation de 
-	destruction) et coûte 1PA
-"""
-
-
-
-func plante_PV_up(plant):
-	get_node("Bateau/YSort/Plante/%s" %plant).hydrat()
-	Plantes.clear_Plant_Selected()
-
-func plante_Remove(plant):
-	for i in range(aGarden.size()):
-		if aGarden[i] == get_node("Bateau/YSort/Plante/%s" %plant):
-			aGarden.remove(i)
-			get_node("Bateau/YSort/Plante/%s/AnimationPlayer" %plant).play("Disparition")
-			break
-	print_garden()
-	Plantes.clear_Plant_Selected()
-
-
-
-
 """
 Gestion de l'action Dormir :
 	Lors clic sur porte de la cabine : 
@@ -390,6 +347,7 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				if ImportData.jour == 9:
 					_encart("Jade", "En ce moment je suis pas efficace, je peux pas finir ma journée comme ça.")
 				change_action(DEFAULT)
+
 		else : 
 
 			if PNJsort.get_dialogue_done() != PNJsort.get_child_count() :
@@ -403,69 +361,52 @@ func _on_Porte_mouse_entered():
 func _on_Porte_mouse_exited():
 	cursor_mode("remove","dormir")
 
+
 func a_day_pass():
 	day += 1
-		
+
 	if PNJsort.get_dialogue_done() >= PNJsort.get_child_count() && ImportData.jour < ImportData.get_last_day():
 		ImportData.jour += 1
-		$CanvasLayer/Debug/DebugLabel4.text = "JOUR : " + str(ImportData.jour)
-		ImportData.DialJour = 0
-		ImportData.ChangDial = 0
-		PNJsort.new_day()
+		chargement_jour()
+
 	else:
-		ImportData.jour = ImportData.jour
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
+		PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
 
-#	ImportData.jour += 1
 	$Bateau/WalkArea.reboot()
-	PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
-	#$CanvasLayer/Transition/Jour.text = "Jour "+str(day)
-	#$CanvasLayer/Transition/Jour.visible = true
 	$CanvasLayer/Transition.waitForClick = true
-	plante_XP_up()
-	plante_PV_down()
-	
-	if ImportData.jour == 10:
-		kill_some_plants()
+	Plantes.plante_XP_up()
+	Plantes.plante_PV_down()
 
-	if ImportData.jour > 10:
-		arrose_plrs_plantes(10)
-		
 	save_et_load.save()
 
-func arrose_plrs_plantes(n = 0):
-	aGarden.sort_custom(MyCustomSorter, "sort_ascending")
-	for i in range(aGarden.size()):
-		if aGarden[i].pv > 0 && n > 0:
-			aGarden[i].hydrat()
-			n -= 1
+func chargement_jour(jr = ImportData.jour):
 
-func kill_some_plants(n = 5):
-	aGarden.sort_custom(MyCustomSorter, "sort_ascending")
-	for i in range(aGarden.size()):
-		if aGarden[i].pv > 0 && n > 0:
-			aGarden[i].pv = 0
-			aGarden[i].update_status()
-			n -= 1
+	change_action(DEFAULT)
 
-func plante_PV_down():
-	for i in range(aGarden.size()):
-		aGarden[i].pv -= 1
-		if aGarden[i].pv > 0 && aGarden[i].pv <= 3 :
-			aGarden[i].deshydrat()
-		
-		if aGarden[i].pv <= 0:
-			aGarden[i].fane()
+	$CanvasLayer/Debug/DebugLabel4.text = "JOUR : " + str(ImportData.jour)
+	ImportData.DialJour = 0
+	ImportData.ChangDial = 0
+	PNJsort.new_day()
+	
+	PA.set_PA(int(ImportData.PAJ[str(jr)].PA))
+	
+	if jr == 0 :
+		var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
+		$CanvasLayer.add_child(tuto)
+		$CanvasLayer/Commande.connect("fin_tuto",self,"fin_tuto")
 
-func plante_XP_up():
-	for i in range(aGarden.size()):
-		if aGarden[i].pv > 0:
-			aGarden[i].xp -= 1
-		if aGarden[i].xp == 0:
-			aGarden[i].LVL_up()
+		Plantes.add_new_plant("HautArbuste",Vector2(-1920,-320),5,4,2)
+		Plantes.add_new_plant("Myosotis",Vector2(-2112,-192),0,0,2)
+		Plantes.add_new_plant("Fougere",Vector2(-1856,-192),2,2,1)
+		Plantes.add_new_plant("OreillesDeLapin",Vector2(-1984,-64),4,2,1)
 
+	if jr == 10:
+		Plantes.kill_some_plants()
 
+	if jr > 10:
+		Plantes.arrose_plrs_plantes(10)
 
 
 """
@@ -557,6 +498,8 @@ func _info_systeme(titre, phrase, btn1 = "", btn2 = ""):
 	$CanvasLayer/Encart.chargement_syst_info(titre, phrase, btn1, btn2)
 	change_action(CONVERS)
 
+func fin_tuto():
+	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
 
 func choix_done(c):
 	$CanvasLayer/Encart.hide()
@@ -582,46 +525,5 @@ func encart_done():
 Gestion des fonctions Debug
 """
 
-
-
-func print_garden():
-	var array = ""
-	for i in range(aGarden.size()):
-		array += "\ni="+str(i)+" [" + str(aGarden[i].get_name()) + "] : " + aGarden[i].get_child(0).get_name()
-
-	$CanvasLayer/Debug/DebugLabel.text = "Jardin : " + str(aGarden.size()) + array
-
-
 func debug():
-	$CanvasLayer/Debug/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100)
-
-
-class MyCustomSorter:
-	static func sort_ascending(a, b):
-		if a.pv < b.pv:
-			return true
-		return false
-
-
-"""
-gestion des feedbacks DESTINATION et PLANTER
-DESACTIVEE
-"""
-
-
-
-func create_ui_destination(_pos, _anim):
-#	if get_node_or_null("Bateau/YSort/UI_Destination") == null :
-#		var UI_Destination = load("res://Scenes/Objet/UI_Destination.tscn").instance()
-#		$Bateau/YSort.add_child(UI_Destination)
-#		get_node("Bateau/YSort/UI_Destination").play(anim)
-#		get_node("Bateau/YSort/UI_Destination").set_global_position(pos)
-#	else :
-#		get_node("Bateau/YSort/UI_Destination").set_global_position(pos)
-	pass
-
-func destroy_ui_destination():
-#	if get_node_or_null("Bateau/YSort/UI_Destination") != null :
-#		get_node("Bateau/YSort/UI_Destination").queue_free()
-	pass
-
+	$CanvasLayer/Debug/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100) + "\nJOUR : " + str(ImportData.jour)

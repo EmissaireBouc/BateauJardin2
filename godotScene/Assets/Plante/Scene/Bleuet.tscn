@@ -52,24 +52,19 @@ shader_param/heightOffset = 0.0
 [sub_resource type="SpriteFrames" id=3]
 resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "lvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "fanelvl2",
+"name": "fanelvl1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "lvl2",
+"name": "lvl3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -77,9 +72,14 @@ animations = [ {
 "name": "fanelvl3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "lvl3",
+"name": "lvl2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "fanelvl2",
 "speed": 5.0
 } ]
 
@@ -87,6 +87,7 @@ animations = [ {
 material = SubResource( 2 )
 frames = SubResource( 3 )
 offset = Vector2( -10, -150 )
+Plante = "Bleuet"
 
 [node name="Area2D" parent="." index="0"]
 visible = true

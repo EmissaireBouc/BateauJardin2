@@ -14,8 +14,9 @@ var shader_vent
 signal mouseOverlapped
 
 func _ready():
-	update_status()
 	initialize_shader()
+#	update_status()
+	self.connect("mouseOverlapped",get_parent(),"mouseOverlapped")
 
 func update_status():
 	
@@ -24,26 +25,23 @@ func update_status():
 	else :
 		play("lvl1")
 
-	if pv <= 0 :
-		fane()
-	elif pv > 0 && pv <= 3 :
-		deshydrat()
+	if pv <= 0 : fane()
+	elif pv > 0 && pv <= 3 : deshydrat()
+	else : $Goutte/AnimationPlayer.play("Modulate_humide")
 
 func fane():
 	play("fanelvl"+str(lvl))
 	$Goutte.self_modulate = ETAT_CRITIQUE
 
-func setup(plantName):
-	Plante = plantName
-	pv = ImportData.plant_data[Plante].PV
-	xp = ImportData.plant_data[Plante].XP
-	lvl = ImportData.plant_data[Plante].LVL
+func setup(POS,PV, XP, LVL):
+
+	position = POS
+	pv = PV
+	xp = XP
+	lvl = LVL
 	$Goutte.self_modulate = ETAT_NORMAL
-	play("lvl1")
-	if pv > 3 : $Goutte/AnimationPlayer.play("Modulate_humide")
-	else : $Goutte/AnimationPlayer.play("Modulate_sec")
-	
-	initialize_shader()
+	update_status()
+
 
 func LVL_up():
 	if lvl < 3:
@@ -70,10 +68,11 @@ func hydrat():
 	if pv >= 1:
 		$Goutte.self_modulate = ETAT_NORMAL
 		pv += ImportData.plant_data[Plante].PV
-		if pv > 3 : #&& $Goutte/AnimationPlayer.get_assigned_animation() == "Modulate_sec":
+		if pv > 3 : 
 			$Goutte/AnimationPlayer.play("Modulate_humide")
 	else: 
 		$Goutte.self_modulate = ETAT_CRITIQUE
+
 
 func deshydrat():
 	if pv <= 1 :
@@ -85,22 +84,10 @@ func deshydrat():
 
 
 
-
-
-func _on_Area2D_area_shape_entered(_area_id, area, _area_shape, _self_shape):
-	
-	pass
-
-func _on_Area2D_area_shape_exited(_area_id, area, _area_shape, _self_shape):
-	
-	pass
-
-
-
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Disparition":
 		queue_free()
-	pass # Replace with function body.
+
 
 
 func _on_Area2D_mouse_entered():

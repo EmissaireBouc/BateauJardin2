@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decors/BateauArrierePlan.tscn" type="PackedScene" id=2]
@@ -18,341 +18,13 @@
 [ext_resource path="res://Scripts/DebugLabel3.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Decors/Background.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/PNJ/PNJ_Interaction.gd" type="Script" id=19]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 3.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Plante/Image/bleue jaunes 1.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Plante/Image/bleue jaunes 2 s.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Plante/Image/bleue jaunes 2.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 3 s.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 1 s.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 2 s.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/Systeme/Dialogues.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Assets/Plante/Image/bleue jaunes 3 s.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 1.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Plante/Image/oreille de lapin 2.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Plante/Image/bleue jaunes 3.png" type="Texture" id=31]
-[ext_resource path="res://Assets/Plante/Image/bleue jaunes 1 s.png" type="Texture" id=32]
-[ext_resource path="res://Assets/Plante/Scene/Myosotis.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Assets/Plante/Scene/OreillesDeLapin.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=36]
 [ext_resource path="res://Scenes/TransitionCiel.tscn" type="PackedScene" id=37]
-[ext_resource path="res://Assets/Plante/Image/fougere 1 s.png" type="Texture" id=39]
-[ext_resource path="res://Assets/Plante/Image/fougere 2 s.png" type="Texture" id=40]
-[ext_resource path="res://Assets/Plante/Image/fougere 1.png" type="Texture" id=41]
-[ext_resource path="res://Assets/Plante/Image/fougere 3 s.png" type="Texture" id=42]
-[ext_resource path="res://Assets/Plante/Image/fougere 3.png" type="Texture" id=43]
-[ext_resource path="res://Assets/Plante/Image/arbuste haut 1 s.png" type="Texture" id=44]
-[ext_resource path="res://Assets/Plante/Image/arbuste haut 3 s.png" type="Texture" id=45]
-[ext_resource path="res://Assets/Plante/Image/arbuste haut 1.png" type="Texture" id=46]
-[ext_resource path="res://Assets/Plante/Image/arbuste haut 2 s.png" type="Texture" id=47]
-[ext_resource path="res://Assets/Plante/Image/fougere 2.png" type="Texture" id=48]
-[ext_resource path="res://Assets/Plante/Image/arbuste haut 3.png" type="Texture" id=49]
-[ext_resource path="res://Assets/Plante/Image/arbuste haut 2.png" type="Texture" id=50]
-[ext_resource path="res://Assets/Plante/Scene/HautArbuste.tscn" type="PackedScene" id=51]
-[ext_resource path="res://Assets/Plante/Scene/Fougere.tscn" type="PackedScene" id=52]
 [ext_resource path="res://Scripts/Plantes.gd" type="Script" id=53]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 107.72
-
-[sub_resource type="Shader" id=2]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-// Wind settings.
-uniform float speed = 1.0;
-uniform float minStrength : hint_range(0.0, 1.0);
-uniform float maxStrength : hint_range(0.0, 1.0);
-uniform float strengthScale = 100.0;
-uniform float interval = 3.5;
-uniform float detail = 1.0;
-uniform float distortion : hint_range(0.0, 1.0);
-uniform float heightOffset = 0.0;
-
-float getWind(vec2 vertex, vec2 uv, float timer){
-	vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
-	float time = timer * speed + pos.x * pos.y;
-	float diff = pow(maxStrength - minStrength, 2.0);
-	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
-	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
-	
-	return wind;
-	}
-
-void vertex() {
-	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
-}
-"
-
-[sub_resource type="ShaderMaterial" id=3]
-resource_local_to_scene = true
-shader = SubResource( 2 )
-shader_param/speed = 2.0
-shader_param/minStrength = 0.092
-shader_param/maxStrength = 0.333
-shader_param/strengthScale = 100.0
-shader_param/interval = 3.5
-shader_param/detail = 1.0
-shader_param/distortion = null
-shader_param/heightOffset = 0.0
-
-[sub_resource type="SpriteFrames" id=4]
-resource_local_to_scene = true
-animations = [ {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-} ]
-
-[sub_resource type="Shader" id=5]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-// Wind settings.
-uniform float speed = 1.0;
-uniform float minStrength : hint_range(0.0, 1.0);
-uniform float maxStrength : hint_range(0.0, 1.0);
-uniform float strengthScale = 100.0;
-uniform float interval = 3.5;
-uniform float detail = 1.0;
-uniform float distortion : hint_range(0.0, 1.0);
-uniform float heightOffset = 0.0;
-
-float getWind(vec2 vertex, vec2 uv, float timer){
-	vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
-	float time = timer * speed + pos.x * pos.y;
-	float diff = pow(maxStrength - minStrength, 2.0);
-	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
-	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
-	
-	return wind;
-	}
-
-void vertex() {
-	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
-}
-"
-
-[sub_resource type="ShaderMaterial" id=6]
-resource_local_to_scene = true
-shader = SubResource( 5 )
-shader_param/speed = 2.0
-shader_param/minStrength = 0.092
-shader_param/maxStrength = 0.333
-shader_param/strengthScale = 100.0
-shader_param/interval = 3.5
-shader_param/detail = 1.0
-shader_param/distortion = null
-shader_param/heightOffset = 0.0
-
-[sub_resource type="SpriteFrames" id=7]
-resource_local_to_scene = true
-animations = [ {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-} ]
-
-[sub_resource type="Shader" id=8]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-// Wind settings.
-uniform float speed = 1.0;
-uniform float minStrength : hint_range(0.0, 1.0);
-uniform float maxStrength : hint_range(0.0, 1.0);
-uniform float strengthScale = 100.0;
-uniform float interval = 3.5;
-uniform float detail = 1.0;
-uniform float distortion : hint_range(0.0, 1.0);
-uniform float heightOffset = 0.0;
-
-float getWind(vec2 vertex, vec2 uv, float timer){
-	vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
-	float time = timer * speed + pos.x * pos.y;
-	float diff = pow(maxStrength - minStrength, 2.0);
-	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
-	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
-	
-	return wind;
-	}
-
-void vertex() {
-	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
-}
-"
-
-[sub_resource type="ShaderMaterial" id=9]
-resource_local_to_scene = true
-shader = SubResource( 8 )
-shader_param/speed = 2.0
-shader_param/minStrength = 0.092
-shader_param/maxStrength = 0.333
-shader_param/strengthScale = 100.0
-shader_param/interval = 3.5
-shader_param/detail = 1.0
-shader_param/distortion = null
-shader_param/heightOffset = 0.0
-
-[sub_resource type="SpriteFrames" id=10]
-resource_local_to_scene = true
-animations = [ {
-"frames": [ ExtResource( 44 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 49 ) ],
-"loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 46 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 45 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-} ]
-
-[sub_resource type="Shader" id=11]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-// Wind settings.
-uniform float speed = 1.0;
-uniform float minStrength : hint_range(0.0, 1.0);
-uniform float maxStrength : hint_range(0.0, 1.0);
-uniform float strengthScale = 100.0;
-uniform float interval = 3.5;
-uniform float detail = 1.0;
-uniform float distortion : hint_range(0.0, 1.0);
-uniform float heightOffset = 0.0;
-
-float getWind(vec2 vertex, vec2 uv, float timer){
-	vec2 pos = mix(vec2(1.0), vertex, distortion).xy;
-	float time = timer * speed + pos.x * pos.y;
-	float diff = pow(maxStrength - minStrength, 2.0);
-	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
-	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
-	
-	return wind;
-	}
-
-void vertex() {
-	VERTEX.x += getWind(VERTEX.xy, UV, TIME);
-}
-"
-
-[sub_resource type="ShaderMaterial" id=12]
-resource_local_to_scene = true
-shader = SubResource( 11 )
-shader_param/speed = 2.0
-shader_param/minStrength = 0.0
-shader_param/maxStrength = 0.3
-shader_param/strengthScale = 50.0
-shader_param/interval = 3.5
-shader_param/detail = 1.0
-shader_param/distortion = 0.0
-shader_param/heightOffset = 0.0
-
-[sub_resource type="SpriteFrames" id=13]
-resource_local_to_scene = true
-animations = [ {
-"frames": [ ExtResource( 39 ) ],
-"loop": true,
-"name": "fanelvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 43 ) ],
-"loop": true,
-"name": "lvl3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 40 ) ],
-"loop": true,
-"name": "fanelvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 48 ) ],
-"loop": true,
-"name": "lvl2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 41 ) ],
-"loop": true,
-"name": "lvl1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 42 ) ],
-"loop": true,
-"name": "fanelvl3",
-"speed": 5.0
-} ]
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 256, 256 )
@@ -391,6 +63,8 @@ font_data = SubResource( 22 )
 
 [node name="ScenePrincipale" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="saveEtLoad" parent="." instance=ExtResource( 12 )]
 
 [node name="Background" parent="." instance=ExtResource( 17 )]
 position = Vector2( -3008, -1344 )
@@ -454,37 +128,6 @@ script = ExtResource( 5 )
 [node name="Plante" type="YSort" parent="Bateau/YSort"]
 script = ExtResource( 53 )
 
-[node name="OreillesDeLapin" parent="Bateau/YSort/Plante" instance=ExtResource( 34 )]
-material = SubResource( 3 )
-position = Vector2( -1984, -64 )
-frames = SubResource( 4 )
-pv = 4
-xp = 2
-
-[node name="Myosotis" parent="Bateau/YSort/Plante" instance=ExtResource( 33 )]
-material = SubResource( 6 )
-position = Vector2( -2112, -192 )
-frames = SubResource( 7 )
-animation = "fanelvl2"
-Plante = "Myosotis"
-lvl = 2
-
-[node name="HautArbuste" parent="Bateau/YSort/Plante" instance=ExtResource( 51 )]
-material = SubResource( 9 )
-position = Vector2( -1920, -320 )
-frames = SubResource( 10 )
-Plante = "HautArbuste"
-pv = 5
-xp = 4
-lvl = 2
-
-[node name="Fougere" parent="Bateau/YSort/Plante" instance=ExtResource( 52 )]
-material = SubResource( 12 )
-position = Vector2( -1856, -192 )
-frames = SubResource( 13 )
-pv = 2
-xp = 2
-
 [node name="PNJ" type="YSort" parent="Bateau/YSort"]
 script = ExtResource( 19 )
 
@@ -545,16 +188,17 @@ __meta__ = {
 }
 
 [node name="DebugPanel" parent="CanvasLayer/Debug" instance=ExtResource( 8 )]
-margin_left = -40.0
-margin_right = 320.0
-margin_bottom = 213.0
+margin_left = 24.0
+margin_top = 64.0
+margin_right = 384.0
+margin_bottom = 364.0
 
 [node name="DebugLabel" type="Label" parent="CanvasLayer/Debug"]
 visible = false
-margin_left = 1600.0
-margin_top = 128.0
-margin_right = 1928.0
-margin_bottom = 224.0
+margin_left = 1536.0
+margin_top = 192.0
+margin_right = 1864.0
+margin_bottom = 288.0
 grow_horizontal = 0
 custom_styles/normal = SubResource( 16 )
 custom_fonts/font = SubResource( 17 )
@@ -566,9 +210,10 @@ __meta__ = {
 
 [node name="DebugLabel4" type="Label" parent="CanvasLayer/Debug"]
 visible = false
-margin_left = 1216.0
-margin_right = 1544.0
-margin_bottom = 96.0
+margin_left = 768.0
+margin_top = 64.0
+margin_right = 1096.0
+margin_bottom = 160.0
 grow_horizontal = 0
 custom_styles/normal = SubResource( 16 )
 custom_fonts/font = SubResource( 17 )
@@ -580,9 +225,10 @@ __meta__ = {
 
 [node name="DebugLabel2" type="Label" parent="CanvasLayer/Debug"]
 visible = false
-margin_left = 1600.0
-margin_right = 1928.0
-margin_bottom = 104.0
+margin_left = 1536.0
+margin_top = 64.0
+margin_right = 1864.0
+margin_bottom = 168.0
 custom_styles/normal = SubResource( 18 )
 custom_fonts/font = SubResource( 19 )
 custom_colors/font_color = Color( 0.105882, 1, 0, 1 )
@@ -594,8 +240,9 @@ __meta__ = {
 
 [node name="DebugLabel3" type="Label" parent="CanvasLayer/Debug"]
 visible = false
+margin_left = 64.0
 margin_top = 704.0
-margin_right = 248.0
+margin_right = 312.0
 margin_bottom = 976.0
 custom_styles/normal = SubResource( 20 )
 custom_fonts/font = SubResource( 21 )
@@ -652,14 +299,13 @@ __meta__ = {
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
-
-[node name="saveEtLoad" parent="." instance=ExtResource( 12 )]
 [connection signal="mouse_entered" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_exited"]
 [connection signal="input_event" from="Bateau/Jardin" to="." method="_on_Jardin_input_event"]
 [connection signal="area_shape_entered" from="Bateau/YSort/gMouseCollider" to="Bateau/YSort/gMouseCollider" method="_on_gMouseCollider_area_shape_entered"]
 [connection signal="area_shape_exited" from="Bateau/YSort/gMouseCollider" to="Bateau/YSort/gMouseCollider" method="_on_gMouseCollider_area_shape_exited"]
 [connection signal="anim_over" from="Bateau/YSort/Player" to="." method="_on_Player_anim_over"]
+[connection signal="debug_plant_description" from="Bateau/YSort/Plante" to="CanvasLayer/Debug/DebugLabel3" method="_on_Plante_debug_plant_description"]
 [connection signal="Fin_Conversation" from="Bateau/YSort/PNJ" to="." method="_on_PNJ_Fin_Conversation"]
 [connection signal="area_shape_entered" from="Bateau/YSort/MasqueTransparent" to="Bateau/YSort/Plante" method="_on_Area2D_area_shape_entered"]
 [connection signal="area_shape_exited" from="Bateau/YSort/MasqueTransparent" to="Bateau/YSort/Plante" method="_on_MasqueTransparent_area_shape_exited"]
