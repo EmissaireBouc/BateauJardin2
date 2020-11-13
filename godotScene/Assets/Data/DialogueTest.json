@@ -260,7 +260,11 @@
       "Dialogue1": [
           {
            "Nom": "Ismael",
-           "Text": "Ha ! Te voilà Jade. Je t'attendais. Je t'ai déjà dis hier que j'étais passionné par les plantes. Je voulais donc te remettre ma collection de graines que l'on avait entamé avec Maël, mais que nous avions du mettre en pause lors de son départ."
+           "Text": "Ha ! Te voilà Jade. Je t'attendais. Je t'ai déjà dis hier que j'étais passionné par les plantes."
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "Je voulais donc te remettre ma collection de graines que l'on avait entamé avec Maël, mais que nous avions du mettre en pause lors de son départ."
           },
           {
            "Nom": "Ismael",
@@ -446,10 +450,8 @@
 		  {
            "Nom": "Mazaa",
            "Text": "Bon je vous laisse, c'est l'heure de ma sieste."
-          }
-          ],
-      "Dialogue2": [
-          {
+          },
+		  {
            "Nom": "Jade",
            "Text": "Mais donc vous avez tou.te.s des maladies psy ?"
           },
@@ -473,6 +475,12 @@
            "Nom": "Jade",
            "Text": "Boarf, ils sont juste un peu stricts."
           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Si tu as besoin de quoi que ce soit, n'hésite pas !"
+          }
         ]
       },
 	  
@@ -492,19 +500,18 @@
       },
 	  	  
 		"Cartographe": {
-      "Dialogue1":
-          [
-          {
+      "Dialogue1": [
+		       {
            "Nom": "Mazaa",
            "Text": "C'est encore moi qui ai nettoyé toute la cuisine."
           },
           {
            "Nom": "Suzanne",
-           "Text": "Ouais, Je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché. Ils remarquent pas du tout quand c'est sale."
+           "Text": "Ouais, je me retenais de le faire pour leur laisser le temps de s'y mettre mais ça a pas marché. Ils remarquent pas du tout quand c'est sale."
            },
-		   {
+		       {
            "Nom": "Mazaa",
-           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan, qui foutent vraiment pas grand chose niveau tâches ménagères."
+           "Text": "Oh salut Jade ! On parle d'Ismaël et Nathan qui foutent vraiment pas grand chose niveau tâches ménagères."
           },
           {
            "Nom": "Suzanne",
@@ -516,7 +523,7 @@
           },
           {
            "Nom": "Suzanne",
-           "Text": "On veut pas les culpabiliser, chacun.e fait ce qu'iel peut."
+           "Text": "On veut pas les culpabiliser, chacun-e fait ce qu'iel peut."
            },
 		   {
            "Nom": "Suzanne",
@@ -541,6 +548,30 @@
 		  {
            "Nom": "Mazaa",
            "Text": "Bon je vous laisse, c'est l'heure de ma sieste."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Mais donc vous avez tou.te.s des maladies psy ?"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Oui, Anna t'avait pas dit ? Enfin Ismaël est autiste et c’est pas une maladie, mais ça change pas grand-chose, on est tou-te-s fols quoi."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Non ma marraine m'avait pas dit. Elle m'a juste dit que je m'entendrai bien avec vous sans préciser."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Mes parents m’auraient sûrement pas laissé venir s'ils avaient su."
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Iels ont l'air particuliers tes parents."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Boarf, ils sont juste un peu stricts."
           }
           ],
       "Dialogue2": [
@@ -701,7 +732,11 @@
           },
 		  {
            "Nom": "Eleanor",
-           "Text": "Non j'ai fais une longue thérapie, j'ai pris des médicaments très peu de temps parce qu'avec la cyclothymie c'était pas compatible. Mais de toute façon les médicaments font pas tout, le plus important c'est de réfléchir à ce qui a causé le burn-out et ce qu'on peut y changer."
+           "Text": "Non j'ai fais une longue thérapie, j'ai pris des médicaments très peu de temps parce qu'avec la cyclothymie c'était pas compatible."
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "Mais de toute façon les médicaments font pas tout, le plus important c'est de réfléchir à ce qui a causé le burn-out et ce qu'on peut y changer."
           },
 		  {
            "Nom": "Eleanor",
@@ -1645,7 +1680,11 @@
            },
 		   {
            "Nom": "Mazaa",
-           "Text": "Bah rien d’extraordinaire, iels me font sentir qu’iels me trouvent nulle, iels s’intéressent pas à ce que je fais ici et me demandent toujours quand je vais avoir une vie plus normale. Iels me font culpabiliser alors que je sais que c'est pas de ma faute. Je survivrai jamais si j'avais un travail sur le continent, même si j'en avais envie."
+           "Text": "Bah rien d’extraordinaire, iels me font sentir qu’iels me trouvent nulle, iels s’intéressent pas à ce que je fais ici et me demandent toujours quand je vais avoir une vie plus normale."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Iels me font culpabiliser alors que je sais que c'est pas de ma faute. Je survivrai jamais si j'avais un travail sur le continent, même si j'en avais envie."
            },
 		   {
            "Nom": "Mazaa",
@@ -1719,7 +1758,11 @@
            },
 		   {
            "Nom": "Ismael",
-           "Text": "Oui ça a l'air d'aller. Elle m'a fait remarquer que l'on à déjà atteint un peu plus de la moitié du voyage pour lequel tu t'es engagée avec nous. Comme le temps file !"
+           "Text": "Oui ça a l'air d'aller. Elle m'a fait remarquer que l'on à déjà atteint un peu plus de la moitié du voyage pour lequel tu t'es engagée avec nous."
+           },
+		   {
+           "Nom": "Ismael",
+           "Text": "Comme le temps file !"
           },
 		  {
            "Nom": "Jade",
@@ -1845,7 +1888,11 @@
           },
 		  {
            "Nom": "Kaneza",
-           "Text": "Non non, avec la vieille radio t'imagine comment ça s'rait galère ? Non, il y a des bateaux psychiatres et psychologues qui naviguent par endroit et qui reçoivent les marin-es qui passent près d'elleux. Ça permet d'avoir un suivi. Il y en a plusieurs sur notre trajet."
+           "Text": "Non non, avec la vieille radio t'imagine comment ça s'rait galère ?"
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Non, il y a des bateaux psychiatres et psychologues qui naviguent par endroit et qui reçoivent les marin-es qui passent près d'elleux. Ça permet d'avoir un suivi. Il y en a plusieurs sur notre trajet."
           },
           {
            "Nom": "Mazaa",
@@ -1887,7 +1934,11 @@
           },
 		  {
            "Nom": "Kaneza",
-           "Text": "Non non, avec la vieille radio t'imagine comment ça s'rait galère ? Non, il y a des bateaux psychiatres et psychologues qui naviguent par endroit et qui reçoivent les marin-es qui passent près d'elleux. Ça permet d'avoir un suivi. Il y en a plusieurs sur notre trajet."
+           "Text": "Non non, avec la vieille radio t'imagine comment ça s'rait galère ?"
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Non, il y a des bateaux psychiatres et psychologues qui naviguent par endroit et qui reçoivent les marin-es qui passent près d'elleux. Ça permet d'avoir un suivi. Il y en a plusieurs sur notre trajet."
           },
           {
            "Nom": "Mazaa",
@@ -1937,7 +1988,11 @@
            },
 		   {
            "Nom": "Minh Tâm",
-           "Text": "J'ai pas encore remarqué d'effets positifs mais ça met plus de temps à arriver je crois. C'est sensé stabiliser l'humeur et limiter les changements émotionnels brutaux et l'impulsivité. C'est vrai que j'ai pas eu de grosse crise depuis quelques jours. Mais ça peut être un hasard aussi."
+           "Text": "J'ai pas encore remarqué d'effets positifs mais ça met plus de temps à arriver je crois."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "C'est sensé stabiliser l'humeur et limiter les changements émotionnels brutaux et l'impulsivité. C'est vrai que j'ai pas eu de grosse crise depuis quelques jours. Mais ça peut être un hasard aussi."
           },
 		  {
            "Nom": "Minh Tâm",
@@ -1949,7 +2004,11 @@
            },
 		   {
            "Nom": "Minh Tâm",
-           "Text": "Pour l'instant la raideur a plutôt l'air d'augmenter avec les jours. J'ai un peu l'habitude avec mes médicaments précédents. Mais ça reste dur de se faire à l'idée qu'on vivra avec ces effets secondaires pendant des années. Faut choisir si on préfère ça ou la folie que ça soigne."
+           "Text": "Pour l'instant la raideur a plutôt l'air d'augmenter avec les jours. J'ai un peu l'habitude avec mes médicaments précédents."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Mais ça reste dur de se faire à l'idée qu'on vivra avec ces effets secondaires pendant des années. Faut choisir si on préfère ça ou la folie que ça soigne."
           },
 		  {
            "Nom": "Jade",
@@ -2020,7 +2079,11 @@
           },
           {
            "Nom": "Mazaa",
-           "Text": "Oui et non, il y a régulièrement des périodes difficiles. Là je crois qu'entre Maël qui est en HP, Minh Tâm qui galère avec son trouble borderline et ses médocs et les deux cis mecs qu'il faut engueuler régulièrement pour qu'ils participent aux taches collectives, ça fait beaucoup !"
+           "Text": "Oui et non, il y a régulièrement des périodes difficiles."
+          },
+          {
+           "Nom": "Mazaa",
+           "Text": "Là je crois qu'entre Maël qui est en HP, Minh Tâm qui galère avec son trouble borderline et ses médocs et les deux cis mecs qu'il faut engueuler régulièrement pour qu'ils participent aux taches collectives, ça fait beaucoup !"
            },
 		   {
            "Nom": "Jade",
@@ -2061,7 +2124,11 @@
           },
           {
            "Nom": "Minh Tâm",
-           "Text": "C'est pour ça qu'il faut que tu te poses. Prends le temps, sans rien faire. Rappelle-toi les plantes, les p'tits zoizeaux, la mer, le vent, l'embrun sur ton visage, ce pour quoi tu es montée sur ce bateau. Ça ferait du bien à Eleanor aussi."
+           "Text": "C'est pour ça qu'il faut que tu te poses. Prends le temps, sans rien faire."
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Rappelle-toi les plantes, les p'tits zoizeaux, la mer, le vent, l'embrun sur ton visage, ce pour quoi tu es montée sur ce bateau. Ça ferait du bien à Eleanor aussi."
            },
 		   {
            "Nom": "Minh Tâm",
@@ -2099,7 +2166,11 @@
           },
           {
            "Nom": "Minh Tâm",
-           "Text": "C'est pour ça qu'il faut que tu te poses. Prends le temps, sans rien faire. Rappelle-toi les plantes, les p'tits zoizeaux, la mer, le vent, l'embrun sur ton visage, ce pour quoi tu es montée sur ce bateau. Ça ferait du bien à Eleanor aussi."
+           "Text": "C'est pour ça qu'il faut que tu te poses. Prends le temps, sans rien faire."
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Rappelle-toi les plantes, les p'tits zoizeaux, la mer, le vent, l'embrun sur ton visage, ce pour quoi tu es montée sur ce bateau. Ça ferait du bien à Eleanor aussi."
            },
 		   {
            "Nom": "Minh Tâm",
@@ -2132,7 +2203,11 @@
            },
 		   {
            "Nom": "Suzanne",
-           "Text": "C'est vrai. Et puis ça permet d'avoir un peu plus de recul, de mieux voir les choses. C'est vraiment super ce que tu as fais pour le jardin."
+           "Text": "C'est vrai. Et puis ça permet d'avoir un peu plus de recul, de mieux voir les choses."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "C'est vraiment super ce que tu as fais pour le jardin."
           },
 		  {
            "Nom": "Jade",
@@ -2275,7 +2350,11 @@
            },
 		   {
            "Nom": "Eleanor",
-           "Text": "Assez oui, c'est moi qui lui ai proposé de venir sur le bateau. On s'est rencontré-e-s à l'Existransinter il y a bien une dizaine d'années. On faisait tou-te-s les deux partie de l'organisation du char handi', et on est resté-e-s en contact depuis."
+           "Text": "Assez oui, c'est moi qui lui ai proposé de venir sur le bateau. On s'est rencontré-e-s à l'Existransinter il y a bien une dizaine d'années."
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "On faisait tou-te-s les deux partie de l'organisation du char handi', et on est resté-e-s en contact depuis."
           },
 		  {
            "Nom": "Jade",
@@ -2500,7 +2579,11 @@
           },
           {
            "Nom": "Nathan",
-           "Text": "C'est pour ça que j'admire le travail de Mazaa ! Relever les différences et les modifications du monde au travers des cartes, c'est passionnant. J'aimerais aider à relever des notes sur les anciennes villes qui ont disparu."
+           "Text": "C'est pour ça que j'admire le travail de Mazaa ! Relever les différences et les modifications du monde au travers des cartes, c'est passionnant."
+          },
+          {
+           "Nom": "Nathan",
+           "Text": "J'aimerais aider à relever des notes sur les anciennes villes qui ont disparu."
            },
 		   {
            "Nom": "Jade",
@@ -2508,7 +2591,11 @@
           },
 		  {
            "Nom": "Nathan",
-           "Text": "Je verrais avec l'équipage s'il y a moyen d'installer un scaphandre sur le bateau, sinon je rejoindrais surement un bateau archéologue. Mais pas de suite, je me plais trop ici pour vouloir partir."
+           "Text": "Je verrais avec l'équipage s'il y a moyen d'installer un scaphandre sur le bateau, sinon je rejoindrais surement un bateau archéologue."
+          },
+		  {
+           "Nom": "Nathan",
+           "Text": "Mais pas de suite, je me plais trop ici pour vouloir partir."
            }		   		   
           ],
       "Dialogue2": [
@@ -2537,7 +2624,11 @@
           },
 		  {
            "Nom": "Jade",
-           "Text": "Oui, j'ai appris plein de choses et surtout je me sens moins coupable d'avoir besoin de temps pour me remettre de mon burn out. Bon, j'ai encore besoin d'apprendre à moins forcer et à avoir un rythme de vie plus lent, mais je suis sur la bonne voie."
+           "Text": "Oui, j'ai appris plein de choses et surtout je me sens moins coupable d'avoir besoin de temps pour me remettre de mon burn out."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Bon, j'ai encore besoin d'apprendre à moins forcer et à avoir un rythme de vie plus lent, mais je suis sur la bonne voie."
           },
           {
            "Nom": "Eleanor",
