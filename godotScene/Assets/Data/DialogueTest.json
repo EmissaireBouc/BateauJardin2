@@ -808,7 +808,7 @@
       "Dialogue2": [
           {
            "Nom": "Minh Tâm",
-           "Text": "T'inquiète c'est pas contre toi ! Kaneza a toujours du mal avec les nouvelles personnes, ça va prendre un peu de temps avant qu'elle arrive à te parler."
+           "Text": "T'inquiète c'est pas contre toi ! Kaneza a toujours du mal avec les nouvelles personnes. Elle est psychotique et ça va prendre un peu de temps pour qu'elle arrive à te parler."
            },
 		   {
            "Nom": "Minh Tâm",
@@ -1615,5 +1615,1034 @@
         ]
       }
 	  
-    }
+    },
+	"12": {
+		"Cartographe": {
+      "Dialogue1": [
+          {
+           "Nom": "Jade",
+           "Text": "Ça va pas ?"
+          },
+          {
+           "Nom": "Mazaa",
+           "Text": "Si si"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "…"
+          },
+		  {
+           "Nom": "Mazaa",
+           "Text": "Non ça va pas ! Je reviens de chez mes parents là et iels sont toujours aussi cons et psychophobes !"
+          },
+          {
+           "Nom": "Mazaa",
+           "Text": "Je sais que je devrais pas accorder de l'importance à ce qu'iels disent, mais y'a rien à faire ! Comme à chaque fois ça va me prendre des jours à m'en remettre, ça me saouuuule !"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Ah. Il s’est passé quoi ?"
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Bah rien d’extraordinaire, iels me font sentir qu’iels me trouvent nulle, iels s’intéressent pas à ce que je fais ici et me demandent toujours quand je vais avoir une vie plus normale. Iels me font culpabiliser alors que je sais que c'est pas de ma faute. Je survivrai jamais si j'avais un travail sur le continent, même si j'en avais envie."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "En plus ça leur plait pas que je fréquente que des gens fous, iels voudraient que je sois bien intégrée avec des gens normaux. Et c'est même pas la peine de parler de Charybde !"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "C'est nul. Je pensais pas que quelqu'un d'aussi chouette que toi pouvait avoir des parents qui te comprennent pas à ce point, qui soient pas fiers."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "On a pas la même définition de ce qui devrait rendre fier."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Depuis mon burn out mes parents sont un peu pareil. Ils rabaissent tout ce que je fais à part chercher du travail. J'avais pas réalisé que c'était psychophobe."
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Ouais, c'est psychophobe et pas normal. Ça résout rien mais ça rend ça un peu plus supportable de savoir que c'est pas nous le problème."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Mazaa",
+           "Text": "Faut que je me concentre sur la mer pour mes cartes."
+          }
+        ]
+      },
+	  
+		"Matelot": {
+      "Dialogue1": [
+          {
+           "Nom": "Nathan",
+           "Text": "Encore une livraison de faite !"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Ha ! Qu'est ce que c'était ?"
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Ho tu sais moi, je m'occupe surtout de charger et décharger. Ce qu'il y a dans les caisses... I don't know."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Euh... ok."
+          },
+          {
+           "Nom": "Nathan",
+           "Text": "Surement des trucs agricoles. On transporte souvent des outils, des graines ou de la nourriture qui craint pas."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Nathan",
+           "Text": "Tu peux chill quand tu veux."
+          }
+		]
+      },
+	  
+		"Vigie": {
+      "Dialogue1": [
+          {
+           "Nom": "Ismael",
+           "Text": "Salutation Jade. J'ai eu des nouvelles de ta marraine par radio ! Elle te passe le bonjour !"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Ah super, elle va bien ?"
+           },
+		   {
+           "Nom": "Ismael",
+           "Text": "Oui ça a l'air d'aller. Elle m'a fait remarquer que l'on à déjà atteint un peu plus de la moitié du voyage pour lequel tu t'es engagée avec nous. Comme le temps file !"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Ah oui c'est passé vite !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Un bateau bien vert, ça fait plaisir à voir."
+          }
+        ]
+      }
+	  
+    },
+	"13": {
+		"Matelot": {
+      "Dialogue1": [
+          {
+           "Nom": "Nathan",
+           "Text": "Oh hello Jade !"
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "On a fait un gros coup de ménage ce matin ! C'est vrai que ça faisait longtemps qu'on l'avait pas fait."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Maintenant comme dit Mazaa le plus dur ça va être de continuer à y faire attention. Faut pas qu'iels soient obligé-e-s de nous le rappeler à chaque fois."
+          },
+		  {
+           "Nom": "Ismael",
+           "Text": "On est désolé qu'il ait fallu nous remonter les bretelles pour qu'on s'en rende compte."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Nathan",
+           "Text": "Tu peux chill quand tu veux."
+          }
+        ]
+      },
+	  		"Vigie": {
+      "Dialogue1": [
+          {
+           "Nom": "Nathan",
+           "Text": "Oh hello Jade !"
+          },
+          {
+           "Nom": "Ismael",
+           "Text": "On a fait un gros coup de ménage ce matin ! C'est vrai que ça faisait longtemps qu'on l'avait pas fait."
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Maintenant comme dit Mazaa le plus dur ça va être de continuer à y faire attention. Faut pas qu'iels soient obligé-e-s de nous le rappeler à chaque fois."
+          },
+		  {
+           "Nom": "Ismael",
+           "Text": "On est désolé qu'il ait fallu nous remonter les bretelles pour qu'on s'en rende compte."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Un bateau bien vert, ça fait plaisir à voir."
+          }
+        ]
+      },
+		"Charpentiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Pfiou je suis fatiguée moi ! Heureusement qu'Ismael et Nathan se sont mis à faire le ménage sans qu'on ait à leur dire 15 fois."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Haha, il a fallu leur dire seulement 14 fois c'est ça ?"
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Oui un peu."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "C'est rare de t'entendre dire que t'es fatiguée."
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Oui, enfin je suis pas si fatiguée que ça. Je vais plutôt mieux que les autres donc c'est normal que j'en fasse un peu plus, que je m'occupe d'elleux quand ça va pas."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Mais à force de te dire ça, c'est toi qui en fait trop et qui t'épuise. Faut que tu prennes soin de toi aussi."
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Haha ! C'est toi qui parle d'en faire trop ! T'inquiète... En même temps j'ai pas grand chose par rapport aux autres, juste un Trouble du Déficit de l'Attention et un petit PTSD. C'est gérable normalement."
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Si tu as besoin de quoi que ce soit, n'hésite pas !"
+          }
+        ]
+      }
+	  
+    },
+	"14": {
+		"Cartographe": {
+      "Dialogue1": [
+          {
+           "Nom": "Mazaa",
+           "Text": "Ça s'est bien passé ton rdv hier ?"
+          },
+          {
+           "Nom": "Kaneza",
+           "Text": "Oui cette psy est toujours chouette, c'est avec elle que je me sens la mieux. Dommage qu'on la croise pas plus souvent."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Vous faites des rendez vous à distance ?"
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Non non, avec la vieille radio t'imagine comment ça s'rait galère ? Non, il y a des bateaux psychiatres et psychologues qui naviguent par endroit et qui reçoivent les marin-es qui passent près d'elleux. Ça permet d'avoir un suivi. Il y en a plusieurs sur notre trajet."
+          },
+          {
+           "Nom": "Mazaa",
+           "Text": "Et toi Jade, tu fais comment depuis que tu es là ?"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Euh ... J'ai tout arrêté, je me disais que c'était un nouveau départ et que j'en aurai plus besoin. Mais je commence à me rendre compte que c'était pas une bonne idée."
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Ah oui, ça doit être difficile. Si tu veux on peut te passer les coordonnées des prochain-e-s qui sont sur notre chemin ?"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Super, je veux bien oui !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Mazaa",
+           "Text": "Faut que je me concentre sur la mer pour mes cartes."
+          }
+        ]
+      },
+		"Mecanicienne": {
+      "Dialogue1": [
+          {
+           "Nom": "Mazaa",
+           "Text": "Ça s'est bien passé ton rdv hier ?"
+          },
+          {
+           "Nom": "Kaneza",
+           "Text": "Oui cette psy est toujours chouette, c'est avec elle que je me sens la mieux. Dommage qu'on la croise pas plus souvent."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Vous faites des rendez vous à distance ?"
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Non non, avec la vieille radio t'imagine comment ça s'rait galère ? Non, il y a des bateaux psychiatres et psychologues qui naviguent par endroit et qui reçoivent les marin-es qui passent près d'elleux. Ça permet d'avoir un suivi. Il y en a plusieurs sur notre trajet."
+          },
+          {
+           "Nom": "Mazaa",
+           "Text": "Et toi Jade, tu fais comment depuis que tu es là ?"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Euh ... J'ai tout arrêté, je me disais que c'était un nouveau départ et que j'en aurai plus besoin. Mais je commence à me rendre compte que c'était pas une bonne idée."
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Ah oui, ça doit être difficile. Si tu veux on peut te passer les coordonnées des prochain-e-s qui sont sur notre chemin ?"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Super, je veux bien oui !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Kaneza",
+           "Text": "..."
+          }
+        ]
+      },
+	  		"Gabiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Jade",
+           "Text": "Salut ! Comment ça va aujourd'hui ?"
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Hey. Ça va bof, le changement de médicaments est difficile."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Ah zut, qu'est ce que ça te fait ?"
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Bah des nausées, et puis je suis tout-e raide et je tremble. C'est assez relou."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Et t'as des effets bénéfiques ou juste ça ?"
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "J'ai pas encore remarqué d'effets positifs mais ça met plus de temps à arriver je crois. C'est sensé stabiliser l'humeur et limiter les changements émotionnels brutaux et l'impulsivité. C'est vrai que j'ai pas eu de grosse crise depuis quelques jours. Mais ça peut être un hasard aussi."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Après certains effets secondaires s'estompent avec le temps. J'espère que ça sera le cas."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Ok, j'espère aussi."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Pour l'instant la raideur a plutôt l'air d'augmenter avec les jours. J'ai un peu l'habitude avec mes médicaments précédents. Mais ça reste dur de se faire à l'idée qu'on vivra avec ces effets secondaires pendant des années. Faut choisir si on préfère ça ou la folie que ça soigne."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "J'imagine que c'est pas facile. Ça me fait un peu pareil avec mes antidépresseurs, mais avec des effets secondaires moins lourds. Enfin c'est pas vraiment comparable désolée..."
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Hé ! Rassure toi ! On n'est pas là pour faire une compèt' de qui souffre le plus. On a toustes des problèmes différents mais on est toustes dans le même bateau ! Haha."
+           }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
+          }
+        ]
+      },
+		"Vigie": {
+      "Dialogue1": [
+          {
+           "Nom": "Ismael",
+           "Text": "Excellent ! J'ai eu des nouvelles de Maël par radio ! Son séjour en clinique psy lui fait du bien, il a trouvé un endroit où les soignant-e-s sont plutôt bienveillant-e-s."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Ah super. Il reviendra bientôt donc ?"
+           },
+		   {
+           "Nom": "Ismael",
+           "Text": "Hélas non, il ne sait pas encore quand il rentrera. Il va prendre son temps pour vraiment aller mieux et ça c'est le principal ! Nous verrons bien pour son retour."
+          }
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Un bateau bien vert, ça fait plaisir à voir."
+          }
+        ]
+      }
+	  
+    },
+	"15": {
+		"Navigatrice": {
+      "Dialogue1": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Fait chier !"
+          }
+        ]
+      },
+		"Cartographe": {
+      "Dialogue1": [
+          {
+           "Nom": "Mazaa",
+           "Text": "Eleanor va pas bien du tout, ça m'inquiète."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "C'est vrai qu'elle a pas l'air comme d'habitude. Qu'est ce qu'elle a ?"
+           },
+		   {
+           "Nom": "Mazaa",
+           "Text": "Il y a tout qui la déprime ou qui l'angoisse. Elle trouve que c'était pas une si bonne idée de vivre sur un bateau ensemble. Ça nous fait trop forcer sur nos santés mentales pour réussir à nous en occuper."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Pourtant ça fait plusieurs années que vous naviguez et ça se passe bien non ?"
+          },
+          {
+           "Nom": "Mazaa",
+           "Text": "Oui et non, il y a régulièrement des périodes difficiles. Là je crois qu'entre Maël qui est en HP, Minh Tâm qui galère avec son trouble borderline et ses médocs et les deux cis mecs qu'il faut engueuler régulièrement pour qu'ils participent aux taches collectives, ça fait beaucoup !"
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Oui c'est sûr. Mais vous feriez quoi si vous abandonnez le bateau ?"
+          },
+		  {
+           "Nom": "Mazaa",
+           "Text": "On sait pas justement. Personne n'a envie de retourner vivre en ville et on tiendrait pas avec un travail à un rythme de valide. Mais on n'en est pas là, on va continuer avec le bateau tant qu'on peut. C'est juste une phase d’inquiétude d'Eleanor."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Mazaa",
+           "Text": "Faut que je me concentre sur la mer pour mes cartes."
+          }
+        ]
+      }
+	  
+    },
+	"16": {
+		"Gabiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Dis ! Tu as une petite mine ce matin. Tu arrives à te reposer un peu de temps en temps ?"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Comme si j'avais le temps avec tout le monde qui va pas bien ! Il faut bien que quelqu'un gère."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Mais justement pour le coup moi ça va pas trop mal aujourd'hui et Kana aussi va bien. On peut te relayer. Profite un peu, on voit toustes que tu commences à être à bout."
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "T'as raison je peux pas tout gérer, de toute façon j'y arrive plus."
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "C'est pour ça qu'il faut que tu te poses. Prends le temps, sans rien faire. Rappelle-toi les plantes, les p'tits zoizeaux, la mer, le vent, l'embrun sur ton visage, ce pour quoi tu es montée sur ce bateau. Ça ferait du bien à Eleanor aussi."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "On est reconnaissant de tout ce que tu fais. Mais on serait content si tu prenais un peu de temps pour toi. On t'en demande beaucoup, souvent, alors quand on peut gérer, c'est avec plaisir."
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Merci... Je vais allez me reposer, puis j'irais profiter du jardin."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
+          }
+        ]
+      },
+		"Charpentiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Dis ! Tu as une petite mine ce matin. Tu arrives à te reposer un peu de temps en temps ?"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Comme si j'avais le temps avec tout le monde qui va pas bien ! Il faut bien que quelqu'un gère."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Mais justement pour le coup moi ça va pas trop mal aujourd'hui et Kana aussi va bien. On peut te relayer. Profite un peu, on voit toustes que tu commences à être à bout."
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "T'as raison je peux pas tout gérer, de toute façon j'y arrive plus."
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "C'est pour ça qu'il faut que tu te poses. Prends le temps, sans rien faire. Rappelle-toi les plantes, les p'tits zoizeaux, la mer, le vent, l'embrun sur ton visage, ce pour quoi tu es montée sur ce bateau. Ça ferait du bien à Eleanor aussi."
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "On est reconnaissant de tout ce que tu fais. Mais on serait content si tu prenais un peu de temps pour toi. On t'en demande beaucoup, souvent, alors quand on peut gérer, c'est avec plaisir."
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Merci... Je vais allez me reposer, puis j'irais profiter du jardin."
+          }
+         ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Je vais allez me reposer."
+          }
+        ]  
+    },
+	"17": {
+		"Charpentiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Suzanne",
+           "Text": "J'avais oublié ce que ça faisait de s'ennuyer... C'est plutôt agréable."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Oui on l'oubli parfois. Moi la première."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "C'est vrai. Et puis ça permet d'avoir un peu plus de recul, de mieux voir les choses. C'est vraiment super ce que tu as fais pour le jardin."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Ha ! Merci !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Si tu as besoin de quoi que ce soit, n'hésite pas !"
+          }
+        ]
+      },
+		"Mecanicienne": {
+      "Dialogue1": [
+          {
+           "Nom": "Kaneza",
+           "Text": "Ça à l'air d'aller mieux toi !"
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Oui, je craignais que les effets secondaires durent mais ils commencent à être moins présent ! Je sais pas si je m'y habitue ou s'ils diminuent mais en tout cas c'est plus supportable."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "C'est super si ça te laisse un peu respirer."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Carrément ! Et ça me gène moins pour grimper dans l'arbre et arranger les voiles."
+          },
+          {
+           "Nom": "Kaneza",
+           "Text": "... Mais tu es monté-e même avec tes tremblements ?! Tu sais bien que ça m'inquiète !"
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Heu ! Ha oui mais j'ava... les voiles, on devait quand même les bouger, et puis l'arbre, c'est un peu mon domaine !"
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Minh !"
+          },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Oui, bon déso' Kana, je ferais plus attention."
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Mouais... Ou la prochaine fois demande de l'aide."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Je vais peut être les laisser..."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Kaneza",
+           "Text": "..."
+          }
+        ]
+      },
+		"Gabiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Kaneza",
+           "Text": "Ça à l'air d'aller mieux toi !"
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Oui, je craignais que les effets secondaires durent mais ils commencent à être moins présent ! Je sais pas si je m'y habitue ou s'ils diminuent mais en tout cas c'est plus supportable."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "C'est super si ça te laisse un peu respirer."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Carrément ! Et ça me gène moins pour grimper dans l'arbre et arranger les voiles."
+          },
+          {
+           "Nom": "Kaneza",
+           "Text": "... Mais tu es monté-e même avec tes tremblements ?! Tu sais bien que ça m'inquiète !"
+           },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Heu ! Ha oui mais j'ava... les voiles, on devait quand même les bouger, et puis l'arbre, c'est un peu mon domaine !"
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Minh !"
+          },
+		   {
+           "Nom": "Minh Tâm",
+           "Text": "Oui, bon déso' Kana, je ferais plus attention."
+          },
+		  {
+           "Nom": "Kaneza",
+           "Text": "Mouais... Ou la prochaine fois demande de l'aide."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Je vais peut être les laisser..."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
+          }
+        ]
+      }
+	  
+    },
+	"18": {
+		"Charpentiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Ça fait du bien de se poser et de regarder la mer. Elle est si calme."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Si tu as besoin de quoi que ce soit, n'hésite pas !"
+          }
+        ]
+      },
+		"Navigatrice": {
+      "Dialogue1": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Maël me manque, on passe beaucoup de temps ensemble d'habitude."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Ah, vous vous connaissez depuis longtemps ?"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Assez oui, c'est moi qui lui ai proposé de venir sur le bateau. On s'est rencontré-e-s à l'Existransinter il y a bien une dizaine d'années. On faisait tou-te-s les deux partie de l'organisation du char handi', et on est resté-e-s en contact depuis."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Ah super, il est sur le bateau depuis 10 ans du coup ?"
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "Haha non, il y a dix ans on venait de trouver le bateau et on était encore en train de le retaper avec Mazaa, Suzy et ta marraine. Ça doit faire cinq ans qu'il navigue avec nous."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Rien de plus revigorant que l'air marin."
+          }
+        ]
+      },
+		"Gabiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Kaneza",
+           "Text": "*Bisou*"
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "*Bisou*"
+           },
+		   {
+           "Nom": "Kaneza",
+           "Text": "Oh salut Jade !"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Désolé de vous déranger, je vous laisse haha !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Minh Tâm",
+           "Text": "Un jour, dans l'arbre, je me suis pris une mouette en pleine tête."
+          }
+        ]
+      },
+		"Mecanicienne": {
+      "Dialogue1": [
+          {
+           "Nom": "Kaneza",
+           "Text": "*Bisou*"
+          },
+          {
+           "Nom": "Minh Tâm",
+           "Text": "*Bisou*"
+           },
+		   {
+           "Nom": "Kaneza",
+           "Text": "Oh salut Jade !"
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Désolé de vous déranger, je vous laisse haha !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Kaneza",
+           "Text": "..."
+          }
+        ]
+      }
+	  
+    },
+	"19": {
+		"Navigatrice": {
+      "Dialogue1": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Alors Eleanor ? Un peu reposée ?"
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "Comme un charme ! Enfin, une fois les angoisses passés haha ! Et toi ? Les autres m'ont dit que tu t'accordais une pose bien méritée ?"
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Disons que j'ai un peu rechigné au début mais oui, ça fait du bien de rien faire !"
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "À qui le dis-tu ! Faudra peut être reprendre la charte qu'on avait posée lorsqu'on avait pris la mer, et y inscrire la glandouille comme une priorité ! Histoire de s'en souvenir plus fréquemment !"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Il y a une charte sur le bateau ?"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Haha, une vieille liste de règle écrite un soir de fête, elle doit trainer quelque part. Mais c'est vrai qu'il y avait deux trois bonnes idées !"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Comme de ne pas se suspendre à la figure de proue pour impressionner les copaines et les obliger à faire demi tour pour récupérer l'auteurice des faits ?"
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Haha entre autre chose oui !"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "C'est vachement spécifique comme règle quand même, ça vous est arrivé souvent ?"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Crois en mon expérience Jade : 'il est des fois des idées qu'il vaut mieux noter pour éviter de les reproduire' !"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Trois fois ? C'est ça Suzy ?"
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Ouuui bon, ce n'est pas si intéressant, n'est ce pas Jade ? Haha !"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Haha, oui je pense que j'en sais assez ! Mais j'aimerais bien voir cette liste, elle a l'air pleine d'anecdotes !"
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "Surtout concernant ta marraine ! Je vais voir si j'arrive à remettre la main dessus !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Rien de plus revigorant que l'air marin."
+          }
+        ]
+      },
+		"Charpentiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Alors Eleanor ? Un peu reposée ?"
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "Comme un charme ! Enfin, une fois les angoisses passés haha ! Et toi ? Les autres m'ont dit que tu t'accordais une pose bien méritée ?"
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Disons que j'ai un peu rechigné au début mais oui, ça fait du bien de rien faire !"
+          },
+		  {
+           "Nom": "Eleanor",
+           "Text": "À qui le dis-tu ! Faudra peut être reprendre la charte qu'on avait posée lorsqu'on avait pris la mer, et y inscrire la glandouille comme une priorité ! Histoire de s'en souvenir plus fréquemment !"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Il y a une charte sur le bateau ?"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Haha, une vieille liste de règle écrite un soir de fête, elle doit trainer quelque part. Mais c'est vrai qu'il y avait deux trois bonnes idées !"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Comme de ne pas se suspendre à la figure de proue pour impressionner les copaines et les obliger à faire demi tour pour récupérer l'auteurice des faits ?"
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Haha entre autre chose oui !"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "C'est vachement spécifique comme règle quand même, ça vous est arrivé souvent ?"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Crois en mon expérience Jade : 'il est des fois des idées qu'il vaut mieux noter pour éviter de les reproduire' !"
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Trois fois ? C'est ça Suzy ?"
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Ouuui bon, ce n'est pas si intéressant, n'est ce pas Jade ? Haha !"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Haha, oui je pense que j'en sais assez ! Mais j'aimerais bien voir cette liste, elle a l'air pleine d'anecdotes !"
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "Surtout concernant ta marraine ! Je vais voir si j'arrive à remettre la main dessus !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Si tu as besoin de quoi que ce soit, n'hésite pas !"
+          }
+        ]
+      },
+		"Matelot": {
+      "Dialogue1": [
+          {
+           "Nom": "Nathan",
+           "Text": "N’empêche toutes ces étendues d'eau, ça fait réfléchir."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Comment ça ?"
+           },
+		   {
+           "Nom": "Nathan",
+           "Text": "Bah, à la montée des eaux et à toute les anciennes terres que nous devons 'survoler' dans le bateau."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Ça remonte à loin, j'étais pas encore née quand c'est arrivé. Mes parents m'en ont jamais vraiment parlé."
+          },
+          {
+           "Nom": "Nathan",
+           "Text": "C'est pour ça que j'admire le travail de Mazaa ! Relever les différences et les modifications du monde au travers des cartes, c'est passionnant. J'aimerais aider à relever des notes sur les anciennes villes qui ont disparu."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "J'avoue que j'ai jamais eu le temps de vraiment penser à ce qu'il y avait sous la surface de l'eau. Tu t'y prendrais comment ?"
+          },
+		  {
+           "Nom": "Nathan",
+           "Text": "Je verrais avec l'équipage s'il y a moyen d'installer un scaphandre sur le bateau, sinon je rejoindrais surement un bateau archéologue. Mais pas de suite, je me plais trop ici pour vouloir partir."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Nathan",
+           "Text": "Tu peux chill quand tu veux."
+          }
+        ]
+      }
+	  
+    },
+	"20": {
+		"Navigatrice": {
+      "Dialogue1": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Tu as bien changé depuis que tu es arrivée sur ce bateau."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Oui, j'ai l'impression que c'était il y a super longtemps tellement je me suis habituée à être ici ! Et nos discussions m'ont fait beaucoup de bien."
+           },
+		   {
+           "Nom": "Eleanor",
+           "Text": "Ah oui ? C'est super."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Oui, j'ai appris plein de choses et surtout je me sens moins coupable d'avoir besoin de temps pour me remettre de mon burn out. Bon, j'ai encore besoin d'apprendre à moins forcer et à avoir un rythme de vie plus lent, mais je suis sur la bonne voie."
+          },
+          {
+           "Nom": "Eleanor",
+           "Text": "Je suis contente pour toi. Moi aussi ça m'avait beaucoup aidée quand j'ai commencé à fréquenter d'autres personnes folles."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Oui c'est génial de voir que parler de santé mentale peut ne pas être tabou, que ces expériences de vie ne sont pas si anormales que ça."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Rien de plus revigorant que l'air marin."
+          }
+        ]
+      },
+		"Cartographe": {
+      "Dialogue1": [
+          {
+           "Nom": "Mazaa",
+           "Text": "C'était chouette de t'avoir parmi nous! Tu fais comme tu veux mais ça me ferait plaisir que tu restes encore quelques temps."
+          },
+          {
+           "Nom": "Jade",
+           "Text": "Oh merci, c'était chouette pour moi aussi !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Mazaa",
+           "Text": "Faut que je me concentre sur la mer pour mes cartes."
+          }
+        ]
+      },
+		"Charpentiere": {
+      "Dialogue1": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Comment ça va aujourd'hui ? Tu appréhendes pas trop le départ ?"
+          },
+          {
+           "Nom": "Jade",
+           "Text": "J’appréhende surtout le retour à la vie 'normale'."
+           },
+		   {
+           "Nom": "Suzanne",
+           "Text": "Je comprends, c'est difficile de trouver sa place. Surtout quand la société ne nous veut pas. On essaye nous aussi. C'est pas parfait, mais c'est bien mieux que ce qu'on nous impose d'habitude."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "C'est déjà énorme ce que vous avez fait !"
+          },
+          {
+           "Nom": "Suzanne",
+           "Text": "Au final ça s'est fait petit à petit. Toi aussi tu pourrais le faire tu sais ! Peut-être pas exactement comme nous mais à ta manière."
+           },
+		   {
+           "Nom": "Jade",
+           "Text": "Tu crois ? À voir."
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Et si jamais tu as envie, tu sais que tu peux rester plus longtemps bien sûr. On t'apprécie tous et toutes vraiment beaucoup."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "Merci ! Moi aussi je me sens bien avec vous !"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Suzanne",
+           "Text": "Si tu as besoin de quoi que ce soit, n'hésite pas !"
+          }
+        ]
+      },
+		"Vigie": {
+      "Dialogue1": [
+          {
+           "Nom": "Ismael",
+           "Text": "Demain nous arriverons au port où tu as intégré l'équipage ! Tu pourras rentrer chez toi si tu le souhaites mais il est évident que si tu veux rester avec nous, tu es la bienvenue."
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Ismael",
+           "Text": "Un bateau bien vert, ça fait plaisir à voir."
+          }
+        ]
+      }
+	  
+    },
+	"21": {
+		"Navigatrice": {
+      "Dialogue1": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Ça y est on est revenu au port où tu nous as rejoint. Est ce que tu veux t'en aller comme c'était prévu, ou tu veux repartir avec nous pour une autre tournée ?"
+           }		   		   
+          ],
+      "Dialogue2": [
+          {
+           "Nom": "Eleanor",
+           "Text": "Rien de plus revigorant que l'air marin."
+           }		   		   
+        ]
+      }
+}
 }

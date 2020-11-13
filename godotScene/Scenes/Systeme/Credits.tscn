@@ -48,7 +48,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_horizontal_guides_": [ 670.162 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 1287.0 ]
 }
 
 [node name="Marge1" type="MarginContainer" parent="."]
@@ -130,12 +132,12 @@ bbcode_enabled = true
 bbcode_text = "[center]
 [b]Game Design[/b]
 Ant0yne
-Dr_Destruction
+Tristan Itier
 [/center]"
 text = "
 Game Design
 Ant0yne
-Dr_Destruction
+Tristan Itier
 "
 scroll_active = false
 
@@ -157,14 +159,14 @@ bbcode_text = "[center]
 [b]Narration[/b]
 Ant0yne
 Axell
-Dr_Destruction
+Tristan Itier
 
 [/center]"
 text = "
 Narration
 Ant0yne
 Axell
-Dr_Destruction
+Tristan Itier
 
 "
 scroll_active = false
@@ -186,13 +188,13 @@ bbcode_enabled = true
 bbcode_text = "[center]
 [b]Graphisme[/b]
 Axell
-Dr_Destruction
+Tristan Itier
 Oloreon
 [/center]"
 text = "
 Graphisme
 Axell
-Dr_Destruction
+Tristan Itier
 Oloreon
 "
 scroll_active = false
@@ -243,13 +245,13 @@ custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Developpement[/b]
-Emilie
+Paulette
 Rl
 
 [/center]"
 text = "
 Developpement
-Emilie
+Paulette
 Rl
 
 "
@@ -271,18 +273,67 @@ custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Playtest[/b]
-Lupcapyou
-Erwan
-Lilolalelo
-Olivial
 [/center]"
 text = "
 Playtest
-Lupcapyou
-Erwan
-Lilolalelo
-Olivial
 "
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2/Playtest"]
+anchor_left = 0.14
+anchor_top = 0.318
+anchor_right = 0.938
+anchor_bottom = 0.901
+margin_left = -0.0800018
+margin_top = -0.0560036
+margin_right = -0.0360107
+margin_bottom = 0.00799561
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LigneGauche" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2/Playtest/HBoxContainer"]
+margin_right = 126.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "Lupcapyou
+Lilolalelo
+Dilz"
+text = "Lupcapyou
+Lilolalelo
+Dilz"
+scroll_active = false
+
+[node name="LigneDroite" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2/Playtest/HBoxContainer"]
+margin_left = 130.0
+margin_right = 257.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 5 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+bbcode_enabled = true
+bbcode_text = "Erwan
+Olivial
+Alice"
+text = "Erwan
+Olivial
+Alice"
 scroll_active = false
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Marge1/Marge1-1/VBoxContainer"]
@@ -309,13 +360,13 @@ bbcode_text = "[center]
 [b]Outils[/b]
 Krita
 Godot
-etc.
+Audacity
 [/center]"
 text = "
 Outils
 Krita
 Godot
-etc.
+Audacity
 "
 scroll_active = false
 

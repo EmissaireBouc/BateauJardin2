@@ -130,7 +130,7 @@ tracks/0/keys = {
 [node name="Gabiere" type="AnimatedSprite"]
 frames = SubResource( 20 )
 animation = "IDLE"
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
