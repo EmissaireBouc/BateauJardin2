@@ -372,7 +372,7 @@ func a_day_pass():
 	else:
 		ImportData.DialJour = 0
 		ImportData.ChangDial = 0
-		PA.set_PA(int(ImportData.PAJ[str(ImportData.jour)].PA))
+		PA.set_PA()
 
 	$Bateau/WalkArea.reboot()
 	$CanvasLayer/Transition.waitForClick = true
@@ -390,7 +390,7 @@ func chargement_jour(jr = ImportData.jour):
 	ImportData.ChangDial = 0
 	PNJsort.new_day()
 	
-	PA.set_PA(int(ImportData.PAJ[str(jr)].PA))
+	PA.set_PA()
 	
 	if jr == 0 :
 		var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()

@@ -26,40 +26,40 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 107.72
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 256, 256 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 175.242, 325.854 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0.262745 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=5]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.227451, 0.203922, 0.203922, 0.360784 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=7]
 size = 22
 outline_color = Color( 0, 1, 0.0862745, 1 )
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=20]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0, 0, 0.231373 )
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=9]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFontData" id=22]
+[sub_resource type="DynamicFontData" id=10]
 font_path = "res://Assets/UI/Font/Quicksand_Bold.otf"
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=11]
 size = 40
-font_data = SubResource( 22 )
+font_data = SubResource( 10 )
 
 [node name="ScenePrincipale" type="Node2D"]
 script = ExtResource( 1 )
@@ -141,7 +141,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bateau/YSort/MasqueTransparent"]
 position = Vector2( 0, 192 )
-shape = SubResource( 14 )
+shape = SubResource( 2 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Bateau/YSort/MasqueTransparent"]
 visible = false
@@ -156,7 +156,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bateau/Porte"]
 position = Vector2( -130.516, -40.9079 )
-shape = SubResource( 15 )
+shape = SubResource( 3 )
 
 [node name="Bateau_PremierPlan" parent="." instance=ExtResource( 4 )]
 position = Vector2( -5114.46, 456.847 )
@@ -200,8 +200,8 @@ margin_top = 192.0
 margin_right = 1864.0
 margin_bottom = 288.0
 grow_horizontal = 0
-custom_styles/normal = SubResource( 16 )
-custom_fonts/font = SubResource( 17 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
 text = "Jardin :"
 __meta__ = {
@@ -215,8 +215,8 @@ margin_top = 64.0
 margin_right = 1096.0
 margin_bottom = 160.0
 grow_horizontal = 0
-custom_styles/normal = SubResource( 16 )
-custom_fonts/font = SubResource( 17 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
 text = "JOUR : "
 __meta__ = {
@@ -229,8 +229,8 @@ margin_left = 1536.0
 margin_top = 64.0
 margin_right = 1864.0
 margin_bottom = 168.0
-custom_styles/normal = SubResource( 18 )
-custom_fonts/font = SubResource( 19 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.105882, 1, 0, 1 )
 text = "Zoom :"
 align = 2
@@ -244,8 +244,8 @@ margin_left = 64.0
 margin_top = 704.0
 margin_right = 312.0
 margin_bottom = 976.0
-custom_styles/normal = SubResource( 20 )
-custom_fonts/font = SubResource( 21 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 1, 0.156863, 1 )
 text = "Plante Description"
 script = ExtResource( 16 )
@@ -287,7 +287,7 @@ margin_left = -960.0
 margin_top = -45.5
 margin_right = 960.0
 margin_bottom = 45.5
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Jour"
 align = 1
