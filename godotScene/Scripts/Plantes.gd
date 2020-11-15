@@ -111,7 +111,7 @@ func _on_Area2D_area_shape_entered(_area_id, area, _area_shape, _self_shape):
 
 func _on_MasqueTransparent_area_shape_exited(_area_id, area, _area_shape, _self_shape):
 
-	if area.get_parent() != null:
+	if area != null:
 		if area.get_parent().modulate != Color(1,1,1,1):
 			transparence_Off(area.get_parent())
 

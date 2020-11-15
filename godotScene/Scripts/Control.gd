@@ -233,6 +233,8 @@ func Engage_Conversation(pos):
 			if cursor == "parler":
 				posCursor = Vector2(pos.x-400,pos.y)
 				change_action(PARLER)
+			else :
+				PNJsort.talking = false
 		_:
 			PNJsort.talking = false
 
@@ -417,7 +419,7 @@ func fondu(animName):
 func _on_Transition_transition_over(t):
 	if t == "transition_in_debut":
 		a_day_pass()
-		transitionJours.start(day)
+		transitionJours.start(ImportData.jour)
 		$CanvasLayer/Transition.transitionCiel = true
 		fondu("transition_out")
 		

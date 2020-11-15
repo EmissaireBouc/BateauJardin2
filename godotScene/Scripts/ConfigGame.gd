@@ -16,6 +16,7 @@ func choix_done(c):
 func encart():
 	var encart = load("res://Scenes/Systeme/Encart.tscn").instance()
 	add_child(encart)
+	encart.hide()
 	encart.connect("encart_done", self, "encart_done")
 	encart.connect("choix_done", self, "choix_done")
 	encart.chargement_syst_info("Information", "[center]Bienvenue sur la démo du Bateau Fol ! \n\n Quelques bugs embusqués peuvent encore surgir... \n [color=#ffffff]Le jeu sauvegarde au début de chaque nouvelle journée[/color][/center][right][img=<64>]res://Assets/UI/Logo/Logo_Gama_128x128.png[/img][/right]", ["Ok"])

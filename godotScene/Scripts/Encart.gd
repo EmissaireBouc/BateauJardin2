@@ -54,16 +54,16 @@ func show_portrait(n):
 func set_pos(pos):
 	
 	if pos == "Middle":
-		set_position(Vector2(0,(get_viewport().size.y/2) - (get_rect().size.y/2)))
+#		set_position(Vector2(0,(get_viewport().size.y/2) - (get_rect().size.y/2)))
 
 		tween.interpolate_property(
-			self, "rect_position:y", 0-get_rect().size.y, (get_viewport().size.y/2) - (get_rect().size.y/2), 1.3,
+			self, "rect_position:y", 0-get_rect().size.y, (get_viewport().size.y/2) - (get_rect().size.y/2), 1.7,
 			tween.TRANS_EXPO, tween.EASE_OUT
 			)
 		tween.start()
 
 		tween.interpolate_property(
-			self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 1.3,
+			self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 1.7,
 			tween.TRANS_EXPO, tween.EASE_OUT
 			)
 		tween.start()
