@@ -71,12 +71,14 @@ func load_page():
 		setup_herbier(4,5)
 	if numeroPage == 7 : 
 		setup_herbier(6,7)
+	if numeroPage == 8 :
+		setup_Recapitulatif()
 
 	$Container/VBoxContainer.raise()
 
 
 func setup_herbier(p1,p2):
-	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageEquipage2.tscn").instance()
+	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageHerbier.tscn").instance()
 	page.setup_pages(p1,p2)
 	$Container.add_child(page)
 
@@ -90,6 +92,10 @@ func setup_sommaire():
 	$Container.add_child(page)
 	page.connect("button_pressed", self, "_on_button_pressed")
 
+func setup_Recapitulatif():
+	page = load ("res://Assets/UI/Carnet/Scene_Carnet/ScPageRecapitulatif.tscn").instance()
+	$Container.add_child(page)
+	page.connect("button_pressed", self, "_on_button_pressed")
 
 func _on_FermetureCarnet_finished():
 	emit_signal("Close_Carnet")

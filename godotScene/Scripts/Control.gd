@@ -73,17 +73,56 @@ func connectique():
 	Encart.connect("encart_done", self, "encart_done")
 	Encart.connect("choix_done", self, "choix_done")
 
+"""
+Changement de jours
+"""
 
+func a_day_pass():
+	day += 1
 
-func _process(_delta):
-	if Input.is_action_just_pressed("Debug"):
-		if !$CanvasLayer/Debug.visible:
-			$CanvasLayer/Debug.visible = true
-		else:
-			$CanvasLayer/Debug.visible = false
+	if PNJsort.get_dialogue_done() >= PNJsort.get_child_count() && ImportData.jour < ImportData.get_last_day():
+		ImportData.jour += 1
+		chargement_jour()
 
-	debug()
+	else:
+		ImportData.DialJour = 0
+		ImportData.ChangDial = 0
+		PA.set_PA()
 
+	
+	$CanvasLayer/Transition.waitForClick = true
+	Plantes.plante_XP_up()
+	Plantes.plante_PV_down()
+
+	save_et_load.save()
+
+func chargement_jour(jr = ImportData.jour):
+
+	change_action(DEFAULT)
+
+	$CanvasLayer/Debug/DebugLabel4.text = "JOUR : " + str(ImportData.jour)
+	ImportData.DialJour = 0
+	ImportData.ChangDial = 0
+	$Bateau/WalkArea.reboot()
+	PNJsort.new_day()
+	
+	PA.set_PA()
+	
+	if jr == 0 :
+		var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
+		$CanvasLayer.add_child(tuto)
+		$CanvasLayer/Commande.connect("fin_tuto",self,"fin_tuto")
+
+		Plantes.add_new_plant("HautArbuste",Vector2(-1920,-320),5,4,2)
+		Plantes.add_new_plant("Myosotis",Vector2(-2112,-192),0,0,2)
+		Plantes.add_new_plant("Fougere",Vector2(-1856,-192),2,2,1)
+		Plantes.add_new_plant("OreillesDeLapin",Vector2(-1984,-64),4,2,1)
+
+	if jr == 10:
+		Plantes.kill_some_plants()
+
+	if jr > 10:
+		Plantes.arrose_plrs_plantes(10)
 
 
 """
@@ -92,7 +131,6 @@ Gestion du clic gauche :
 	(distingue des inputs qui ont lieu dans le HUD)
 	Gère le Clic gauche (par défaut : Marcher)
 """
-
 
 
 func _unhandled_input(_event):
@@ -113,7 +151,6 @@ func _unhandled_input(_event):
 					
 			DEPLACER :
 				_on_Player_anim_over(MOVE)
-
 
 
 """
@@ -308,7 +345,7 @@ func _on_PNJ_Fin_Conversation():
 
 	change_action(DEFAULT)
 	if ImportData.jour >= ImportData.get_last_day() && PNJsort.get_dialogue_done() == PNJsort.get_child_count():
-		_info_systeme("fin", "[center]Ce message marque la fin du prototype de Bateau fol ! \n \n Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez. \n Merci d'avoir joué ![/center][right][img=<64>]res://Assets/UI/Logo/Logo_Gama_128x128.png[/img][/right]","Ok", "Quitter")
+		_info_systeme("fin", "[center]Ce message marque la fin du prototype de Bateau fol ! \n \n Vous pouvez toutefois continuer à embellir le jardin si vous le souhaitez. \n Merci d'avoir joué ![/center][right][img=<64>]res://Assets/UI/Logo/Logo_Gama_128x128.png[/img][/right]", ["Ok", "Quitter"])
 
 
 
@@ -351,9 +388,9 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 		else : 
 
 			if PNJsort.get_dialogue_done() != PNJsort.get_child_count() :
-				_info_systeme("info", "Je n'ai pas parlé à tout le monde. Se coucher ?", "Oui", "Non")
+				_info_systeme("Jade", "Je n'ai pas parlé à tout le monde. Se coucher ?", ["Oui","Non"], "Bottom")
 			else :
-				_info_systeme("info", "Le jour est en train de tomber. Se coucher ?", "Oui", "Non")
+				_info_systeme("Jade", "Le jour est en train de tomber. Se coucher ?", ["Oui","Non"], "Bottom")
 
 func _on_Porte_mouse_entered():
 	cursor_mode("add","dormir")
@@ -361,52 +398,6 @@ func _on_Porte_mouse_entered():
 func _on_Porte_mouse_exited():
 	cursor_mode("remove","dormir")
 
-
-func a_day_pass():
-	day += 1
-
-	if PNJsort.get_dialogue_done() >= PNJsort.get_child_count() && ImportData.jour < ImportData.get_last_day():
-		ImportData.jour += 1
-		chargement_jour()
-
-	else:
-		ImportData.DialJour = 0
-		ImportData.ChangDial = 0
-		PA.set_PA()
-
-	$Bateau/WalkArea.reboot()
-	$CanvasLayer/Transition.waitForClick = true
-	Plantes.plante_XP_up()
-	Plantes.plante_PV_down()
-
-	save_et_load.save()
-
-func chargement_jour(jr = ImportData.jour):
-
-	change_action(DEFAULT)
-
-	$CanvasLayer/Debug/DebugLabel4.text = "JOUR : " + str(ImportData.jour)
-	ImportData.DialJour = 0
-	ImportData.ChangDial = 0
-	PNJsort.new_day()
-	
-	PA.set_PA()
-	
-	if jr == 0 :
-		var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
-		$CanvasLayer.add_child(tuto)
-		$CanvasLayer/Commande.connect("fin_tuto",self,"fin_tuto")
-
-		Plantes.add_new_plant("HautArbuste",Vector2(-1920,-320),5,4,2)
-		Plantes.add_new_plant("Myosotis",Vector2(-2112,-192),0,0,2)
-		Plantes.add_new_plant("Fougere",Vector2(-1856,-192),2,2,1)
-		Plantes.add_new_plant("OreillesDeLapin",Vector2(-1984,-64),4,2,1)
-
-	if jr == 10:
-		Plantes.kill_some_plants()
-
-	if jr > 10:
-		Plantes.arrose_plrs_plantes(10)
 
 
 """
@@ -452,7 +443,7 @@ func start_new_day():
 			var newPath = "[img=<48>]res://Assets/Plante/Icone/icon_%s.png[/img]" %key
 			phrase +=  newPath
 	if nbText != 0:
-		_info_systeme("graine", phrase + "[/center]", "ok")
+		_info_systeme("graines",phrase + "[/center]",["Ok"],"Middle")
 	
 	if ImportData.jour == 10: 
 		_encart("Jade", "J'ai pas réussi à sortir de mon lit depuis deux jours... Il faut que j'aille m'excuser auprès de tout le monde.")
@@ -493,9 +484,9 @@ func _encart(nom, sentence):
 	change_action(CONVERS)
 
 
-func _info_systeme(titre, phrase, btn1 = "", btn2 = ""):
+func _info_systeme(titre, phrase, btn = [], pos = "Middle"):
 
-	$CanvasLayer/Encart.chargement_syst_info(titre, phrase, btn1, btn2)
+	$CanvasLayer/Encart.chargement_syst_info(titre, phrase, btn, pos)
 	change_action(CONVERS)
 
 func fin_tuto():
@@ -527,3 +518,11 @@ Gestion des fonctions Debug
 
 func debug():
 	$CanvasLayer/Debug/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100) + "\nJOUR : " + str(ImportData.jour)
+func _process(_delta):
+	if Input.is_action_just_pressed("Debug"):
+		if !$CanvasLayer/Debug.visible:
+			$CanvasLayer/Debug.visible = true
+		else:
+			$CanvasLayer/Debug.visible = false
+
+	debug()

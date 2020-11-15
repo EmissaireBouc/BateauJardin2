@@ -143,11 +143,6 @@ __meta__ = {
 position = Vector2( 0, 192 )
 shape = SubResource( 2 )
 
-[node name="Polygon2D" type="Polygon2D" parent="Bateau/YSort/MasqueTransparent"]
-visible = false
-self_modulate = Color( 0.101961, 1, 0, 0.0235294 )
-polygon = PoolVector2Array( -256, -64, -256, 448, 256, 448, 256, -64 )
-
 [node name="Tween" type="Tween" parent="Bateau/YSort"]
 
 [node name="Porte" type="Area2D" parent="Bateau"]

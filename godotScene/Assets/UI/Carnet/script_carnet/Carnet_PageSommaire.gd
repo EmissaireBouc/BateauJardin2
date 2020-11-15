@@ -74,3 +74,7 @@ func _on_Options_pressed():
 	var option = load("res://Scenes/Systeme/Options.tscn").instance()
 	get_parent().get_parent().add_child(option)
 	option.raise()
+
+
+func _on_Options2_pressed():
+	emit_signal("button_pressed", 8)

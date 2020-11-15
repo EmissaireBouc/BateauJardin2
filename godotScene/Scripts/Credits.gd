@@ -7,6 +7,11 @@ func _ready():
 			$Tween.TRANS_EXPO, $Tween.EASE_OUT
 			)
 	$Tween.start()
+	$Tween.interpolate_property(
+			$TextureRect, "modulate", Color(1,1,1,0), Color(1,1,1,0.6), 1.3,
+			$Tween.TRANS_EXPO, $Tween.EASE_OUT
+			)
+	$Tween.start()
 
 
 func _on_TextureButton_pressed():

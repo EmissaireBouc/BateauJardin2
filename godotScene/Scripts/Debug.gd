@@ -10,7 +10,7 @@ func _on_CB_Graines_pressed():
 	ImportData.All_Plant_Available()
 
 func _on_CB_PA_pressed():
-	get_parent().get_parent().get_node("PA").set_PA(99)
+	get_parent().get_parent().get_node("PA").set_99_PA()
 
 func _on_CB_DebugPannel_toggled(button_pressed):
 	get_parent().get_node("DebugLabel").visible = button_pressed

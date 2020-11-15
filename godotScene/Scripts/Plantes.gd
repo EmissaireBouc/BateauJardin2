@@ -44,10 +44,12 @@ func mouseOverlapped(fonction, plante):
 
 			if currentPlantOutlined != "":
 				get_node(currentPlantOutlined).set_material(get_node(currentPlantOutlined).shader_vent)
+				transparence_On(get_node(currentPlantOutlined))
 
 			plantesArray.push_front(plante)
 			get_node(plante).set_material(preload("res://Assets/Mask/Outline.tres"))
 			currentPlantOutlined = plante
+			transparence_Off(get_node(plante))
 			mask_transparent.global_position = get_node(plante).get_global_position()
 	
 	emit_signal("debug_plant_description", plante, get_node(plante).pv, get_node(plante).xp, get_node(plante).lvl )
@@ -104,11 +106,14 @@ func _on_Area2D_area_shape_entered(_area_id, area, _area_shape, _self_shape):
 	if area.get_parent().get_name() != currentPlantOutlined:
 		transparence_On(area.get_parent())
 
+	elif area.get_parent().modulate != Color(1,1,1,1):
+		transparence_Off(area.get_parent())
+
 func _on_MasqueTransparent_area_shape_exited(_area_id, area, _area_shape, _self_shape):
 
-
-	if area.get_parent().modulate != Color(1,1,1,1):
-		transparence_Off(area.get_parent())
+	if area.get_parent() != null:
+		if area.get_parent().modulate != Color(1,1,1,1):
+			transparence_Off(area.get_parent())
 
 func transparence_On(plante):
 	

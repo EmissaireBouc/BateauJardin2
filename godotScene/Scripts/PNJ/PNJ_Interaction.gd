@@ -15,7 +15,7 @@ A propos de Spot_PNJ :
 	méthode efficiente. Elle est à retravailler. 
 """
 
-export (Array) var  Spot_PNJ = [["A1", Vector2(-3311,-465)],["A4", Vector2(-2946,514)],["B1", Vector2(-2105,-488)],["E1", Vector2(232,-787)],["E4", Vector2(-1364,465)],["F4", Vector2(-120,465)],["G3", Vector2(896,512)]]
+export (Array) var  Spot_PNJ = [["A1", Vector2(-3311,-465)],["A4", Vector2(-2946,514)],["B1", Vector2(-2105,-488)],["E1", Vector2(232,-787)],["E4", Vector2(-1000,465)],["F4", Vector2(-120,465)],["G3", Vector2(896,512)]]
 var Lieu_PNJ = [["D1", Vector2(-320,-768),  Vector2(-896,-768), Vector2(-704,-384) ],["F2", Vector2(704,192), Vector2(1088,64), Vector2(704,-192)],["C3", Vector2(-1792,512), Vector2(-1344,384), Vector2(-1792,192)]]
 var Save_Lieu_PNJ = []
 
@@ -85,9 +85,6 @@ func PNJ_Setup():
 		var jr = ImportData.PosPNJ[nbPNJ[i]].keys()
 		var coord = ImportData.PosPNJ[nbPNJ[i]].values()
 		nvPNJ.emplacement = coord[jr.find(str(ImportData.jour))]
-		print("jour" + str(jr.find(str(ImportData.jour))))
-		print("coord" + coord[jr.find(str(ImportData.jour))])
-
 		# Attribution des positions depuis les tableaux Spot_PNJ et Lieu_PNJ
 
 		if nvPNJ.emplacement == "D1" || nvPNJ.emplacement == "F2" || nvPNJ.emplacement == "C3": # Si plusieurs PNJ discutent ensemble
@@ -148,21 +145,21 @@ func on_Character_input(n, d, c):
 			DialGroupe += 1
 		if ImportData.jour == 8 && ImportData.PosPNJ[NomPersonnage]['8'] == "C3" && DialGroupe <= 1:
 			DialGroupe += 1
-		if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe <= 1:
+		if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['11'] == "D1" && DialGroupe <= 1:
 			DialGroupe += 1
-		if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "C3" && DialGroupe2 <= 1:
+		if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['11'] == "C3" && DialGroupe2 <= 1:
 			DialGroupe2 += 1
-		if ImportData.jour == 13 && ImportData.PosPNJ[NomPersonnage]['15'] == "D1" && DialGroupe <= 1:
+		if ImportData.jour == 13 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe <= 1:
 			DialGroupe += 1
-		if ImportData.jour == 14 && ImportData.PosPNJ[NomPersonnage]['16'] == "C3" && DialGroupe <= 1:
+		if ImportData.jour == 14 && ImportData.PosPNJ[NomPersonnage]['14'] == "C3" && DialGroupe <= 1:
 			DialGroupe += 1
-		if ImportData.jour == 16 && ImportData.PosPNJ[NomPersonnage]['18'] == "F2" && DialGroupe <= 1:
+		if ImportData.jour == 16 && ImportData.PosPNJ[NomPersonnage]['16'] == "F2" && DialGroupe <= 1:
 			DialGroupe += 1
-		if ImportData.jour == 17 && ImportData.PosPNJ[NomPersonnage]['19'] == "D1" && DialGroupe <= 1:
+		if ImportData.jour == 17 && ImportData.PosPNJ[NomPersonnage]['17'] == "D1" && DialGroupe <= 1:
 			DialGroupe += 1
-		if ImportData.jour == 18 && ImportData.PosPNJ[NomPersonnage]['20'] == "C3" && DialGroupe <= 1:
+		if ImportData.jour == 18 && ImportData.PosPNJ[NomPersonnage]['18'] == "C3" && DialGroupe <= 1:
 			DialGroupe += 1
-		if ImportData.jour == 19 && ImportData.PosPNJ[NomPersonnage]['21'] == "F2" && DialGroupe <= 1:
+		if ImportData.jour == 19 && ImportData.PosPNJ[NomPersonnage]['19'] == "F2" && DialGroupe <= 1:
 			DialGroupe += 1
 
 func lancer_dialogue():
@@ -183,21 +180,21 @@ func lancer_dialogue():
 		NumDial = 1
 	if ImportData.jour == 8 && ImportData.PosPNJ[NomPersonnage]['8'] == "C3" && DialGroupe == 2:
 		NumDial = 1
-	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe == 2:
+	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['11'] == "D1" && DialGroupe == 2:
 		NumDial = 1
-	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['13'] == "C3" && DialGroupe2 == 2:
+	if ImportData.jour == 11 && ImportData.PosPNJ[NomPersonnage]['11'] == "C3" && DialGroupe2 == 2:
 		NumDial = 1
-	if ImportData.jour == 13 && ImportData.PosPNJ[NomPersonnage]['15'] == "D1" && DialGroupe == 2:
+	if ImportData.jour == 13 && ImportData.PosPNJ[NomPersonnage]['13'] == "D1" && DialGroupe == 2:
 		NumDial = 1
-	if ImportData.jour == 14 && ImportData.PosPNJ[NomPersonnage]['16'] == "C3" && DialGroupe == 2:
+	if ImportData.jour == 14 && ImportData.PosPNJ[NomPersonnage]['14'] == "C3" && DialGroupe == 2:
 		NumDial = 1
-	if ImportData.jour == 16 && ImportData.PosPNJ[NomPersonnage]['18'] == "F2" && DialGroupe == 2:
+	if ImportData.jour == 16 && ImportData.PosPNJ[NomPersonnage]['16'] == "F2" && DialGroupe == 2:
 		NumDial = 1
-	if ImportData.jour == 17 && ImportData.PosPNJ[NomPersonnage]['19'] == "D1" && DialGroupe == 2:
+	if ImportData.jour == 17 && ImportData.PosPNJ[NomPersonnage]['17'] == "D1" && DialGroupe == 2:
 		NumDial = 1
-	if ImportData.jour == 18 && ImportData.PosPNJ[NomPersonnage]['20'] == "C3" && DialGroupe == 2:
+	if ImportData.jour == 18 && ImportData.PosPNJ[NomPersonnage]['18'] == "C3" && DialGroupe == 2:
 		NumDial = 1
-	if ImportData.jour == 19 && ImportData.PosPNJ[NomPersonnage]['21'] == "F2" && DialGroupe == 2:
+	if ImportData.jour == 19 && ImportData.PosPNJ[NomPersonnage]['19'] == "F2" && DialGroupe == 2:
 		NumDial = 1
 	
 	if NumDial == 0:

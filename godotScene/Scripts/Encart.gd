@@ -1,7 +1,7 @@
 extends Control
 
-onready var choix1 : Button = get_node("Marge1/Marge2/Marge3/HBoxContainer/Choix1")
-onready var choix2 : Button = get_node("Marge1/Marge2/Marge3/HBoxContainer/Choix2")
+onready var bouttons : HBoxContainer = get_node("Marge1/Marge2/Marge3/HBoxContainer")
+
 onready var txtNom : RichTextLabel = get_node("Marge1/Marge2/Marge2-1/MargeH1/MargeV1/nom")
 onready var txtInfo : RichTextLabel = get_node("Marge1/Marge2/Marge2-1/MargeH1/MargeV1/texte")
 onready var portrait : TextureRect = get_node("Marge1/Marge2/Marge2-1/MargeH1/Portrait")
@@ -12,16 +12,52 @@ signal choix_done
 signal encart_done
 
 func _ready():
-	choix1.visible = false
-	choix2.visible = false
 	pass
 
+func chargement_dialog(n, p):
+
+	portrait.visible = false
+	txtNom.visible = false
+	txtInfo.bbcode_text = p
+
+	set_pos("Bottom")
+	animationTexte()
+	show_portrait(n)
+
+
+
+func chargement_syst_info(n, p, btn = [], var pos:String = "Middle"):
+	
+	btnNext.visible = false
+	portrait.visible = false
+	txtNom.visible = false
+
+	for i in range(btn.size()):
+		var nvBouton = load("res://Scenes/btn_Encart.tscn").instance()
+		bouttons.add_child(nvBouton)
+		nvBouton.text = btn[i]
+		nvBouton.connect("pressed", self, "_on_Choix1_pressed", [nvBouton.text])
+
+	txtInfo.bbcode_text = p
+
+	set_pos(pos)
+
+	if n == "Jade":
+		show_portrait(n)
+
+func show_portrait(n):
+	portrait.visible = true
+	txtNom.visible = true
+	txtNom.text = n
+	animationTexte()
+
 func set_pos(pos):
+	
 	if pos == "Middle":
-		$Marge1.set_position(Vector2(0,(get_viewport().size.y/2) - ($Marge1.get_rect().size.y/2)))
+		set_position(Vector2(0,(get_viewport().size.y/2) - (get_rect().size.y/2)))
 
 		tween.interpolate_property(
-			self, "rect_position:y", 0-$Marge1.get_rect().size.y, 0, 1.3,
+			self, "rect_position:y", 0-get_rect().size.y, (get_viewport().size.y/2) - (get_rect().size.y/2), 1.3,
 			tween.TRANS_EXPO, tween.EASE_OUT
 			)
 		tween.start()
@@ -31,53 +67,17 @@ func set_pos(pos):
 			tween.TRANS_EXPO, tween.EASE_OUT
 			)
 		tween.start()
-		show()
 		$AudioStreamPlayer.play()
 
 	if pos == "Bottom":
-		$Marge1.set_position(Vector2(0,(get_viewport().size.y) - ($Marge1.get_rect().size.y)))
-
-
-func chargement_dialog(n, p):
-
-	choix1.visible = false
-	choix2.visible = false
-	portrait.visible = true
-	txtNom.visible = true
-
-	set_pos("Bottom")
-	animationTexte(n, p)
-
-func chargement_syst_info(_n, p, c1 = "", c2 = ""):
-	
-	
-	choix1.visible = false
-	choix2.visible = false
-	
-	btnNext.visible = false
-	portrait.visible = false
-	txtNom.visible = false
-
-	if c1 != "":
-		choix1.text = c1
-		choix1.visible = true
-
-
-	if c2 != "":
-		choix2.text = c2
-		choix2.visible = true
-
-	txtInfo.bbcode_text = p
-
-	set_pos("Middle")
-
-
-func animationTexte(n, p):
-
-	txtNom.bbcode_text = n
-	txtInfo.bbcode_text = p
+		set_position(Vector2(0,(get_viewport().size.y) - (get_rect().size.y)))
 
 	show()
+
+
+
+
+func animationTexte():
 
 	txtInfo.percent_visible = 0
 
@@ -90,7 +90,7 @@ func animationTexte(n, p):
 
 
 func _on_Tween_tween_completed(_object, _key):
-	if choix1.text == "":
+	if bouttons.get_child_count() == 0:
 		btnNext.visible = true
 
 
@@ -98,13 +98,7 @@ func _on_indicateur_pressed():
 	emit_signal("encart_done")
 
 
-
-func _on_Choix1_pressed():
-	emit_signal("choix_done", choix1.text)
-	choix1.text = ""
-	choix2.text = ""
-
-func _on_Choix2_pressed():
-	emit_signal("choix_done", choix2.text)
-	choix1.text = ""
-	choix2.text = ""
+func _on_Choix1_pressed(t):
+	emit_signal("choix_done", t)
+	for i in range(bouttons.get_child_count()):
+		bouttons.get_child(i).queue_free()

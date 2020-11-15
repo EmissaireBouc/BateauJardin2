@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Menu/BtnMenu.tres" type="Theme" id=1]
+
+[node name="Choix1" type="Button"]
+margin_left = 32.0
+margin_top = 167.0
+margin_right = 138.0
+margin_bottom = 239.0
+mouse_filter = 1
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme = ExtResource( 1 )
+text = "Oui"
+__meta__ = {
+"_edit_use_anchors_": false
+}

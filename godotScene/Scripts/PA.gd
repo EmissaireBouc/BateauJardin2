@@ -10,6 +10,9 @@ func PA_up(d):
 	PA += d
 	PA_update()
 
+func set_99_PA():
+	PA = 99
+
 func set_PA():
 	if ImportData.jour <= ImportData.get_last_day():
 		PA = ImportData.PAJ[str(ImportData.jour)].PA
