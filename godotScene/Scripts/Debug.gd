@@ -10,13 +10,17 @@ func _on_CB_Graines_pressed():
 	ImportData.All_Plant_Available()
 
 func _on_CB_PA_pressed():
-	get_parent().get_parent().get_node("PA").set_99_PA()
+	get_parent().get_parent().get_node("PA").set_new_PA()
 
 func _on_CB_DebugPannel_toggled(button_pressed):
 	get_parent().get_node("DebugLabel").visible = button_pressed
 	get_parent().get_node("DebugLabel2").visible = button_pressed
 	get_parent().get_node("DebugLabel3").visible = button_pressed
 	get_parent().get_parent().get_node("PA").visible = button_pressed
+
+
+func _on_newPA_text_entered(new_text):
+	get_parent().get_parent().get_node("PA").set_new_PA(int(new_text))
 
 func _on_CB_Camera_toggled(button_pressed):
 	get_parent().get_parent().get_parent().get_node("Bateau/YSort/Player/Camera2D").SquareX_Camera = button_pressed

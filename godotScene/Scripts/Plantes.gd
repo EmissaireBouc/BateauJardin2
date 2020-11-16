@@ -167,11 +167,11 @@ func arrose_plrs_plantes(n = 0):
 			aGarden[i].hydrat()
 			n -= 1
 
-func kill_some_plants(n = 5):
+func kill_some_plants(n = 10):
 	aGarden.sort_custom(MyCustomSorter, "sort_ascending")
 	for i in range(aGarden.size()):
 		if aGarden[i].pv > 0 && n > 0:
-			aGarden[i].pv = 0
+			aGarden[i].pv = -10
 			aGarden[i].update_status()
 			n -= 1
 

@@ -10,6 +10,10 @@ func PA_up(d):
 	PA += d
 	PA_update()
 
+func set_new_PA(new):
+	PA = new
+	PA_update()
+
 func set_99_PA():
 	PA = 99
 

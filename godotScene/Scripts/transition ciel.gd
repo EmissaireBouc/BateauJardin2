@@ -2,6 +2,7 @@ extends Node2D
 
 
 var jour = 0
+var day = 0
 onready var main = get_node("/root/ScenePrincipale")
 var anim_speed = 1
 var en_cours = false
@@ -23,10 +24,11 @@ func _process(_delta):
 	pass
 
 
-func start(day,new_anim_speed = 1):
+func start(jr, d, new_anim_speed = 1):
 	$soleil.position = Vector2(156,838)
 	get_node("../").visible = true
-	jour = day
+	jour = jr
+	day = d
 	$Timer.start()
 	anim_speed = new_anim_speed
 	en_cours = true
@@ -43,18 +45,22 @@ func nuit() :
 
 func fin_anim(anim):
 	if anim == "nuitTombe":
-		if jour == 7 || jour == 10 || jour == 11:
-			$AnimationPlayer.play("aubeRateLeReveil",-1,anim_speed)
+		if day == 0 :
+			if jour == 7 || jour == 10 : #|| jour == 11:
+				$AnimationPlayer.play("aubeRateLeReveil",-1,anim_speed)
+			else :
+				$AnimationPlayer.play("aube",-1,anim_speed)
 		else :
-			$AnimationPlayer.play("aube",-1,anim_speed)
+				$AnimationPlayer.play("aube",-1,anim_speed)
+
 	if anim == "aube":
 		main._on_Transition_transition_over("transition_out_fin")
 	if anim == "aubeRateLeReveil":
 		if jour == 7  :
 			main._on_Transition_transition_over("transition_out_fin")
-		elif jour == 10 || jour == 11:
+		elif jour == 10 : # || jour == 11:
 			main.a_day_pass()
-			start(main.day,anim_speed)
+			start(ImportData.jour, main.day, anim_speed)
 			
 			
 func skip_anim():

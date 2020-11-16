@@ -52,6 +52,7 @@ func setup_game():
 	$CanvasLayer.add_child(inv)
 	inventaire = get_node("CanvasLayer/Inventory")
 	
+	
 #	Creation de l'encart
 
 	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
@@ -112,6 +113,7 @@ func chargement_jour(jr = ImportData.jour):
 		var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 		$CanvasLayer.add_child(tuto)
 		$CanvasLayer/Commande.connect("fin_tuto",self,"fin_tuto")
+		$CanvasLayer/Transition.raise()
 
 		Plantes.add_new_plant("HautArbuste",Vector2(-1920,-320),5,4,2)
 		Plantes.add_new_plant("Myosotis",Vector2(-2112,-192),0,0,2)
@@ -119,10 +121,12 @@ func chargement_jour(jr = ImportData.jour):
 		Plantes.add_new_plant("OreillesDeLapin",Vector2(-1984,-64),4,2,1)
 
 	if jr == 10:
-		Plantes.kill_some_plants()
-
+			Plantes.kill_some_plants()
+	
 	if jr > 10:
-		Plantes.arrose_plrs_plantes(10)
+			Plantes.arrose_plrs_plantes(10)
+
+	day = 0
 
 
 """
@@ -419,7 +423,7 @@ func fondu(animName):
 func _on_Transition_transition_over(t):
 	if t == "transition_in_debut":
 		a_day_pass()
-		transitionJours.start(ImportData.jour)
+		transitionJours.start(ImportData.jour, day)
 		$CanvasLayer/Transition.transitionCiel = true
 		fondu("transition_out")
 		
@@ -429,7 +433,7 @@ func _on_Transition_transition_over(t):
 		fondu("transition_out")
 
 	if t == "transition_out":
-		start_new_day()
+			start_new_day()
 
 	if t == "transition_out_fin":
 		$CanvasLayer/Transition.transitionCiel = false
@@ -493,6 +497,7 @@ func _info_systeme(titre, phrase, btn = [], pos = "Middle"):
 
 func fin_tuto():
 	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
+	fondu("transition_out")
 
 func choix_done(c):
 	$CanvasLayer/Encart.hide()
@@ -519,7 +524,7 @@ Gestion des fonctions Debug
 """
 
 func debug():
-	$CanvasLayer/Debug/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100) + "\nJOUR : " + str(ImportData.jour)
+	$CanvasLayer/Debug/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100) + "\nJOUR : " + str(ImportData.jour) + "\nDAY : " + str(day)
 func _process(_delta):
 	if Input.is_action_just_pressed("Debug"):
 		if !$CanvasLayer/Debug.visible:
