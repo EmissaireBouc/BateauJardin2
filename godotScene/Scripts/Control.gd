@@ -503,7 +503,7 @@ func choix_done(c):
 	$CanvasLayer/Encart.hide()
 	change_action(DEFAULT)
 
-	if c == "ok":
+	if c == "Ok":
 		if ImportData.jour == 7 :
 			_encart("Jade", "J'ai pas réussi à me lever ce matin... Va falloir que je rattrape le temps perdu. Ça devrait aller !")
 	if c == "Quitter":

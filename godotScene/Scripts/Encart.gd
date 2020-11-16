@@ -16,6 +16,7 @@ func _ready():
 
 func chargement_dialog(n, p):
 
+	tween.reset_all()
 	portrait.visible = false
 	txtNom.visible = false
 	txtInfo.bbcode_text = p
@@ -100,5 +101,7 @@ func _on_indicateur_pressed():
 
 func _on_Choix1_pressed(t):
 	emit_signal("choix_done", t)
+	tween.reset_all()
+#	tween.stop_all()
 	for i in range(bouttons.get_child_count()):
 		bouttons.get_child(i).queue_free()

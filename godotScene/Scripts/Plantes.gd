@@ -43,8 +43,11 @@ func mouseOverlapped(fonction, plante):
 		else:
 
 			if currentPlantOutlined != "":
-				get_node(currentPlantOutlined).set_material(get_node(currentPlantOutlined).shader_vent)
-				transparence_On(get_node(currentPlantOutlined))
+				if get_node_or_null(currentPlantOutlined) != null :
+					get_node(currentPlantOutlined).set_material(get_node(currentPlantOutlined).shader_vent)
+					transparence_On(get_node(currentPlantOutlined))
+				else :
+					print("null_1")
 
 			plantesArray.push_front(plante)
 			get_node(plante).set_material(preload("res://Assets/Mask/Outline.tres"))
@@ -64,10 +67,14 @@ func mouseOverlapped(fonction, plante):
 			
 			plantesArray.erase(plante)
 
-			if !plantesArray.empty():
-				get_node(plantesArray[0]).set_material(preload("res://Assets/Mask/Outline.tres"))
-				currentPlantOutlined = plantesArray[0]
-				mask_transparent.global_position = get_node(plantesArray[0]).get_global_position()
+			if !plantesArray.empty() :
+				if get_node_or_null(plantesArray[0]) != null:
+					get_node(plantesArray[0]).set_material(preload("res://Assets/Mask/Outline.tres"))
+					currentPlantOutlined = plantesArray[0]
+					mask_transparent.global_position = get_node(plantesArray[0]).get_global_position()
+				else : 
+					plantesArray.erase(plantesArray[0])
+					print("null_2")
 
 			else:
 				mask_transparent.global_position = Vector2(-6000,-900)
@@ -91,10 +98,11 @@ func clear_Plant_Selected():
 	
 	
 	if !plantesArray.empty():
-		get_node(plantesArray[0]).set_material(preload("res://Assets/Mask/Outline.tres"))
-		currentPlantOutlined = plantesArray[0]
-		mask_transparent.global_position = get_node(plantesArray[0]).get_global_position()
-		transparence_Off(get_node(plantesArray[0]))
+		if get_node_or_null(plantesArray[0]) != null:
+			get_node(plantesArray[0]).set_material(preload("res://Assets/Mask/Outline.tres"))
+			currentPlantOutlined = plantesArray[0]
+			mask_transparent.global_position = get_node(plantesArray[0]).get_global_position()
+			transparence_Off(get_node(plantesArray[0]))
 
 
 """
@@ -148,6 +156,7 @@ func plante_Remove(plant):
 		if aGarden[i] == get_node(plant):
 			aGarden.remove(i)
 			get_node("%s/AnimationPlayer" %plant).play("Disparition")
+			get_node("%s/Area2D" %plant).queue_free()
 			break
 #	print_garden()
 	clear_Plant_Selected()
