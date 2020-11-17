@@ -42,3 +42,9 @@ func _on_SpinBox_value_changed(value):
 func _on_HSlider2_value_changed(value):
 	get_parent().get_parent().get_parent().get_node("Bateau/YSort/Player/Camera2D").a = Vector2(value, value)
 
+
+
+func _on_LoadDaySlow_text_entered(new_text):
+	if int(new_text) <= ImportData.get_last_day() :
+		ImportData.jour = int(new_text)
+		get_parent().get_parent().get_parent().fondu("transition_in")

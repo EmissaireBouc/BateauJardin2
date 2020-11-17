@@ -186,9 +186,12 @@ func _input(_event):
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && Plantes.currentPlantOutlined == ""):
 		if PA.get_PA() > 0: 
-			match action:
-				DEFAULT:
-					change_action(PLANTER)
+			if Plantes.get_child_count() < 110:
+				match action:
+					DEFAULT:
+						change_action(PLANTER)
+			else :
+				_encart("Jade", "Le jardin a atteint ses limites, et les miennes aussi. Semer de nouvelles graines pourrait nous faire couler !")
 		else:
 			_encart("Jade","La journée est finie, le soleil va se coucher. C'est le moment de rejoindre ma cabine.")
 

@@ -16,7 +16,6 @@ func _ready():
 
 func chargement_dialog(n, p):
 
-	tween.reset_all()
 	portrait.visible = false
 	txtNom.visible = false
 	txtInfo.bbcode_text = p
@@ -55,22 +54,22 @@ func show_portrait(n):
 func set_pos(pos):
 	
 	if pos == "Middle":
-#		set_position(Vector2(0,(get_viewport().size.y/2) - (get_rect().size.y/2)))
 
 		tween.interpolate_property(
-			self, "rect_position:y", get_viewport().size.y/3-get_rect().size.y, (get_viewport().size.y/2) - (get_rect().size.y/2), 1.7,
+			self, "rect_position:y", get_viewport().size.y/2.5-get_rect().size.y, (get_viewport().size.y/2) - (get_rect().size.y/2), 1.5,
 			tween.TRANS_EXPO, tween.EASE_OUT
 			)
 		tween.start()
 
 		tween.interpolate_property(
-			self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 1.7,
+			self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 1.5,
 			tween.TRANS_SINE, tween.EASE_OUT
 			)
 		tween.start()
-		$AudioStreamPlayer.play()
+#		$AudioStreamPlayer.play()
 
 	if pos == "Bottom":
+		self.modulate = Color(1,1,1,1)
 		set_position(Vector2(0,(get_viewport().size.y) - (get_rect().size.y)))
 
 	show()
@@ -100,8 +99,7 @@ func _on_indicateur_pressed():
 
 
 func _on_Choix1_pressed(t):
+	tween.stop(self)
 	emit_signal("choix_done", t)
-	tween.reset_all()
-#	tween.stop_all()
 	for i in range(bouttons.get_child_count()):
 		bouttons.get_child(i).queue_free()
