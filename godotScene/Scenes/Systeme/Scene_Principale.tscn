@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decors/BateauArrierePlan.tscn" type="PackedScene" id=2]
@@ -40,26 +40,29 @@ size = 22
 font_data = ExtResource( 13 )
 
 [sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0.262745 )
+
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.227451, 0.203922, 0.203922, 0.360784 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 22
 outline_color = Color( 0, 1, 0.0862745, 1 )
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 0.231373 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="DynamicFontData" id=10]
+[sub_resource type="DynamicFontData" id=11]
 font_path = "res://Assets/UI/Font/Quicksand_Bold.otf"
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 size = 40
-font_data = SubResource( 10 )
+font_data = SubResource( 11 )
 
 [node name="ScenePrincipale" type="Node2D"]
 script = ExtResource( 1 )
@@ -210,7 +213,7 @@ margin_top = 64.0
 margin_right = 1096.0
 margin_bottom = 160.0
 grow_horizontal = 0
-custom_styles/normal = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
 text = "JOUR : "
@@ -224,8 +227,8 @@ margin_left = 1536.0
 margin_top = 64.0
 margin_right = 1864.0
 margin_bottom = 168.0
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.105882, 1, 0, 1 )
 text = "Zoom :"
 align = 2
@@ -239,8 +242,8 @@ margin_left = 64.0
 margin_top = 704.0
 margin_right = 312.0
 margin_bottom = 976.0
-custom_styles/normal = SubResource( 8 )
-custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 1, 0.156863, 1 )
 text = "Plante Description"
 script = ExtResource( 16 )
@@ -282,7 +285,7 @@ margin_left = -960.0
 margin_top = -45.5
 margin_right = 960.0
 margin_bottom = 45.5
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Jour"
 align = 1

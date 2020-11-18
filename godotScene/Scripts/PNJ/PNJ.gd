@@ -14,6 +14,8 @@ func _on_Area2D_input_event(_viewport, _event, _shape_idx):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "disparition":
+		$Area2D.emit_signal("mouse_exited")
 		queue_free()
 	#elif anim_name == "disparition3":
 	#	queue_free()
+

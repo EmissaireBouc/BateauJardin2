@@ -1,5 +1,6 @@
 extends Node2D
 
+const MAX_PLANT = 110
 var cursor = "default"
 var posCursor
 var aGarden = []
@@ -186,7 +187,7 @@ func _input(_event):
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && Plantes.currentPlantOutlined == ""):
 		if PA.get_PA() > 0: 
-			if Plantes.get_child_count() < 110:
+			if Plantes.get_child_count() < MAX_PLANT:
 				match action:
 					DEFAULT:
 						change_action(PLANTER)
@@ -220,6 +221,8 @@ func cursor_mode(fonction, newMode):
 	var texture = Texture
 	texture = load("res://Assets/UI/Curseur/curseur_%s.png" %cursor)
 	Input.set_custom_mouse_cursor(texture)
+
+
 
 
 """
