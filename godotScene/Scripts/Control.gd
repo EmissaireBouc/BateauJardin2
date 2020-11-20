@@ -531,11 +531,12 @@ Gestion des fonctions Debug
 
 func debug():
 	$CanvasLayer/Debug/DebugLabel2.text = "Animation en cours : " + str(Player.state) + "\nAction en cours : " + str(action) + "\nZoom : x" + str(round(Cam.get_zoom().x*100)/100) + "\nJOUR : " + str(ImportData.jour) + "\nDAY : " + str(day)
+
 func _process(_delta):
 	if Input.is_action_just_pressed("Debug"):
 		if !$CanvasLayer/Debug.visible:
 			$CanvasLayer/Debug.visible = true
 		else:
 			$CanvasLayer/Debug.visible = false
-
-	debug()
+#	debug()
+	pass

@@ -84,14 +84,14 @@ func PNJ_Setup():
 		add_child(nvPNJ)
 		var jr = ImportData.PosPNJ[nbPNJ[i]].keys()
 		var coord = ImportData.PosPNJ[nbPNJ[i]].values()
-		nvPNJ.emplacement = coord[jr.find(str(ImportData.jour))]
+		nvPNJ.emplacement = coord[jr.find(str(ImportData.jour))].left(2)
 		# Attribution des positions depuis les tableaux Spot_PNJ et Lieu_PNJ
-
+		
 		if nvPNJ.emplacement == "D1" || nvPNJ.emplacement == "F2" || nvPNJ.emplacement == "C3": # Si plusieurs PNJ discutent ensemble
 			for j in range(Lieu_PNJ.size()):
 				if str(Lieu_PNJ[j][0]) == nvPNJ.emplacement:
-					nvPNJ.position = Lieu_PNJ[j][1]
-					Lieu_PNJ[j].remove(1) # Retire la position assignée du pool de positions
+					nvPNJ.position = Lieu_PNJ[j][int(coord[jr.find(str(ImportData.jour))].right(3))]
+#					Lieu_PNJ[j].remove(1) # Retire la position assignée du pool de positions
 		else: # Si PNJ seul
 			for k in range (Spot_PNJ.size()):
 				if str(Spot_PNJ[k][0]) == nvPNJ.emplacement:
@@ -121,8 +121,8 @@ func on_Character_input(n, d, c):
 		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
 
-		print("Numero du Dialogue: ", NumDial)
-		print("Verification des Dialolgues en groupe: ",DialGroupe)
+#		print("Numero du Dialogue: ", NumDial)
+#		print("Verification des Dialolgues en groupe: ",DialGroupe)
 
 #Conversation de groupe
 
