@@ -62,7 +62,7 @@ func _on_retour_pressed():
 
 func _on_Effacer_pressed(var num_sauvegarde = 0):
 	var file = File.new()
-	if file.open("res://saves/saved_game_"+String(num_sauvegarde)+".sav",File.WRITE) != 0:
+	if file.open("user://saved_game_"+String(num_sauvegarde)+".sav",File.WRITE) != 0:
 		print("error opening file")
 		return
 	var data = {"fichier vide" : "vide" }
