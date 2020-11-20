@@ -9,7 +9,13 @@ func _on_Jouer_pressed():
 	var i = 1
 	while i <= 3 :
 		var file = File.new()
-		if file.open("res://saves/saved_game_"+String(i)+".sav",File.READ) != 0:
+		# crée un fichier si il n'existe pas
+		if ! file.file_exists("user://saved_game_"+String(i)+".sav") :
+			file.open("user://saved_game_"+String(i)+".sav",File.READ)
+			var data = {"fichier vide" : "vide" }
+			file.store_line(to_json(data))
+		# affiche nouvelle partie ou charger partie selon le contenu du fichier
+		if file.open("user://saved_game_"+String(i)+".sav",File.READ) != 0:
 			print("error opening file")
 			return
 		var line_data = parse_json(file.get_line())
@@ -56,7 +62,7 @@ func _on_retour_pressed():
 
 func _on_Effacer_pressed(var num_sauvegarde = 0):
 	var file = File.new()
-	if file.open("res://saves/saved_game_"+String(num_sauvegarde)+".sav",File.WRITE) != 0:
+	if file.open("user://saved_game_"+String(num_sauvegarde)+".sav",File.WRITE) != 0:
 		print("error opening file")
 		return
 	var data = {"fichier vide" : "vide" }

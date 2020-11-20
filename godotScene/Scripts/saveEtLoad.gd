@@ -14,7 +14,7 @@ func _ready():
 
 func save():
 	var file = File.new()
-	if file.open("res://saves/saved_game_"+num_fichier+".sav",File.WRITE) != 0:
+	if file.open("user://saved_game_"+num_fichier+".sav",File.WRITE) != 0:
 		print("error opening file")
 		return
 	var data = {"jour" : ImportData.jour }
@@ -30,13 +30,13 @@ func save():
 
 func _load():
 	var file = File.new()
-	if ! file.file_exists("res://saves/saved_game_"+num_fichier+".sav") :
+	if ! file.file_exists("user://saved_game_"+num_fichier+".sav") :
 		print ("no file found")
 		return
 		
 
 	# charge
-	if file.open("res://saves/saved_game_"+num_fichier+".sav", file.READ) != 0:
+	if file.open("user://saved_game_"+num_fichier+".sav", file.READ) != 0:
 		print ("error opening file")
 		return
 	while file.get_position() < file.get_len():
