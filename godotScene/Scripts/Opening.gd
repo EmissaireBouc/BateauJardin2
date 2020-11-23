@@ -7,6 +7,8 @@ func _ready():
 	$Transition.animation("transition_out")
 	$Gama.set_material(preload("res://Assets/Mask/InvertedColor.material"))
 
+
+
 func _on_Transition_transition_over(t):
 	if t == "transition_out" :
 		$Timer.start(2)

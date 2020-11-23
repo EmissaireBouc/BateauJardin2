@@ -1,11 +1,11 @@
 extends Node2D
 
-const MAX_PLANT = 110
+const MAX_PLANT = 150
 var cursor = "default"
 var posCursor
 var aGarden = []
 var cursorArray = []
-export (int) var day = 0
+var day = 0
 var action
 
 enum{IDLE, MOVE, PLANT, PLANT_BACK, OPEN_INV, SPRAY, CUT, TALK} # State
@@ -97,6 +97,8 @@ func a_day_pass():
 	Plantes.plante_PV_down()
 
 	save_et_load.save()
+	
+	change_action(DEFAULT)
 
 func chargement_jour(jr = ImportData.jour):
 
@@ -141,22 +143,39 @@ Gestion du clic gauche :
 func _unhandled_input(_event):
 	if !Input.is_action_just_pressed("ui_left_mouse"):
 		return
+
 	else:
 		match action :
+
 			DEFAULT :
-				if !menuEntretenir.is_open():
-					if cursor == "default":
-						change_action(DEPLACER)
-						Player.change_state(MOVE)
 
-				else:
-					menuEntretenir.close()
-					Plantes.clear_Plant_Selected()
-#					MouseA.clear_aCollisionNode()
-					
+				if cursor == "default":
+					change_action(DEPLACER)
+					Player.change_state(MOVE)
+
+				if cursor == "lire":
+					change_action(CARNET)
+
+				if cursor == "dormir":
+					sleep_action()
+
+			ENTRETENIR :
+
+				menuEntretenir.close()
+				Plantes.clear_Plant_Selected()
+				change_action(DEFAULT)
+	
 			DEPLACER :
-				_on_Player_anim_over(MOVE)
+#				_on_Player_anim_over(MOVE)
+				Player.change_state(MOVE)
 
+
+func Engage_Conversation(pos):
+	match action :
+		DEFAULT, DEPLACER :
+			if cursor == "parler":
+				posCursor = Vector2(pos.x-400,pos.y)
+				change_action(PARLER)
 
 """
 Gestion du clic droit :
@@ -174,17 +193,15 @@ func _input(_event):
 	else:
 		match action:
 			DEFAULT, DEPLACER:
-				if Plantes.currentPlantOutlined != "" && !menuEntretenir.is_open():
-					if !Plantes.plantSelected:
-						if PA.get_PA() > 0:
-							Plantes.select_Plant()
-							posCursor = get_node("Bateau/YSort/Plante/%s" %Plantes.currentPlantOutlined).get_global_position()
-							menuEntretenir.open()
-						else:
-							_encart("Jade","La journée est finie, le soleil va se coucher. C'est le moment de rejoindre ma cabine.")
+				if Plantes.currentPlantOutlined != "" :
+					if PA.get_PA() > 0:
+						change_action(ENTRETENIR)
+					else:
+						_encart("Jade","La journée est finie, le soleil va se coucher. C'est le moment de rejoindre ma cabine.")
 
 
 func _on_Jardin_input_event(_viewport, event, _shape_idx):
+
 	if (event is InputEventMouseButton && Input.is_action_pressed("ui_right_mouse") && Plantes.currentPlantOutlined == ""):
 		if PA.get_PA() > 0: 
 			if Plantes.get_child_count() < MAX_PLANT:
@@ -195,7 +212,6 @@ func _on_Jardin_input_event(_viewport, event, _shape_idx):
 				_encart("Jade", "Le jardin a atteint ses limites, et les miennes aussi. Semer de nouvelles graines pourrait nous faire couler !")
 		else:
 			_encart("Jade","La journée est finie, le soleil va se coucher. C'est le moment de rejoindre ma cabine.")
-
 
 
 """
@@ -237,17 +253,6 @@ Gestion des actions du joueur :
 
 
 
-func Engage_Conversation(pos):
-	match action :
-		DEFAULT :
-			if cursor == "parler":
-				posCursor = Vector2(pos.x-400,pos.y)
-				change_action(PARLER)
-			else :
-				PNJsort.talking = false
-		_:
-			PNJsort.talking = false
-
 func change_action(newaction):
 	action = newaction
 
@@ -257,11 +262,9 @@ func change_action(newaction):
 		PLANTER:
 			posCursor = get_global_mouse_position()
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y-25))
-
 		ARROSER:
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y-25))
 			menuEntretenir.close()
-
 		COUPER:
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y-25))
 			menuEntretenir.close()
@@ -269,9 +272,20 @@ func change_action(newaction):
 			posCursor = $Bateau/Porte.get_position()
 			Player.change_state(MOVE, Vector2(posCursor.x + 100, posCursor.y))
 		PARLER:
+			PNJsort.talking = true
 			Player.change_state(MOVE, Vector2(posCursor.x, posCursor.y))
 		CONVERS:
 			Player.change_state(IDLE)
+		ENTRETENIR:
+			Plantes.select_Plant()
+			menuEntretenir.open()
+			Player.change_state(DEFAULT)
+			posCursor = get_node("Bateau/YSort/Plante/%s" %Plantes.currentPlantOutlined).get_global_position()
+		CARNET:
+			var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
+			$CanvasLayer.add_child(Carnet)
+			Carnet.connect("Close_Carnet", self, "change_action",[DEFAULT])
+
 
 func _on_Player_anim_over(state):
 	match action:
@@ -316,14 +330,16 @@ func _on_Player_anim_over(state):
 		DORMIR:
 			match state :
 				MOVE:
+					Player.change_state(IDLE)
 					fondu("transition_in")
-					change_action(DEFAULT)
-					
+
 		PARLER:
 			match state :
 				MOVE:
 					change_action(CONVERS)
 					$Bateau/YSort/PNJ.lancer_dialogue()
+
+
 
 
 func _on_Inventory_item_selected():
@@ -333,6 +349,7 @@ func _on_Inventory_item_selected():
 
 func _on_Inventory_plant_abort():
 	change_action(DEFAULT)
+
 
 
 func _on_Button_Cut_pressed():
@@ -362,17 +379,10 @@ func _on_PNJ_Fin_Conversation():
 
 
 """
-Gestion de l'action Dormir :
-	Lors clic sur porte de la cabine : 
-	Player marche vers la porte -> animation entre dans la cabine -> transition_in -> actualisation du bateau
-	-> texte : Un_Jour_Passe -> transition_out -> animation sort de la cabine
+Action dormir
 """
 
-
-
-func _on_Porte_input_event(_viewport, event, _shape_idx):
-	if (event is InputEventMouseButton && Input.is_action_pressed("ui_left_mouse")):
-
+func sleep_action():
 		if ImportData.jour == 0 :
 
 			if PNJsort.get_dialogue_done() != PNJsort.get_child_count():
@@ -382,8 +392,10 @@ func _on_Porte_input_event(_viewport, event, _shape_idx):
 				change_action(DORMIR)
 
 		elif ImportData.jour >= 5 && ImportData.jour <= 9 :
+
 			if PA.get_PA() <= 3:
 				change_action(DORMIR)
+
 			else:
 				if ImportData.jour == 5:
 					_encart("Jade", "J'ai presque rien fait aujourd’hui, je vais travailler encore un peu.")
@@ -463,32 +475,8 @@ func start_new_day():
 
 
 """
-Gestion du Carnet
-"""
-
-
-
-func Open_Carnet():
-	match action : 
-		DEFAULT :
-			if !menuEntretenir.is_open():
-				if cursor == "lire":
-					var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
-					$CanvasLayer.add_child(Carnet)
-					
-					Carnet.connect("Close_Carnet", self, "Close_Carnet")
-					change_action(CARNET)
-
-func Close_Carnet():
-	change_action(DEFAULT)
-
-
-
-"""
 gestion des encarts
 """
-
-
 
 func _encart(nom, sentence):
 
@@ -501,9 +489,6 @@ func _info_systeme(titre, phrase, btn = [], pos = "Middle"):
 	$CanvasLayer/Encart.chargement_syst_info(titre, phrase, btn, pos)
 	change_action(CONVERS)
 
-func fin_tuto():
-	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
-	fondu("transition_out")
 
 func choix_done(c):
 	$CanvasLayer/Encart.hide()
@@ -525,6 +510,13 @@ func encart_done():
 	change_action(DEFAULT)
 
 
+
+
+
+func fin_tuto():
+	fondu("transition_out")
+	_encart("Jade", "Me voilà à bord du Bonny & Read... Je dois parler à la Capitaine.")
+
 """
 Gestion des fonctions Debug
 """
@@ -538,5 +530,5 @@ func _process(_delta):
 			$CanvasLayer/Debug.visible = true
 		else:
 			$CanvasLayer/Debug.visible = false
-#	debug()
+	debug()
 	pass

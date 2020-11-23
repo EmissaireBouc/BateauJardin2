@@ -48,6 +48,7 @@ func _process(delta):
 func change_state(newstate, dest = get_global_mouse_position()):
 # Change l'état du PJ (marche, idle, plant...)
 	state = newstate
+
 	
 	match state:
 		IDLE:
@@ -75,6 +76,7 @@ func moving_PJ(pos):
 	self.path = new_path
 
 
+
 func move_along_path(distance):
 # Déplacement PJ sur le chemin tracé grâce à Navigation 2D
 	var starting_point : = position
@@ -82,7 +84,6 @@ func move_along_path(distance):
 	for _i in range(path.size()):
 		var distance_to_next : = starting_point.distance_to(path[0])
 		move_direction = rad2deg(path[0].angle_to_point(position))
-
 		if (distance <= distance_to_next):
 			position = starting_point.linear_interpolate(path[0], distance / distance_to_next)
 			break
@@ -90,6 +91,7 @@ func move_along_path(distance):
 
 		if(path.size() == 0):
 			_on_Player_animation_finished()
+
 
 
 func _on_Player_animation_finished():
@@ -105,21 +107,18 @@ func animation_loop(mode, backward = false):
 	var anim_direction = ""
 	var anim_mode = mode
 	var animation
-	
-	if anim_mode != "OPEN_INV":
-		if move_direction <= 40 and move_direction >= -40 :
-			anim_direction = "E"
-		elif move_direction <= 100 and move_direction >= 40 :
-			anim_direction = "S"
-		elif move_direction <= 180 and move_direction >= 100 :
-			anim_direction = "W"
-		elif move_direction <= -100 :
-			anim_direction = "W"
-		elif move_direction <= -40 and move_direction >= -100 :
-			anim_direction = "N"
-		animation = anim_mode +"_"+ anim_direction
-	else:
-		animation = anim_mode
+
+	if move_direction <= 40 and move_direction >= -40 :
+		anim_direction = "E"
+	elif move_direction <= 100 and move_direction >= 40 :
+		anim_direction = "S"
+	elif move_direction <= 180 and move_direction >= 100 :
+		anim_direction = "W"
+	elif move_direction <= -100 :
+		anim_direction = "W"
+	elif move_direction <= -40 and move_direction >= -100 :
+		anim_direction = "N"
+	animation = anim_mode +"_"+ anim_direction
 
 	self.play(animation, backward)
 
@@ -139,11 +138,7 @@ func son(anim_mode):
 			if !$Couper.is_playing():
 				$Couper.play()
 
-#	if anim_mode == "OPEN_INV":
-#		if frame == 1:
-#			if !$OuvrirBoiteGraine.is_playing():
-#				$OuvrirBoiteGraine.play()
-	
+
 	if anim_mode == "SPRAY":
 		if frame == 3:
 			if !$Arroser.is_playing():
@@ -155,26 +150,13 @@ func son(anim_mode):
 				$Planter.play()
 
 
-
-#func _on_Area2D_area_shape_entered(_area_id, area, _area_shape, _self_shape):
-#	area.get_parent().get_material().set_shader_param("detail",10)
-#
-#
-#func _on_Area2D_area_shape_exited(_area_id, area, _area_shape, _self_shape):
-#	if area != null:
-#		area.get_parent().get_material().set_shader_param("detail",1)
-#
-
-
-func _on_Area2D_input_event(_viewport, _event, _shape_idx):
-	if Input.is_action_pressed("ui_left_mouse"):
-		emit_signal("Open_Carnet")
-		
-
-
 func _on_Area2D_mouse_entered():
 	emit_signal("Change_Cursor","add", "lire")
 
 
 func _on_Area2D_mouse_exited():
 	emit_signal("Change_Cursor","remove", "lire")
+
+#func _on_Area2D_input_event(_viewport, _event, _shape_idx):
+#	if Input.is_action_pressed("ui_left_mouse"):
+#		emit_signal("Open_Carnet")

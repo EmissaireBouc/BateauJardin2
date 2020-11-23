@@ -307,7 +307,6 @@ stream = ExtResource( 15 )
 [connection signal="Fin_Conversation" from="Bateau/YSort/PNJ" to="." method="_on_PNJ_Fin_Conversation"]
 [connection signal="area_shape_entered" from="Bateau/YSort/MasqueTransparent" to="Bateau/YSort/Plante" method="_on_Area2D_area_shape_entered"]
 [connection signal="area_shape_exited" from="Bateau/YSort/MasqueTransparent" to="Bateau/YSort/Plante" method="_on_MasqueTransparent_area_shape_exited"]
-[connection signal="input_event" from="Bateau/Porte" to="." method="_on_Porte_input_event"]
 [connection signal="mouse_entered" from="Bateau/Porte" to="." method="_on_Porte_mouse_entered"]
 [connection signal="mouse_exited" from="Bateau/Porte" to="." method="_on_Porte_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Control/MenuInteractions/HBoxContainer/Button_Spray" to="." method="_on_Button_Spray_pressed"]

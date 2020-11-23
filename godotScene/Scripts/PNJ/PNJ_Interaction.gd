@@ -17,7 +17,6 @@ A propos de Spot_PNJ :
 
 export (Array) var  Spot_PNJ = [["A1", Vector2(-3311,-465)],["A4", Vector2(-2946,514)],["B1", Vector2(-2105,-488)],["E1", Vector2(232,-787)],["E4", Vector2(-1000,465)],["F4", Vector2(-120,465)],["G3", Vector2(896,512)]]
 var Lieu_PNJ = [["D1", Vector2(-320,-768),  Vector2(-896,-768), Vector2(-704,-384) ],["F2", Vector2(704,192), Vector2(1088,64), Vector2(704,-192)],["C3", Vector2(-1792,512), Vector2(-1344,384), Vector2(-1792,192)]]
-var Save_Lieu_PNJ = []
 
 onready var BoiteDialogue = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues/BoiteDialogue")
 onready var Dialogues = get_parent().get_parent().get_parent().get_node("CanvasLayer/Dialogues")
@@ -31,7 +30,6 @@ signal Fin_Conversation
 
 
 func _ready():
-	Save_Lieu_PNJ = Lieu_PNJ.duplicate(true)
 	BoiteDialogue.connect("Texte_Suivant", self, "Texte_Suivant")
 
 
@@ -91,16 +89,10 @@ func PNJ_Setup():
 			for j in range(Lieu_PNJ.size()):
 				if str(Lieu_PNJ[j][0]) == nvPNJ.emplacement:
 					nvPNJ.position = Lieu_PNJ[j][int(coord[jr.find(str(ImportData.jour))].right(3))]
-#					Lieu_PNJ[j].remove(1) # Retire la position assignée du pool de positions
 		else: # Si PNJ seul
 			for k in range (Spot_PNJ.size()):
 				if str(Spot_PNJ[k][0]) == nvPNJ.emplacement:
 					nvPNJ.position = Spot_PNJ[k][1]
-
-		# Une fois les positions assignées : reinitialisation du tableau Lieu_PNJ pour le jour suivant
-
-		if i == nbPNJ.size() - 1 :
-			Lieu_PNJ = Save_Lieu_PNJ.duplicate(true)
 
 		# Redécoupage de l'aire de marche en fonction de l'area2D du nouveau PNJ
 
@@ -118,7 +110,6 @@ func on_Character_input(n, d, c):
 		NomPersonnage = n
 		NumDial = d
 		DisPNG = c
-		talking = true
 		emit_signal("Engage_Conversation", get_node_character(n).position)
 
 #		print("Numero du Dialogue: ", NumDial)

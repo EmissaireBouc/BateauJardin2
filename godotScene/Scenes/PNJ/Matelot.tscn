@@ -101,6 +101,7 @@ animations = [ {
 [node name="Matelot" type="AnimatedSprite"]
 frames = SubResource( 17 )
 animation = "IDLE"
+frame = 4
 playing = true
 offset = Vector2( 0, -300 )
 script = ExtResource( 1 )
@@ -110,6 +111,8 @@ NomPersonnage = "Matelot"
 position = Vector2( 43.2325, -75.1375 )
 collision_layer = 8
 collision_mask = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 visible = false
