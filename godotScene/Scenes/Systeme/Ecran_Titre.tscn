@@ -192,20 +192,20 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 314.0
-margin_right = 1605.0
-margin_bottom = 349.0
+margin_left = 760.0
+margin_right = 1160.0
+margin_bottom = 273.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-margin_left = 445.0
-margin_right = 845.0
+margin_right = 400.0
 margin_bottom = 273.0
 size_flags_horizontal = 4
 texture = ExtResource( 8 )
 
 [node name="Menu" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 margin_top = 277.0
 margin_right = 1291.0
 margin_bottom = 349.0
@@ -442,18 +442,19 @@ anims/Boucle = SubResource( 7 )
 [node name="Transition" parent="." instance=ExtResource( 12 )]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 anchor_left = 0.876
 anchor_top = 0.953
 anchor_right = 0.996
 anchor_bottom = 0.995
-margin_left = 0.0799561
-margin_top = -0.240112
-margin_right = 0.679932
-margin_bottom = 0.399902
+margin_left = 76.0801
+margin_top = -0.23999
+margin_right = 8.68005
+margin_bottom = 0.400024
 custom_fonts/normal_font = ExtResource( 13 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_text = "Démo version 1.0"
-text = "Démo version 1.0"
+bbcode_text = "version 1.0"
+text = "version 1.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
