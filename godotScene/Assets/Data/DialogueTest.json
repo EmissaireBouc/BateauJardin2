@@ -1201,8 +1201,16 @@
            "Text": "Depuis le temps, j'ai enfin trouvé une médecin qui me saoule pas avec les risques si je tombe enceint-e."
           },
 		  {
+          "Nom": "Jade",
+          "Text": "C'est quoi le rapport avec le fait d'être enceint.e ?"
+          },
+		  {
            "Nom": "Minh Tâm",
-           "Text": "Je le commence aujourd'hui, je stresse un peu. Mais l'ancien avait pas beaucoup d'effet. On va bien voir."
+           "Text": "Ben comme c'est contre indiqué en cas de grossesse y'a des médecins qui refusent de le prescrire des qu'on est une femme ou perçu comme tel, même si on n'a pas tu tout l'intention d'avoir des gosses."
+          },
+		  {
+           "Nom": "Minh Tâm",
+           "Text": "Bref, je le commence aujourd'hui, je stresse un peu. Mais l'ancien avait pas beaucoup d'effet. On va bien voir."
           },
           {
            "Nom": "Jade",
@@ -1860,6 +1868,14 @@
 		  {
            "Nom": "Suzanne",
            "Text": "Haha ! C'est toi qui parle d'en faire trop ! T'inquiète... En même temps j'ai pas grand chose par rapport aux autres, juste un Trouble du Déficit de l'Attention et un petit PTSD. C'est gérable normalement."
+          },
+		  {
+           "Nom": "Jade",
+           "Text": "C'est pas toi qui disais qu'il faut pas hiérarchiser les troubles ? T'as aussi le droit de te reposer !"
+          },
+		  {
+           "Nom": "Suzanne",
+           "Text": "Oui t'as raison, je dirai jamais à d'autres gens que leurs neuroatypie c'est rien, faut que j'arrête de le dire pour moi."
           }
           ],
       "Dialogue2": [
