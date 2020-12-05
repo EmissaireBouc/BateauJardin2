@@ -93,21 +93,21 @@ margin_top = 50.0
 margin_right = 1520.0
 margin_bottom = 1030.0
 custom_constants/margin_right = 75
-custom_constants/margin_top = 50
+custom_constants/margin_top = 25
 custom_constants/margin_left = 75
-custom_constants/margin_bottom = 50
+custom_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Marge1/Marge1-1"]
 margin_left = 75.0
-margin_top = 50.0
+margin_top = 25.0
 margin_right = 1045.0
-margin_bottom = 930.0
+margin_bottom = 955.0
 
 [node name="Logo" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer"]
 margin_right = 970.0
-margin_bottom = 289.0
+margin_bottom = 262.0
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.5
+size_flags_stretch_ratio = 1.2
 custom_fonts/mono_font = ExtResource( 2 )
 custom_fonts/bold_italics_font = ExtResource( 2 )
 custom_fonts/italics_font = ExtResource( 2 )
@@ -120,15 +120,17 @@ text = " "
 scroll_active = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Marge1/Marge1-1/VBoxContainer"]
-margin_top = 293.0
+margin_top = 266.0
 margin_right = 970.0
-margin_bottom = 485.0
+margin_bottom = 484.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="GD" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer"]
 margin_right = 320.0
-margin_bottom = 192.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
@@ -155,7 +157,7 @@ scroll_active = false
 [node name="Narration" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer"]
 margin_left = 324.0
 margin_right = 644.0
-margin_bottom = 192.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
@@ -186,7 +188,7 @@ scroll_active = false
 [node name="Graphisme" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer"]
 margin_left = 648.0
 margin_right = 970.0
-margin_bottom = 192.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
@@ -213,15 +215,17 @@ Oloreon
 scroll_active = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Marge1/Marge1-1/VBoxContainer"]
-margin_top = 489.0
+margin_top = 488.0
 margin_right = 970.0
-margin_bottom = 681.0
+margin_bottom = 706.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Sound Design" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2"]
 margin_right = 320.0
-margin_bottom = 192.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
@@ -231,7 +235,6 @@ custom_fonts/italics_font = ExtResource( 4 )
 custom_fonts/bold_font = ExtResource( 5 )
 custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
-custom_constants/line_separation = 6
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Sound Design[/b]
@@ -246,7 +249,7 @@ scroll_active = false
 [node name="Developpement" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2"]
 margin_left = 324.0
 margin_right = 644.0
-margin_bottom = 192.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
@@ -256,7 +259,6 @@ custom_fonts/italics_font = ExtResource( 4 )
 custom_fonts/bold_font = ExtResource( 5 )
 custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
-custom_constants/line_separation = 6
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Developpement[/b]
@@ -275,7 +277,7 @@ scroll_active = false
 [node name="Playtest" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer2"]
 margin_left = 648.0
 margin_right = 970.0
-margin_bottom = 192.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
@@ -285,34 +287,34 @@ custom_fonts/italics_font = ExtResource( 4 )
 custom_fonts/bold_font = ExtResource( 5 )
 custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
-custom_constants/table_vseparation = 5
+custom_constants/table_vseparation = 4
 custom_constants/table_hseparation = 10
-custom_constants/line_separation = 6
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Playtest[/b]
 [table=<2>]
-[cell]Lupcapyou[/cell] [cell]Lilolalelo[/cell] 
-[cell]Erwan[/cell] [cell]Olivial[/cell]
-[cell]Dilz[/cell] [cell]Alice[/cell]
+[cell]Lupcapyou[/cell] [cell]Haïm[/cell] 
+[cell]Lilolelalo[/cell] [cell]Olivial[/cell]
+[cell]Erwan[/cell] [cell]Alice[/cell]
+[cell]Dilz[/cell]
 [/table]
 [/center]"
 text = "
 Playtest
-LupcapyouLilolaleloErwanOlivialDilzAlice
+LupcapyouHaïmLilolelaloOlivialErwanAliceDilz
 "
 scroll_active = false
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Marge1/Marge1-1/VBoxContainer"]
-margin_top = 685.0
+margin_top = 710.0
 margin_right = 970.0
-margin_bottom = 880.0
+margin_bottom = 930.0
 size_flags_vertical = 7
 custom_constants/separation = -150
 
 [node name="Outils" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer3"]
 margin_right = 560.0
-margin_bottom = 195.0
+margin_bottom = 220.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
@@ -339,7 +341,7 @@ scroll_active = false
 [node name="Playtest" type="RichTextLabel" parent="Marge1/Marge1-1/VBoxContainer/HBoxContainer3"]
 margin_left = 410.0
 margin_right = 970.0
-margin_bottom = 195.0
+margin_bottom = 220.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
@@ -351,14 +353,16 @@ custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 custom_constants/table_vseparation = 4
 custom_constants/table_hseparation = 10
-custom_constants/line_separation = 6
 bbcode_enabled = true
-bbcode_text = "[center][b]Merci à :[/b][table=<2>]
-[cell]Lupcapyou[/cell] [cell]Lilolalelo[/cell] 
-[cell]Erwan[/cell] [cell]Olivial[/cell]
-[cell]Dilz[/cell] [cell]Alice[/cell]
+bbcode_text = "[center][b]Merci à :[/b]
+[table=<2>]
+[cell]Lupcapyou[/cell] [cell]Haïm[/cell] 
+[cell]Lilolelalo[/cell] [cell]Olivial[/cell]
+[cell]Erwan[/cell] [cell]Alice[/cell]
+[cell]Dilz[/cell]
 [/table][/center]"
-text = "Merci à :LupcapyouLilolaleloErwanOlivialDilzAlice"
+text = "Merci à :
+LupcapyouHaïmLilolelaloOlivialErwanAliceDilz"
 scroll_active = false
 
 [node name="TextureButton" type="TextureButton" parent="."]

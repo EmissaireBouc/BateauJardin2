@@ -14,7 +14,9 @@ func _on_Retour_pressed():
 func _on_PleinEcran_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
 	OS.center_window()
-
+	var texture = Texture
+	texture = load("res://Assets/UI/Curseur/curseur_default.png")
+	Input.set_custom_mouse_cursor(texture)
 
 
 func _on_OptionButton_item_selected(id):
