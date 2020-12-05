@@ -192,20 +192,20 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 760.0
-margin_right = 1160.0
-margin_bottom = 273.0
+margin_left = 314.0
+margin_right = 1605.0
+margin_bottom = 349.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-margin_right = 400.0
+margin_left = 445.0
+margin_right = 845.0
 margin_bottom = 273.0
 size_flags_horizontal = 4
 texture = ExtResource( 8 )
 
 [node name="Menu" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
 margin_top = 277.0
 margin_right = 1291.0
 margin_bottom = 349.0

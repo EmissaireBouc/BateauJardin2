@@ -291,15 +291,16 @@ custom_constants/line_separation = 6
 bbcode_enabled = true
 bbcode_text = "[center]
 [b]Playtest[/b]
-[table=<2>]
+[table=<3>]
 [cell]Lupcapyou[/cell] [cell]Lilolalelo[/cell] 
 [cell]Erwan[/cell] [cell]Olivial[/cell]
 [cell]Dilz[/cell] [cell]Alice[/cell]
+[cell]Haïm[/cell][cell]Claire[/cell] [cell]Flo[/cell]
 [/table]
 [/center]"
 text = "
 Playtest
-LupcapyouLilolaleloErwanOlivialDilzAlice
+LupcapyouLilolaleloErwanOlivialDilzAliceHaïmClaireFlo
 "
 scroll_active = false
 
@@ -353,12 +354,13 @@ custom_constants/table_vseparation = 4
 custom_constants/table_hseparation = 10
 custom_constants/line_separation = 6
 bbcode_enabled = true
-bbcode_text = "[center][b]Merci à :[/b][table=<2>]
+bbcode_text = "[center][b]Merci à :[/b][table=<3>]
 [cell]Lupcapyou[/cell] [cell]Lilolalelo[/cell] 
 [cell]Erwan[/cell] [cell]Olivial[/cell]
 [cell]Dilz[/cell] [cell]Alice[/cell]
+[cell]Haïm[/cell] [cell]Claire[/cell] [cell]Flo[/cell]
 [/table][/center]"
-text = "Merci à :LupcapyouLilolaleloErwanOlivialDilzAlice"
+text = "Merci à :LupcapyouLilolaleloErwanOlivialDilzAliceHaïmClaireFlo"
 scroll_active = false
 
 [node name="TextureButton" type="TextureButton" parent="."]
