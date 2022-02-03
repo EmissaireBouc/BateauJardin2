@@ -91,17 +91,17 @@ custom_constants/separation = 70
 [node name="Options" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer"]
 margin_right = 520.0
 margin_bottom = 52.0
-custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_fonts/font = ExtResource( 1 )
 text = "Options"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer"]
-margin_top = 310.0
+margin_top = 215.0
 margin_right = 520.0
-margin_bottom = 480.0
+margin_bottom = 575.0
 size_flags_vertical = 6
-custom_constants/separation = 100
+custom_constants/separation = 30
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_right = 520.0
@@ -114,8 +114,8 @@ __meta__ = {
 margin_right = 258.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "Plein Ecran :"
 valign = 1
 
@@ -127,9 +127,9 @@ size_flags_horizontal = 3
 custom_constants/check_vadjust = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
-margin_top = 135.0
+margin_top = 65.0
 margin_right = 520.0
-margin_bottom = 170.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -140,8 +140,8 @@ __meta__ = {
 margin_right = 258.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "Volume :"
 valign = 1
 
@@ -159,20 +159,161 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="luminosite" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 520.0
+margin_bottom = 165.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/luminosite"]
+margin_right = 258.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Luminosité :"
+valign = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/luminosite"]
+margin_left = 262.0
+margin_right = 520.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area = SubResource( 2 )
+min_value = -1.0
+max_value = 1.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="contraste" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 195.0
+margin_right = 520.0
+margin_bottom = 230.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/contraste"]
+margin_right = 258.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Contraste :"
+valign = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/contraste"]
+margin_left = 262.0
+margin_right = 520.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area = SubResource( 2 )
+min_value = 0.4
+max_value = 6.0
+step = 0.2
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="saturation" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 260.0
+margin_right = 520.0
+margin_bottom = 295.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/saturation"]
+margin_right = 258.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Saturation :"
+valign = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/saturation"]
+margin_left = 262.0
+margin_right = 520.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area = SubResource( 2 )
+max_value = 3.0
+step = 0.2
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="teinte" type="HBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 325.0
+margin_right = 520.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/teinte"]
+margin_right = 258.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Teinte :"
+valign = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/teinte"]
+margin_left = 262.0
+margin_right = 520.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area = SubResource( 2 )
+max_value = 360.0
+step = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Retour" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
 margin_top = 739.0
 margin_right = 520.0
 margin_bottom = 780.0
 size_flags_vertical = 0
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
 custom_constants/hseparation = 150
+custom_fonts/font = ExtResource( 4 )
 text = "Fermer"
 flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
 [connection signal="toggled" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/PleinEcran" to="." method="_on_PleinEcran_toggled"]
 [connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/luminosite/HSlider" to="." method="_luminosite_slider"]
+[connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/contraste/HSlider" to="." method="_contrast_slider"]
+[connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/saturation/HSlider" to="." method="_saturation_slider"]
+[connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/teinte/HSlider" to="." method="_hue_slider"]
 [connection signal="pressed" from="MarginContainer2/MarginContainer/VBoxContainer/Retour" to="." method="_on_Retour_pressed"]

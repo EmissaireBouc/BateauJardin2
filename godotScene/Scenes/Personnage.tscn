@@ -58,6 +58,7 @@ show_behind_parent = true
 position = Vector2( 15.4756, -21.674 )
 scale = Vector2( 1.11117, 1.49706 )
 texture = ExtResource( 3 )
+
 [connection signal="animation_finished" from="." to="." method="_on_Player_animation_finished"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

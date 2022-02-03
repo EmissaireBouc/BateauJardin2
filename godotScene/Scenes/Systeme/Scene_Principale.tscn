@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decors/BateauArrierePlan.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Son/Mer+VentV1.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Scripts/DebugLabel3.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Decors/Background.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Systeme/change_color.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scripts/PNJ/PNJ_Interaction.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/Systeme/Dialogues.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=36]
@@ -294,6 +295,9 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="changeColor" parent="CanvasLayer" instance=ExtResource( 18 )]
+mouse_filter = 2
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )

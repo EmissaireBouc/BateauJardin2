@@ -1,7 +1,13 @@
 extends Control
 
+onready var color_modif_mat = preload("res://Assets/UI/Options/couleur_options_mat.tres")
+
 func _ready():
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HSlider.value = ImportData.volume
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/luminosite/HSlider.value = color_modif_mat.get_shader_param("brightness")
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/contraste/HSlider.value = color_modif_mat.get_shader_param("contrast")
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/saturation/HSlider.value = color_modif_mat.get_shader_param("saturation")
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/teinte/HSlider.value = color_modif_mat.get_shader_param("hue_modif")
 	
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/PleinEcran.pressed = OS.window_fullscreen
 
@@ -32,3 +38,17 @@ func _on_OptionButton_item_selected(id):
 func _on_HSlider_value_changed(value):
 	ImportData.volume = value
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), log(ImportData.volume)*20)
+	
+func _contrast_slider(value):
+	color_modif_mat.set_shader_param("contrast",value)
+
+func _luminosite_slider(value):
+	color_modif_mat.set_shader_param("brightness",value)
+	
+func _saturation_slider(value):
+	color_modif_mat.set_shader_param("saturation",value)
+	
+func _hue_slider(value):
+	color_modif_mat.set_shader_param("hue_modif",value)
+	
+		
