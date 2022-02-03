@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/curseur_dormir.png-364656b6021bfbb4ab3844111057b181.stex"
+path="res://.import/curseur_ancienDefault.png-b8612f64ef47b151a3b4b449857afe0f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Curseur/curseur_dormir.png"
-dest_files=[ "res://.import/curseur_dormir.png-364656b6021bfbb4ab3844111057b181.stex" ]
+source_file="res://Assets/UI/Curseur/curseur_ancienDefault.png"
+dest_files=[ "res://.import/curseur_ancienDefault.png-b8612f64ef47b151a3b4b449857afe0f.stex" ]
 
 [params]
 

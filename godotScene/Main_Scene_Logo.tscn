@@ -55,5 +55,6 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
 [connection signal="transition_over" from="Transition" to="." method="_on_Transition_transition_over"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

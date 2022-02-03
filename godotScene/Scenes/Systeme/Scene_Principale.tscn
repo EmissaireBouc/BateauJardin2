@@ -32,30 +32,30 @@ extents = Vector2( 256, 256 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 175.242, 325.854 )
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 0.262745 )
-
 [sub_resource type="DynamicFont" id=5]
 size = 22
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0.262745 )
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.227451, 0.203922, 0.203922, 0.360784 )
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0.262745 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 22
 outline_color = Color( 0, 1, 0.0862745, 1 )
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0, 0, 0, 0.231373 )
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.227451, 0.203922, 0.203922, 0.360784 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 22
 font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 0.231373 )
 
 [sub_resource type="DynamicFontData" id=11]
 font_path = "res://Assets/UI/Font/Quicksand_Bold.otf"
@@ -169,8 +169,8 @@ margin_left = -48.0
 margin_top = 87.0
 margin_right = 48.0
 margin_bottom = 127.0
-custom_fonts/font = ExtResource( 36 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 36 )
 text = "PA : "
 script = ExtResource( 9 )
 __meta__ = {
@@ -198,9 +198,9 @@ margin_top = 192.0
 margin_right = 1864.0
 margin_bottom = 288.0
 grow_horizontal = 0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
 text = "Jardin :"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -213,9 +213,9 @@ margin_top = 64.0
 margin_right = 1096.0
 margin_bottom = 160.0
 grow_horizontal = 0
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0588235, 0.988235, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 text = "JOUR : "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -227,9 +227,9 @@ margin_left = 1536.0
 margin_top = 64.0
 margin_right = 1864.0
 margin_bottom = 168.0
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.105882, 1, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 7 )
 text = "Zoom :"
 align = 2
 __meta__ = {
@@ -242,9 +242,9 @@ margin_left = 64.0
 margin_top = 704.0
 margin_right = 312.0
 margin_bottom = 976.0
-custom_styles/normal = SubResource( 9 )
-custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0, 1, 0.156863, 1 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/normal = SubResource( 9 )
 text = "Plante Description"
 script = ExtResource( 16 )
 __meta__ = {
@@ -285,8 +285,8 @@ margin_left = -960.0
 margin_top = -45.5
 margin_right = 960.0
 margin_bottom = 45.5
-custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 12 )
 text = "Jour"
 align = 1
 valign = 1
@@ -297,6 +297,7 @@ __meta__ = {
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
+
 [connection signal="mouse_entered" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Bateau/WalkArea/Area2D" to="." method="_on_Area2D_mouse_exited"]
 [connection signal="input_event" from="Bateau/Jardin" to="." method="_on_Jardin_input_event"]
