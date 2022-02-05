@@ -51,6 +51,7 @@ func setup_game():
 
 	var inv = load("res://Scenes/Systeme/Inventaire_plantes.tscn").instance()
 	$CanvasLayer.add_child(inv)
+	$CanvasLayer.move_child(inv,inv.get_index()-2)
 	inventaire = get_node("CanvasLayer/Inventory")
 	
 	
@@ -58,6 +59,7 @@ func setup_game():
 
 	var encart = load ("res://Scenes/Systeme/Encart.tscn").instance()
 	$CanvasLayer.add_child(encart)
+	$CanvasLayer.move_child(encart,encart.get_index()-2)
 	Encart = get_node("CanvasLayer/Encart")
 	Encart.hide()
 
@@ -115,6 +117,7 @@ func chargement_jour(jr = ImportData.jour):
 	if jr == 0 :
 		var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 		$CanvasLayer.add_child(tuto)
+		$CanvasLayer.move_child(tuto,tuto.get_index()-2)
 		$CanvasLayer/Commande.connect("fin_tuto",self,"fin_tuto")
 		$CanvasLayer/Transition.raise()
 
@@ -284,7 +287,9 @@ func change_action(newaction):
 		CARNET:
 			var Carnet = load("res://Assets/UI/Carnet/Scene_Carnet/ScMenuLivre.tscn").instance()
 			$CanvasLayer.add_child(Carnet)
+			$CanvasLayer.move_child(Carnet,Carnet.get_index()-2)
 			Carnet.connect("Close_Carnet", self, "change_action",[DEFAULT])
+			#print(Carnet.get_index())
 
 
 func _on_Player_anim_over(state):

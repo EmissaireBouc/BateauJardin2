@@ -1,18 +1,19 @@
 extends Control
 
 onready var color_modif_mat = preload("res://Assets/UI/Options/couleur_options_mat.tres")
+var a_reactiver = null
+
 
 func _ready():
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HSlider.value = ImportData.volume
-	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/luminosite/HSlider.value = color_modif_mat.get_shader_param("brightness")
-	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/contraste/HSlider.value = color_modif_mat.get_shader_param("contrast")
-	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/saturation/HSlider.value = color_modif_mat.get_shader_param("saturation")
-	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/teinte/HSlider.value = color_modif_mat.get_shader_param("hue_modif")
-	
+	_update_position_sliders()
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/PleinEcran.pressed = OS.window_fullscreen
 
 
 func _on_Retour_pressed():
+	if(a_reactiver != null):
+		a_reactiver.visible = true
+		a_reactiver = null
 	queue_free()
 
 
@@ -50,5 +51,16 @@ func _saturation_slider(value):
 	
 func _hue_slider(value):
 	color_modif_mat.set_shader_param("hue_modif",value)
-	
-		
+
+func _reinitialiser_couleurs():
+	color_modif_mat.set_shader_param("contrast",1)
+	color_modif_mat.set_shader_param("brightness",0)
+	color_modif_mat.set_shader_param("saturation",1)
+	color_modif_mat.set_shader_param("hue_modif",0)
+	_update_position_sliders()
+
+func _update_position_sliders():
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/luminosite/HSlider.value = color_modif_mat.get_shader_param("brightness")
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/contraste/HSlider.value = color_modif_mat.get_shader_param("contrast")
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/saturation/HSlider.value = color_modif_mat.get_shader_param("saturation")
+	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/teinte/HSlider.value = color_modif_mat.get_shader_param("hue_modif")

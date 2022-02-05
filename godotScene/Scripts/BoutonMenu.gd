@@ -48,12 +48,13 @@ func _on_Quitter_pressed():
 func _on_Option_pressed():
 		var Option_scene = load("res://Scenes/Systeme/Options.tscn").instance()
 		get_parent().get_parent().get_parent().get_parent().add_child(Option_scene)
+		get_parent().get_parent().get_parent().get_parent().move_child(Option_scene,Option_scene.get_index()-1)
 
 
 func _on_Credits_pressed():
 	var Credits_scene = load("res://Scenes/Systeme/Credits.tscn").instance()
 	get_parent().get_parent().get_parent().get_parent().add_child(Credits_scene)
-
+	get_parent().get_parent().get_parent().get_parent().move_child(Credits_scene,Credits_scene.get_index()-1)
 
 func _on_retour_pressed():
 	menu.visible = true

@@ -31,7 +31,7 @@ __meta__ = {
 self_modulate = Color( 1, 1, 1, 0.627451 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.34902, 0.321569, 0.321569, 1 )
+color = Color( 0.34902, 0.321569, 0.321569, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -97,9 +97,9 @@ text = "Options"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/MarginContainer/VBoxContainer"]
-margin_top = 215.0
+margin_top = 180.0
 margin_right = 520.0
-margin_bottom = 575.0
+margin_bottom = 611.0
 size_flags_vertical = 6
 custom_constants/separation = 30
 
@@ -295,6 +295,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="reiniialiser" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 390.0
+margin_right = 520.0
+margin_bottom = 431.0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0.152941, 0.196078, 0.14902, 1 )
+custom_constants/hseparation = 150
+custom_fonts/font = ExtResource( 4 )
+text = "Reinitialiser les couleurs"
+flat = true
+align = 0
+
 [node name="Retour" type="Button" parent="MarginContainer2/MarginContainer/VBoxContainer"]
 margin_top = 739.0
 margin_right = 520.0
@@ -316,4 +328,5 @@ autoplay = true
 [connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/contraste/HSlider" to="." method="_contrast_slider"]
 [connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/saturation/HSlider" to="." method="_saturation_slider"]
 [connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/teinte/HSlider" to="." method="_hue_slider"]
+[connection signal="pressed" from="MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/reiniialiser" to="." method="_reinitialiser_couleurs"]
 [connection signal="pressed" from="MarginContainer2/MarginContainer/VBoxContainer/Retour" to="." method="_on_Retour_pressed"]

@@ -67,13 +67,15 @@ func _on_RetourMenu_pressed():
 func _on_Tuto_pressed():
 	var tuto = load("res://Scenes/Systeme/Tuto.tscn").instance()
 	get_parent().get_parent().add_child(tuto)
-	tuto.raise()
+	#tuto.raise()
 
 
 func _on_Options_pressed():
 	var option = load("res://Scenes/Systeme/Options.tscn").instance()
-	get_parent().get_parent().add_child(option)
-	option.raise()
+	get_parent().get_parent().get_parent().add_child(option)
+	get_parent().get_parent().get_parent().move_child(option,option.get_index()-2)
+	get_parent().get_parent().visible = false
+	option.a_reactiver = get_parent().get_parent()
 
 
 func _on_Options2_pressed():

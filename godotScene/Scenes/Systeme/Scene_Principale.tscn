@@ -273,8 +273,10 @@ margin_right = 0.0
 [node name="ciel transition" parent="CanvasLayer" instance=ExtResource( 37 )]
 visible = false
 
+[node name="changeColor" parent="CanvasLayer" instance=ExtResource( 18 )]
+mouse_filter = 2
+
 [node name="Transition" parent="CanvasLayer" instance=ExtResource( 7 )]
-visible = false
 
 [node name="Jour" type="Label" parent="CanvasLayer/Transition"]
 visible = false
@@ -295,9 +297,6 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="changeColor" parent="CanvasLayer" instance=ExtResource( 18 )]
-mouse_filter = 2
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
