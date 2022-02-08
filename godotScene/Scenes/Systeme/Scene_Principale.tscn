@@ -166,8 +166,10 @@ position = Vector2( -5114.46, 456.847 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Carnet button" type="TextureButton" parent="CanvasLayer"]
-margin_right = 117.0
-margin_bottom = 126.0
+margin_left = 1790.0
+margin_top = 7.0
+margin_right = 1910.0
+margin_bottom = 133.0
 focus_mode = 0
 texture_normal = ExtResource( 20 )
 texture_pressed = ExtResource( 20 )
