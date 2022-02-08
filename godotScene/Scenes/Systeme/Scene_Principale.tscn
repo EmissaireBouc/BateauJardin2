@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Decors/BateauArrierePlan.tscn" type="PackedScene" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Scenes/Decors/Background.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Systeme/change_color.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scripts/PNJ/PNJ_Interaction.gd" type="Script" id=19]
+[ext_resource path="res://Assets/UI/bouton_carnet.png" type="Texture" id=20]
+[ext_resource path="res://Assets/UI/bouton_carnet_hover.png" type="Texture" id=21]
+[ext_resource path="res://Scripts/BoutonCarnet.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/Systeme/Dialogues.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/UI/Carnet/Font/Font_SousTitre1_Livre.tres" type="DynamicFont" id=36]
 [ext_resource path="res://Scenes/TransitionCiel.tscn" type="PackedScene" id=37]
@@ -161,6 +164,19 @@ shape = SubResource( 3 )
 position = Vector2( -5114.46, 456.847 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Carnet button" type="TextureButton" parent="CanvasLayer"]
+margin_right = 117.0
+margin_bottom = 126.0
+focus_mode = 0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 21 )
+texture_focused = ExtResource( 21 )
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PA" type="Label" parent="CanvasLayer"]
 visible = false
@@ -313,6 +329,7 @@ stream = ExtResource( 15 )
 [connection signal="area_shape_exited" from="Bateau/YSort/MasqueTransparent" to="Bateau/YSort/Plante" method="_on_MasqueTransparent_area_shape_exited"]
 [connection signal="mouse_entered" from="Bateau/Porte" to="." method="_on_Porte_mouse_entered"]
 [connection signal="mouse_exited" from="Bateau/Porte" to="." method="_on_Porte_mouse_exited"]
+[connection signal="button_down" from="CanvasLayer/Carnet button" to="CanvasLayer/Carnet button" method="_on_Carnet_button_button_down"]
 [connection signal="pressed" from="CanvasLayer/Control/MenuInteractions/HBoxContainer/Button_Spray" to="." method="_on_Button_Spray_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/MenuInteractions/HBoxContainer/Button_Cut" to="." method="_on_Button_Cut_pressed"]
 [connection signal="gui_input" from="CanvasLayer/Transition" to="CanvasLayer/Transition" method="_on_Transition_gui_input"]

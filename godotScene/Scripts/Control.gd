@@ -69,8 +69,8 @@ func setup_game():
 
 func connectique():
 	PNJsort.connect("Engage_Conversation",self,"Engage_Conversation")
-	Player.connect("Open_Carnet",self,"Open_Carnet")
-	Player.connect("Change_Cursor", self, "cursor_mode")
+	#Player.connect("Open_Carnet",self,"Open_Carnet")
+	#Player.connect("Change_Cursor", self, "cursor_mode")
 	PNJsort.connect("Change_Cursor", self, "cursor_mode")
 	inventaire.connect("item_selected", self, "_on_Inventory_item_selected")
 	inventaire.connect("plant_abort", self, "_on_Inventory_plant_abort")
@@ -289,7 +289,6 @@ func change_action(newaction):
 			$CanvasLayer.add_child(Carnet)
 			$CanvasLayer.move_child(Carnet,Carnet.get_index()-2)
 			Carnet.connect("Close_Carnet", self, "change_action",[DEFAULT])
-			#print(Carnet.get_index())
 
 
 func _on_Player_anim_over(state):
