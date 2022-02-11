@@ -17,6 +17,7 @@ _global_script_class_icons={
 config/name="BateauJardin"
 config/description="jeu narratif réalisé par l'association Gamaturgie"
 run/main_scene="res://Main_Scene_Logo.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://Assets/Plante/Icone/icon_BuissonRose.png"
 config/windows_native_icon="res://Assets/Icon_jeu/icon_Jeu_48x48.ico"
 
@@ -66,3 +67,7 @@ Debug={
 2d_physics/layer_2="plante"
 2d_physics/layer_3=true
 2d_physics/layer_4="jardin"
+
+[rendering]
+
+environment/default_clear_color=Color( 0.172549, 0.172549, 0.172549, 1 )

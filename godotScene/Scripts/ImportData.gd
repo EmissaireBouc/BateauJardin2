@@ -12,6 +12,7 @@ var DialJour = 0
 var nbrPNJ = 0
 var ChangDial = 0
 var volume = 1
+var fond_cache = bool(false)
 
 # pour la sauvegarde
 var is_loading = false

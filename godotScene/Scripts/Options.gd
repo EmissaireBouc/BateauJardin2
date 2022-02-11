@@ -1,14 +1,19 @@
 extends Control
 
+onready var cacheFond = $"MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/Cahce Fond/Checkbox"
 onready var color_modif_mat = preload("res://Assets/UI/Options/couleur_options_mat.tres")
 var a_reactiver = null
 
+var importData = ImportData
 
 func _ready():
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HSlider.value = ImportData.volume
 	_update_position_sliders()
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/PleinEcran.pressed = OS.window_fullscreen
-
+	if importData.fond_cache == false :
+		cacheFond.pressed = false
+	if importData.fond_cache == true :
+		cacheFond.pressed = true
 
 func _on_Retour_pressed():
 	if(a_reactiver != null):
@@ -64,3 +69,13 @@ func _update_position_sliders():
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/contraste/HSlider.value = color_modif_mat.get_shader_param("contrast")
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/saturation/HSlider.value = color_modif_mat.get_shader_param("saturation")
 	$MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer/teinte/HSlider.value = color_modif_mat.get_shader_param("hue_modif")
+
+#Cache Fond#
+func _on_Checkbox_toggled(button_pressed):
+	if cacheFond.pressed == true :
+		importData.fond_cache = true
+		color_modif_mat.set_shader_param("saturation",3)
+		_update_position_sliders()
+	if cacheFond.pressed == false :
+		importData.fond_cache = false
+		_reinitialiser_couleurs()
